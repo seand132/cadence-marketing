@@ -43,6 +43,10 @@ export const metadata: Metadata = {
     images: ['https://cadencehq.co/og-image.svg'],
     creator: '@seand132',
   },
+  icons: {
+    icon: '/favicon.svg',
+    apple: '/apple-touch-icon.svg',
+  },
 }
 
 export default function RootLayout({
