@@ -19,8 +19,8 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'Cadence — Management in Rhythm',
-  description: 'The operating system for new managers. Run better 1:1s, set real goals, and build habits that stick.',
+  title: 'Cadence — Management tool for first-time managers',
+  description: 'Cadence helps new managers run better 1:1s, track delegation, and keep their team in rhythm. Simple. For teams of 3–8. Free while in beta.',
 }
 
 export default function RootLayout({
@@ -44,10 +44,16 @@ export default function RootLayout({
               />
             </Link>
             <nav className="flex items-center gap-6">
+              <Link href="/features" className="text-[#1C2B3A] font-medium hover:text-[#3A7D7B] transition-colors hidden sm:inline">
+                Features
+              </Link>
+              <Link href="/blog" className="text-[#1C2B3A] font-medium hover:text-[#3A7D7B] transition-colors hidden sm:inline">
+                Blog
+              </Link>
               <Link href="/pricing" className="text-[#1C2B3A] font-medium hover:text-[#3A7D7B] transition-colors">
                 Pricing
               </Link>
-              <Button href="/pricing" size="sm">Start free trial</Button>
+              <Button href="/pricing" size="sm">Try Cadence free</Button>
             </nav>
           </div>
         </header>
@@ -56,6 +62,9 @@ export default function RootLayout({
           <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-[#1C2B3A]/60">
             <p>© {new Date().getFullYear()} Cadence. All rights reserved.</p>
             <div className="flex gap-6">
+              <Link href="/features" className="hover:text-[#1C2B3A] transition-colors">Features</Link>
+              <Link href="/about" className="hover:text-[#1C2B3A] transition-colors">About</Link>
+              <Link href="/blog" className="hover:text-[#1C2B3A] transition-colors">Blog</Link>
               <Link href="/privacy" className="hover:text-[#1C2B3A] transition-colors">Privacy</Link>
               <Link href="/terms" className="hover:text-[#1C2B3A] transition-colors">Terms</Link>
             </div>
