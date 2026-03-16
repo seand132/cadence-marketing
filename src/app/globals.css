@@ -86,3 +86,17 @@ details[open] summary .faq-arrow {
   transition: color 150ms ease;
 }
 .footer-link:hover { color: white; }
+
+/* Mobile overflow fix */
+html {
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

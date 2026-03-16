@@ -30,7 +30,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${montserrat.variable} ${dmSans.variable}`}>
-      <body style={{ background: '#F5F0E8' }}>
+      <body style={{ background: '#F5F0E8', overflowX: 'hidden', maxWidth: '100vw' }}>
         <NavClient />
         <main>{children}</main>
 
@@ -39,11 +39,12 @@ export default function RootLayout({
           <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-8">
             <div className="flex flex-col items-center sm:items-start gap-3">
               <Image
-                src="/brand/cadence-logo-lockup.svg"
+                src="/brand/cadence-horizontal-lockup-dark.svg"
                 alt="Cadence"
                 width={130}
                 height={34}
-                className="brightness-0 invert"
+                className="max-w-full h-auto"
+                style={{ maxWidth: '130px' }}
               />
               <p className="text-sm" style={{ color: 'rgba(255,255,255,0.45)' }}>
                 © {new Date().getFullYear()} Cadence. All rights reserved.
