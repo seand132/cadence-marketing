@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="400" height="120">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;display=swap');
+    </style>
+  </defs>
+  
+  <!-- Logomark - Rhythmic bars -->
+  <g transform="translate(50, 60)">
+    <rect x="-28" y="-8" width="9" height="32" rx="4.5" fill="#C8782A"/>
+    <rect x="-13" y="-26" width="9" height="50" rx="4.5" fill="#C8782A"/>
+    <rect x="2" y="-16" width="9" height="40" rx="4.5" fill="#C8782A"/>
+    <rect x="17" y="-4" width="9" height="28" rx="4.5" fill="#C8782A"/>
+  </g>
+  
+  <!-- "cadence" wordmark -->
+  <text x="100" y="72" font-family="DM Sans, Helvetica Neue, Arial, sans-serif" font-weight="500" font-size="48" letter-spacing="3" fill="#2C2C2C">cadence</text>
+  
+  <!-- "HQ" badge -->
+  <rect x="328" y="38" width="56" height="32" rx="4" fill="#2C2C2C"/>
+  <text x="356" y="60" text-anchor="middle" font-family="DM Sans, Helvetica Neue, Arial, sans-serif" font-weight="600" font-size="16" letter-spacing="2" fill="#F5F0E8">HQ</text>
+</svg>

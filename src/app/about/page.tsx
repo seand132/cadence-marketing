@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'About Cadence — Built for the first-time manager',
@@ -48,6 +49,30 @@ export default function AboutPage() {
             </p>
             <p style={{ fontFamily: 'var(--font-dm-sans)', fontSize: 17, color: 'rgba(255,255,255,0.70)', lineHeight: 1.75 }}>
               Cadence exists because good managers aren&rsquo;t born — they&rsquo;re made. And making them shouldn&rsquo;t require a 200-person HR team or a $50k software contract.
+            </p>
+          </div>
+
+          {/* CTA */}
+          <div className="mt-16 text-center reveal">
+            <Link
+              href="https://app.cadencehq.co/signup"
+              style={{
+                display: 'inline-block',
+                background: '#C8782A',
+                color: 'white',
+                fontFamily: 'var(--font-montserrat)',
+                fontWeight: 600,
+                fontSize: 16,
+                padding: '14px 36px',
+                borderRadius: 2,
+                textDecoration: 'none',
+                letterSpacing: '0.03em',
+              }}
+            >
+              Try Cadence free for 14 days →
+            </Link>
+            <p style={{ fontFamily: 'var(--font-dm-sans)', fontSize: 14, color: 'rgba(28,43,58,0.5)', marginTop: 12 }}>
+              No credit card required.
             </p>
           </div>
         </div>

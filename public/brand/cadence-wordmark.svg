@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 28 230 38" width="230" height="38">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;display=swap');
+    </style>
+  </defs>
+  <text x="4" y="60" font-family="DM Sans, Helvetica Neue, Arial, sans-serif" font-weight="500" font-size="48" letter-spacing="3" fill="#2C2C2C">cadence</text>
+</svg>
