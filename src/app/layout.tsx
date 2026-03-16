@@ -1,29 +1,30 @@
 import type { Metadata } from 'next'
-import { Montserrat, DM_Sans } from 'next/font/google'
+import { DM_Sans, Source_Sans_3 } from 'next/font/google'
 import Image from 'next/image'
 import Link from 'next/link'
 import './globals.css'
 import { NavClient } from '@/components/nav/NavClient'
 
-const montserrat = Montserrat({
-  subsets: ['latin'],
-  variable: '--font-montserrat',
-  display: 'swap',
-  weight: ['300', '400', '500', '600'],
-})
-
 const dmSans = DM_Sans({
   subsets: ['latin'],
   variable: '--font-dm-sans',
   display: 'swap',
+  weight: ['400', '500', '600', '700'],
+})
+
+const sourceSans3 = Source_Sans_3({
+  subsets: ['latin'],
+  variable: '--font-source-sans',
+  display: 'swap',
+  weight: ['400', '600'],
 })
 
 export const metadata: Metadata = {
   title: 'Cadence — Management in rhythm.',
-  description: 'Simple tools for first-time managers. Run better 1:1s, track your team, and build the habits that make you a great manager.',
+  description: 'Cadence gives first-time managers a real system. Run better 1:1s, track your team, and build the habits that make you a great manager.',
   openGraph: {
     title: 'Cadence — Management in rhythm.',
-    description: 'Simple tools for first-time managers. Run better 1:1s, track your team, and build the habits that make you a great manager.',
+    description: 'Cadence gives first-time managers a real system. Run better 1:1s, track your team, and build the habits that make you a great manager.',
     url: 'https://cadencehq.co',
     siteName: 'Cadence',
     images: [
@@ -55,13 +56,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${dmSans.variable}`}>
+    <html lang="en" className={`${dmSans.variable} ${sourceSans3.variable}`}>
       <body style={{ background: '#F5F0E8', overflowX: 'hidden', maxWidth: '100vw' }}>
         <NavClient />
         <main>{children}</main>
 
         {/* Footer */}
-        <footer style={{ background: '#1C2B3A' }} className="py-14 mt-0">
+        <footer style={{ background: '#2C2C2C' }} className="py-12">
           <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-8">
             <div className="flex flex-col items-center sm:items-start gap-3">
               <Image
@@ -72,7 +73,10 @@ export default function RootLayout({
                 className="max-w-full h-auto"
                 style={{ maxWidth: '130px' }}
               />
-              <p className="text-sm" style={{ color: 'rgba(255,255,255,0.45)' }}>
+              <p
+                className="text-sm"
+                style={{ color: '#9C968B', fontFamily: 'var(--font-source-sans)' }}
+              >
                 © {new Date().getFullYear()} Cadence. All rights reserved.
               </p>
             </div>
@@ -88,7 +92,8 @@ export default function RootLayout({
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="footer-link text-sm"
+                  className="text-sm transition-colors hover:text-white"
+                  style={{ color: '#9C968B', fontFamily: 'var(--font-dm-sans)' }}
                 >
                   {link.label}
                 </Link>

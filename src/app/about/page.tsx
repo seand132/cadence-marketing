@@ -9,17 +9,17 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section style={{ background: '#1C2B3A' }} className="py-20">
+      <section style={{ background: '#F5F0E8' }} className="py-20">
         <div className="max-w-2xl mx-auto px-6">
           <h1
-            style={{ fontFamily: 'var(--font-montserrat)', fontWeight: 300, fontSize: 'clamp(36px, 5vw, 56px)', color: 'white' }}
+            style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 'clamp(36px, 5vw, 52px)', color: '#2C2C2C' }}
           >
             Why I built this.
           </h1>
         </div>
       </section>
 
-      <section style={{ background: '#F5F0E8' }} className="py-24">
+      <section style={{ background: 'white' }} className="py-20">
         <div className="max-w-2xl mx-auto px-6">
           <div className="space-y-6 mb-16 reveal">
             {[
@@ -30,24 +30,31 @@ export default function AboutPage() {
               "It's not a performance management platform. It's not an HR tool. It's a rhythm — a set of simple practices that help you show up for your team consistently.",
               "That's it. No enterprise contracts. No 40-feature setup. Just what you need to do the job well.",
             ].map((para, i) => (
-              <p key={i} style={{ fontFamily: 'var(--font-dm-sans)', fontSize: 18, color: 'rgba(28,43,58,0.75)', lineHeight: 1.8 }}>
+              <p key={i} style={{ fontFamily: 'var(--font-source-sans)', fontSize: 18, color: '#9C968B', lineHeight: 1.8 }}>
                 {para}
               </p>
             ))}
-            <p style={{ fontFamily: 'var(--font-dm-sans)', fontSize: 18, color: '#1C2B3A', fontWeight: 600 }}>
+            <p style={{ fontFamily: 'var(--font-dm-sans)', fontSize: 18, color: '#2C2C2C', fontWeight: 600 }}>
               — Sean Davis, Founder
             </p>
           </div>
 
           {/* Mission */}
-          <div className="p-10 text-center reveal" style={{ background: '#1C2B3A', borderRadius: 2 }}>
+          <div
+            className="p-10 text-center reveal"
+            style={{
+              background: '#2C2C2C',
+              borderRadius: 8,
+              border: '1px solid #D0CAC0',
+            }}
+          >
             <p
               className="mb-4"
-              style={{ fontFamily: 'var(--font-montserrat)', fontWeight: 500, fontSize: 24, color: 'white' }}
+              style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 24, color: 'white' }}
             >
               Management in rhythm.
             </p>
-            <p style={{ fontFamily: 'var(--font-dm-sans)', fontSize: 17, color: 'rgba(255,255,255,0.70)', lineHeight: 1.75 }}>
+            <p style={{ fontFamily: 'var(--font-source-sans)', fontSize: 17, color: 'rgba(255,255,255,0.70)', lineHeight: 1.75 }}>
               Cadence exists because good managers aren&rsquo;t born — they&rsquo;re made. And making them shouldn&rsquo;t require a 200-person HR team or a $50k software contract.
             </p>
           </div>
@@ -56,22 +63,17 @@ export default function AboutPage() {
           <div className="mt-16 text-center reveal">
             <Link
               href="https://app.cadencehq.co/signup"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white transition-opacity hover:opacity-90"
               style={{
-                display: 'inline-block',
                 background: '#C8782A',
-                color: 'white',
-                fontFamily: 'var(--font-montserrat)',
+                borderRadius: 4,
+                fontFamily: 'var(--font-dm-sans)',
                 fontWeight: 600,
-                fontSize: 16,
-                padding: '14px 36px',
-                borderRadius: 2,
-                textDecoration: 'none',
-                letterSpacing: '0.03em',
               }}
             >
-              Try Cadence free for 14 days →
+              Start free — 14 days
             </Link>
-            <p style={{ fontFamily: 'var(--font-dm-sans)', fontSize: 14, color: 'rgba(28,43,58,0.5)', marginTop: 12 }}>
+            <p style={{ fontFamily: 'var(--font-source-sans)', fontSize: 14, color: '#9C968B', marginTop: 12 }}>
               No credit card required.
             </p>
           </div>
