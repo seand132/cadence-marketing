@@ -3,13 +3,13 @@ import { Montserrat, DM_Sans } from 'next/font/google'
 import Image from 'next/image'
 import Link from 'next/link'
 import './globals.css'
-import { ColorStripe } from '@/components/brand/ColorStripe'
-import { Button } from '@/components/ui/Button'
+import { NavClient } from '@/components/nav/NavClient'
 
 const montserrat = Montserrat({
   subsets: ['latin'],
   variable: '--font-montserrat',
   display: 'swap',
+  weight: ['300', '400', '500', '600'],
 })
 
 const dmSans = DM_Sans({
@@ -30,46 +30,63 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${montserrat.variable} ${dmSans.variable}`}>
-      <body style={{ background: '#EEF0EC' }}>
-        <ColorStripe />
-        <header className="border-b border-[#1C2B3A]/10 bg-[#EEF0EC]">
-          <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-2">
+      <body style={{ background: '#F5F0E8' }}>
+        <NavClient />
+        <main>{children}</main>
+
+        {/* Footer */}
+        <footer style={{ background: '#1C2B3A' }} className="py-14 mt-0">
+          <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-8">
+            <div className="flex flex-col items-center sm:items-start gap-3">
               <Image
                 src="/brand/cadence-logo-lockup.svg"
                 alt="Cadence"
-                width={140}
-                height={36}
-                priority
+                width={130}
+                height={34}
+                className="brightness-0 invert"
               />
-            </Link>
-            <nav className="flex items-center gap-6">
-              <Link href="/features" className="text-[#1C2B3A] font-medium hover:text-[#3A7D7B] transition-colors hidden sm:inline">
-                Features
-              </Link>
-              <Link href="/blog" className="text-[#1C2B3A] font-medium hover:text-[#3A7D7B] transition-colors hidden sm:inline">
-                Blog
-              </Link>
-              <Link href="/pricing" className="text-[#1C2B3A] font-medium hover:text-[#3A7D7B] transition-colors">
-                Pricing
-              </Link>
-              <Button href="/pricing" size="sm">Try Cadence free</Button>
+              <p className="text-sm" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                © {new Date().getFullYear()} Cadence. All rights reserved.
+              </p>
+            </div>
+            <nav className="flex flex-wrap gap-6 justify-center sm:justify-end">
+              {[
+                { label: 'Features', href: '/features' },
+                { label: 'Pricing', href: '/pricing' },
+                { label: 'Blog', href: '/blog' },
+                { label: 'About', href: '/about' },
+                { label: 'Privacy', href: '/privacy' },
+                { label: 'Terms', href: '/terms' },
+              ].map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="footer-link text-sm"
+                >
+                  {link.label}
+                </Link>
+              ))}
             </nav>
           </div>
-        </header>
-        <main>{children}</main>
-        <footer className="border-t border-[#1C2B3A]/10 mt-20 py-8">
-          <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-[#1C2B3A]/60">
-            <p>© {new Date().getFullYear()} Cadence. All rights reserved.</p>
-            <div className="flex gap-6">
-              <Link href="/features" className="hover:text-[#1C2B3A] transition-colors">Features</Link>
-              <Link href="/about" className="hover:text-[#1C2B3A] transition-colors">About</Link>
-              <Link href="/blog" className="hover:text-[#1C2B3A] transition-colors">Blog</Link>
-              <Link href="/privacy" className="hover:text-[#1C2B3A] transition-colors">Privacy</Link>
-              <Link href="/terms" className="hover:text-[#1C2B3A] transition-colors">Terms</Link>
-            </div>
-          </div>
         </footer>
+
+        {/* Scroll reveal script */}
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            (function() {
+              var els = document.querySelectorAll('.reveal');
+              var io = new IntersectionObserver(function(entries) {
+                entries.forEach(function(e) {
+                  if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    io.unobserve(e.target);
+                  }
+                });
+              }, { threshold: 0.12 });
+              els.forEach(function(el) { io.observe(el); });
+            })();
+          `
+        }} />
       </body>
     </html>
   )

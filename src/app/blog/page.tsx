@@ -29,34 +29,46 @@ const posts = [
 
 export default function BlogIndex() {
   return (
-    <div className="max-w-3xl mx-auto px-6 py-20">
-      <div className="mb-12">
-        <h1
-          className="text-4xl font-bold mb-4"
-          style={{ fontFamily: 'var(--font-montserrat)', color: '#1C2B3A' }}
-        >
-          The Cadence Blog
-        </h1>
-        <p className="text-lg text-[#1C2B3A]/65">
-          Practical guidance for new managers navigating their first team.
-        </p>
-      </div>
-
-      <div className="space-y-6">
-        {posts.map((post) => (
-          <Link
-            key={post.slug}
-            href={`/blog/${post.slug}`}
-            className="block bg-white rounded-xl p-8 border border-[#1C2B3A]/5 shadow-sm hover:shadow-md transition-shadow"
+    <>
+      <section style={{ background: '#1C2B3A' }} className="py-20">
+        <div className="max-w-2xl mx-auto px-6">
+          <h1
+            className="mb-3"
+            style={{ fontFamily: 'var(--font-montserrat)', fontWeight: 300, fontSize: 'clamp(36px, 5vw, 52px)', color: 'white' }}
           >
-            <h2 className="text-xl font-bold mb-3" style={{ color: '#1C2B3A' }}>
-              {post.title}
-            </h2>
-            <p className="text-[#1C2B3A]/65 leading-relaxed mb-4">{post.description}</p>
-            <span className="text-sm text-[#7A9E82] font-medium">{post.readTime}</span>
-          </Link>
-        ))}
-      </div>
-    </div>
+            The Cadence Blog
+          </h1>
+          <p style={{ fontFamily: 'var(--font-dm-sans)', fontSize: 18, color: 'rgba(255,255,255,0.65)' }}>
+            Practical guidance for new managers navigating their first team.
+          </p>
+        </div>
+      </section>
+
+      <section style={{ background: '#F5F0E8' }} className="py-24">
+        <div className="max-w-2xl mx-auto px-6 space-y-4">
+          {posts.map((post, i) => (
+            <Link
+              key={post.slug}
+              href={`/blog/${post.slug}`}
+              className={`block bg-white p-8 reveal reveal-delay-${i + 1} transition-transform hover:-translate-y-1`}
+              style={{ border: '1px solid #E0DDD8', borderRadius: 2, borderLeft: '3px solid #7A9E82' }}
+            >
+              <h2
+                className="mb-3"
+                style={{ fontFamily: 'var(--font-montserrat)', fontWeight: 500, fontSize: 18, color: '#1C2B3A' }}
+              >
+                {post.title}
+              </h2>
+              <p className="mb-4" style={{ fontFamily: 'var(--font-dm-sans)', fontSize: 15, color: '#8A96A0', lineHeight: 1.7 }}>
+                {post.description}
+              </p>
+              <span className="text-xs font-medium" style={{ color: '#7A9E82', fontFamily: 'var(--font-dm-sans)' }}>
+                {post.readTime}
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
+    </>
   )
 }
