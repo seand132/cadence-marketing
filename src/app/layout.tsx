@@ -19,8 +19,30 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'Cadence — Management tool for first-time managers',
-  description: 'Cadence helps new managers run better 1:1s, track delegation, and keep their team in rhythm. Simple. For teams of 3–8. Free while in beta.',
+  title: 'Cadence — Management in rhythm.',
+  description: 'Simple tools for first-time managers. Run better 1:1s, track your team, and build the habits that make you a great manager.',
+  openGraph: {
+    title: 'Cadence — Management in rhythm.',
+    description: 'Simple tools for first-time managers. Run better 1:1s, track your team, and build the habits that make you a great manager.',
+    url: 'https://cadencehq.co',
+    siteName: 'Cadence',
+    images: [
+      {
+        url: 'https://cadencehq.co/og-image.svg',
+        width: 1200,
+        height: 630,
+        alt: 'Cadence — Management in rhythm.',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cadence — Management in rhythm.',
+    description: 'Simple tools for first-time managers.',
+    images: ['https://cadencehq.co/og-image.svg'],
+    creator: '@seand132',
+  },
 }
 
 export default function RootLayout({
