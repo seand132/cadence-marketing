@@ -2,76 +2,85 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Cadence Blog — Management advice for managers',
-  description: 'Practical guidance for managers building systems that stick. 1:1s, delegation, team rhythms, and building systems that stick.',
+  title: 'The Cadence Blog — Practical management for real teams',
+  description: 'Practical management for real teams. 1:1s, delegation, team culture, and building systems that actually work.',
 }
 
-const posts = [
-  {
-    slug: 'new-manager-survival-guide',
-    title: "The New Manager's Survival Guide (No Generic Advice)",
-    description: "What actually matters in the first 90 days — not advice written for people who've been doing it for a decade.",
-    readTime: '8 min read',
-    category: 'Getting started',
-    strip: '#C8782A',
-  },
-  {
-    slug: 'why-management-tools-fail-small-teams',
-    title: 'Why Most Management Tools Fail Small Teams',
-    description: "Enterprise HR tools are designed for HR departments. If you manage 6 people, here's why that's a problem — and what to use instead.",
-    readTime: '7 min read',
-    category: 'Tools',
-    strip: '#3A7D7B',
-  },
-  {
-    slug: 'management-in-rhythm',
-    title: 'What "Management in Rhythm" Actually Means',
-    description: "It's not a metaphor. It's a design principle — and the antidote to reactive management.",
-    readTime: '6 min read',
-    category: 'Philosophy',
-    strip: '#7B8F6A',
-  },
-  {
-    slug: 'the-11-that-actually-works',
-    title: 'The 1:1 That Actually Works',
-    description: "Most 1:1s are status updates with a human face. Here's how to turn them into the most valuable 30 minutes of your week.",
-    readTime: '7 min read',
-    category: '1:1s',
-    strip: '#C2604A',
-  },
+const featuredPost = {
+  slug: 'the-11-that-actually-works',
+  title: 'The 1:1 That Actually Works',
+  category: '1:1s',
+  readTime: '8 min read',
+  author: 'Sean Davis',
+  excerpt:
+    "Most 1:1s are status updates with better lighting. Here's how to turn yours into the most valuable 30 minutes of your week.",
+}
+
+const gridPosts = [
   {
     slug: 'how-to-delegate-without-losing-control',
     title: 'How to Delegate Without Losing Control',
-    description: "Delegation doesn't fail because people can't do the work. It fails because the handoff was incomplete.",
-    readTime: '7 min read',
     category: 'Delegation',
-    strip: '#3A7D7B',
+    readTime: '8 min read',
+    date: 'Mar 10, 2025',
+    excerpt:
+      "You know you should delegate more. You don't. Here's the real reason — and a framework that actually works.",
   },
   {
     slug: 'what-to-track-when-you-manage-a-small-team',
     title: 'What to Track When You Manage a Small Team',
-    description: "You don't need a dashboard with 40 metrics. You need about five signals that tell you whether your team is healthy.",
+    category: 'KPIs',
     readTime: '7 min read',
-    category: 'Metrics',
-    strip: '#7B8F6A',
+    date: 'Mar 3, 2025',
+    excerpt:
+      "You're either tracking the wrong things or nothing at all. Here's what actually matters for a team of 3 to 8.",
   },
   {
     slug: 'how-to-give-feedback-your-team-will-hear',
     title: 'How to Give Feedback Your Team Will Actually Hear',
-    description: "Feedback fails not because it's too harsh — but because it's too rare, too vague, and too far from the moment that mattered.",
-    readTime: '6 min read',
-    category: 'Feedback',
-    strip: '#C8782A',
+    category: 'Team Culture',
+    readTime: '7 min read',
+    date: 'Feb 24, 2025',
+    excerpt:
+      "Feedback doesn't fail because managers don't give it. It fails because they don't know how. That's fixable.",
   },
   {
     slug: 'building-team-culture-without-the-corporate-playbook',
     title: 'Building Team Culture Without the Corporate Playbook',
-    description: "Culture isn't ping pong tables or off-sites. It's what your team does when no one is telling them what to do.",
+    category: 'Team Culture',
+    readTime: '8 min read',
+    date: 'Feb 17, 2025',
+    excerpt:
+      "Culture isn't built at off-sites. It's built in the small decisions you make every day as a manager.",
+  },
+  {
+    slug: 'management-in-rhythm',
+    title: 'What "Management in Rhythm" Actually Means',
+    category: 'Management',
+    readTime: '6 min read',
+    date: 'Feb 10, 2025',
+    excerpt: "Great teams don't happen by accident. They find their rhythm — and keep it.",
+  },
+  {
+    slug: 'new-manager-survival-guide',
+    title: "The New Manager's Survival Guide (No Generic Advice)",
+    category: 'Management',
     readTime: '7 min read',
-    category: 'Culture',
-    strip: '#5A7A6A',
+    date: 'Feb 3, 2025',
+    excerpt: "Nobody hands you a manual when you become a manager. This is as close as it gets.",
+  },
+  {
+    slug: 'why-management-tools-fail-small-teams',
+    title: 'Why Most Management Tools Fail Small Teams',
+    category: 'Management',
+    readTime: '6 min read',
+    date: 'Jan 27, 2025',
+    excerpt:
+      "Most management tools are built for HR, not managers. Here's why that matters and what to look for instead.",
   },
 ]
+
+const categories = ['All', '1:1s', 'Delegation', 'Team Culture', 'KPIs', 'Management']
 
 function RhythmDivider({ id, bg }: { id: string; bg: string }) {
   return (
@@ -106,139 +115,292 @@ function RhythmDivider({ id, bg }: { id: string; bg: string }) {
 export default function BlogIndex() {
   return (
     <>
-      <section style={{ background: '#F5F0E8' }} className="py-20">
-        <div className="max-w-3xl mx-auto px-6">
-          <div
-            className="inline-flex mb-6 px-3 py-1 rounded-full uppercase"
+      {/* Hero */}
+      <section style={{ background: '#F5F0E8' }} className="pt-20 pb-10">
+        <div className="max-w-4xl mx-auto px-6">
+          <h1
+            className="mb-3"
             style={{
-              background: '#FDF6EE',
-              color: '#C8782A',
               fontFamily: 'var(--font-dm-sans)',
-              fontWeight: 600,
-              fontSize: 11,
-              letterSpacing: '0.1em',
+              fontWeight: 700,
+              fontSize: 'clamp(40px, 5vw, 60px)',
+              color: '#2C2C2C',
+              lineHeight: 1.1,
             }}
           >
             The Cadence Blog
-          </div>
-          <h1
-            className="mb-3"
-            style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 'clamp(36px, 5vw, 52px)', color: '#2C2C2C', lineHeight: 1.15 }}
-          >
-            Written for managers who actually manage.
           </h1>
-          <p style={{ fontFamily: 'var(--font-source-sans)', fontSize: 18, color: '#9C968B', lineHeight: 1.6 }}>
-            Practical guidance for managers building systems that stick.
+          <p style={{ fontFamily: 'var(--font-source-sans)', fontSize: 20, color: '#9C968B', lineHeight: 1.6 }}>
+            Practical management for real teams.
           </p>
         </div>
       </section>
 
-      <RhythmDivider id="blog-div-1" bg="#F5F0E8" />
+      {/* Featured post */}
+      <section style={{ background: '#F5F0E8' }} className="pb-12">
+        <div className="max-w-4xl mx-auto px-6">
+          <Link
+            href={`/blog/${featuredPost.slug}`}
+            className="block"
+            style={{
+              borderRadius: 10,
+              border: '1px solid #D0CAC0',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.07)',
+              overflow: 'hidden',
+              textDecoration: 'none',
+              background: 'white',
+            }}
+          >
+            <div style={{ height: 6, background: '#C8782A' }} />
+            <div className="p-10">
+              <div className="flex items-center gap-3 mb-4">
+                <span
+                  className="px-3 py-1 rounded-full text-xs font-semibold uppercase"
+                  style={{
+                    background: '#FEF3E2',
+                    color: '#C8782A',
+                    fontFamily: 'var(--font-dm-sans)',
+                    letterSpacing: '0.07em',
+                  }}
+                >
+                  {featuredPost.category}
+                </span>
+                <span style={{ color: '#9C968B', fontFamily: 'var(--font-dm-sans)', fontSize: 14 }}>
+                  {featuredPost.readTime}
+                </span>
+              </div>
+              <h2
+                className="mb-4"
+                style={{
+                  fontFamily: 'var(--font-dm-sans)',
+                  fontWeight: 700,
+                  fontSize: 'clamp(24px, 3vw, 34px)',
+                  color: '#2C2C2C',
+                  lineHeight: 1.2,
+                }}
+              >
+                {featuredPost.title}
+              </h2>
+              <p
+                className="mb-6"
+                style={{
+                  fontFamily: 'var(--font-source-sans)',
+                  fontSize: 18,
+                  color: '#6B6560',
+                  lineHeight: 1.7,
+                  maxWidth: 680,
+                }}
+              >
+                {featuredPost.excerpt}
+              </p>
+              <div className="flex items-center justify-between flex-wrap gap-4">
+                <span style={{ fontFamily: 'var(--font-dm-sans)', fontSize: 14, color: '#9C968B' }}>
+                  By {featuredPost.author}
+                </span>
+                <span
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold"
+                  style={{ color: '#C8782A', fontFamily: 'var(--font-dm-sans)' }}
+                >
+                  Read the post
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path
+                      d="M3 8h10M9 4l4 4-4 4"
+                      stroke="#C8782A"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </Link>
+        </div>
+      </section>
 
-      <section style={{ background: 'white' }} className="py-20">
-        <div className="max-w-3xl mx-auto px-6">
+      {/* Rhythm divider */}
+      <RhythmDivider id="blog-div-featured" bg="#F5F0E8" />
+
+      {/* Category filter */}
+      <section style={{ background: 'white' }} className="pt-12 pb-6">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="flex flex-wrap gap-2">
+            {categories.map((cat, i) => (
+              <span
+                key={cat}
+                className="px-4 py-2 rounded-full text-sm cursor-default"
+                style={{
+                  background: i === 0 ? '#C8782A' : '#F5F0E8',
+                  color: i === 0 ? 'white' : '#6B6560',
+                  fontFamily: 'var(--font-dm-sans)',
+                  fontWeight: i === 0 ? 600 : 500,
+                  letterSpacing: '0.02em',
+                }}
+              >
+                {cat}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Grid */}
+      <section style={{ background: 'white' }} className="pt-4 pb-20">
+        <div className="max-w-4xl mx-auto px-6">
           <div className="grid sm:grid-cols-2 gap-6">
-            {posts.map((post) => (
+            {gridPosts.map((post) => (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="block bg-white feature-card reveal"
+                className="block"
                 style={{
                   borderRadius: 8,
                   border: '1px solid #D0CAC0',
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.07)',
                   overflow: 'hidden',
                   textDecoration: 'none',
+                  background: 'white',
                 }}
               >
-                <div style={{ height: 6, background: post.strip }} />
-                <div className="p-8">
-                  <div className="flex items-center gap-2 mb-4">
+                <div style={{ height: 6, background: '#C8782A' }} />
+                <div className="p-7">
+                  <div className="mb-3">
                     <span
-                      className="px-2 py-0.5 rounded text-xs font-semibold uppercase"
+                      className="px-2.5 py-0.5 rounded-full text-xs font-semibold uppercase"
                       style={{
-                        background: '#F5F0E8',
-                        color: '#9C968B',
+                        background: '#FEF3E2',
+                        color: '#C8782A',
                         fontFamily: 'var(--font-dm-sans)',
                         letterSpacing: '0.06em',
                       }}
                     >
                       {post.category}
                     </span>
-                    <span className="text-xs" style={{ color: '#9C968B', fontFamily: 'var(--font-dm-sans)' }}>
-                      {post.readTime}
-                    </span>
                   </div>
                   <h2
                     className="mb-3"
-                    style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 600, fontSize: 18, color: '#2C2C2C', lineHeight: 1.3 }}
+                    style={{
+                      fontFamily: 'var(--font-dm-sans)',
+                      fontWeight: 600,
+                      fontSize: 17,
+                      color: '#2C2C2C',
+                      lineHeight: 1.3,
+                    }}
                   >
                     {post.title}
                   </h2>
-                  <p style={{ fontFamily: 'var(--font-source-sans)', fontSize: 15, color: '#9C968B', lineHeight: 1.7 }}>
-                    {post.description}
+                  <p
+                    className="mb-5"
+                    style={{
+                      fontFamily: 'var(--font-source-sans)',
+                      fontSize: 15,
+                      color: '#6B6560',
+                      lineHeight: 1.65,
+                    }}
+                  >
+                    {post.excerpt}
                   </p>
-                  <div className="mt-5 flex items-center gap-1 text-sm font-semibold" style={{ color: '#C8782A', fontFamily: 'var(--font-dm-sans)' }}>
-                    Read more
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="mt-0.5">
-                      <path d="M3 7h8M8 4l3 3-3 3" stroke="#C8782A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
+                  <div className="flex items-center justify-between">
+                    <span style={{ fontFamily: 'var(--font-dm-sans)', fontSize: 13, color: '#9C968B' }}>
+                      {post.readTime} · {post.date}
+                    </span>
+                    <span
+                      className="inline-flex items-center gap-1 text-sm font-semibold"
+                      style={{ color: '#C8782A', fontFamily: 'var(--font-dm-sans)' }}
+                    >
+                      Read
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <path
+                          d="M3 7h8M8 4l3 3-3 3"
+                          stroke="#C8782A"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </span>
                   </div>
                 </div>
               </Link>
             ))}
-
-            {/* Coming soon card */}
-            <div
-              className="bg-white reveal"
-              style={{
-                borderRadius: 8,
-                border: '1px dashed #D0CAC0',
-                overflow: 'hidden',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                minHeight: 200,
-                padding: 32,
-              }}
-            >
-              <div className="text-center">
-                <div style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 600, fontSize: 14, color: '#9C968B', marginBottom: 8 }}>
-                  More coming soon
-                </div>
-                <p style={{ fontFamily: 'var(--font-source-sans)', fontSize: 13, color: '#9C968B', lineHeight: 1.6 }}>
-                  New articles every week on 1:1s, delegation, and team rhythm.
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
-      <RhythmDivider id="blog-div-2" bg="white" />
+      {/* Newsletter */}
+      <section style={{ background: '#FDF6EE' }} className="py-20">
+        <div className="max-w-xl mx-auto px-6 text-center">
+          <h2
+            className="mb-2"
+            style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 28, color: '#2C2C2C' }}
+          >
+            Get management insights monthly.
+          </h2>
+          <p className="mb-8" style={{ fontFamily: 'var(--font-source-sans)', fontSize: 16, color: '#9C968B' }}>
+            No spam. Unsubscribe anytime.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <input
+              type="email"
+              placeholder="Your email address"
+              className="flex-1 px-4 py-3 rounded"
+              style={{
+                border: '1px solid #D0CAC0',
+                fontFamily: 'var(--font-source-sans)',
+                fontSize: 15,
+                outline: 'none',
+                background: 'white',
+                color: '#2C2C2C',
+              }}
+            />
+            <a
+              href="mailto:hello@cadencehq.co?subject=Subscribe to Cadence Blog"
+              className="inline-flex items-center justify-center px-6 py-3 rounded font-semibold"
+              style={{
+                background: '#C8782A',
+                color: 'white',
+                fontFamily: 'var(--font-dm-sans)',
+                fontWeight: 600,
+                fontSize: 15,
+                textDecoration: 'none',
+                whiteSpace: 'nowrap',
+              }}
+            >
+              Subscribe
+            </a>
+          </div>
+        </div>
+      </section>
 
-      {/* CTA */}
+      {/* Bottom CTA */}
       <section style={{ background: '#C8782A' }} className="py-20">
         <div className="max-w-xl mx-auto px-6 text-center">
           <h2
-            className="mb-4"
-            style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 36, color: 'white' }}
+            className="mb-6"
+            style={{
+              fontFamily: 'var(--font-dm-sans)',
+              fontWeight: 700,
+              fontSize: 'clamp(28px, 4vw, 36px)',
+              color: 'white',
+              lineHeight: 1.2,
+            }}
           >
-            Put the advice into practice.
+            Ready to try Cadence?
           </h2>
-          <p className="mb-8" style={{ fontFamily: 'var(--font-source-sans)', fontSize: 18, color: 'rgba(255,255,255,0.80)', lineHeight: 1.6 }}>
-            Cadence is built around exactly these ideas. Try it free for 14 days.
-          </p>
           <Link
             href="https://app.cadencehq.co/signup"
             className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold transition-opacity hover:opacity-90"
-            style={{ background: 'white', color: '#C8782A', borderRadius: 4, fontFamily: 'var(--font-dm-sans)', fontWeight: 600 }}
+            style={{
+              background: 'white',
+              color: '#C8782A',
+              borderRadius: 4,
+              fontFamily: 'var(--font-dm-sans)',
+              fontWeight: 600,
+              textDecoration: 'none',
+            }}
           >
             Get started free
           </Link>
-          <p className="mt-3 text-sm" style={{ color: 'rgba(255,255,255,0.65)', fontFamily: 'var(--font-source-sans)' }}>
-            No credit card required.
-          </p>
         </div>
       </section>
     </>

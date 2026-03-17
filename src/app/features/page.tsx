@@ -2,103 +2,15 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Cadence Features — 1:1s, Task Tracking, Team Dashboard',
-  description: 'Everything a small-team manager needs in one place. 1:1 agendas, delegation tracking, KPI goals, team dashboard. Built for teams of 3 to 8.',
-}
-
-const features = [
-  {
-    strip: '#C8782A',
-    name: '1:1s that actually work',
-    screenshot: '/screenshots/one-on-ones.png',
-    screenshotAlt: 'Cadence 1:1 meeting view',
-    body: [
-      'Most 1:1s drift. They start with \u201cso what\u2019s going on\u201d and end 30 minutes later with nothing decided.',
-      'Cadence gives every direct report a standing agenda \u2014 context, real talk, and next actions. Run every week. Never feel like homework.',
-    ],
-  },
-  {
-    strip: '#3A7D7B',
-    name: 'Delegation that doesn\u2019t disappear',
-    screenshot: '/screenshots/tasks.png',
-    screenshotAlt: 'Cadence task tracking view',
-    body: [
-      'When you delegate, you\u2019re not done \u2014 you\u2019re accountable for the outcome. Cadence keeps everything you\u2019ve assigned visible and status-tracked, so you always know what\u2019s moving and what needs a nudge.',
-    ],
-  },
-  {
-    strip: '#7B8F6A',
-    name: 'See the whole picture',
-    screenshot: '/screenshots/team.png',
-    screenshotAlt: 'Cadence team overview',
-    body: [
-      'A single view of your team \u2014 who\u2019s on track, who\u2019s behind, where the load isn\u2019t balanced. Not a surveillance tool. A manager\u2019s read on the room without scheduling five more meetings to get it.',
-    ],
-  },
-  {
-    strip: '#C8782A',
-    name: 'Goals that don\u2019t die in a doc',
-    screenshot: '/screenshots/dashboard.png',
-    screenshotAlt: 'Cadence goals and KPI dashboard',
-    body: [
-      'Set goals for your team and keep them visible. Cadence connects individual KPIs to team outcomes so progress isn\u2019t something you have to dig for \u2014 it\u2019s just there.',
-    ],
-  },
-  {
-    strip: '#3A7D7B',
-    name: 'Know how your team is built',
-    screenshot: null,
-    screenshotAlt: '',
-    body: [
-      'A live view of your reporting structure. Simple enough that you actually use it, detailed enough that it tells you something useful when your team changes.',
-    ],
-  },
-  {
-    strip: '#7B8F6A',
-    name: 'No more scattered docs',
-    screenshot: null,
-    screenshotAlt: '',
-    body: [
-      'Cadence replaces the Notion doc, the spreadsheet, and the Slack thread where you track team stuff. One system. One rhythm.',
-    ],
-  },
-]
-
-function RhythmDivider({ id, bg }: { id: string; bg: string }) {
-  return (
-    <div style={{ width: '100%', overflow: 'hidden', lineHeight: 0, background: bg }} aria-hidden="true">
-      <svg width="100%" height="40" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id={id} x="0" y="0" width="192" height="40" patternUnits="userSpaceOnUse">
-            <rect x="0"   y="34" width="7" height="6"  rx="3.5" fill="#C2604A" />
-            <rect x="12"  y="14" width="7" height="26" rx="3.5" fill="#C2604A" />
-            <rect x="24"  y="30" width="7" height="10" rx="3.5" fill="#3A7D7B" />
-            <rect x="36"  y="8"  width="7" height="32" rx="3.5" fill="#3A7D7B" />
-            <rect x="48"  y="32" width="7" height="8"  rx="3.5" fill="#7B8F6A" />
-            <rect x="60"  y="20" width="7" height="20" rx="3.5" fill="#7B8F6A" />
-            <rect x="72"  y="34" width="7" height="6"  rx="3.5" fill="#C8782A" />
-            <rect x="84"  y="6"  width="7" height="34" rx="3.5" fill="#C8782A" />
-            <rect x="96"  y="30" width="7" height="10" rx="3.5" fill="#3A7D7B" />
-            <rect x="108" y="22" width="7" height="18" rx="3.5" fill="#3A7D7B" />
-            <rect x="120" y="34" width="7" height="6"  rx="3.5" fill="#7B8F6A" />
-            <rect x="132" y="12" width="7" height="28" rx="3.5" fill="#7B8F6A" />
-            <rect x="144" y="32" width="7" height="8"  rx="3.5" fill="#C2604A" />
-            <rect x="156" y="18" width="7" height="22" rx="3.5" fill="#C2604A" />
-            <rect x="168" y="34" width="7" height="6"  rx="3.5" fill="#C8782A" />
-            <rect x="180" y="10" width="7" height="30" rx="3.5" fill="#C8782A" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="40" fill={`url(#${id})`} />
-      </svg>
-    </div>
-  )
+  title: 'Cadence Features — 1:1s, Task Delegation, Team Dashboard, KPI Goals',
+  description: 'Six focused tools for small-team managers. 1:1 meeting agendas, task delegation, team dashboard, KPI goals, org chart. Built for teams of 3 to 8.',
 }
 
 export default function FeaturesPage() {
   return (
     <>
-      {/* Hero */}
-      <section style={{ background: '#F5F0E8' }} className="py-20">
+      {/* ─── HERO ─────────────────────────────────────────────── */}
+      <section style={{ background: '#F5F0E8' }} className="py-24">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <div
             className="inline-flex mb-6 px-3 py-1 rounded-full uppercase"
@@ -111,7 +23,7 @@ export default function FeaturesPage() {
               letterSpacing: '0.1em',
             }}
           >
-            Simple tools. Steady habits. Stronger teams.
+            What You Get
           </div>
           <h1
             className="mb-5"
@@ -123,111 +35,1033 @@ export default function FeaturesPage() {
               lineHeight: 1.15,
             }}
           >
-            Everything you need to manage well.
+            Six tools. One rhythm. Zero overhead.
           </h1>
-          <p style={{ fontFamily: 'var(--font-source-sans)', fontSize: 18, color: '#9C968B', lineHeight: 1.6 }}>
-            Six focused features. One steady rhythm. No setup overhead.
+          <p
+            style={{
+              fontFamily: 'var(--font-source-sans)',
+              fontSize: 19,
+              color: '#9C968B',
+              lineHeight: 1.6,
+            }}
+          >
+            Everything a manager needs to run a tight team. 1:1s, delegation, goals, and visibility. Nothing they don&rsquo;t.
           </p>
         </div>
       </section>
 
-      <RhythmDivider id="feat-div-1" bg="#F5F0E8" />
+      {/* ─── RHYTHM DIVIDER 1 ─────────────────────────────────── */}
+      <div style={{ width:'100%', overflow:'hidden', lineHeight:0, background:'#F5F0E8' }} aria-hidden="true">
+        <svg width="100%" height="40" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="features-div-1" x="0" y="0" width="192" height="40" patternUnits="userSpaceOnUse">
+              <rect x="0"   y="34" width="7" height="6"  rx="3.5" fill="#C2604A" />
+              <rect x="12"  y="14" width="7" height="26" rx="3.5" fill="#C2604A" />
+              <rect x="24"  y="30" width="7" height="10" rx="3.5" fill="#3A7D7B" />
+              <rect x="36"  y="8"  width="7" height="32" rx="3.5" fill="#3A7D7B" />
+              <rect x="48"  y="32" width="7" height="8"  rx="3.5" fill="#7B8F6A" />
+              <rect x="60"  y="20" width="7" height="20" rx="3.5" fill="#7B8F6A" />
+              <rect x="72"  y="34" width="7" height="6"  rx="3.5" fill="#C8782A" />
+              <rect x="84"  y="6"  width="7" height="34" rx="3.5" fill="#C8782A" />
+              <rect x="96"  y="30" width="7" height="10" rx="3.5" fill="#3A7D7B" />
+              <rect x="108" y="22" width="7" height="18" rx="3.5" fill="#3A7D7B" />
+              <rect x="120" y="34" width="7" height="6"  rx="3.5" fill="#7B8F6A" />
+              <rect x="132" y="12" width="7" height="28" rx="3.5" fill="#7B8F6A" />
+              <rect x="144" y="32" width="7" height="8"  rx="3.5" fill="#C2604A" />
+              <rect x="156" y="18" width="7" height="22" rx="3.5" fill="#C2604A" />
+              <rect x="168" y="34" width="7" height="6"  rx="3.5" fill="#C8782A" />
+              <rect x="180" y="10" width="7" height="30" rx="3.5" fill="#C8782A" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="40" fill="url(#features-div-1)" />
+        </svg>
+      </div>
 
-      {/* Features */}
-      <section style={{ background: 'white' }} className="py-20">
-        <div className="max-w-5xl mx-auto px-6 space-y-16">
-          {features.map((f, i) => (
-            <div
-              key={f.name}
-              className={`reveal flex flex-col ${f.screenshot ? (i % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row') : ''} items-center gap-10`}
+      {/* ─── FEATURE NAV TABS ─────────────────────────────────── */}
+      <div
+        style={{
+          background: 'white',
+          borderBottom: '1px solid #D0CAC0',
+          position: 'sticky',
+          top: '53px',
+          zIndex: 40,
+        }}
+      >
+        <div className="max-w-5xl mx-auto px-6 py-3 flex items-center gap-2 overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
+          {[
+            { label: '1:1 Meetings', href: '#one-on-ones' },
+            { label: 'Task Delegation', href: '#delegation' },
+            { label: 'Team Dashboard', href: '#team-dashboard' },
+            { label: 'KPI Goals', href: '#kpi-goals' },
+            { label: 'Org Chart', href: '#org-chart' },
+            { label: 'One System', href: '#one-system' },
+          ].map((tab) => (
+            <a
+              key={tab.href}
+              href={tab.href}
+              className="flex-shrink-0 px-4 py-1.5 rounded-full text-sm font-medium transition-colors hover:bg-[#FDF6EE] hover:text-[#C8782A]"
+              style={{
+                fontFamily: 'var(--font-dm-sans)',
+                color: '#9C968B',
+                textDecoration: 'none',
+              }}
             >
-              {/* Text card */}
-              <div className={f.screenshot ? 'flex-1' : 'w-full max-w-3xl'}>
-                <div
-                  style={{
-                    borderRadius: 8,
-                    border: '1px solid #D0CAC0',
-                    boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
-                    overflow: 'hidden',
-                    background: 'white',
-                  }}
-                >
-                  <div style={{ height: 6, background: f.strip }} />
-                  <div className="p-8">
-                    <h2
-                      className="mb-4"
-                      style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 600, fontSize: 22, color: '#2C2C2C' }}
-                    >
-                      {f.name}
-                    </h2>
-                    <div className="space-y-3">
-                      {f.body.map((p, j) => (
-                        <p key={j} style={{ fontFamily: 'var(--font-source-sans)', fontSize: 16, color: '#9C968B', lineHeight: 1.75 }}>
-                          {p}
-                        </p>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Screenshot */}
-              {f.screenshot && (
-                <div className="flex-1 w-full">
-                  <div style={{
-                    borderRadius: 10,
-                    overflow: 'hidden',
-                    border: '1px solid #D0CAC0',
-                    boxShadow: '0 8px 32px rgba(0,0,0,0.10)',
-                  }}>
-                    <div style={{ background: '#EBE6DD', padding: '8px 14px', display: 'flex', alignItems: 'center', gap: 6, borderBottom: '1px solid #D0CAC0' }}>
-                      <div style={{ display: 'flex', gap: 4 }}>
-                        {['#C2604A','#C8782A','#7B8F6A'].map((c, k) => (
-                          <div key={k} style={{ width: 9, height: 9, borderRadius: '50%', background: c, opacity: 0.7 }} />
-                        ))}
-                      </div>
-                      <div style={{ flex: 1, background: 'white', borderRadius: 3, padding: '2px 10px', fontSize: 10, color: '#9C968B', fontFamily: 'var(--font-dm-sans)' }}>
-                        app.cadencehq.co
-                      </div>
-                    </div>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={f.screenshot}
-                      alt={f.screenshotAlt}
-                      style={{ width: '100%', display: 'block' }}
-                    />
-                  </div>
-                </div>
-              )}
-            </div>
+              {tab.label}
+            </a>
           ))}
         </div>
+      </div>
+
+      {/* ─── FEATURE 1: 1:1 MEETINGS ─────────────────────────── */}
+      <section id="one-on-ones" style={{ background: '#F5F0E8' }} className="py-24">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            {/* Text left */}
+            <div className="flex-1 max-w-xl">
+              <div
+                style={{
+                  borderLeft: '4px solid #C8782A',
+                  paddingLeft: 20,
+                  marginBottom: 24,
+                }}
+              >
+                <p
+                  style={{
+                    fontFamily: 'var(--font-dm-sans)',
+                    fontWeight: 600,
+                    fontSize: 11,
+                    color: '#C8782A',
+                    letterSpacing: '0.1em',
+                    textTransform: 'uppercase',
+                    marginBottom: 12,
+                  }}
+                >
+                  1:1 Meetings
+                </p>
+                <h2
+                  style={{
+                    fontFamily: 'var(--font-dm-sans)',
+                    fontWeight: 700,
+                    fontSize: 'clamp(26px, 3vw, 36px)',
+                    color: '#2C2C2C',
+                    lineHeight: 1.2,
+                    marginBottom: 16,
+                  }}
+                >
+                  1:1s that actually run themselves.
+                </h2>
+                <p
+                  style={{
+                    fontFamily: 'var(--font-source-sans)',
+                    fontSize: 17,
+                    color: '#9C968B',
+                    lineHeight: 1.75,
+                  }}
+                >
+                  Give every direct report a standing agenda. Real talk, context, and next actions every week, without starting from scratch. Cadence remembers what you covered last time so you don&rsquo;t have to.
+                </p>
+              </div>
+              {/* Stat callout */}
+              <div
+                style={{
+                  background: 'white',
+                  border: '1px solid #D0CAC0',
+                  borderRadius: 8,
+                  padding: '16px 20px',
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  gap: 12,
+                }}
+              >
+                <div
+                  style={{
+                    width: 4,
+                    minHeight: 40,
+                    background: '#C8782A',
+                    borderRadius: 2,
+                    flexShrink: 0,
+                    marginTop: 2,
+                  }}
+                />
+                <p
+                  style={{
+                    fontFamily: 'var(--font-dm-sans)',
+                    fontSize: 14,
+                    color: '#2C2C2C',
+                    lineHeight: 1.6,
+                    margin: 0,
+                  }}
+                >
+                  Managers who hold weekly 1:1s report 20% higher team retention.
+                </p>
+              </div>
+            </div>
+            {/* Screenshot right */}
+            <div className="flex-1 w-full">
+              <div
+                style={{
+                  borderRadius: 10,
+                  overflow: 'hidden',
+                  border: '1px solid #D0CAC0',
+                  boxShadow: '0 12px 40px rgba(0,0,0,0.12)',
+                }}
+              >
+                <div
+                  style={{
+                    background: '#EBE6DD',
+                    padding: '10px 16px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 8,
+                    borderBottom: '1px solid #D0CAC0',
+                  }}
+                >
+                  <div style={{ display: 'flex', gap: 5 }}>
+                    {['#C2604A', '#C8782A', '#7B8F6A'].map((c, i) => (
+                      <div
+                        key={i}
+                        style={{
+                          width: 10,
+                          height: 10,
+                          borderRadius: '50%',
+                          background: c,
+                          opacity: 0.75,
+                        }}
+                      />
+                    ))}
+                  </div>
+                  <div
+                    style={{
+                      flex: 1,
+                      background: 'white',
+                      borderRadius: 4,
+                      padding: '3px 12px',
+                      fontSize: 11,
+                      color: '#9C968B',
+                      fontFamily: 'var(--font-dm-sans)',
+                    }}
+                  >
+                    app.cadencehq.co/1-1s
+                  </div>
+                </div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/screenshots/one-on-ones.png"
+                  alt="Cadence 1:1 meeting agendas"
+                  style={{ width: '100%', display: 'block' }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <RhythmDivider id="feat-div-2" bg="white" />
+      {/* ─── FEATURE 2: TASK DELEGATION ─────────────────────── */}
+      <section id="delegation" style={{ background: 'white' }} className="py-24">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
+            {/* Text right (reversed) */}
+            <div className="flex-1 max-w-xl">
+              <div
+                style={{
+                  borderLeft: '4px solid #3A7D7B',
+                  paddingLeft: 20,
+                  marginBottom: 24,
+                }}
+              >
+                <p
+                  style={{
+                    fontFamily: 'var(--font-dm-sans)',
+                    fontWeight: 600,
+                    fontSize: 11,
+                    color: '#3A7D7B',
+                    letterSpacing: '0.1em',
+                    textTransform: 'uppercase',
+                    marginBottom: 12,
+                  }}
+                >
+                  Task Delegation
+                </p>
+                <h2
+                  style={{
+                    fontFamily: 'var(--font-dm-sans)',
+                    fontWeight: 700,
+                    fontSize: 'clamp(26px, 3vw, 36px)',
+                    color: '#2C2C2C',
+                    lineHeight: 1.2,
+                    marginBottom: 16,
+                  }}
+                >
+                  Delegate once. See it through.
+                </h2>
+                <p
+                  style={{
+                    fontFamily: 'var(--font-source-sans)',
+                    fontSize: 17,
+                    color: '#9C968B',
+                    lineHeight: 1.75,
+                  }}
+                >
+                  When you hand something off, you&rsquo;re still accountable for the outcome. Cadence keeps everything you&rsquo;ve delegated visible: status, priority, due date. You always know what&rsquo;s moving and what needs a nudge.
+                </p>
+              </div>
+              {/* Pull quote */}
+              <div
+                style={{
+                  background: '#F5F0E8',
+                  border: '1px solid #D0CAC0',
+                  borderRadius: 8,
+                  padding: '16px 20px',
+                }}
+              >
+                <p
+                  style={{
+                    fontFamily: 'var(--font-dm-sans)',
+                    fontWeight: 600,
+                    fontSize: 15,
+                    color: '#2C2C2C',
+                    lineHeight: 1.5,
+                    margin: 0,
+                    fontStyle: 'italic',
+                  }}
+                >
+                  &ldquo;No more &lsquo;what&rsquo;s the status on that?&rsquo; in Slack.&rdquo;
+                </p>
+              </div>
+            </div>
+            {/* Screenshot left (reversed) */}
+            <div className="flex-1 w-full">
+              <div
+                style={{
+                  borderRadius: 10,
+                  overflow: 'hidden',
+                  border: '1px solid #D0CAC0',
+                  boxShadow: '0 12px 40px rgba(0,0,0,0.10)',
+                }}
+              >
+                <div
+                  style={{
+                    background: '#EBE6DD',
+                    padding: '10px 16px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 8,
+                    borderBottom: '1px solid #D0CAC0',
+                  }}
+                >
+                  <div style={{ display: 'flex', gap: 5 }}>
+                    {['#C2604A', '#C8782A', '#7B8F6A'].map((c, i) => (
+                      <div
+                        key={i}
+                        style={{
+                          width: 10,
+                          height: 10,
+                          borderRadius: '50%',
+                          background: c,
+                          opacity: 0.75,
+                        }}
+                      />
+                    ))}
+                  </div>
+                  <div
+                    style={{
+                      flex: 1,
+                      background: 'white',
+                      borderRadius: 4,
+                      padding: '3px 12px',
+                      fontSize: 11,
+                      color: '#9C968B',
+                      fontFamily: 'var(--font-dm-sans)',
+                    }}
+                  >
+                    app.cadencehq.co/tasks
+                  </div>
+                </div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/screenshots/tasks.png"
+                  alt="Cadence task delegation and tracking"
+                  style={{ width: '100%', display: 'block' }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      {/* CTA */}
-      <section style={{ background: '#C8782A' }} className="py-20">
-        <div className="max-w-xl mx-auto px-6 text-center">
-          <h2
-            className="mb-4"
-            style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 36, color: 'white' }}
+      {/* ─── FEATURE 3: TEAM DASHBOARD ──────────────────────── */}
+      <section id="team-dashboard" style={{ background: '#EBE6DD' }} className="py-24">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            {/* Text left */}
+            <div className="flex-1 max-w-xl">
+              <div
+                style={{
+                  borderLeft: '4px solid #7B8F6A',
+                  paddingLeft: 20,
+                  marginBottom: 24,
+                }}
+              >
+                <p
+                  style={{
+                    fontFamily: 'var(--font-dm-sans)',
+                    fontWeight: 600,
+                    fontSize: 11,
+                    color: '#7B8F6A',
+                    letterSpacing: '0.1em',
+                    textTransform: 'uppercase',
+                    marginBottom: 12,
+                  }}
+                >
+                  Team Dashboard
+                </p>
+                <h2
+                  style={{
+                    fontFamily: 'var(--font-dm-sans)',
+                    fontWeight: 700,
+                    fontSize: 'clamp(26px, 3vw, 36px)',
+                    color: '#2C2C2C',
+                    lineHeight: 1.2,
+                    marginBottom: 16,
+                  }}
+                >
+                  Your team at a glance. Not in five meetings.
+                </h2>
+                <p
+                  style={{
+                    fontFamily: 'var(--font-source-sans)',
+                    fontSize: 17,
+                    color: '#9C968B',
+                    lineHeight: 1.75,
+                  }}
+                >
+                  One view of who&rsquo;s on track, who&rsquo;s overloaded, and who&rsquo;s gone quiet. Not a surveillance tool. A manager&rsquo;s honest read on the room, updated in real time.
+                </p>
+              </div>
+              {/* Callout card */}
+              <div
+                style={{
+                  background: '#2C2C2C',
+                  borderRadius: 8,
+                  padding: '18px 22px',
+                }}
+              >
+                <p
+                  style={{
+                    fontFamily: 'var(--font-dm-sans)',
+                    fontWeight: 600,
+                    fontSize: 15,
+                    color: 'white',
+                    lineHeight: 1.5,
+                    margin: 0,
+                  }}
+                >
+                  Spot problems before they become incidents.
+                </p>
+                <p
+                  style={{
+                    fontFamily: 'var(--font-source-sans)',
+                    fontSize: 13,
+                    color: 'rgba(255,255,255,0.6)',
+                    margin: '6px 0 0 0',
+                  }}
+                >
+                  Real-time visibility without scheduling another status meeting.
+                </p>
+              </div>
+            </div>
+            {/* Screenshot right */}
+            <div className="flex-1 w-full">
+              <div
+                style={{
+                  borderRadius: 10,
+                  overflow: 'hidden',
+                  border: '1px solid #D0CAC0',
+                  boxShadow: '0 12px 40px rgba(0,0,0,0.10)',
+                }}
+              >
+                <div
+                  style={{
+                    background: '#EBE6DD',
+                    padding: '10px 16px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 8,
+                    borderBottom: '1px solid #D0CAC0',
+                  }}
+                >
+                  <div style={{ display: 'flex', gap: 5 }}>
+                    {['#C2604A', '#C8782A', '#7B8F6A'].map((c, i) => (
+                      <div
+                        key={i}
+                        style={{
+                          width: 10,
+                          height: 10,
+                          borderRadius: '50%',
+                          background: c,
+                          opacity: 0.75,
+                        }}
+                      />
+                    ))}
+                  </div>
+                  <div
+                    style={{
+                      flex: 1,
+                      background: 'white',
+                      borderRadius: 4,
+                      padding: '3px 12px',
+                      fontSize: 11,
+                      color: '#9C968B',
+                      fontFamily: 'var(--font-dm-sans)',
+                    }}
+                  >
+                    app.cadencehq.co/team
+                  </div>
+                </div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/screenshots/team.png"
+                  alt="Cadence team dashboard"
+                  style={{ width: '100%', display: 'block' }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── FEATURE 4: KPI GOALS ───────────────────────────── */}
+      <section id="kpi-goals" style={{ background: 'white' }} className="py-24">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
+            {/* Text right (reversed) */}
+            <div className="flex-1 max-w-xl">
+              <div
+                style={{
+                  borderLeft: '4px solid #C8782A',
+                  paddingLeft: 20,
+                  marginBottom: 24,
+                }}
+              >
+                <p
+                  style={{
+                    fontFamily: 'var(--font-dm-sans)',
+                    fontWeight: 600,
+                    fontSize: 11,
+                    color: '#C8782A',
+                    letterSpacing: '0.1em',
+                    textTransform: 'uppercase',
+                    marginBottom: 12,
+                  }}
+                >
+                  KPI Goals
+                </p>
+                <h2
+                  style={{
+                    fontFamily: 'var(--font-dm-sans)',
+                    fontWeight: 700,
+                    fontSize: 'clamp(26px, 3vw, 36px)',
+                    color: '#2C2C2C',
+                    lineHeight: 1.2,
+                    marginBottom: 16,
+                  }}
+                >
+                  Goals that don&rsquo;t die in a doc.
+                </h2>
+                <p
+                  style={{
+                    fontFamily: 'var(--font-source-sans)',
+                    fontSize: 17,
+                    color: '#9C968B',
+                    lineHeight: 1.75,
+                  }}
+                >
+                  Set team and individual KPIs and keep them visible every week. Not buried in a spreadsheet you open once a quarter. Right there in your dashboard where they actually drive behavior.
+                </p>
+              </div>
+              {/* Stat pill */}
+              <div
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 8,
+                  background: '#FDF6EE',
+                  border: '1px solid #F0D5B8',
+                  borderRadius: 999,
+                  padding: '10px 18px',
+                }}
+              >
+                <div
+                  style={{
+                    width: 8,
+                    height: 8,
+                    borderRadius: '50%',
+                    background: '#C8782A',
+                  }}
+                />
+                <span
+                  style={{
+                    fontFamily: 'var(--font-dm-sans)',
+                    fontWeight: 600,
+                    fontSize: 14,
+                    color: '#C8782A',
+                  }}
+                >
+                  3 KPIs on track
+                </span>
+              </div>
+            </div>
+            {/* Screenshot left (reversed) */}
+            <div className="flex-1 w-full">
+              <div
+                style={{
+                  borderRadius: 10,
+                  overflow: 'hidden',
+                  border: '1px solid #D0CAC0',
+                  boxShadow: '0 12px 40px rgba(0,0,0,0.10)',
+                }}
+              >
+                <div
+                  style={{
+                    background: '#EBE6DD',
+                    padding: '10px 16px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 8,
+                    borderBottom: '1px solid #D0CAC0',
+                  }}
+                >
+                  <div style={{ display: 'flex', gap: 5 }}>
+                    {['#C2604A', '#C8782A', '#7B8F6A'].map((c, i) => (
+                      <div
+                        key={i}
+                        style={{
+                          width: 10,
+                          height: 10,
+                          borderRadius: '50%',
+                          background: c,
+                          opacity: 0.75,
+                        }}
+                      />
+                    ))}
+                  </div>
+                  <div
+                    style={{
+                      flex: 1,
+                      background: 'white',
+                      borderRadius: 4,
+                      padding: '3px 12px',
+                      fontSize: 11,
+                      color: '#9C968B',
+                      fontFamily: 'var(--font-dm-sans)',
+                    }}
+                  >
+                    app.cadencehq.co/goals
+                  </div>
+                </div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/screenshots/dashboard.png"
+                  alt="Cadence KPI goals and tracking"
+                  style={{ width: '100%', display: 'block' }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── FEATURE 5: ORG CHART ───────────────────────────── */}
+      <section id="org-chart" style={{ background: '#EBE6DD' }} className="py-24">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            {/* Text left */}
+            <div className="flex-1 max-w-xl">
+              <div
+                style={{
+                  borderLeft: '4px solid #C2604A',
+                  paddingLeft: 20,
+                  marginBottom: 24,
+                }}
+              >
+                <p
+                  style={{
+                    fontFamily: 'var(--font-dm-sans)',
+                    fontWeight: 600,
+                    fontSize: 11,
+                    color: '#C2604A',
+                    letterSpacing: '0.1em',
+                    textTransform: 'uppercase',
+                    marginBottom: 12,
+                  }}
+                >
+                  Org Chart
+                </p>
+                <h2
+                  style={{
+                    fontFamily: 'var(--font-dm-sans)',
+                    fontWeight: 700,
+                    fontSize: 'clamp(26px, 3vw, 36px)',
+                    color: '#2C2C2C',
+                    lineHeight: 1.2,
+                    marginBottom: 16,
+                  }}
+                >
+                  Know exactly how your team is built.
+                </h2>
+                <p
+                  style={{
+                    fontFamily: 'var(--font-source-sans)',
+                    fontSize: 17,
+                    color: '#9C968B',
+                    lineHeight: 1.75,
+                  }}
+                >
+                  A live view of your reporting structure. Who manages who, how many reports each person has, and where the accountability sits. Simple enough that you actually use it.
+                </p>
+              </div>
+              <div
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: '1fr 1fr',
+                  gap: 12,
+                }}
+              >
+                {[
+                  { n: '6', label: 'Team members tracked' },
+                  { n: '100%', label: 'Reporting clarity' },
+                ].map((s) => (
+                  <div
+                    key={s.label}
+                    style={{
+                      background: 'white',
+                      borderRadius: 8,
+                      border: '1px solid #D0CAC0',
+                      padding: '14px 18px',
+                      textAlign: 'center',
+                    }}
+                  >
+                    <div
+                      style={{
+                        fontFamily: 'var(--font-dm-sans)',
+                        fontWeight: 700,
+                        fontSize: 28,
+                        color: '#C2604A',
+                        lineHeight: 1,
+                      }}
+                    >
+                      {s.n}
+                    </div>
+                    <div
+                      style={{
+                        fontFamily: 'var(--font-source-sans)',
+                        fontSize: 12,
+                        color: '#9C968B',
+                        marginTop: 4,
+                      }}
+                    >
+                      {s.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* Screenshot right */}
+            <div className="flex-1 w-full">
+              <div
+                style={{
+                  borderRadius: 10,
+                  overflow: 'hidden',
+                  border: '1px solid #D0CAC0',
+                  boxShadow: '0 12px 40px rgba(0,0,0,0.10)',
+                }}
+              >
+                <div
+                  style={{
+                    background: '#EBE6DD',
+                    padding: '10px 16px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 8,
+                    borderBottom: '1px solid #D0CAC0',
+                  }}
+                >
+                  <div style={{ display: 'flex', gap: 5 }}>
+                    {['#C2604A', '#C8782A', '#7B8F6A'].map((c, i) => (
+                      <div
+                        key={i}
+                        style={{
+                          width: 10,
+                          height: 10,
+                          borderRadius: '50%',
+                          background: c,
+                          opacity: 0.75,
+                        }}
+                      />
+                    ))}
+                  </div>
+                  <div
+                    style={{
+                      flex: 1,
+                      background: 'white',
+                      borderRadius: 4,
+                      padding: '3px 12px',
+                      fontSize: 11,
+                      color: '#9C968B',
+                      fontFamily: 'var(--font-dm-sans)',
+                    }}
+                  >
+                    app.cadencehq.co/org
+                  </div>
+                </div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/screenshots/team.png"
+                  alt="Cadence org chart and team structure"
+                  style={{ width: '100%', display: 'block' }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── FEATURE 6: ONE SYSTEM (dark panel) ─────────────── */}
+      <section id="one-system" style={{ background: '#2C2C2C' }} className="py-24">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <p
+            style={{
+              fontFamily: 'var(--font-dm-sans)',
+              fontWeight: 600,
+              fontSize: 11,
+              color: '#9C968B',
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase',
+              marginBottom: 16,
+            }}
           >
-            Ready to build a rhythm?
-          </h2>
-          <p className="mb-8" style={{ fontFamily: 'var(--font-source-sans)', fontSize: 18, color: 'rgba(255,255,255,0.80)', lineHeight: 1.6 }}>
-            14-day free trial. Takes 3 minutes to set up. No credit card.
+            One System
           </p>
+          <h2
+            style={{
+              fontFamily: 'var(--font-dm-sans)',
+              fontWeight: 700,
+              fontSize: 'clamp(28px, 4vw, 44px)',
+              color: 'white',
+              lineHeight: 1.2,
+              marginBottom: 20,
+            }}
+          >
+            Replace the doc. Kill the spreadsheet. Close the Slack thread.
+          </h2>
+          <p
+            style={{
+              fontFamily: 'var(--font-source-sans)',
+              fontSize: 18,
+              color: 'rgba(255,255,255,0.65)',
+              lineHeight: 1.7,
+              maxWidth: 620,
+              margin: '0 auto 48px',
+            }}
+          >
+            Cadence is where your team management actually lives. Not Notion, not a Google Doc, not a running thread you&rsquo;ve lost track of. One system. One rhythm.
+          </p>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              gap: 32,
+              flexWrap: 'wrap',
+              marginBottom: 48,
+            }}
+          >
+            {[
+              { icon: '📋', label: '1:1 Agendas' },
+              { icon: '✅', label: 'Task Tracking' },
+              { icon: '📊', label: 'Team Dashboard' },
+            ].map((item) => (
+              <div
+                key={item.label}
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  gap: 8,
+                }}
+              >
+                <div
+                  style={{
+                    width: 56,
+                    height: 56,
+                    borderRadius: 12,
+                    background: 'rgba(255,255,255,0.08)',
+                    border: '1px solid rgba(255,255,255,0.12)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: 24,
+                  }}
+                >
+                  {item.icon}
+                </div>
+                <span
+                  style={{
+                    fontFamily: 'var(--font-dm-sans)',
+                    fontSize: 13,
+                    fontWeight: 500,
+                    color: 'rgba(255,255,255,0.7)',
+                  }}
+                >
+                  {item.label}
+                </span>
+              </div>
+            ))}
+          </div>
           <Link
             href="https://app.cadencehq.co/signup"
             className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold transition-opacity hover:opacity-90"
-            style={{ background: 'white', color: '#C8782A', borderRadius: 4, fontFamily: 'var(--font-dm-sans)', fontWeight: 600 }}
+            style={{
+              background: '#C8782A',
+              color: 'white',
+              borderRadius: 4,
+              fontFamily: 'var(--font-dm-sans)',
+              fontWeight: 600,
+              textDecoration: 'none',
+            }}
           >
             Get started free
           </Link>
-          <p className="mt-3 text-sm" style={{ color: 'rgba(255,255,255,0.65)', fontFamily: 'var(--font-source-sans)' }}>
-            No credit card required.
-          </p>
+        </div>
+      </section>
+
+      {/* ─── RHYTHM DIVIDER 2 ─────────────────────────────────── */}
+      <div style={{ width:'100%', overflow:'hidden', lineHeight:0, background:'#2C2C2C' }} aria-hidden="true">
+        <svg width="100%" height="40" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="features-div-2" x="0" y="0" width="192" height="40" patternUnits="userSpaceOnUse">
+              <rect x="0"   y="34" width="7" height="6"  rx="3.5" fill="#C2604A" />
+              <rect x="12"  y="14" width="7" height="26" rx="3.5" fill="#C2604A" />
+              <rect x="24"  y="30" width="7" height="10" rx="3.5" fill="#3A7D7B" />
+              <rect x="36"  y="8"  width="7" height="32" rx="3.5" fill="#3A7D7B" />
+              <rect x="48"  y="32" width="7" height="8"  rx="3.5" fill="#7B8F6A" />
+              <rect x="60"  y="20" width="7" height="20" rx="3.5" fill="#7B8F6A" />
+              <rect x="72"  y="34" width="7" height="6"  rx="3.5" fill="#C8782A" />
+              <rect x="84"  y="6"  width="7" height="34" rx="3.5" fill="#C8782A" />
+              <rect x="96"  y="30" width="7" height="10" rx="3.5" fill="#3A7D7B" />
+              <rect x="108" y="22" width="7" height="18" rx="3.5" fill="#3A7D7B" />
+              <rect x="120" y="34" width="7" height="6"  rx="3.5" fill="#7B8F6A" />
+              <rect x="132" y="12" width="7" height="28" rx="3.5" fill="#7B8F6A" />
+              <rect x="144" y="32" width="7" height="8"  rx="3.5" fill="#C2604A" />
+              <rect x="156" y="18" width="7" height="22" rx="3.5" fill="#C2604A" />
+              <rect x="168" y="34" width="7" height="6"  rx="3.5" fill="#C8782A" />
+              <rect x="180" y="10" width="7" height="30" rx="3.5" fill="#C8782A" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="40" fill="url(#features-div-2)" />
+        </svg>
+      </div>
+
+      {/* ─── BOTTOM CTA ─────────────────────────────────────── */}
+      <section style={{ background: '#C8782A' }} className="py-24">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            <div className="flex-1 text-center lg:text-left">
+              <h2
+                style={{
+                  fontFamily: 'var(--font-dm-sans)',
+                  fontWeight: 700,
+                  fontSize: 'clamp(28px, 4vw, 42px)',
+                  color: 'white',
+                  lineHeight: 1.2,
+                  marginBottom: 16,
+                }}
+              >
+                See it in action.
+              </h2>
+              <p
+                style={{
+                  fontFamily: 'var(--font-source-sans)',
+                  fontSize: 18,
+                  color: 'rgba(255,255,255,0.80)',
+                  lineHeight: 1.6,
+                  marginBottom: 28,
+                }}
+              >
+                14-day free trial. Takes 3 minutes to set up. No credit card.
+              </p>
+              <Link
+                href="https://app.cadencehq.co/signup"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold transition-opacity hover:opacity-90"
+                style={{
+                  background: 'white',
+                  color: '#C8782A',
+                  borderRadius: 4,
+                  fontFamily: 'var(--font-dm-sans)',
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                }}
+              >
+                Get started free
+              </Link>
+            </div>
+            {/* Screenshot thumbnail */}
+            <div className="flex-1 w-full max-w-md">
+              <div
+                style={{
+                  borderRadius: 10,
+                  overflow: 'hidden',
+                  border: '1px solid rgba(255,255,255,0.25)',
+                  boxShadow: '0 16px 50px rgba(0,0,0,0.25)',
+                  opacity: 0.92,
+                }}
+              >
+                <div
+                  style={{
+                    background: 'rgba(0,0,0,0.3)',
+                    padding: '10px 16px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 8,
+                    borderBottom: '1px solid rgba(255,255,255,0.1)',
+                  }}
+                >
+                  <div style={{ display: 'flex', gap: 5 }}>
+                    {['#C2604A', '#C8782A', '#7B8F6A'].map((c, i) => (
+                      <div
+                        key={i}
+                        style={{
+                          width: 10,
+                          height: 10,
+                          borderRadius: '50%',
+                          background: c,
+                          opacity: 0.75,
+                        }}
+                      />
+                    ))}
+                  </div>
+                  <div
+                    style={{
+                      flex: 1,
+                      background: 'rgba(255,255,255,0.15)',
+                      borderRadius: 4,
+                      padding: '3px 12px',
+                      fontSize: 11,
+                      color: 'rgba(255,255,255,0.7)',
+                      fontFamily: 'var(--font-dm-sans)',
+                    }}
+                  >
+                    app.cadencehq.co/dashboard
+                  </div>
+                </div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/screenshots/dashboard.png"
+                  alt="Cadence dashboard"
+                  style={{ width: '100%', display: 'block' }}
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </>
