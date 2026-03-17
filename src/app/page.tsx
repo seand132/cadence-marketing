@@ -14,9 +14,9 @@ export default function Home() {
       <section style={{ background: '#F5F0E8', position: 'relative', overflow: 'hidden' }} className="py-24">
         {/* Rhythm motif decorative background — right edge */}
         <div style={{ position: 'absolute', right: 40, top: '50%', transform: 'translateY(-50%)', display: 'flex', gap: 16, pointerEvents: 'none', zIndex: 0 }}>
-          <RhythmMotif size="lg" opacity={0.08} color="#C8782A" />
-          <div style={{ marginTop: 48 }}><RhythmMotif size="lg" opacity={0.06} color="#3A7D7B" /></div>
-          <RhythmMotif size="lg" opacity={0.05} color="#7B8F6A" />
+          <RhythmMotif scale={1} opacity={0.08} color="#C8782A" />
+          <div style={{ marginTop: 48 }}><RhythmMotif scale={1} opacity={0.06} color="#3A7D7B" /></div>
+          <RhythmMotif scale={1} opacity={0.05} color="#7B8F6A" />
         </div>
 
         <div className="max-w-6xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-16" style={{ position: 'relative', zIndex: 1 }}>
@@ -83,100 +83,96 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Right — Enhanced Product Mockup */}
+          {/* Right — Product Mockup matching real Cadence dashboard */}
           <div className="flex-1 flex justify-center lg:justify-end w-full">
-            <div
-              style={{
-                background: 'white',
-                borderRadius: 8,
-                border: '1px solid #D0CAC0',
-                boxShadow: '0 4px 24px rgba(0,0,0,0.10)',
-                maxWidth: 400,
-                width: '100%',
-                animation: 'float 4s ease-in-out infinite',
-                overflow: 'hidden',
-              }}
-            >
-              {/* Amber accent strip */}
-              <div style={{ height: 6, background: '#C8782A' }} />
+            <div style={{
+              background: '#F5F0E8',
+              borderRadius: 12,
+              border: '1px solid #D0CAC0',
+              boxShadow: '0 4px 24px rgba(0,0,0,0.10)',
+              maxWidth: 380,
+              width: '100%',
+              animation: 'float 4s ease-in-out infinite',
+              overflow: 'hidden',
+              fontFamily: 'var(--font-dm-sans)'
+            }}>
+              {/* Amber header bar like the real app greeting header */}
+              <div style={{ background: '#C8782A', padding: '14px 16px', position: 'relative', overflow: 'hidden' }}>
+                {/* Decorative ascending bars (from real app stat card motif) */}
+                <svg style={{ position: 'absolute', bottom: 0, right: 0, opacity: 0.2 }} width="56" height="40" viewBox="0 0 56 48" fill="white">
+                  <rect x="0" y="32" width="7" height="16" rx="2"/>
+                  <rect x="11" y="22" width="7" height="26" rx="2"/>
+                  <rect x="22" y="13" width="7" height="35" rx="2"/>
+                  <rect x="33" y="5" width="7" height="43" rx="2"/>
+                  <rect x="44" y="0" width="7" height="48" rx="2"/>
+                </svg>
+                <div style={{ fontSize: 10, color: 'rgba(255,255,255,0.7)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 2 }}>Good morning</div>
+                <div style={{ fontSize: 16, fontWeight: 700, color: 'white' }}>Sarah <span style={{ color: 'rgba(255,255,255,0.6)' }}>✦</span></div>
+                <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.7)', marginTop: 2 }}>You have 3 upcoming 1:1s this week.</div>
+              </div>
 
-              {/* App chrome — mini sidebar + content */}
-              <div style={{ display: 'flex', height: 260 }}>
-                {/* Mini sidebar */}
-                <div style={{ width: 48, background: '#F5F0E8', borderRight: '1px solid #D0CAC0', padding: '12px 0', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
-                  {/* Dashboard icon - active (amber) */}
-                  <svg width="18" height="18" fill="none" stroke="#C8782A" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                    <rect x="2" y="3" width="20" height="18" rx="4"/>
-                    <polyline points="5,13 7.5,13 9.5,8 12,17 14.5,7 16.5,13 19,13"/>
-                  </svg>
-                  {/* Tasks icon - inactive */}
-                  <svg width="18" height="18" fill="none" stroke="#9C968B" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                    <rect x="4" y="2" width="16" height="20" rx="3"/>
-                    <path d="M8.5 9.5l2 2 4-4.5"/>
-                    <line x1="8.5" y1="15" x2="15.5" y2="15"/>
-                    <line x1="8.5" y1="18.5" x2="13" y2="18.5"/>
-                  </svg>
-                  {/* 1:1 icon */}
-                  <svg width="18" height="18" fill="none" stroke="#9C968B" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                    <circle cx="8" cy="6.5" r="3"/>
-                    <circle cx="16" cy="6.5" r="3"/>
-                    <path d="M3 21c0-3.5 2-6.5 5-6.5h8c3 0 5 3 5 6.5"/>
-                  </svg>
-                  {/* KPIs icon */}
-                  <svg width="18" height="18" fill="none" stroke="#9C968B" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                    <path d="M5 16.5A8.5 8.5 0 0119 16.5"/>
-                    <line x1="12" y1="16.5" x2="15.5" y2="10.5"/>
-                    <circle cx="12" cy="16.5" r="1.5" fill="#9C968B" stroke="none"/>
-                    <line x1="3" y1="20" x2="21" y2="20"/>
-                  </svg>
+              <div style={{ padding: '12px 14px' }}>
+                {/* Stat cards row — matches real app */}
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 12 }}>
+                  {/* Active Tasks — amber tint */}
+                  <div style={{ background: '#FDF6EE', borderRadius: 10, padding: '10px 10px 8px', position: 'relative', overflow: 'hidden' }}>
+                    <svg style={{ position: 'absolute', bottom: 0, right: 0, color: '#FAE8D0' }} width="36" height="32" viewBox="0 0 56 48" fill="currentColor">
+                      <rect x="0" y="32" width="7" height="16" rx="2"/>
+                      <rect x="11" y="22" width="7" height="26" rx="2"/>
+                      <rect x="22" y="13" width="7" height="35" rx="2"/>
+                      <rect x="33" y="5" width="7" height="43" rx="2"/>
+                      <rect x="44" y="0" width="7" height="48" rx="2"/>
+                    </svg>
+                    <div style={{ width: 24, height: 24, borderRadius: 7, background: '#FAE8D0', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 6 }}>
+                      <svg width="13" height="13" fill="none" stroke="#C8782A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                        <polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+                      </svg>
+                    </div>
+                    <div style={{ fontSize: 20, fontWeight: 700, color: '#A86022', lineHeight: 1 }}>8</div>
+                    <div style={{ fontSize: 10, color: '#9C968B', fontWeight: 500, marginTop: 2 }}>Active Tasks</div>
+                  </div>
+                  {/* Overdue — terracotta tint */}
+                  <div style={{ background: '#FAEAE7', borderRadius: 10, padding: '10px 10px 8px' }}>
+                    <div style={{ width: 24, height: 24, borderRadius: 7, background: '#F5D5CF', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 6 }}>
+                      <svg width="13" height="13" fill="none" stroke="#C2604A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+                      </svg>
+                    </div>
+                    <div style={{ fontSize: 20, fontWeight: 700, color: '#C2604A', lineHeight: 1 }}>2</div>
+                    <div style={{ fontSize: 10, color: '#9C968B', fontWeight: 500, marginTop: 2 }}>Overdue</div>
+                  </div>
                 </div>
 
-                {/* Main content area */}
-                <div style={{ flex: 1, padding: '12px 14px', overflowY: 'hidden' }}>
-                  {/* Page title */}
-                  <div style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 13, color: '#2C2C2C', marginBottom: 10 }}>Dashboard</div>
-
-                  {/* Stat cards row */}
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 6, marginBottom: 10 }}>
-                    {[
-                      { label: 'Active Tasks', value: '12', color: '#C8782A' },
-                      { label: 'Upcoming 1:1s', value: '3', color: '#3A7D7B' },
-                    ].map(stat => (
-                      <div key={stat.label} style={{ background: '#F5F0E8', borderRadius: 6, border: '1px solid #D0CAC0', padding: '6px 8px' }}>
-                        <div style={{ fontSize: 16, fontWeight: 700, color: stat.color, fontFamily: 'var(--font-dm-sans)' }}>{stat.value}</div>
-                        <div style={{ fontSize: 9, color: '#9C968B', fontFamily: 'var(--font-dm-sans)', fontWeight: 500 }}>{stat.label}</div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Recent 1:1 */}
-                  <div style={{ background: 'white', borderRadius: 6, border: '1px solid #D0CAC0', padding: '8px 10px', marginBottom: 6 }}>
-                    <div style={{ fontSize: 9, fontWeight: 600, color: '#9C968B', textTransform: 'uppercase', letterSpacing: '0.08em', fontFamily: 'var(--font-dm-sans)', marginBottom: 4 }}>NEXT 1:1</div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                      <div style={{ width: 24, height: 24, borderRadius: '50%', background: '#FDF6EE', color: '#C8782A', fontSize: 9, fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-dm-sans)', flexShrink: 0 }}>AC</div>
-                      <div>
-                        <div style={{ fontSize: 11, fontWeight: 600, color: '#2C2C2C', fontFamily: 'var(--font-dm-sans)' }}>Alex Chen</div>
-                        <div style={{ fontSize: 9, color: '#9C968B', fontFamily: 'var(--font-source-sans)' }}>Tomorrow · 10:00 AM</div>
-                      </div>
-                      <div style={{ marginLeft: 'auto', fontSize: 9, fontWeight: 600, color: '#3A7D7B', fontFamily: 'var(--font-dm-sans)', background: '#EDF2EA', padding: '2px 6px', borderRadius: 10 }}>Scheduled</div>
+                {/* My Work section — task list */}
+                <div style={{ marginBottom: 8 }}>
+                  <div style={{ fontSize: 10, fontWeight: 600, color: '#9C968B', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>My Work</div>
+                  {[
+                    { text: 'Q2 goal review with Jordan', priority: '#C8782A', due: 'Today' },
+                    { text: 'Share onboarding doc → Marcus', priority: '#7B8F6A', due: 'Tomorrow' },
+                    { text: "Tyler's project proposal", priority: '#C2604A', due: '2 days ago' },
+                  ].map((task, i) => (
+                    <div key={i} style={{
+                      display: 'flex', alignItems: 'center', gap: 8,
+                      padding: '6px 8px 6px 10px',
+                      background: 'white', borderRadius: '0 6px 6px 0',
+                      marginBottom: 4,
+                      border: '1px solid #D0CAC0',
+                      borderLeft: `3px solid ${task.priority}`
+                    }}>
+                      <span style={{ flex: 1, fontSize: 11, color: '#2C2C2C', fontFamily: 'var(--font-source-sans)' }}>{task.text}</span>
+                      <span style={{ fontSize: 9, color: '#9C968B', whiteSpace: 'nowrap' }}>{task.due}</span>
                     </div>
-                  </div>
+                  ))}
+                </div>
 
-                  {/* Task list */}
-                  <div>
-                    {[
-                      { text: 'Review Q2 goals with Jordan', done: true },
-                      { text: 'Share onboarding doc → Marcus', done: false },
-                      { text: 'Tyler project proposal feedback', done: false },
-                    ].map((task, i) => (
-                      <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '4px 0', borderBottom: i < 2 ? '1px solid #F0EDE8' : 'none' }}>
-                        <div style={{ width: 13, height: 13, borderRadius: 3, border: `1.5px solid ${task.done ? '#C8782A' : '#D0CAC0'}`, background: task.done ? '#C8782A' : 'white', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                          {task.done && <svg width="8" height="6" viewBox="0 0 8 6" fill="none"><path d="M1 3L3 5L7 1" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>}
-                        </div>
-                        <span style={{ fontSize: 10, color: task.done ? '#9C968B' : '#2C2C2C', textDecoration: task.done ? 'line-through' : 'none', fontFamily: 'var(--font-source-sans)' }}>{task.text}</span>
-                      </div>
-                    ))}
+                {/* Next 1:1 */}
+                <div style={{ background: 'white', borderRadius: 8, border: '1px solid #D0CAC0', padding: '8px 10px', display: 'flex', alignItems: 'center', gap: 8 }}>
+                  <div style={{ width: 28, height: 28, borderRadius: '50%', background: '#FDF6EE', color: '#C8782A', fontSize: 10, fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>AC</div>
+                  <div style={{ flex: 1 }}>
+                    <div style={{ fontSize: 11, fontWeight: 600, color: '#2C2C2C' }}>Alex Chen · 1:1</div>
+                    <div style={{ fontSize: 10, color: '#9C968B' }}>Tomorrow · 10:00 AM</div>
                   </div>
+                  <div style={{ fontSize: 9, background: '#EDF2EA', color: '#7B8F6A', padding: '2px 6px', borderRadius: 10, fontWeight: 600 }}>Scheduled</div>
                 </div>
               </div>
             </div>
@@ -191,34 +187,23 @@ export default function Home() {
           <span style={{ fontSize: 13, color: '#9C968B', fontFamily: 'var(--font-dm-sans)', fontWeight: 500 }}>Managers keeping their teams in rhythm</span>
           <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
             {[
-              { initials: 'SR', name: 'Sarah R.', bg: '#FDF6EE', color: '#C8782A' },
-              { initials: 'MJ', name: 'Marcus J.', bg: '#EDF2EA', color: '#7B8F6A' },
-              { initials: 'KL', name: 'Kim L.', bg: '#E8F4F3', color: '#3A7D7B' },
-              { initials: 'DP', name: 'Diego P.', bg: '#FDF6EE', color: '#C8782A' },
-              { initials: 'AN', name: 'Aisha N.', bg: '#EDF2EA', color: '#7B8F6A' },
+              { initials: 'SR', name: 'Sarah', bg: '#FDF6EE', color: '#C8782A' },
+              { initials: 'MJ', name: 'Marcus', bg: '#EDF2EA', color: '#7B8F6A' },
+              { initials: 'KL', name: 'Kim', bg: '#E8F4F3', color: '#3A7D7B' },
+              { initials: 'DP', name: 'Diego', bg: '#FDF6EE', color: '#C8782A' },
+              { initials: 'AN', name: 'Aisha', bg: '#EDF2EA', color: '#7B8F6A' },
             ].map(p => (
-              <div
-                key={p.initials}
-                title={p.name}
-                style={{
-                  width: 36,
-                  height: 36,
-                  borderRadius: '50%',
-                  background: p.bg,
-                  color: p.color,
-                  fontSize: 12,
-                  fontWeight: 700,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
+              <div key={p.initials} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
+                <div style={{
+                  width: 40, height: 40, borderRadius: '50%',
+                  background: p.bg, color: p.color,
+                  fontSize: 13, fontWeight: 700,
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
                   fontFamily: 'var(--font-dm-sans)',
                   border: '2px solid white',
-                  boxShadow: '0 0 0 1px #D0CAC0',
-                  marginLeft: -8,
-                  cursor: 'default',
-                }}
-              >
-                {p.initials}
+                  boxShadow: '0 1px 4px rgba(0,0,0,0.12)'
+                }}>{p.initials}</div>
+                <span style={{ fontSize: 11, color: '#9C968B', fontFamily: 'var(--font-dm-sans)' }}>{p.name}</span>
               </div>
             ))}
           </div>
@@ -273,7 +258,7 @@ export default function Home() {
       {/* ─── RHYTHM DIVIDER ───────────────────────────────────── */}
       <div style={{ display: 'flex', justifyContent: 'center', gap: 12, padding: '8px 0', background: 'white' }}>
         {['#3A7D7B', '#C8782A', '#7B8F6A', '#3A7D7B', '#C8782A', '#7B8F6A'].map((color, i) => (
-          <RhythmMotif key={i} size="sm" color={color} opacity={0.12} />
+          <RhythmMotif key={i} scale={0.5} color={color} opacity={0.12} />
         ))}
       </div>
 
@@ -348,7 +333,7 @@ export default function Home() {
       {/* ─── RHYTHM DIVIDER ───────────────────────────────────── */}
       <div style={{ display: 'flex', justifyContent: 'center', gap: 12, padding: '8px 0', background: '#EBE6DD' }}>
         {['#C8782A', '#7B8F6A', '#3A7D7B', '#C8782A', '#7B8F6A', '#3A7D7B'].map((color, i) => (
-          <RhythmMotif key={i} size="sm" color={color} opacity={0.12} />
+          <RhythmMotif key={i} scale={0.5} color={color} opacity={0.12} />
         ))}
       </div>
 
@@ -401,7 +386,7 @@ export default function Home() {
       <section style={{ background: '#F5F0E8', position: 'relative', overflow: 'hidden' }} className="py-20">
         {/* Background motif */}
         <div style={{ position: 'absolute', right: 60, top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none', opacity: 0.6 }}>
-          <RhythmMotif size="md" color="#C8782A" opacity={0.08} />
+          <RhythmMotif scale={0.7} color="#C8782A" opacity={0.08} />
         </div>
         <div className="max-w-sm mx-auto px-6 reveal" style={{ position: 'relative', zIndex: 1 }}>
           <div

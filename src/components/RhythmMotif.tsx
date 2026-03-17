@@ -2,47 +2,44 @@ interface RhythmMotifProps {
   color?: string
   opacity?: number
   className?: string
-  size?: 'sm' | 'md' | 'lg'
+  scale?: number
 }
 
-export function RhythmMotif({
-  color = '#C8782A',
-  opacity = 0.15,
-  className = '',
-  size = 'md',
-}: RhythmMotifProps) {
-  const sizes = { sm: 32, md: 48, lg: 72 }
-  const w = sizes[size]
-  // 4 bars: heights 60%, 100%, 80%, 45% of total — same proportions as the logomark
-  const h = w * 2
-  const barW = w * 0.18
-  const gap = w * 0.08
-  const bars = [0.60, 1.0, 0.80, 0.45]
+export function RhythmMotif({ color = '#C8782A', opacity = 0.12, className = '', scale = 1 }: RhythmMotifProps) {
+  // Exact proportions from cadence-logomark.svg
+  // Bars: short(44), tall(70), medium(56), short-medium(38)
+  // All bars same width (12), gaps of 10 between
+  const barW = 12 * scale
+  const gap = 10 * scale
+  const bars = [
+    { h: 44 * scale, y: 12 * scale },   // bar 1: short
+    { h: 70 * scale, y: 0 },             // bar 2: tall (tallest)
+    { h: 56 * scale, y: 14 * scale },    // bar 3: medium
+    { h: 38 * scale, y: 32 * scale },    // bar 4: short-medium
+  ]
+  const totalW = 4 * barW + 3 * gap
+  const totalH = 70 * scale
 
   return (
     <svg
-      width={w}
-      height={h}
-      viewBox={`0 0 ${w} ${h}`}
+      width={totalW}
+      height={totalH}
+      viewBox={`0 0 ${totalW} ${totalH}`}
       className={className}
       aria-hidden
     >
-      {bars.map((ratio, i) => {
-        const barH = h * ratio
-        const x = i * (barW + gap)
-        return (
-          <rect
-            key={i}
-            x={x}
-            y={h - barH}
-            width={barW}
-            height={barH}
-            rx={barW * 0.3}
-            fill={color}
-            fillOpacity={opacity}
-          />
-        )
-      })}
+      {bars.map((bar, i) => (
+        <rect
+          key={i}
+          x={i * (barW + gap)}
+          y={bar.y}
+          width={barW}
+          height={bar.h}
+          rx={barW * 0.5}
+          fill={color}
+          fillOpacity={opacity}
+        />
+      ))}
     </svg>
   )
 }
