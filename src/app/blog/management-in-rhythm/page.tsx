@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { ShareBar } from '@/components/ShareBar'
 
 export const metadata: Metadata = {
-  title: 'What "Management in Rhythm" Actually Means — Cadence Blog',
-  description: "It's not a metaphor. It's a design principle — and the antidote to reactive management.",
+  title: 'What "Management in Rhythm" Actually Means | Cadence Blog',
+  description: "It's not a metaphor. It's a design principle. The antidote to reactive management.",
 }
 
 const POST_TITLE = 'What %22Management in Rhythm%22 Actually Means'
@@ -38,7 +38,7 @@ export default function ManagementInRhythm() {
           </h2>
           <p>Most managers operate reactively. They&rsquo;re responsive to whoever needs them most, whatever problem surfaced today, whatever message came in last.</p>
           <p>That&rsquo;s not management. That&rsquo;s firefighting.</p>
-          <p>Rhythm means you have a pattern — weekly 1:1s, a consistent way of tracking team progress, a regular moment where you look at the whole picture. The pattern doesn&rsquo;t eliminate the fires. It means you&rsquo;re not discovering them in your email at 5pm on Friday.</p>
+          <p>Rhythm means you have a pattern: weekly 1:1s, a consistent way of tracking team progress, a regular moment where you look at the whole picture. The pattern doesn&rsquo;t eliminate the fires. It means you&rsquo;re not discovering them in your email at 5pm on Friday.</p>
 
           <h2 style={{ fontFamily: 'var(--font-montserrat)', fontWeight: 500, fontSize: 22, color: '#1C2B3A', paddingTop: 16 }}>
             What a rhythm actually looks like.
@@ -46,7 +46,7 @@ export default function ManagementInRhythm() {
           <p>A basic management rhythm for a team of 5–8 looks like this:</p>
           <ul className="space-y-3 pl-2">
             {[
-              { day: 'Monday', rest: "Quick team pulse — what's in progress, what's blocked?" },
+              { day: 'Monday', rest: "Quick team pulse: what's in progress, what's blocked?" },
               { day: 'Tuesday–Thursday', rest: '1:1s with direct reports on a rotating schedule.' },
               { day: 'Friday', rest: "Review what shipped, what's open, what needs next week's attention." },
             ].map((item) => (
@@ -56,7 +56,7 @@ export default function ManagementInRhythm() {
               </li>
             ))}
           </ul>
-          <p>That&rsquo;s it. 3–4 hours per week of structured, intentional management time. The rest is the actual work of managing — coaching, unblocking, and being available.</p>
+          <p>That&rsquo;s it. 3–4 hours per week of structured, intentional management time. The rest is the actual work of managing: coaching, unblocking, and being available.</p>
 
           <h2 style={{ fontFamily: 'var(--font-montserrat)', fontWeight: 500, fontSize: 22, color: '#1C2B3A', paddingTop: 16 }}>
             Why it&rsquo;s hard to maintain.
@@ -77,7 +77,7 @@ export default function ManagementInRhythm() {
           <p>When the friction is high enough, the rhythm breaks. Then you&rsquo;re reactive again.</p>
 
           <div className="pt-4 p-6 rounded" style={{ background: 'rgba(122,158,130,0.08)', borderLeft: '3px solid #7A9E82' }}>
-            <p style={{ color: '#1C2B3A' }}>Cadence exists because the rhythm is the product. Every feature is in service of the weekly pattern that makes managing consistent — not a feature you use once and forget.</p>
+            <p style={{ color: '#1C2B3A' }}>Cadence exists because the rhythm is the product. Every feature is in service of the weekly pattern that makes managing consistent, not something you use once and forget.</p>
             <p className="mt-3 font-medium" style={{ color: '#1C2B3A' }}>Management in rhythm isn&rsquo;t a brand line. It&rsquo;s the design principle.</p>
           </div>
 

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { ShareBar } from '@/components/ShareBar'
 
 export const metadata: Metadata = {
-  title: 'Why Most Management Tools Fail Small Teams — Cadence Blog',
+  title: 'Why Most Management Tools Fail Small Teams | Cadence Blog',
   description: "Enterprise HR tools are designed for HR departments. If you manage 6 people, here's why that's a problem.",
 }
 
@@ -46,13 +46,13 @@ export default function WhyToolsFail() {
             Complexity is a bug, not a feature.
           </h2>
           <p>When a tool has 40 features, you don&rsquo;t use any of them well.</p>
-          <p>The best systems for small teams are simple by design. Not because the problem is simple — managing 6 people is genuinely hard — but because the system needs to be consistent. A 40-feature tool gets used for 2 weeks, then abandoned. A 5-feature tool that you actually open every week changes how you manage.</p>
+          <p>The best systems for small teams are simple by design. Not because the problem is simple, managing 6 people is genuinely hard, but because the system needs to be consistent. A 40-feature tool gets used for 2 weeks, then abandoned. A 5-feature tool that you actually open every week changes how you manage.</p>
 
           <h2 style={{ fontFamily: 'var(--font-montserrat)', fontWeight: 500, fontSize: 22, color: '#1C2B3A', paddingTop: 16 }}>
             The right tool for the right manager.
           </h2>
-          <p>If you&rsquo;re an HR leader managing a 500-person organization — enterprise platforms exist for you. They&rsquo;re good tools for that problem.</p>
-          <p>If you&rsquo;re a manager with 3–8 direct reports who wants a system that fits your actual workday — most of those tools are overkill.</p>
+          <p>If you&rsquo;re an HR leader managing a 500-person organization, enterprise platforms exist for you. They&rsquo;re good tools for that problem.</p>
+          <p>If you&rsquo;re a manager with 3–8 direct reports who wants a system that fits your actual workday, most of those tools are overkill.</p>
           <p>That&rsquo;s the gap Cadence fills. Not a better enterprise tool. A tool for the manager the enterprise tools ignore.</p>
 
           <div className="pt-4 p-6 rounded" style={{ background: 'rgba(122,158,130,0.08)', borderLeft: '3px solid #7A9E82' }}>

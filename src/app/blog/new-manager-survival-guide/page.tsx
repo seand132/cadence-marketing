@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { ShareBar } from '@/components/ShareBar'
 
 export const metadata: Metadata = {
-  title: "The New Manager's Survival Guide (No Generic Advice) — Cadence Blog",
+  title: "The New Manager's Survival Guide (No Generic Advice) | Cadence Blog",
   description: "Most management advice is written for people who've been doing it for a decade. Here's what actually matters in the first 90 days.",
 }
 
@@ -50,7 +50,7 @@ export default function NewManagerSurvivalGuide() {
             {[
               { label: 'Weekly 1:1s', rest: 'with every direct report. Standing agenda. 30 minutes.' },
               { label: 'A simple task system', rest: "to track what you've delegated and what's open." },
-              { label: 'A weekly read', rest: "on the team — who's on track, who needs a conversation." },
+              { label: 'A weekly read', rest: "on the team: who's on track, who needs a conversation." },
             ].map((item) => (
               <li key={item.label} className="flex items-start gap-3">
                 <span style={{ color: '#7A9E82', fontWeight: 700, marginTop: 2 }}>–</span>
@@ -63,7 +63,7 @@ export default function NewManagerSurvivalGuide() {
           <h2 style={{ fontFamily: 'var(--font-montserrat)', fontWeight: 500, fontSize: 22, color: '#1C2B3A', paddingTop: 16 }}>
             Your 1:1s are probably reactive. Fix them.
           </h2>
-          <p>If your 1:1 agenda is &ldquo;so what&rsquo;s going on with you?&rdquo; — you don&rsquo;t have a 1:1. You have a check-in.</p>
+          <p>If your 1:1 agenda is &ldquo;so what&rsquo;s going on with you?&rdquo; you don&rsquo;t have a 1:1. You have a check-in.</p>
           <p>A working 1:1 has a standing structure. Something like:</p>
           <ul className="space-y-3 pl-2">
             {[
@@ -84,7 +84,7 @@ export default function NewManagerSurvivalGuide() {
           </h2>
           <p>New managers accumulate context. They remember who said what, what got delegated, who&rsquo;s struggling with what. They hold all of it in their head.</p>
           <p>This works for a few weeks. Then someone gets a surprise in their performance review, or you forget you told someone to do something, or you have no idea what the team&rsquo;s output was last quarter.</p>
-          <p>Get a system — even a basic one. Somewhere you track open delegations, 1:1 notes, and team goals. It doesn&rsquo;t have to be fancy. It has to exist.</p>
+          <p>Get a system, even a basic one. Somewhere you track open delegations, 1:1 notes, and team goals. It doesn&rsquo;t have to be fancy. It has to exist.</p>
 
           <div className="pt-4 p-6 rounded" style={{ background: 'rgba(122,158,130,0.08)', borderLeft: '3px solid #7A9E82' }}>
             <p style={{ color: '#1C2B3A', fontStyle: 'normal' }}>The first-time manager job is not that complicated. It&rsquo;s just different. Different skills, different cadence, different definition of doing well.</p>

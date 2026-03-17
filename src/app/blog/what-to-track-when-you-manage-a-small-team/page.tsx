@@ -4,7 +4,7 @@ import { ShareBar } from '@/components/ShareBar'
 
 export const metadata: Metadata = {
   title: 'What to Track When You Manage a Small Team | Cadence Blog',
-  description: 'Most small-team managers track the wrong things — or nothing at all. Here are the five signals that actually tell you whether your team is healthy and on track.',
+  description: 'Most small-team managers track the wrong things, or nothing at all. Here are the five signals that actually tell you whether your team is healthy and on track.',
 }
 
 export default function WhatToTrackWhenYouManageASmallTeam() {
@@ -26,7 +26,7 @@ export default function WhatToTrackWhenYouManageASmallTeam() {
         </h1>
 
         <p style={{ fontFamily: 'var(--font-source-sans)', fontSize: 20, color: '#6B6560', lineHeight: 1.5, marginBottom: 24 }}>
-          You don&rsquo;t need 40 metrics — you need five signals that tell you whether your team is healthy, moving, and actually working on what matters.
+          You don&rsquo;t need 40 metrics. You need five signals that tell you whether your team is healthy, moving, and actually working on what matters.
         </p>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 40, paddingBottom: 24, borderBottom: '1px solid #D0CAC0' }}>
@@ -55,7 +55,7 @@ export default function WhatToTrackWhenYouManageASmallTeam() {
 
           <p>The problem with output-only tracking is that it&rsquo;s a rearview mirror. By the time you see that output dropped last month, you&rsquo;re looking at a problem that was building for four weeks. The cause might be a team member who&rsquo;s been quietly overwhelmed, or a process that&rsquo;s broken, or a priority shift that nobody communicated clearly. Output numbers tell you something happened. They don&rsquo;t tell you why, and they don&rsquo;t tell you in time to do anything useful.</p>
 
-          <p>Leading indicators — signals — are what tell you something is about to happen. And for small teams, leading indicators are almost entirely interpersonal and operational. They come from your 1:1s, your weekly reviews, and paying attention to patterns that don&rsquo;t show up in any spreadsheet.</p>
+          <p>Leading indicators, the signals, are what tell you something is about to happen. And for small teams, leading indicators are almost entirely interpersonal and operational. They come from your 1:1s, your weekly reviews, and paying attention to patterns that don&rsquo;t show up in any spreadsheet.</p>
 
           <blockquote style={{ borderLeft: '4px solid #C8782A', paddingLeft: 24, margin: '32px 0', fontFamily: 'var(--font-dm-sans)', fontSize: 22, fontStyle: 'italic', color: '#2C2C2C', lineHeight: 1.4 }}>
             &ldquo;If you don&rsquo;t track anything, you&rsquo;re managing on vibes. That works until it doesn&rsquo;t — and when it doesn&rsquo;t, it tends to fail loudly.&rdquo;
@@ -65,40 +65,40 @@ export default function WhatToTrackWhenYouManageASmallTeam() {
             The five signals worth tracking
           </h2>
 
-          <p>For a team of three to eight people, I&rsquo;d track these five things — and only these five. More than this and you&rsquo;re either managing the metrics instead of the work, or you&rsquo;re creating a surveillance dynamic that poisons the team culture.</p>
+          <p>For a team of three to eight people, I&rsquo;d track these five things, and only these five. More than this and you&rsquo;re either managing the metrics instead of the work, or you&rsquo;re creating a surveillance dynamic that poisons the team culture.</p>
 
           <ol style={{ paddingLeft: 24, margin: '24px 0' }}>
             <li style={{ marginBottom: 20 }}>
-              <strong>Work in progress per person.</strong> Not what&rsquo;s assigned — what&rsquo;s actively being worked on right now. If someone has 14 open items and nothing&rsquo;s moving, that&rsquo;s a problem. If someone has 2 items and both are stuck waiting on someone else, that&rsquo;s a different problem. Work in progress is one of the best early signals for whether someone is underwater or underutilized, and it&rsquo;s almost impossible to see if you&rsquo;re not looking. I check this weekly, informally — sometimes just by asking &ldquo;what are you actually working on right now&rdquo; in a 1:1.
+              <strong>Work in progress per person.</strong> Not what&rsquo;s assigned. What&rsquo;s actively being worked on right now. If someone has 14 open items and nothing&rsquo;s moving, that&rsquo;s a problem. If someone has 2 items and both are stuck waiting on someone else, that&rsquo;s a different problem. Work in progress is one of the best early signals for whether someone is underwater or underutilized, and it&rsquo;s almost impossible to see if you&rsquo;re not looking. I check this weekly, informally, sometimes just by asking &ldquo;what are you actually working on right now&rdquo; in a 1:1.
             </li>
             <li style={{ marginBottom: 20 }}>
               <strong>Blockers sitting more than 48 hours.</strong> This is the metric I wish I&rsquo;d been watching earlier in my career. A blocker that&rsquo;s been unresolved for two days is usually a sign that either the person doesn&rsquo;t feel comfortable escalating, or they&rsquo;ve tried and nothing happened, or there&rsquo;s a dependency problem nobody&rsquo;s admitted yet. I ask about blockers in every 1:1, not as a box-checking exercise but specifically: &ldquo;Is there anything that&rsquo;s been in your way for more than a couple of days that you haven&rsquo;t been able to clear?&rdquo; That framing surfaces things that &ldquo;any blockers?&rdquo; doesn&rsquo;t.
             </li>
             <li style={{ marginBottom: 20 }}>
-              <strong>Completion rate vs. commitments.</strong> Are people finishing what they said they&rsquo;d finish, at roughly the rate they said they&rsquo;d finish it? Not as a performance measurement — as a calibration signal. When someone consistently over-commits and under-delivers, that&rsquo;s usually a problem with estimation or priorities, not effort. When the whole team starts missing commitments at once, something has shifted in the environment: capacity, clarity, or morale. Tracking this over time lets you see the pattern before it becomes a crisis.
+              <strong>Completion rate vs. commitments.</strong> Are people finishing what they said they&rsquo;d finish, at roughly the rate they said they&rsquo;d finish it? Not as a performance measurement. As a calibration signal. When someone consistently over-commits and under-delivers, that&rsquo;s usually a problem with estimation or priorities, not effort. When the whole team starts missing commitments at once, something has shifted in the environment: capacity, clarity, or morale. Tracking this over time lets you see the pattern before it becomes a crisis.
             </li>
             <li style={{ marginBottom: 20 }}>
-              <strong>Energy and engagement.</strong> This one isn&rsquo;t a metric — it&rsquo;s a read. But it&rsquo;s one of the most important signals you have. Are your 1:1s getting shorter and more surface-level? Is someone who used to bring ideas to team meetings now just nodding along? Are questions that used to get asked in group settings now going unasked? Energy shifts usually precede disengagement by weeks, sometimes months. If you&rsquo;re paying attention, you can have the conversation early. If you&rsquo;re not, you find out when someone hands you a resignation.
+              <strong>Energy and engagement.</strong> This one isn&rsquo;t a metric. It&rsquo;s a read. But it&rsquo;s one of the most important signals you have. Are your 1:1s getting shorter and more surface-level? Is someone who used to bring ideas to team meetings now just nodding along? Are questions that used to get asked in group settings now going unasked? Energy shifts usually precede disengagement by weeks, sometimes months. If you&rsquo;re paying attention, you can have the conversation early. If you&rsquo;re not, you find out when someone hands you a resignation.
             </li>
             <li style={{ marginBottom: 20 }}>
-              <strong>Goal alignment — does your team know what matters this quarter?</strong> This sounds obvious. It isn&rsquo;t. I&rsquo;ve done spot checks with teams where I ask each person individually: &ldquo;What are the two or three things that matter most for us to accomplish this quarter?&rdquo; The variance in answers is often stunning. People are working hard — they&rsquo;re just not all working toward the same thing. That&rsquo;s a manager problem, not a team problem. If your team can&rsquo;t articulate the current priorities without hesitation, the priorities aren&rsquo;t clear enough.
+              <strong>Goal alignment: does your team know what matters this quarter?</strong> This sounds obvious. It isn&rsquo;t. I&rsquo;ve done spot checks with teams where I ask each person individually: &ldquo;What are the two or three things that matter most for us to accomplish this quarter?&rdquo; The variance in answers is often stunning. People are working hard. They&rsquo;re just not all working toward the same thing. That&rsquo;s a manager problem, not a team problem. If your team can&rsquo;t articulate the current priorities without hesitation, the priorities aren&rsquo;t clear enough.
             </li>
           </ol>
 
           <div style={{ background: '#FDF6EE', border: '1px solid #EBD5B8', borderTop: '3px solid #C8782A', borderRadius: 6, padding: '20px 24px', margin: '32px 0' }}>
             <div style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 600, fontSize: 13, color: '#C8782A', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>Try this week</div>
-            <p style={{ fontFamily: 'var(--font-source-sans)', fontSize: 16, color: '#2C2C2C', lineHeight: 1.6, margin: 0 }}>In your next round of 1:1s, ask each person: &ldquo;What&rsquo;s slowing you down right now that I probably don&rsquo;t know about?&rdquo; That phrasing is different from &ldquo;any blockers?&rdquo; — it acknowledges that you might not have visibility, which makes people more likely to actually tell you.</p>
+            <p style={{ fontFamily: 'var(--font-source-sans)', fontSize: 16, color: '#2C2C2C', lineHeight: 1.6, margin: 0 }}>In your next round of 1:1s, ask each person: &ldquo;What&rsquo;s slowing you down right now that I probably don&rsquo;t know about?&rdquo; That phrasing is different from &ldquo;any blockers?&rdquo; It acknowledges that you might not have visibility, which makes people more likely to actually tell you.</p>
           </div>
 
           <h2 style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 24, color: '#2C2C2C', marginTop: 40, marginBottom: 16 }}>
             What to stop tracking
           </h2>
 
-          <p>Just as important as what to track is what to let go of. There are metrics that feel useful and aren&rsquo;t. Hours worked. Meeting attendance. Slack response times. Lines of code. Tasks opened. These are activity metrics — they measure presence and motion, not outcomes and health.</p>
+          <p>Just as important as what to track is what to let go of. There are metrics that feel useful and aren&rsquo;t. Hours worked. Meeting attendance. Slack response times. Lines of code. Tasks opened. These are activity metrics. They measure presence and motion, not outcomes and health.</p>
 
           <p>Tracking activity at the individual level creates a surveillance dynamic, and surveillance culture poisons teams quickly. People start managing their metrics instead of their work. They spend time on things that look productive rather than things that are productive. You get compliance instead of commitment, and you spend more of your time auditing than managing.</p>
 
-          <p>The other thing to stop tracking: anything you look at every week but never act on. If a number changes and it doesn&rsquo;t change anything you do, you&rsquo;re not tracking a signal — you&rsquo;re collecting data for its own sake. Audit your tracking quarterly. Kill what you don&rsquo;t use.</p>
+          <p>The other thing to stop tracking: anything you look at every week but never act on. If a number changes and it doesn&rsquo;t change anything you do, you&rsquo;re not tracking a signal. You&rsquo;re collecting data for its own sake. Audit your tracking quarterly. Kill what you don&rsquo;t use.</p>
 
           <blockquote style={{ borderLeft: '4px solid #C8782A', paddingLeft: 24, margin: '32px 0', fontFamily: 'var(--font-dm-sans)', fontSize: 22, fontStyle: 'italic', color: '#2C2C2C', lineHeight: 1.4 }}>
             &ldquo;The best signal is often the one that doesn&rsquo;t show up in any dashboard. It&rsquo;s a shift in tone, a change in how someone carries themselves in a meeting, a question that used to get asked that suddenly isn&rsquo;t.&rdquo;
@@ -108,7 +108,7 @@ export default function WhatToTrackWhenYouManageASmallTeam() {
             The 15-minute weekly review
           </h2>
 
-          <p>Once a week — I do this Friday afternoons — I spend 15 minutes looking at my team with a specific set of questions. Not checking dashboards. Not reviewing task boards. Just thinking:</p>
+          <p>Once a week, Friday afternoons, I spend 15 minutes looking at my team with a specific set of questions. Not checking dashboards. Not reviewing task boards. Just thinking:</p>
 
           <ul style={{ paddingLeft: 24, margin: '24px 0' }}>
             <li style={{ marginBottom: 12 }}>Who had a good week? Who had a hard one?</li>
@@ -118,14 +118,14 @@ export default function WhatToTrackWhenYouManageASmallTeam() {
             <li style={{ marginBottom: 12 }}>What conversation am I avoiding that I should have next week?</li>
           </ul>
 
-          <p>That last question is the one that produces the most value. There&rsquo;s almost always a conversation I&rsquo;ve been putting off — feedback I&rsquo;ve been softening, a concern I&rsquo;ve been watching but not naming, a priority conflict I&rsquo;ve been hoping would resolve itself. The weekly review forces me to surface it and decide: am I having this conversation next week, or am I choosing to let it sit?</p>
+          <p>That last question is the one that produces the most value. There&rsquo;s almost always a conversation I&rsquo;ve been putting off: feedback I&rsquo;ve been softening, a concern I&rsquo;ve been watching but not naming, a priority conflict I&rsquo;ve been hoping would resolve itself. The weekly review forces me to surface it and decide: am I having this conversation next week, or am I choosing to let it sit?</p>
 
           <div style={{ background: '#FDF6EE', border: '1px solid #EBD5B8', borderTop: '3px solid #C8782A', borderRadius: 6, padding: '20px 24px', margin: '32px 0' }}>
             <div style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 600, fontSize: 13, color: '#C8782A', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>The real question</div>
-            <p style={{ fontFamily: 'var(--font-source-sans)', fontSize: 16, color: '#2C2C2C', lineHeight: 1.6, margin: 0 }}>If you were building a dashboard for your own team from scratch — not what your company asks you to report on, but what you&rsquo;d actually want to see — what would it show? That&rsquo;s probably a better starting point than whatever tool you were handed.</p>
+            <p style={{ fontFamily: 'var(--font-source-sans)', fontSize: 16, color: '#2C2C2C', lineHeight: 1.6, margin: 0 }}>If you were building a dashboard for your own team from scratch, not what your company asks you to report on, but what you&rsquo;d actually want to see, what would it show? That&rsquo;s probably a better starting point than whatever tool you were handed.</p>
           </div>
 
-          <p>I built Cadence with this in mind: a place where small-team managers can see the signals that matter without building the tracking system themselves. The goal isn&rsquo;t a comprehensive view of everything — it&rsquo;s a clear answer to &ldquo;is my team healthy right now?&rdquo; If you&rsquo;re managing a small team and still don&rsquo;t have a good answer to that question, start with five minutes of honest reflection before your next 1:1 cycle. That alone will tell you more than most dashboards will.</p>
+          <p>I built Cadence with this in mind: a place where small-team managers can see the signals that matter without building the tracking system themselves. The goal isn&rsquo;t a comprehensive view of everything. It&rsquo;s a clear answer to &ldquo;is my team healthy right now?&rdquo; If you&rsquo;re managing a small team and still don&rsquo;t have a good answer to that question, start with five minutes of honest reflection before your next 1:1 cycle. That alone will tell you more than most dashboards will.</p>
 
         </div>
 
@@ -141,7 +141,7 @@ export default function WhatToTrackWhenYouManageASmallTeam() {
 
         <div style={{ marginTop: 48, padding: '40px 32px', background: '#C8782A', borderRadius: 8, textAlign: 'center' }}>
           <h3 style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 24, color: 'white', marginBottom: 12 }}>Track the signals that actually matter.</h3>
-          <p style={{ fontFamily: 'var(--font-source-sans)', fontSize: 16, color: 'rgba(255,255,255,0.85)', marginBottom: 24 }}>Cadence gives you team visibility, goal tracking, and 1:1 insights — without the overhead of building a system from scratch. 14-day free trial.</p>
+          <p style={{ fontFamily: 'var(--font-source-sans)', fontSize: 16, color: 'rgba(255,255,255,0.85)', marginBottom: 24 }}>Cadence gives you team visibility, goal tracking, and 1:1 insights, without the overhead of building a system from scratch. 14-day free trial.</p>
           <a href="https://app.cadencehq.co/signup" style={{ display: 'inline-block', background: 'white', color: '#C8782A', fontFamily: 'var(--font-dm-sans)', fontWeight: 600, fontSize: 15, padding: '12px 28px', borderRadius: 4, textDecoration: 'none' }}>Get started free</a>
         </div>
       </article>
