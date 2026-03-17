@@ -6,18 +6,63 @@ export const metadata: Metadata = {
   description: "Cadence was built by a real estate ops leader who got promoted to managing people and couldn't find a tool that fit. Here's the story.",
 }
 
+function RhythmDivider({ id, bg }: { id: string; bg: string }) {
+  return (
+    <div style={{ width: '100%', overflow: 'hidden', lineHeight: 0, background: bg }} aria-hidden="true">
+      <svg width="100%" height="40" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id={id} x="0" y="0" width="192" height="40" patternUnits="userSpaceOnUse">
+            <rect x="0"   y="34" width="7" height="6"  rx="3.5" fill="#C2604A" />
+            <rect x="12"  y="14" width="7" height="26" rx="3.5" fill="#C2604A" />
+            <rect x="24"  y="30" width="7" height="10" rx="3.5" fill="#3A7D7B" />
+            <rect x="36"  y="8"  width="7" height="32" rx="3.5" fill="#3A7D7B" />
+            <rect x="48"  y="32" width="7" height="8"  rx="3.5" fill="#7B8F6A" />
+            <rect x="60"  y="20" width="7" height="20" rx="3.5" fill="#7B8F6A" />
+            <rect x="72"  y="34" width="7" height="6"  rx="3.5" fill="#C8782A" />
+            <rect x="84"  y="6"  width="7" height="34" rx="3.5" fill="#C8782A" />
+            <rect x="96"  y="30" width="7" height="10" rx="3.5" fill="#3A7D7B" />
+            <rect x="108" y="22" width="7" height="18" rx="3.5" fill="#3A7D7B" />
+            <rect x="120" y="34" width="7" height="6"  rx="3.5" fill="#7B8F6A" />
+            <rect x="132" y="12" width="7" height="28" rx="3.5" fill="#7B8F6A" />
+            <rect x="144" y="32" width="7" height="8"  rx="3.5" fill="#C2604A" />
+            <rect x="156" y="18" width="7" height="22" rx="3.5" fill="#C2604A" />
+            <rect x="168" y="34" width="7" height="6"  rx="3.5" fill="#C8782A" />
+            <rect x="180" y="10" width="7" height="30" rx="3.5" fill="#C8782A" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="40" fill={`url(#${id})`} />
+      </svg>
+    </div>
+  )
+}
+
 export default function AboutPage() {
   return (
     <>
       <section style={{ background: '#F5F0E8' }} className="py-20">
         <div className="max-w-2xl mx-auto px-6">
+          <div
+            className="inline-flex mb-6 px-3 py-1 rounded-full uppercase"
+            style={{
+              background: '#FDF6EE',
+              color: '#C8782A',
+              fontFamily: 'var(--font-dm-sans)',
+              fontWeight: 600,
+              fontSize: 11,
+              letterSpacing: '0.1em',
+            }}
+          >
+            About
+          </div>
           <h1
-            style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 'clamp(36px, 5vw, 52px)', color: '#2C2C2C' }}
+            style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 'clamp(36px, 5vw, 52px)', color: '#2C2C2C', lineHeight: 1.15 }}
           >
             Why I built this.
           </h1>
         </div>
       </section>
+
+      <RhythmDivider id="about-div-1" bg="#F5F0E8" />
 
       <section style={{ background: 'white' }} className="py-20">
         <div className="max-w-2xl mx-auto px-6">
@@ -45,7 +90,6 @@ export default function AboutPage() {
             style={{
               background: '#2C2C2C',
               borderRadius: 8,
-              border: '1px solid #D0CAC0',
             }}
           >
             <p
@@ -57,6 +101,52 @@ export default function AboutPage() {
             <p style={{ fontFamily: 'var(--font-source-sans)', fontSize: 17, color: 'rgba(255,255,255,0.70)', lineHeight: 1.75 }}>
               Cadence exists because good managers aren&rsquo;t born — they&rsquo;re made. And making them shouldn&rsquo;t require a 200-person HR team or a $50k software contract.
             </p>
+          </div>
+
+          {/* Values */}
+          <div className="mt-16 reveal">
+            <h2 style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 22, color: '#2C2C2C', marginBottom: 24 }}>
+              What we believe
+            </h2>
+            <div className="space-y-4">
+              {[
+                {
+                  strip: '#C8782A',
+                  title: 'Simple beats comprehensive.',
+                  body: 'The best system is the one you actually use. We built Cadence to be picked up in minutes, not deployed over months.',
+                },
+                {
+                  strip: '#3A7D7B',
+                  title: 'Rhythm beats effort.',
+                  body: 'Consistency matters more than intensity. Good managers show up the same way every week — and Cadence is designed to make that easy.',
+                },
+                {
+                  strip: '#7B8F6A',
+                  title: 'Managers are people too.',
+                  body: 'You have a job to do and a team to lead. We\'re not here to add homework — we\'re here to clear it.',
+                },
+              ].map((v) => (
+                <div
+                  key={v.title}
+                  style={{
+                    borderRadius: 8,
+                    border: '1px solid #D0CAC0',
+                    boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                    overflow: 'hidden',
+                  }}
+                >
+                  <div style={{ height: 4, background: v.strip }} />
+                  <div className="p-6">
+                    <h3 style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 600, fontSize: 16, color: '#2C2C2C', marginBottom: 6 }}>
+                      {v.title}
+                    </h3>
+                    <p style={{ fontFamily: 'var(--font-source-sans)', fontSize: 15, color: '#9C968B', lineHeight: 1.7 }}>
+                      {v.body}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* CTA */}
@@ -71,10 +161,10 @@ export default function AboutPage() {
                 fontWeight: 600,
               }}
             >
-              Start free — 14 days
+              Get started free
             </Link>
             <p style={{ fontFamily: 'var(--font-source-sans)', fontSize: 14, color: '#9C968B', marginTop: 12 }}>
-              No credit card required.
+              No credit card required. 14-day free trial.
             </p>
           </div>
         </div>

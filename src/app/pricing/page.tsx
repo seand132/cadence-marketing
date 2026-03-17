@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Cadence Pricing — $10/month, 14-day free trial',
-  description: 'One plan, one price. $10/month per manager. Start free for 14 days. Built for managers with 3–8 direct reports.',
+  description: 'One plan, one price. $10/month per manager. Start free for 14 days. Built for managers with 3 to 8 direct reports.',
 }
 
 const planFeatures = [
@@ -18,33 +18,59 @@ const planFeatures = [
 const faqs = [
   {
     q: 'Is Cadence really free right now?',
-    a: "You get 14 days free, no credit card required. After that it's $10/month. Cancel anytime — no lock-in, no surprises.",
+    a: 'You get 14 days free, no credit card required. After that it\'s $10/month. Cancel anytime — no lock-in, no surprises.',
   },
   {
     q: 'Is this per manager or per user?',
-    a: "Per manager. If you manage a team of 8, that's one Cadence account at $10/month. Your direct reports don't need accounts.",
+    a: 'Per manager. If you manage a team of 8, that\'s one Cadence account at $10/month. Your direct reports don\'t need accounts.',
   },
   {
     q: 'What if my team grows beyond 10 people?',
-    a: "We're working on expanded plans for larger teams. For now, reach out and we'll figure something out.",
+    a: 'We\'re working on expanded plans for larger teams. For now, reach out and we\'ll figure something out.',
   },
   {
     q: 'I manage a small team at a larger company. Is Cadence right for me?',
-    a: "Yes — that's exactly who it's for. Cadence is built for the individual manager, not for IT or HR to configure and roll out. You can get started in 3 minutes without involving anyone else.",
-  },
-  {
-    q: "Is Cadence only for small teams?",
-    a: "Of course. The features are useful for any manager who wants more structure. We just built it specifically for people early in their management career — that's the problem we know best.",
+    a: 'Yes — that\'s exactly who it\'s for. Cadence is built for the individual manager, not for IT or HR to configure and roll out. You can get started in 3 minutes without involving anyone else.',
   },
   {
     q: 'Is my data secure?',
-    a: "Yes. Cadence uses Supabase for data storage with row-level security — your team's data is only visible to you and your direct reports. Full details in the privacy policy.",
+    a: 'Yes. Cadence uses Supabase for data storage with row-level security — your team\'s data is only visible to you and your direct reports. Full details in the privacy policy.',
   },
   {
-    q: "What's your refund policy?",
-    a: "If you're charged and decide within 7 days it's not for you, we'll refund the charge. After that, we don't offer pro-rated refunds — but you can cancel anytime and won't be charged again.",
+    q: 'What\'s your refund policy?',
+    a: 'If you\'re charged and decide within 7 days it\'s not for you, we\'ll refund the charge. After that, we don\'t offer pro-rated refunds — but you can cancel anytime and won\'t be charged again.',
   },
 ]
+
+function RhythmDivider({ id, bg }: { id: string; bg: string }) {
+  return (
+    <div style={{ width: '100%', overflow: 'hidden', lineHeight: 0, background: bg }} aria-hidden="true">
+      <svg width="100%" height="40" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id={id} x="0" y="0" width="192" height="40" patternUnits="userSpaceOnUse">
+            <rect x="0"   y="34" width="7" height="6"  rx="3.5" fill="#C2604A" />
+            <rect x="12"  y="14" width="7" height="26" rx="3.5" fill="#C2604A" />
+            <rect x="24"  y="30" width="7" height="10" rx="3.5" fill="#3A7D7B" />
+            <rect x="36"  y="8"  width="7" height="32" rx="3.5" fill="#3A7D7B" />
+            <rect x="48"  y="32" width="7" height="8"  rx="3.5" fill="#7B8F6A" />
+            <rect x="60"  y="20" width="7" height="20" rx="3.5" fill="#7B8F6A" />
+            <rect x="72"  y="34" width="7" height="6"  rx="3.5" fill="#C8782A" />
+            <rect x="84"  y="6"  width="7" height="34" rx="3.5" fill="#C8782A" />
+            <rect x="96"  y="30" width="7" height="10" rx="3.5" fill="#3A7D7B" />
+            <rect x="108" y="22" width="7" height="18" rx="3.5" fill="#3A7D7B" />
+            <rect x="120" y="34" width="7" height="6"  rx="3.5" fill="#7B8F6A" />
+            <rect x="132" y="12" width="7" height="28" rx="3.5" fill="#7B8F6A" />
+            <rect x="144" y="32" width="7" height="8"  rx="3.5" fill="#C2604A" />
+            <rect x="156" y="18" width="7" height="22" rx="3.5" fill="#C2604A" />
+            <rect x="168" y="34" width="7" height="6"  rx="3.5" fill="#C8782A" />
+            <rect x="180" y="10" width="7" height="30" rx="3.5" fill="#C8782A" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="40" fill={`url(#${id})`} />
+      </svg>
+    </div>
+  )
+}
 
 export default function PricingPage() {
   return (
@@ -52,37 +78,53 @@ export default function PricingPage() {
       {/* Header */}
       <section style={{ background: '#F5F0E8' }} className="py-20">
         <div className="max-w-2xl mx-auto px-6 text-center">
+          <div
+            className="inline-flex mb-6 px-3 py-1 rounded-full uppercase"
+            style={{
+              background: '#FDF6EE',
+              color: '#C8782A',
+              fontFamily: 'var(--font-dm-sans)',
+              fontWeight: 600,
+              fontSize: 11,
+              letterSpacing: '0.1em',
+            }}
+          >
+            Pricing
+          </div>
           <h1
             className="mb-4"
-            style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 'clamp(36px, 5vw, 52px)', color: '#2C2C2C' }}
+            style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 'clamp(36px, 5vw, 52px)', color: '#2C2C2C', lineHeight: 1.15 }}
           >
             Simple pricing for small teams.
           </h1>
-          <p style={{ fontFamily: 'var(--font-source-sans)', fontSize: 18, color: '#9C968B' }}>
+          <p style={{ fontFamily: 'var(--font-source-sans)', fontSize: 18, color: '#9C968B', lineHeight: 1.6 }}>
             One plan. One price. Everything included.
           </p>
         </div>
       </section>
 
+      <RhythmDivider id="pricing-div-1" bg="#F5F0E8" />
+
+      {/* Plan + FAQ */}
       <section style={{ background: 'white' }} className="py-20">
         <div className="max-w-xl mx-auto px-6">
 
           {/* Plan card */}
           <div
-            className="bg-white mb-12 reveal"
+            className="bg-white mb-16 reveal"
             style={{
               borderRadius: 8,
               border: '1px solid #D0CAC0',
-              boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+              boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
               overflow: 'hidden',
             }}
           >
             <div style={{ height: 6, background: '#C8782A' }} />
             <div className="p-10">
-              <div className="flex items-start justify-between mb-6">
+              <div className="flex items-start justify-between mb-2">
                 <div>
                   <h2 style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 22, color: '#2C2C2C' }}>
-                    Cadence Pro
+                    Cadence Starter
                   </h2>
                   <p className="mt-1 text-sm" style={{ color: '#9C968B', fontFamily: 'var(--font-source-sans)' }}>
                     For individual managers
@@ -95,10 +137,10 @@ export default function PricingPage() {
               </div>
 
               <div
-                className="mb-8 px-4 py-2 text-sm font-medium rounded-full inline-block"
-                style={{ background: '#FDF6EE', color: '#C8782A', fontFamily: 'var(--font-dm-sans)', fontWeight: 600 }}
+                className="mb-8 mt-4 px-4 py-1.5 text-sm font-semibold rounded-full inline-block"
+                style={{ background: '#FDF6EE', color: '#C8782A', fontFamily: 'var(--font-dm-sans)' }}
               >
-                14-day free trial
+                Most popular
               </div>
 
               <ul className="space-y-3 mb-8">
@@ -118,11 +160,11 @@ export default function PricingPage() {
                 className="block w-full py-3.5 text-sm font-semibold text-white text-center transition-opacity hover:opacity-90"
                 style={{ background: '#C8782A', borderRadius: 4, fontFamily: 'var(--font-dm-sans)', fontWeight: 600 }}
               >
-                Start free — 14 days
+                Get started free
               </Link>
 
               <p className="mt-3 text-center text-xs" style={{ color: '#9C968B', fontFamily: 'var(--font-source-sans)' }}>
-                No credit card required. Cancel anytime.
+                14-day free trial. No credit card required. Cancel anytime.
               </p>
             </div>
           </div>
@@ -147,11 +189,11 @@ export default function PricingPage() {
                     style={{ color: '#2C2C2C', fontFamily: 'var(--font-dm-sans)', fontWeight: 500, fontSize: 15 }}
                   >
                     {faq.q}
-                    <span className="faq-arrow ml-4 flex-shrink-0 text-lg" style={{ color: '#9C968B' }}>+</span>
+                    <span className="ml-4 flex-shrink-0 text-lg" style={{ color: '#9C968B' }}>+</span>
                   </summary>
                   <div
                     className="px-6 pb-5 text-sm leading-relaxed"
-                    style={{ color: '#9C968B', fontFamily: 'var(--font-source-sans)' }}
+                    style={{ color: '#9C968B', fontFamily: 'var(--font-source-sans)', lineHeight: 1.7 }}
                   >
                     {faq.a}
                   </div>
@@ -159,6 +201,30 @@ export default function PricingPage() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      <RhythmDivider id="pricing-div-2" bg="white" />
+
+      {/* CTA */}
+      <section style={{ background: '#C8782A' }} className="py-20">
+        <div className="max-w-xl mx-auto px-6 text-center">
+          <h2
+            className="mb-4"
+            style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 36, color: 'white' }}
+          >
+            Try it free for 14 days.
+          </h2>
+          <p className="mb-8" style={{ fontFamily: 'var(--font-source-sans)', fontSize: 18, color: 'rgba(255,255,255,0.80)', lineHeight: 1.6 }}>
+            No credit card. 3 minutes to set up. Cancel anytime.
+          </p>
+          <Link
+            href="https://app.cadencehq.co/signup"
+            className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold transition-opacity hover:opacity-90"
+            style={{ background: 'white', color: '#C8782A', borderRadius: 4, fontFamily: 'var(--font-dm-sans)', fontWeight: 600 }}
+          >
+            Get started free
+          </Link>
         </div>
       </section>
     </>

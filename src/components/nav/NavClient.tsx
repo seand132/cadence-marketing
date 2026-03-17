@@ -14,8 +14,16 @@ export function NavClient() {
   }, [])
 
   return (
+    <>
+    {/* ── 4-color accent bar — matches app login ── */}
+    <div className="flex h-[5px] w-full shrink-0" style={{ position: 'sticky', top: 0, zIndex: 51 }}>
+      <div className="flex-1" style={{ backgroundColor: '#C8782A' }} />
+      <div className="flex-1" style={{ backgroundColor: '#3A7D7B' }} />
+      <div className="flex-1" style={{ backgroundColor: '#7B8F6A' }} />
+      <div className="flex-1" style={{ backgroundColor: '#C2604A' }} />
+    </div>
     <header
-      className="sticky top-0 z-50 transition-all duration-300"
+      className="sticky top-[5px] z-50 transition-all duration-300"
       style={{
         background: scrolled ? 'rgba(245,240,232,0.95)' : '#F5F0E8',
         borderBottom: '1px solid #D0CAC0',
@@ -68,5 +76,6 @@ export function NavClient() {
         </Link>
       </div>
     </header>
+    </>
   )
 }
