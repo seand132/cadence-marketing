@@ -234,7 +234,7 @@ export default function Home() {
               color: '#2C2C2C',
             }}
           >
-            Simple tools. Steady habits. Stronger teams.
+            Everything you need. Nothing you don&rsquo;t.
           </h2>
           <div className="grid sm:grid-cols-3 gap-6">
             {[
@@ -311,10 +311,10 @@ export default function Home() {
                   lineHeight: 1.2,
                 }}
               >
-                Built for one kind of manager.
+                Made for the manager in the middle.
               </h2>
               <p style={{ fontFamily: 'var(--font-source-sans)', fontSize: 17, color: '#9C968B', lineHeight: 1.7 }}>
-                It&rsquo;s not a performance management suite. It&rsquo;s a rhythm you can actually keep.
+                New enough to still be figuring it out. Experienced enough to know you need a system.
               </p>
             </div>
             <div className="flex-1 reveal">
