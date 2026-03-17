@@ -244,7 +244,7 @@ export function PricingToggle() {
           </ul>
 
           <Link
-            href="https://app.cadencehq.co/signup"
+            href={annual ? "https://app.cadencehq.co/signup?billing=annual" : "https://app.cadencehq.co/signup"}
             style={{
               display: 'block',
               width: '100%',
@@ -501,7 +501,7 @@ export function PricingToggle() {
           Convinced?
         </p>
         <Link
-          href="https://app.cadencehq.co/signup"
+          href={annual ? "https://app.cadencehq.co/signup?billing=annual" : "https://app.cadencehq.co/signup"}
           style={{
             display: 'inline-flex',
             alignItems: 'center',
