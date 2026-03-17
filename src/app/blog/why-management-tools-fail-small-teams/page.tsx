@@ -26,7 +26,7 @@ export default function WhyToolsFail() {
 
       <section style={{ background: '#F5F0E8' }} className="py-20">
         <article className="max-w-2xl mx-auto px-6 space-y-5 reveal" style={{ fontFamily: 'var(--font-dm-sans)', fontSize: 17, color: 'rgba(28,43,58,0.75)', lineHeight: 1.8 }}>
-          <p>If you manage 6 people and you try to use Lattice, here&rsquo;s what happens.</p>
+          <p>If you manage 6 people and you try to use an enterprise management platform, here&rsquo;s what happens.</p>
           <p>You sign up. You get a 47-step onboarding flow. Someone from sales emails you. There&rsquo;s a module for &ldquo;compensation management,&rdquo; one for &ldquo;succession planning,&rdquo; and one for &ldquo;workforce analytics.&rdquo;</p>
           <p>None of that is your job. You&rsquo;re trying to run a good 1:1 with your five direct reports and make sure the right things get done this week.</p>
           <p>Most management tools are built for HR departments managing hundreds of employees. They just happen to be sold to individual managers too.</p>
@@ -47,7 +47,7 @@ export default function WhyToolsFail() {
           <h2 style={{ fontFamily: 'var(--font-montserrat)', fontWeight: 500, fontSize: 22, color: '#1C2B3A', paddingTop: 16 }}>
             The right tool for the right manager.
           </h2>
-          <p>If you&rsquo;re an HR leader managing a 500-person organization — Lattice, 15Five, and Workday exist for you. They&rsquo;re good tools for that problem.</p>
+          <p>If you&rsquo;re an HR leader managing a 500-person organization — enterprise platforms exist for you. They&rsquo;re good tools for that problem.</p>
           <p>If you&rsquo;re a manager with 3–8 direct reports who got promoted from IC and wants a system that fits your actual workday — most of those tools are overkill.</p>
           <p>That&rsquo;s the gap Cadence fills. Not a better enterprise tool. A tool for the manager the enterprise tools ignore.</p>
 

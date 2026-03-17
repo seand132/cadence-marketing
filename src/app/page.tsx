@@ -314,7 +314,7 @@ export default function Home() {
                 Built for one kind of manager.
               </h2>
               <p style={{ fontFamily: 'var(--font-source-sans)', fontSize: 17, color: '#9C968B', lineHeight: 1.7 }}>
-                This isn&rsquo;t Lattice. It&rsquo;s not a performance management suite. It&rsquo;s a rhythm you can actually keep.
+                It&rsquo;s not a performance management suite. It&rsquo;s a rhythm you can actually keep.
               </p>
             </div>
             <div className="flex-1 reveal">
