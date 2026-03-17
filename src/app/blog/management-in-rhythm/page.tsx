@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   description: "It's not a metaphor. It's a design principle — and the antidote to reactive management.",
 }
 
+const POST_TITLE = 'What %22Management in Rhythm%22 Actually Means'
+const POST_URL = 'https%3A%2F%2Fcadencehq.co%2Fblog%2Fmanagement-in-rhythm'
+
 export default function ManagementInRhythm() {
   return (
     <>
@@ -42,9 +45,9 @@ export default function ManagementInRhythm() {
           <p>A basic management rhythm for a team of 5–8 looks like this:</p>
           <ul className="space-y-3 pl-2">
             {[
-              { day: 'Monday', rest: 'Quick team pulse — what\'s in progress, what\'s blocked?' },
+              { day: 'Monday', rest: "Quick team pulse — what's in progress, what's blocked?" },
               { day: 'Tuesday–Thursday', rest: '1:1s with direct reports on a rotating schedule.' },
-              { day: 'Friday', rest: 'Review what shipped, what\'s open, what needs next week\'s attention.' },
+              { day: 'Friday', rest: "Review what shipped, what's open, what needs next week's attention." },
             ].map((item) => (
               <li key={item.day} className="flex items-start gap-3">
                 <span style={{ color: '#7A9E82', fontWeight: 700, marginTop: 2 }}>–</span>
@@ -76,7 +79,70 @@ export default function ManagementInRhythm() {
             <p style={{ color: '#1C2B3A' }}>Cadence exists because the rhythm is the product. Every feature is in service of the weekly pattern that makes managing consistent — not a feature you use once and forget.</p>
             <p className="mt-3 font-medium" style={{ color: '#1C2B3A' }}>Management in rhythm isn&rsquo;t a brand line. It&rsquo;s the design principle.</p>
           </div>
+
+          {/* Share buttons */}
+          <div className="pt-8 flex items-center gap-4 flex-wrap">
+            <span style={{ fontFamily: 'var(--font-dm-sans)', fontSize: 13, fontWeight: 600, color: '#9C968B', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Share</span>
+            <a
+              href={`https://twitter.com/intent/tweet?text=${POST_TITLE}&url=${POST_URL}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded text-sm font-semibold transition-opacity hover:opacity-80"
+              style={{ background: '#000', color: 'white', fontFamily: 'var(--font-dm-sans)', textDecoration: 'none' }}
+            >
+              𝕏 Post
+            </a>
+            <a
+              href={`https://www.linkedin.com/sharing/share-offsite/?url=${POST_URL}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded text-sm font-semibold transition-opacity hover:opacity-80"
+              style={{ background: '#0A66C2', color: 'white', fontFamily: 'var(--font-dm-sans)', textDecoration: 'none' }}
+            >
+              LinkedIn
+            </a>
+            <a
+              href={`mailto:?subject=What "Management in Rhythm" Actually Means&body=https://cadencehq.co/blog/management-in-rhythm`}
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded text-sm font-semibold transition-opacity hover:opacity-80"
+              style={{ background: '#F5F0E8', color: '#2C2C2C', fontFamily: 'var(--font-dm-sans)', textDecoration: 'none', border: '1px solid #D0CAC0' }}
+            >
+              Email
+            </a>
+          </div>
+
+          {/* Author block */}
+          <div className="pt-8 pb-4 flex items-start gap-4" style={{ borderTop: '1px solid #D0CAC0', marginTop: 24 }}>
+            <div
+              className="flex-shrink-0 flex items-center justify-center rounded-full"
+              style={{ width: 48, height: 48, background: '#C8782A' }}
+            >
+              <span style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 16, color: 'white' }}>SD</span>
+            </div>
+            <div>
+              <div style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 16, color: '#2C2C2C' }}>Sean Davis</div>
+              <div style={{ fontFamily: 'var(--font-source-sans)', fontSize: 14, color: '#9C968B' }}>Founder at Cadence</div>
+            </div>
+          </div>
         </article>
+      </section>
+
+      {/* Bottom CTA */}
+      <section style={{ background: '#C8782A' }} className="py-16">
+        <div className="max-w-xl mx-auto px-6 text-center">
+          <h2
+            className="mb-6"
+            style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 28, color: 'white' }}
+          >
+            Running a team? Cadence can help.
+          </h2>
+          <Link
+            href="https://app.cadencehq.co/signup"
+            className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold transition-opacity hover:opacity-90"
+            style={{ background: 'white', color: '#C8782A', borderRadius: 4, fontFamily: 'var(--font-dm-sans)', fontWeight: 600, textDecoration: 'none' }}
+          >
+            Get started free
+          </Link>
+        </div>
       </section>
     </>
   )

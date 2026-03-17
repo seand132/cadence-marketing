@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   description: "Most management advice is written for people who've been doing it for a decade. Here's what actually matters in the first 90 days.",
 }
 
+const POST_TITLE = "The New Manager's Survival Guide (No Generic Advice)"
+const POST_URL = 'https://cadencehq.co/blog/new-manager-survival-guide'
+
 export default function NewManagerSurvivalGuide() {
   return (
     <>
@@ -20,7 +23,7 @@ export default function NewManagerSurvivalGuide() {
           >
             The New Manager&rsquo;s Survival Guide (No Generic Advice)
           </h1>
-          <p className="text-sm" style={{ color: 'rgba(255,255,255,0.45)', fontFamily: 'var(--font-dm-sans)' }}>8 min read</p>
+          <p className="text-sm" style={{ color: 'rgba(255,255,255,0.45)', fontFamily: 'var(--font-dm-sans)' }}>7 min read</p>
         </div>
       </section>
 
@@ -87,7 +90,70 @@ export default function NewManagerSurvivalGuide() {
             <p className="mt-3" style={{ color: '#1C2B3A' }}>Build a rhythm. Stay consistent. Get feedback early. Adjust.</p>
             <p className="mt-3 font-medium" style={{ color: '#1C2B3A' }}>That&rsquo;s the whole job.</p>
           </div>
+
+          {/* Share buttons */}
+          <div className="pt-8 flex items-center gap-4 flex-wrap">
+            <span style={{ fontFamily: 'var(--font-dm-sans)', fontSize: 13, fontWeight: 600, color: '#9C968B', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Share</span>
+            <a
+              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(POST_TITLE)}&url=${encodeURIComponent(POST_URL)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded text-sm font-semibold transition-opacity hover:opacity-80"
+              style={{ background: '#000', color: 'white', fontFamily: 'var(--font-dm-sans)', textDecoration: 'none' }}
+            >
+              𝕏 Post
+            </a>
+            <a
+              href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(POST_URL)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded text-sm font-semibold transition-opacity hover:opacity-80"
+              style={{ background: '#0A66C2', color: 'white', fontFamily: 'var(--font-dm-sans)', textDecoration: 'none' }}
+            >
+              LinkedIn
+            </a>
+            <a
+              href={`mailto:?subject=${encodeURIComponent(POST_TITLE)}&body=${encodeURIComponent(POST_URL)}`}
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded text-sm font-semibold transition-opacity hover:opacity-80"
+              style={{ background: '#F5F0E8', color: '#2C2C2C', fontFamily: 'var(--font-dm-sans)', textDecoration: 'none', border: '1px solid #D0CAC0' }}
+            >
+              Email
+            </a>
+          </div>
+
+          {/* Author block */}
+          <div className="pt-8 pb-4 flex items-start gap-4" style={{ borderTop: '1px solid #D0CAC0', marginTop: 24 }}>
+            <div
+              className="flex-shrink-0 flex items-center justify-center rounded-full"
+              style={{ width: 48, height: 48, background: '#C8782A' }}
+            >
+              <span style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 16, color: 'white' }}>SD</span>
+            </div>
+            <div>
+              <div style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 16, color: '#2C2C2C' }}>Sean Davis</div>
+              <div style={{ fontFamily: 'var(--font-source-sans)', fontSize: 14, color: '#9C968B' }}>Founder at Cadence</div>
+            </div>
+          </div>
         </article>
+      </section>
+
+      {/* Bottom CTA */}
+      <section style={{ background: '#C8782A' }} className="py-16">
+        <div className="max-w-xl mx-auto px-6 text-center">
+          <h2
+            className="mb-6"
+            style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 28, color: 'white' }}
+          >
+            Running a team? Cadence can help.
+          </h2>
+          <Link
+            href="https://app.cadencehq.co/signup"
+            className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold transition-opacity hover:opacity-90"
+            style={{ background: 'white', color: '#C8782A', borderRadius: 4, fontFamily: 'var(--font-dm-sans)', fontWeight: 600, textDecoration: 'none' }}
+          >
+            Get started free
+          </Link>
+        </div>
       </section>
     </>
   )
