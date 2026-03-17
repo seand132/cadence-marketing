@@ -7,6 +7,14 @@ export const metadata: Metadata = {
   description: 'Cadence helps new managers run better 1:1s, track delegation, and keep their team in rhythm. Simple. For teams of 3–8. 14-day free trial.',
 }
 
+const PEOPLE = {
+  sarah: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=96&h=96&q=80',
+  marcus: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=96&h=96&q=80',
+  kim: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=96&h=96&q=80',
+  diego: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=96&h=96&q=80',
+  aisha: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=96&h=96&q=80',
+}
+
 export default function Home() {
   return (
     <>
@@ -133,10 +141,14 @@ export default function Home() {
                       <path d="M0 32 Q37 20 75 32 Q112 44 150 32 Q187 20 225 32 Q262 44 300 32" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
                       <path d="M0 50 Q37 38 75 50 Q112 62 150 50 Q187 38 225 50 Q262 62 300 50" stroke="white" strokeWidth="2" strokeLinecap="round"/>
                     </svg>
-                    <div style={{ position: 'relative', zIndex: 1 }}>
-                      <div style={{ fontSize: 10, color: 'rgba(255,255,255,0.7)', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', fontFamily: 'var(--font-dm-sans)' }}>Good morning</div>
-                      <div style={{ fontSize: 15, fontWeight: 700, color: 'white', fontFamily: 'var(--font-dm-sans)' }}>Sarah <span style={{ color: 'rgba(255,255,255,0.5)' }}>✦</span></div>
-                      <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.75)', fontFamily: 'var(--font-source-sans)' }}>3 upcoming 1:1s this week.</div>
+                    <div style={{ position: 'relative', zIndex: 1, display: 'flex', alignItems: 'center', gap: 10 }}>
+                      <div style={{ flex: 1 }}>
+                        <div style={{ fontSize: 10, color: 'rgba(255,255,255,0.7)', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', fontFamily: 'var(--font-dm-sans)' }}>Good morning</div>
+                        <div style={{ fontSize: 15, fontWeight: 700, color: 'white', fontFamily: 'var(--font-dm-sans)' }}>Sarah <span style={{ color: 'rgba(255,255,255,0.5)' }}>✦</span></div>
+                        <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.75)', fontFamily: 'var(--font-source-sans)' }}>3 upcoming 1:1s this week.</div>
+                      </div>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={PEOPLE.sarah} width="32" height="32" style={{ borderRadius: '50%', objectFit: 'cover', border: '2px solid rgba(255,255,255,0.4)', flexShrink: 0 }} alt="Sarah" />
                     </div>
                   </div>
 
@@ -171,13 +183,20 @@ export default function Home() {
                         <div style={{ fontSize: 18, fontWeight: 700, color: '#2C2C2C', lineHeight: 1, fontFamily: 'var(--font-dm-sans)' }}>5</div>
                         <div style={{ fontSize: 9, color: '#9C968B', fontWeight: 500, fontFamily: 'var(--font-dm-sans)' }}>Due This Week</div>
                       </div>
-                      {/* Team Members - surface */}
+                      {/* Team Members - with avatar stack */}
                       <div style={{ background: '#EBE6DD', borderRadius: 10, padding: '8px 10px' }}>
                         <div style={{ width: 20, height: 20, borderRadius: 6, background: '#DDD8CF', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 4 }}>
                           <svg width="11" height="11" fill="none" stroke="#9C968B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
                         </div>
                         <div style={{ fontSize: 18, fontWeight: 700, color: '#2C2C2C', lineHeight: 1, fontFamily: 'var(--font-dm-sans)' }}>4</div>
-                        <div style={{ fontSize: 9, color: '#9C968B', fontWeight: 500, fontFamily: 'var(--font-dm-sans)' }}>Team Members</div>
+                        <div style={{ fontSize: 9, color: '#9C968B', fontWeight: 500, fontFamily: 'var(--font-dm-sans)', marginBottom: 4 }}>Team Members</div>
+                        {/* Mini avatar stack */}
+                        <div style={{ display: 'flex' }}>
+                          {[PEOPLE.marcus, PEOPLE.kim, PEOPLE.diego, PEOPLE.aisha].map((src, i) => (
+                            // eslint-disable-next-line @next/next/no-img-element
+                            <img key={i} src={src} width="16" height="16" style={{ borderRadius: '50%', objectFit: 'cover', border: '1.5px solid #EBE6DD', marginLeft: i === 0 ? 0 : -5 }} alt="" />
+                          ))}
+                        </div>
                       </div>
                     </div>
 
@@ -185,9 +204,9 @@ export default function Home() {
                     <div style={{ marginBottom: 10 }}>
                       <div style={{ fontSize: 10, fontWeight: 700, color: '#2C2C2C', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 6, fontFamily: 'var(--font-dm-sans)' }}>My Work</div>
                       {[
-                        { text: 'Q2 goals review with Jordan', priority: '#C8782A', statusColor: '#A86022', statusBg: '#FAE8D0', due: 'Today' },
-                        { text: 'Share onboarding doc → Marcus', priority: '#7B8F6A', statusColor: '#5A7A4A', statusBg: '#EDF2EA', due: 'Tomorrow' },
-                        { text: "Tyler's project proposal feedback", priority: '#C2604A', statusColor: '#C2604A', statusBg: '#FAEAE7', due: '2d ago' },
+                        { text: 'Q2 goals review with Jordan', priority: '#C8782A', statusColor: '#A86022', statusBg: '#FAE8D0', due: 'Today', avatar: PEOPLE.diego },
+                        { text: 'Share onboarding doc → Marcus', priority: '#7B8F6A', statusColor: '#5A7A4A', statusBg: '#EDF2EA', due: 'Tomorrow', avatar: PEOPLE.marcus },
+                        { text: "Tyler's project proposal feedback", priority: '#C2604A', statusColor: '#C2604A', statusBg: '#FAEAE7', due: '2d ago', avatar: PEOPLE.kim },
                       ].map((task, i) => (
                         <div key={i} style={{
                           display: 'flex', alignItems: 'center', gap: 6,
@@ -198,6 +217,8 @@ export default function Home() {
                           border: '1px solid #E8E4DF',
                           borderLeft: `2.5px solid ${task.priority}`
                         }}>
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img src={task.avatar} width="18" height="18" style={{ borderRadius: '50%', objectFit: 'cover', flexShrink: 0 }} alt="" />
                           <span style={{ flex: 1, fontSize: 10, color: '#2C2C2C', fontFamily: 'var(--font-source-sans)', lineHeight: 1.3 }}>{task.text}</span>
                           <span style={{ fontSize: 8, fontWeight: 600, color: task.statusColor, background: task.statusBg, padding: '1px 5px', borderRadius: 8, whiteSpace: 'nowrap', fontFamily: 'var(--font-dm-sans)' }}>{task.due}</span>
                         </div>
@@ -207,7 +228,7 @@ export default function Home() {
                     {/* Next 1:1 */}
                     <div style={{ background: 'white', borderRadius: 8, border: '1px solid #D0CAC0', padding: '8px 10px', display: 'flex', alignItems: 'center', gap: 8 }}>
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" width="28" height="28" style={{ borderRadius: '50%', objectFit: 'cover', flexShrink: 0 }} alt="Marcus" />
+                      <img src={PEOPLE.marcus} width="28" height="28" style={{ borderRadius: '50%', objectFit: 'cover', flexShrink: 0 }} alt="Marcus" />
                       <div style={{ flex: 1 }}>
                         <div style={{ fontSize: 11, fontWeight: 600, color: '#2C2C2C', fontFamily: 'var(--font-dm-sans)' }}>Marcus Johnson · 1:1</div>
                         <div style={{ fontSize: 10, color: '#9C968B', fontFamily: 'var(--font-source-sans)' }}>Tomorrow · 10:00 AM</div>
@@ -343,34 +364,36 @@ export default function Home() {
       </section>
 
       {/* ─── TESTIMONIALS ─────────────────────────────────────── */}
-      <section style={{ background: 'white', padding: '40px 0', borderTop: '1px solid #D0CAC0' }}>
+      <section style={{ background: 'white', padding: '60px 0', borderTop: '1px solid #D0CAC0' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 24px' }}>
-          <div style={{ textAlign: 'center', marginBottom: 28 }}>
+          <div style={{ textAlign: 'center', marginBottom: 36 }}>
             <div style={{ fontSize: 12, fontWeight: 600, color: '#9C968B', textTransform: 'uppercase', letterSpacing: '0.1em', fontFamily: 'var(--font-dm-sans)', marginBottom: 8 }}>Managers finding their rhythm</div>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
             {[
               {
                 quote: "I used to dread 1:1s. Now I actually look forward to them — Cadence gives me a structure that works.",
-                name: "Sarah R.", role: "Engineering Manager", img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=80&h=80&fit=crop&crop=face"
+                name: "Sarah R.", role: "Engineering Manager", img: PEOPLE.sarah
               },
               {
                 quote: "The task delegation view alone is worth it. I always know what's moving and what needs a nudge.",
-                name: "Marcus J.", role: "Operations Lead", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face"
+                name: "Marcus J.", role: "Operations Lead", img: PEOPLE.marcus
               },
               {
                 quote: "Finally a management tool that doesn't feel like it was built for an HR department.",
-                name: "Aisha N.", role: "Product Manager", img: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=80&h=80&fit=crop&crop=face"
+                name: "Aisha N.", role: "Product Manager", img: PEOPLE.aisha
               }
             ].map((t, i) => (
-              <div key={i} style={{ background: '#F5F0E8', borderRadius: 10, padding: '20px', border: '1px solid #D0CAC0' }}>
-                <div style={{ fontSize: 13, color: '#2C2C2C', fontFamily: 'var(--font-source-sans)', lineHeight: 1.6, marginBottom: 16, fontStyle: 'italic' }}>&ldquo;{t.quote}&rdquo;</div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+              <div key={i} style={{ background: '#F5F0E8', borderRadius: 10, padding: '24px', border: '1px solid #D0CAC0', borderLeft: '3px solid #C8782A' }}>
+                {/* 5-star rating */}
+                <div style={{ marginBottom: 10, fontSize: 14, color: '#D97706', letterSpacing: 2 }}>★★★★★</div>
+                <div style={{ fontSize: 15, color: '#2C2C2C', fontFamily: 'var(--font-source-sans)', lineHeight: 1.65, marginBottom: 20, fontStyle: 'italic' }}>&ldquo;{t.quote}&rdquo;</div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={t.img} width="36" height="36" style={{ borderRadius: '50%', objectFit: 'cover' }} alt={t.name} />
+                  <img src={t.img} width="48" height="48" style={{ borderRadius: '50%', objectFit: 'cover', flexShrink: 0 }} alt={t.name} />
                   <div>
-                    <div style={{ fontSize: 13, fontWeight: 600, color: '#2C2C2C', fontFamily: 'var(--font-dm-sans)' }}>{t.name}</div>
-                    <div style={{ fontSize: 11, color: '#9C968B', fontFamily: 'var(--font-source-sans)' }}>{t.role}</div>
+                    <div style={{ fontSize: 14, fontWeight: 600, color: '#2C2C2C', fontFamily: 'var(--font-dm-sans)' }}>{t.name}</div>
+                    <div style={{ fontSize: 12, color: '#9C968B', fontFamily: 'var(--font-source-sans)' }}>{t.role}</div>
                   </div>
                 </div>
               </div>
