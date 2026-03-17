@@ -112,6 +112,7 @@ export default function AboutPage() {
               fontSize: 18,
               color: '#9C968B',
               lineHeight: 1.8,
+              maxWidth: 680,
             }}
           >
             <p>
@@ -341,8 +342,8 @@ export default function AboutPage() {
                   <p
                     style={{
                       fontFamily: 'var(--font-source-sans)',
-                      fontSize: 14,
-                      color: 'rgba(245,240,232,0.6)',
+                      fontSize: 15,
+                      color: 'rgba(245,240,232,0.82)',
                       lineHeight: 1.7,
                       margin: 0,
                     }}

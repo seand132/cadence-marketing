@@ -153,7 +153,7 @@ export default function FeaturesPage() {
                 <p
                   style={{
                     fontFamily: 'var(--font-source-sans)',
-                    fontSize: 17,
+                    fontSize: 'clamp(15px, 4vw, 17px)',
                     color: '#9C968B',
                     lineHeight: 1.75,
                   }}
@@ -248,7 +248,7 @@ export default function FeaturesPage() {
                 <img
                   src="/screenshots/one-on-ones.png"
                   alt="Cadence 1:1 meeting agendas"
-                  style={{ width: '100%', display: 'block' }}
+                  style={{ width: '100%', maxWidth: '100%', display: 'block' }}
                 />
               </div>
             </div>
@@ -297,7 +297,7 @@ export default function FeaturesPage() {
                 <p
                   style={{
                     fontFamily: 'var(--font-source-sans)',
-                    fontSize: 17,
+                    fontSize: 'clamp(15px, 4vw, 17px)',
                     color: '#9C968B',
                     lineHeight: 1.75,
                   }}
@@ -381,7 +381,7 @@ export default function FeaturesPage() {
                 <img
                   src="/screenshots/tasks.png"
                   alt="Cadence task delegation and tracking"
-                  style={{ width: '100%', display: 'block' }}
+                  style={{ width: '100%', maxWidth: '100%', display: 'block' }}
                 />
               </div>
             </div>
@@ -430,7 +430,7 @@ export default function FeaturesPage() {
                 <p
                   style={{
                     fontFamily: 'var(--font-source-sans)',
-                    fontSize: 17,
+                    fontSize: 'clamp(15px, 4vw, 17px)',
                     color: '#9C968B',
                     lineHeight: 1.75,
                   }}
@@ -522,7 +522,7 @@ export default function FeaturesPage() {
                 <img
                   src="/screenshots/dashboard.png"
                   alt="Cadence team dashboard"
-                  style={{ width: '100%', display: 'block' }}
+                  style={{ width: '100%', maxWidth: '100%', display: 'block' }}
                 />
               </div>
             </div>
@@ -571,7 +571,7 @@ export default function FeaturesPage() {
                 <p
                   style={{
                     fontFamily: 'var(--font-source-sans)',
-                    fontSize: 17,
+                    fontSize: 'clamp(15px, 4vw, 17px)',
                     color: '#9C968B',
                     lineHeight: 1.75,
                   }}
@@ -663,7 +663,7 @@ export default function FeaturesPage() {
                 <img
                   src="/screenshots/kpis.png"
                   alt="Cadence KPI goals and tracking"
-                  style={{ width: '100%', display: 'block' }}
+                  style={{ width: '100%', maxWidth: '100%', display: 'block' }}
                 />
               </div>
             </div>
@@ -712,7 +712,7 @@ export default function FeaturesPage() {
                 <p
                   style={{
                     fontFamily: 'var(--font-source-sans)',
-                    fontSize: 17,
+                    fontSize: 'clamp(15px, 4vw, 17px)',
                     color: '#9C968B',
                     lineHeight: 1.75,
                   }}
@@ -818,7 +818,7 @@ export default function FeaturesPage() {
                 <img
                   src="/screenshots/team.png"
                   alt="Cadence org chart and team structure"
-                  style={{ width: '100%', display: 'block' }}
+                  style={{ width: '100%', maxWidth: '100%', display: 'block' }}
                 />
               </div>
             </div>
@@ -1024,7 +1024,7 @@ export default function FeaturesPage() {
                   style={{
                     fontFamily: 'var(--font-source-sans)',
                     fontSize: 15,
-                    color: 'rgba(245,240,232,0.65)',
+                    color: 'rgba(245,240,232,0.78)',
                     lineHeight: 1.6,
                     margin: 0,
                   }}
@@ -1174,7 +1174,7 @@ export default function FeaturesPage() {
                 <img
                   src="/screenshots/dashboard.png"
                   alt="Cadence dashboard"
-                  style={{ width: '100%', display: 'block' }}
+                  style={{ width: '100%', maxWidth: '100%', display: 'block' }}
                 />
               </div>
             </div>

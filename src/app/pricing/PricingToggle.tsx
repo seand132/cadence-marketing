@@ -291,6 +291,7 @@ export function PricingToggle() {
           What $10 gets you
         </h2>
         <div
+          className="pricing-comparison-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(3, 1fr)',

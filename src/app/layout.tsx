@@ -59,7 +59,7 @@ export default function RootLayout({
     <html lang="en" className={`${dmSans.variable} ${sourceSans3.variable}`}>
       <body style={{ background: '#F5F0E8', overflowX: 'hidden', maxWidth: '100vw' }}>
         <NavClient />
-        <main>{children}</main>
+        <main style={{ paddingBottom: 80 }}>{children}</main>
 
         {/* Footer */}
         <footer style={{ background: '#2C2C2C' }} className="py-12">
@@ -80,7 +80,7 @@ export default function RootLayout({
                 © {new Date().getFullYear()} Cadence. All rights reserved.
               </p>
             </div>
-            <nav className="flex flex-wrap gap-6 justify-center sm:justify-end">
+            <nav className="flex flex-wrap gap-x-4 gap-y-2 sm:gap-6 justify-center sm:justify-end">
               {[
                 { label: 'Features', href: '/features' },
                 { label: 'Pricing', href: '/pricing' },

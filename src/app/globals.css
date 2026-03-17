@@ -43,3 +43,10 @@ details[open] summary .faq-arrow {
 .faq-arrow {
   transition: transform 200ms ease;
 }
+
+/* Pricing comparison: 3-col on md+, single-col stacked on mobile */
+@media (max-width: 767px) {
+  .pricing-comparison-grid {
+    grid-template-columns: 1fr !important;
+  }
+}

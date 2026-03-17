@@ -107,7 +107,9 @@ export default function BlogFilterGrid() {
       <section style={{ background: 'white' }} className="pt-4 pb-20">
         <div className="max-w-4xl mx-auto px-6">
           <div className="grid sm:grid-cols-2 gap-6">
-            {filteredPosts.map((post) => (
+            {filteredPosts.map((post, idx) => {
+              const isOrphan = filteredPosts.length % 2 !== 0 && idx === filteredPosts.length - 1
+              return (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
@@ -119,6 +121,7 @@ export default function BlogFilterGrid() {
                   overflow: 'hidden',
                   textDecoration: 'none',
                   background: 'white',
+                  ...(isOrphan ? { gridColumn: '1 / -1', maxWidth: '50%', margin: '0 auto', width: '100%' } : {}),
                 }}
               >
                 <div style={{ height: 6, background: '#C8782A' }} />
@@ -181,7 +184,8 @@ export default function BlogFilterGrid() {
                   </div>
                 </div>
               </Link>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
