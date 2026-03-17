@@ -85,6 +85,13 @@ export function NavClient() {
           <div className="flex items-center gap-2">
             {/* CTA — desktop only */}
             <Link
+              href="https://app.cadencehq.co/login"
+              className="hidden md:inline-flex items-center justify-center px-4 py-2 text-sm font-medium transition-colors hover:text-text-primary mr-2"
+              style={{ color: '#6B6560', fontFamily: 'var(--font-dm-sans)', textDecoration: 'none' }}
+            >
+              Log in
+            </Link>
+            <Link
               href="https://app.cadencehq.co/signup"
               className="hidden md:inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"
               style={{

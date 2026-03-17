@@ -17,6 +17,14 @@ const KICKER_MAP: Record<string, { label: string; color: string }> = {
 
 const gridPosts = [
   {
+    slug: 'the-11-that-actually-works',
+    title: 'The 1:1 That Actually Works',
+    category: '1:1s',
+    readTime: '8 min read',
+    date: 'Mar 17, 2026',
+    excerpt: "Most 1:1s are status updates with better lighting. Here's how to turn yours into the most valuable 30 minutes of your week.",
+  },
+  {
     slug: 'how-to-delegate-without-losing-control',
     title: 'How to Delegate Without Losing Control',
     category: 'Delegation',
@@ -174,24 +182,7 @@ export default function BlogFilterGrid() {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         {/* Author avatar */}
-                        <div
-                          style={{
-                            width: 24,
-                            height: 24,
-                            borderRadius: '50%',
-                            background: '#C8782A',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            fontFamily: 'var(--font-dm-sans)',
-                            fontWeight: 700,
-                            fontSize: 9,
-                            color: 'white',
-                            flexShrink: 0,
-                          }}
-                        >
-                          SD
-                        </div>
+                        <img src="https://whzwyvjerrsyqjmktxcg.supabase.co/storage/v1/object/public/avatars/06d4938c-f40d-46dd-b24c-3a2596e0c8a1/avatar.jpg?t=1773037991750" alt="Sean Davis" style={{ width: 24, height: 24, borderRadius: '50%', objectFit: 'cover', flexShrink: 0, border: '1.5px solid #D0CAC0' }} />
                         <span style={{ fontFamily: 'var(--font-dm-sans)', fontSize: 12, color: '#9C968B' }}>
                           Sean Davis · {post.readTime}
                         </span>

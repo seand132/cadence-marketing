@@ -131,24 +131,7 @@ export default function BlogIndex() {
               <div className="flex items-center justify-between flex-wrap gap-4">
                 <div className="flex items-center gap-3">
                   {/* Author avatar */}
-                  <div
-                    style={{
-                      width: 32,
-                      height: 32,
-                      borderRadius: '50%',
-                      background: '#C8782A',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontFamily: 'var(--font-dm-sans)',
-                      fontWeight: 700,
-                      fontSize: 12,
-                      color: 'white',
-                      flexShrink: 0,
-                    }}
-                  >
-                    SD
-                  </div>
+                  <img src="https://whzwyvjerrsyqjmktxcg.supabase.co/storage/v1/object/public/avatars/06d4938c-f40d-46dd-b24c-3a2596e0c8a1/avatar.jpg?t=1773037991750" alt="Sean Davis" style={{ width: 32, height: 32, borderRadius: "50%", objectFit: "cover", flexShrink: 0, border: "2px solid rgba(245,240,232,0.4)" }} />
                   <span style={{ fontFamily: 'var(--font-dm-sans)', fontSize: 14, color: 'rgba(245,240,232,0.6)' }}>
                     {featuredPost.author} · {featuredPost.readTime}
                   </span>
@@ -168,8 +151,10 @@ export default function BlogIndex() {
         </div>
       </section>
 
-      {/* Rhythm divider */}
+      {/* Rhythm divider — with breathing room */}
+      <div style={{ background: '#F5F0E8', paddingBottom: 16 }} />
       <RhythmDivider id="blog-div-featured" bg="#F5F0E8" />
+      <div style={{ background: 'white', paddingTop: 8 }} />
 
       {/* Category filter + Grid (client component) */}
       <BlogFilterGrid />

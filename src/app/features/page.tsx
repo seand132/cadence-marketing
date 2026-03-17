@@ -51,6 +51,7 @@ export default function FeaturesPage() {
       </section>
 
       {/* ─── RHYTHM DIVIDER 1 ─────────────────────────────────── */}
+      <div style={{ background: '#F5F0E8', paddingBottom: 12 }} />
       <div style={{ width:'100%', overflow:'hidden', lineHeight:0, background:'#F5F0E8' }} aria-hidden="true">
         <svg width="100%" height="40" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -78,6 +79,10 @@ export default function FeaturesPage() {
       </div>
 
       {/* ─── FEATURE NAV TABS ─────────────────────────────────── */}
+      <style>{`
+        html { scroll-behavior: smooth; }
+        section[id] { scroll-margin-top: 110px; }
+      `}</style>
       <div
         style={{
           background: 'white',
@@ -876,9 +881,9 @@ export default function FeaturesPage() {
             }}
           >
             {[
-              { icon: '📋', label: '1:1 Agendas' },
-              { icon: '✅', label: 'Task Tracking' },
-              { icon: '📊', label: 'Team Dashboard' },
+              { icon: '11', label: '1:1 Agendas' },
+              { icon: 'task', label: 'Task Tracking' },
+              { icon: 'chart', label: 'Team Dashboard' },
             ].map((item) => (
               <div
                 key={item.label}
@@ -902,7 +907,9 @@ export default function FeaturesPage() {
                     fontSize: 24,
                   }}
                 >
-                  {item.icon}
+                  {item.icon === '11' && <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>}
+                  {item.icon === 'task' && <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>}
+                  {item.icon === 'chart' && <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>}
                 </div>
                 <span
                   style={{
@@ -1052,7 +1059,8 @@ export default function FeaturesPage() {
       </div>
 
       {/* ─── RHYTHM DIVIDER 2 ─────────────────────────────────── */}
-      <div style={{ width:'100%', overflow:'hidden', lineHeight:0, background:'#2C2C2C' }} aria-hidden="true">
+      <div style={{ background: '#EBE6DD', paddingTop: 20 }} />
+      <div style={{ width:'100%', overflow:'hidden', lineHeight:0, background:'#EBE6DD' }} aria-hidden="true">
         <svg width="100%" height="40" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="features-div-2" x="0" y="0" width="192" height="40" patternUnits="userSpaceOnUse">

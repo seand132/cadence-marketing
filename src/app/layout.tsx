@@ -68,10 +68,10 @@ export default function RootLayout({
               <Image
                 src="/brand/cadence-horizontal-lockup-dark.svg"
                 alt="Cadence"
-                width={130}
-                height={34}
+                width={160}
+                height={42}
                 className="max-w-full h-auto"
-                style={{ maxWidth: '130px' }}
+                style={{ maxWidth: '160px' }}
               />
               <p
                 className="text-sm"

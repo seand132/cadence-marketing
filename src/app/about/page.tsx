@@ -26,30 +26,7 @@ export default function AboutPage() {
             Our Story
           </div>
           {/* Founder avatar */}
-          <div
-            style={{
-              width: 80,
-              height: 80,
-              borderRadius: '50%',
-              background: '#C8782A',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              marginBottom: 24,
-            }}
-          >
-            <span
-              style={{
-                fontFamily: 'var(--font-dm-sans)',
-                fontWeight: 700,
-                fontSize: 28,
-                color: 'white',
-                letterSpacing: '0.02em',
-              }}
-            >
-              SD
-            </span>
-          </div>
+          <img src="https://whzwyvjerrsyqjmktxcg.supabase.co/storage/v1/object/public/avatars/06d4938c-f40d-46dd-b24c-3a2596e0c8a1/avatar.jpg?t=1773037991750" alt="Sean Davis" style={{ width: 96, height: 96, borderRadius: "50%", objectFit: "cover", marginBottom: 24, border: "3px solid #D0CAC0" }} />
           <h1
             style={{
               fontFamily: 'var(--font-dm-sans)',
