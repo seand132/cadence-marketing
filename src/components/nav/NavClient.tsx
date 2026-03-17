@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { label: 'Pricing', href: '/pricing' },
   { label: 'Blog', href: '/blog' },
   { label: 'About', href: '/about' },
+  { label: 'FAQ', href: '/faq' },
 ]
 
 export function NavClient() {
