@@ -445,7 +445,7 @@ export function PricingToggle() {
                 Enterprise tools
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 20px' }}>
-                {['Lattice / 15Five', 'Built for HR, not managers', '$15-25/user/month', 'Months to implement', 'Requires IT department'].map(
+                {['Enterprise HR platforms', 'Built for HR, not managers', '$15-25/user/month', 'Months to implement', 'Requires IT department'].map(
                   (item) => (
                     <li
                       key={item}
@@ -476,7 +476,7 @@ export function PricingToggle() {
                   color: '#9C968B',
                 }}
               >
-                $15-25/user/mo. For a team of 6, that&rsquo;s $90-150.
+                $15-25/user/mo — built for HR teams, not managers.
               </div>
             </div>
           </div>
