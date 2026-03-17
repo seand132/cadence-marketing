@@ -117,6 +117,21 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── RHYTHM MOTIF BAND — hero to dark panel transition ── */}
+      <div style={{ width: '100%', overflow: 'hidden', lineHeight: 0, background: '#F5F0E8' }} aria-hidden="true">
+        <svg width="100%" height="72" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <defs>
+            <pattern id="rhythm-hero" x="0" y="0" width="72" height="72" patternUnits="userSpaceOnUse">
+              <rect x="0"  y={72-44} width="10" height="44" rx="5" fill="#C8782A" />
+              <rect x="18" y={72-70} width="10" height="70" rx="5" fill="#3A7D7B" />
+              <rect x="36" y={72-56} width="10" height="56" rx="5" fill="#7B8F6A" />
+              <rect x="54" y={72-38} width="10" height="38" rx="5" fill="#C2604A" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="72" fill="url(#rhythm-hero)" />
+        </svg>
+      </div>
+
       {/* ─── PRODUCT SHOWCASE ─────────────────────────────────── */}
       {/* Product showcase — real screenshots */}
       <section style={{ background: '#1C1C1C', padding: '80px 0', overflow: 'hidden' }}>
@@ -398,6 +413,21 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ─── RHYTHM MOTIF BAND — footer ─────────────────────────── */}
+      <div style={{ width: '100%', overflow: 'hidden', lineHeight: 0 }} aria-hidden="true">
+        <svg width="100%" height="72" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <defs>
+            <pattern id="rhythm-footer" x="0" y="0" width="72" height="72" patternUnits="userSpaceOnUse">
+              <rect x="0"  y="28" width="10" height="44" rx="5" fill="#C8782A" />
+              <rect x="18" y="2"  width="10" height="70" rx="5" fill="#3A7D7B" />
+              <rect x="36" y="16" width="10" height="56" rx="5" fill="#7B8F6A" />
+              <rect x="54" y="34" width="10" height="38" rx="5" fill="#C2604A" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="72" fill="url(#rhythm-footer)" />
+        </svg>
+      </div>
 
       {/* ─── SECTION 6: CLOSING CTA ───────────────────────────── */}
       <section style={{ background: '#C8782A' }} className="py-20">
