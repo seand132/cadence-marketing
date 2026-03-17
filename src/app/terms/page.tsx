@@ -120,6 +120,15 @@ export default function TermsPage() {
 
             <div>
               <h2 style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 600, fontSize: 20, color: '#2C2C2C', marginBottom: 12 }}>
+                Data export and deletion
+              </h2>
+              <p>
+                When you cancel, you have 30 days to export your data. After 30 days, your data is permanently deleted.
+              </p>
+            </div>
+
+            <div>
+              <h2 style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 600, fontSize: 20, color: '#2C2C2C', marginBottom: 12 }}>
                 Service availability
               </h2>
               <p>
@@ -133,6 +142,15 @@ export default function TermsPage() {
               </h2>
               <p>
                 We may update these terms from time to time. If we make material changes, we will notify you by email at least 14 days before the changes take effect. Continued use of the service after that constitutes acceptance of the new terms.
+              </p>
+            </div>
+
+            <div>
+              <h2 style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 600, fontSize: 20, color: '#2C2C2C', marginBottom: 12 }}>
+                Dispute resolution
+              </h2>
+              <p>
+                Disputes will be resolved through binding arbitration in Arkansas. We&rsquo;ll always give 30 days notice of significant service changes.
               </p>
             </div>
 

@@ -192,7 +192,7 @@ export default function FeaturesPage() {
                     margin: 0,
                   }}
                 >
-                  Managers who hold weekly 1:1s report 20% higher team retention.
+                  Teams with consistent 1:1s see significantly higher retention and faster problem resolution. Cadence makes consistency the default.
                 </p>
               </div>
             </div>
@@ -933,6 +933,123 @@ export default function FeaturesPage() {
           </Link>
         </div>
       </section>
+
+      {/* ─── HOW THEY WORK TOGETHER ────────────────────────── */}
+      <section style={{ background: '#2C2C2C' }} className="py-24">
+        <div className="max-w-4xl mx-auto px-6">
+          <p
+            style={{
+              fontFamily: 'var(--font-dm-sans)',
+              fontWeight: 600,
+              fontSize: 11,
+              color: '#9C968B',
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase',
+              marginBottom: 16,
+              textAlign: 'center',
+            }}
+          >
+            How they work together
+          </p>
+          <h2
+            style={{
+              fontFamily: 'var(--font-dm-sans)',
+              fontWeight: 700,
+              fontSize: 'clamp(28px, 4vw, 40px)',
+              color: '#F5F0E8',
+              lineHeight: 1.2,
+              marginBottom: 48,
+              textAlign: 'center',
+            }}
+          >
+            A week in Cadence.
+          </h2>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+              gap: 24,
+            }}
+          >
+            {[
+              {
+                num: '1',
+                day: 'Monday',
+                desc: "Open your dashboard. See who's on track, who needs a nudge, what's due.",
+              },
+              {
+                num: '2',
+                day: 'Tuesday–Thursday',
+                desc: 'Run your 1:1s. Standing agenda, no prep required. Notes carry forward.',
+              },
+              {
+                num: '3',
+                day: 'Friday',
+                desc: "Check delegated tasks. Close the week knowing what moved and what didn't.",
+              },
+            ].map((step) => (
+              <div
+                key={step.num}
+                style={{
+                  background: 'rgba(255,255,255,0.06)',
+                  border: '1px solid rgba(255,255,255,0.1)',
+                  borderRadius: 8,
+                  padding: '28px 24px',
+                }}
+              >
+                <div
+                  style={{
+                    fontFamily: 'var(--font-dm-sans)',
+                    fontWeight: 700,
+                    fontSize: 36,
+                    color: '#C8782A',
+                    lineHeight: 1,
+                    marginBottom: 12,
+                  }}
+                >
+                  {step.num}
+                </div>
+                <p
+                  style={{
+                    fontFamily: 'var(--font-dm-sans)',
+                    fontWeight: 600,
+                    fontSize: 16,
+                    color: '#F5F0E8',
+                    marginBottom: 8,
+                  }}
+                >
+                  {step.day}
+                </p>
+                <p
+                  style={{
+                    fontFamily: 'var(--font-source-sans)',
+                    fontSize: 15,
+                    color: 'rgba(245,240,232,0.65)',
+                    lineHeight: 1.6,
+                    margin: 0,
+                  }}
+                >
+                  {step.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── WORKS WITH YOUR TOOLS ──────────────────────────── */}
+      <div style={{ background: '#F5F0E8', padding: '20px 24px', textAlign: 'center' }}>
+        <p
+          style={{
+            fontFamily: 'var(--font-source-sans)',
+            fontSize: 14,
+            color: '#9C968B',
+            margin: 0,
+          }}
+        >
+          Cadence works alongside Slack, Google Calendar, Zoom, and your existing tools. No migration required.
+        </p>
+      </div>
 
       {/* ─── RHYTHM DIVIDER 2 ─────────────────────────────────── */}
       <div style={{ width:'100%', overflow:'hidden', lineHeight:0, background:'#2C2C2C' }} aria-hidden="true">

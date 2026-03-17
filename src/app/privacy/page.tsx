@@ -59,7 +59,7 @@ export default function PrivacyPage() {
             Privacy Policy
           </h1>
           <p className="mt-4" style={{ fontFamily: 'var(--font-source-sans)', fontSize: 15, color: '#9C968B' }}>
-            Last updated: March 2026
+            Last updated: March 2026 &middot; Effective: March 18, 2026
           </p>
         </div>
       </section>
@@ -95,6 +95,9 @@ export default function PrivacyPage() {
               <p>
                 Your data is stored in Supabase with row-level security enabled. This means your team data is only accessible to you and the accounts you explicitly grant access to. We use encrypted connections (HTTPS) for all data in transit.
               </p>
+              <p className="mt-3">
+                Data is encrypted in transit (HTTPS/TLS) and at rest (AES-256 via Supabase). Stripe handles all payment data &mdash; we never store credit card numbers.
+              </p>
             </div>
 
             <div>
@@ -125,6 +128,45 @@ export default function PrivacyPage() {
                   hello@cadencehq.co
                 </a>{' '}
                 and we will respond within 5 business days.
+              </p>
+            </div>
+
+            <div>
+              <h2 style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 600, fontSize: 20, color: '#2C2C2C', marginBottom: 12 }}>
+                Data retention
+              </h2>
+              <p>
+                <strong style={{ color: '#2C2C2C' }}>DATA RETENTION</strong> &mdash; When you cancel your account, we delete your workspace data within 30 days. Backups are purged within 60 days. You can request immediate deletion at{' '}
+                <a href="mailto:privacy@cadencehq.co" style={{ color: '#C8782A', textDecoration: 'underline' }}>
+                  privacy@cadencehq.co
+                </a>
+                .
+              </p>
+            </div>
+
+            <div>
+              <h2 style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 600, fontSize: 20, color: '#2C2C2C', marginBottom: 12 }}>
+                EU users (GDPR)
+              </h2>
+              <p>
+                <strong style={{ color: '#2C2C2C' }}>EU USERS</strong> &mdash; If you&rsquo;re in the European Economic Area, you have rights under GDPR including access, correction, erasure, and data portability. Contact{' '}
+                <a href="mailto:privacy@cadencehq.co" style={{ color: '#C8782A', textDecoration: 'underline' }}>
+                  privacy@cadencehq.co
+                </a>{' '}
+                to exercise these rights.
+              </p>
+            </div>
+
+            <div>
+              <h2 style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 600, fontSize: 20, color: '#2C2C2C', marginBottom: 12 }}>
+                California users (CCPA)
+              </h2>
+              <p>
+                <strong style={{ color: '#2C2C2C' }}>CALIFORNIA USERS</strong> &mdash; Under CCPA, you have the right to know what personal data we collect and to request deletion. We do not sell personal information. Contact{' '}
+                <a href="mailto:privacy@cadencehq.co" style={{ color: '#C8782A', textDecoration: 'underline' }}>
+                  privacy@cadencehq.co
+                </a>
+                .
               </p>
             </div>
 

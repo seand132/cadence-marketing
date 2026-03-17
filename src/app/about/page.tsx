@@ -25,6 +25,31 @@ export default function AboutPage() {
           >
             Our Story
           </div>
+          {/* Founder avatar */}
+          <div
+            style={{
+              width: 80,
+              height: 80,
+              borderRadius: '50%',
+              background: '#C8782A',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              marginBottom: 24,
+            }}
+          >
+            <span
+              style={{
+                fontFamily: 'var(--font-dm-sans)',
+                fontWeight: 700,
+                fontSize: 28,
+                color: 'white',
+                letterSpacing: '0.02em',
+              }}
+            >
+              SD
+            </span>
+          </div>
           <h1
             style={{
               fontFamily: 'var(--font-dm-sans)',
@@ -118,6 +143,25 @@ export default function AboutPage() {
             }}
           >
             Sean Davis, Founder
+          </p>
+        </div>
+      </section>
+
+      {/* ─── BUSINESS MODEL ──────────────────────────────────── */}
+      <section style={{ background: '#FDF6EE' }} className="py-12">
+        <div className="max-w-2xl mx-auto px-6">
+          <p
+            style={{
+              fontFamily: 'var(--font-source-sans)',
+              fontSize: 17,
+              color: '#9C968B',
+              lineHeight: 1.8,
+              borderLeft: '4px solid #C8782A',
+              paddingLeft: 20,
+              margin: 0,
+            }}
+          >
+            Cadence is bootstrapped and independent. We charge $10/month because that&rsquo;s what keeps us focused &mdash; not on growth rounds, not on enterprise upsells, but on building the right tools for managers who just want a system that works.
           </p>
         </div>
       </section>
@@ -222,21 +266,32 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ─── THE GAP WE FILL ──────────────────────────────────── */}
-      <section style={{ background: 'white' }} className="py-20">
+      {/* ─── WHAT'S COMING ────────────────────────────────────── */}
+      <section style={{ background: '#2C2C2C' }} className="py-20">
         <div className="max-w-4xl mx-auto px-6">
           <h2
             style={{
               fontFamily: 'var(--font-dm-sans)',
               fontWeight: 700,
               fontSize: 28,
-              color: '#2C2C2C',
+              color: '#F5F0E8',
+              textAlign: 'center',
+              marginBottom: 8,
+            }}
+          >
+            What&rsquo;s coming
+          </h2>
+          <p
+            style={{
+              fontFamily: 'var(--font-source-sans)',
+              fontSize: 16,
+              color: 'rgba(245,240,232,0.6)',
               textAlign: 'center',
               marginBottom: 40,
             }}
           >
-            The gap we fill
-          </h2>
+            The product is alive. Here&rsquo;s what&rsquo;s on the roadmap.
+          </p>
           <div
             style={{
               display: 'grid',
@@ -247,80 +302,163 @@ export default function AboutPage() {
             {[
               {
                 accent: '#C8782A',
-                icon: '📋',
-                headline: 'More than a spreadsheet.',
-                body: 'Spreadsheets don&rsquo;t send you reminders. They don&rsquo;t connect your 1:1s to your goals. They don&rsquo;t tell you when someone is quietly struggling. Cadence does.',
+                title: '1:1 templates',
+                body: 'Pre-built agendas for new hire check-ins, performance conversations, and more. Coming Q2 2026.',
               },
               {
                 accent: '#3A7D7B',
-                icon: '🎯',
-                headline: 'Less than enterprise.',
-                body: 'You don&rsquo;t need six modules, three months of onboarding, or an IT ticket. You need something you can open on Monday morning and actually use.',
+                title: 'Slack integration',
+                body: 'Nudges and task updates where your team already is. Coming Q3 2026.',
               },
               {
                 accent: '#7B8F6A',
-                icon: '👥',
-                headline: 'Built for your team size.',
-                body: 'Built for managers with 3 to 8 people. Not 3,000. The right amount of structure for the right amount of team.',
+                title: 'Team sentiment',
+                body: 'Lightweight weekly pulse to surface how your team is actually feeling. Coming Q3 2026.',
               },
             ].map((item) => (
               <div
-                key={item.headline}
+                key={item.title}
                 style={{
-                  background: '#F5F0E8',
-                  border: '1px solid #D0CAC0',
+                  background: 'rgba(255,255,255,0.05)',
+                  border: '1px solid rgba(255,255,255,0.1)',
                   borderRadius: 8,
-                  padding: '28px 24px',
+                  overflow: 'hidden',
                 }}
               >
-                <div
-                  style={{
-                    width: 48,
-                    height: 48,
-                    borderRadius: 10,
-                    background: 'white',
-                    border: '1px solid #D0CAC0',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: 22,
-                    marginBottom: 16,
-                  }}
-                >
-                  {item.icon}
+                <div style={{ height: 4, background: item.accent }} />
+                <div style={{ padding: '24px 24px 28px' }}>
+                  <h3
+                    style={{
+                      fontFamily: 'var(--font-dm-sans)',
+                      fontWeight: 700,
+                      fontSize: 16,
+                      color: '#F5F0E8',
+                      marginBottom: 10,
+                    }}
+                  >
+                    {item.title}
+                  </h3>
+                  <p
+                    style={{
+                      fontFamily: 'var(--font-source-sans)',
+                      fontSize: 14,
+                      color: 'rgba(245,240,232,0.6)',
+                      lineHeight: 1.7,
+                      margin: 0,
+                    }}
+                  >
+                    {item.body}
+                  </p>
                 </div>
-                <div
-                  style={{
-                    width: 32,
-                    height: 3,
-                    background: item.accent,
-                    borderRadius: 2,
-                    marginBottom: 12,
-                  }}
-                />
-                <h3
-                  style={{
-                    fontFamily: 'var(--font-dm-sans)',
-                    fontWeight: 700,
-                    fontSize: 16,
-                    color: '#2C2C2C',
-                    marginBottom: 10,
-                  }}
-                >
-                  {item.headline}
-                </h3>
-                <p
-                  style={{
-                    fontFamily: 'var(--font-source-sans)',
-                    fontSize: 14,
-                    color: '#9C968B',
-                    lineHeight: 1.7,
-                    margin: 0,
-                  }}
-                  dangerouslySetInnerHTML={{ __html: item.body }}
-                />
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── BUILT IN PUBLIC ─────────────────────────────────── */}
+      <section style={{ background: 'white' }} className="py-20">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2
+            style={{
+              fontFamily: 'var(--font-dm-sans)',
+              fontWeight: 700,
+              fontSize: 28,
+              color: '#2C2C2C',
+              textAlign: 'center',
+              marginBottom: 12,
+            }}
+          >
+            Built in public. Improving every week.
+          </h2>
+          <p
+            style={{
+              fontFamily: 'var(--font-source-sans)',
+              fontSize: 17,
+              color: '#9C968B',
+              textAlign: 'center',
+              marginBottom: 40,
+            }}
+          >
+            Launched March 2026. We ship weekly and share what we&rsquo;re working on.
+          </p>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+              gap: 20,
+            }}
+          >
+            <a
+              href="https://x.com/seand132"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'block',
+                background: '#F5F0E8',
+                border: '1px solid #D0CAC0',
+                borderRadius: 8,
+                padding: '28px 24px',
+                textDecoration: 'none',
+              }}
+            >
+              <p
+                style={{
+                  fontFamily: 'var(--font-dm-sans)',
+                  fontWeight: 700,
+                  fontSize: 16,
+                  color: '#2C2C2C',
+                  marginBottom: 8,
+                }}
+              >
+                Follow along on X @seand132
+              </p>
+              <p
+                style={{
+                  fontFamily: 'var(--font-source-sans)',
+                  fontSize: 14,
+                  color: '#9C968B',
+                  lineHeight: 1.6,
+                  margin: 0,
+                }}
+              >
+                Building Cadence in the open. Progress, mistakes, and everything in between.
+              </p>
+            </a>
+            <a
+              href="https://app.cadencehq.co/signup"
+              style={{
+                display: 'block',
+                background: '#F5F0E8',
+                border: '1px solid #D0CAC0',
+                borderRadius: 8,
+                padding: '28px 24px',
+                textDecoration: 'none',
+              }}
+            >
+              <p
+                style={{
+                  fontFamily: 'var(--font-dm-sans)',
+                  fontWeight: 700,
+                  fontSize: 16,
+                  color: '#2C2C2C',
+                  marginBottom: 8,
+                }}
+              >
+                Try it and tell us what&rsquo;s broken
+              </p>
+              <p
+                style={{
+                  fontFamily: 'var(--font-source-sans)',
+                  fontSize: 14,
+                  color: '#9C968B',
+                  lineHeight: 1.6,
+                  margin: 0,
+                }}
+              >
+                14-day free trial. Real feedback makes Cadence better for everyone.
+              </p>
+            </a>
           </div>
         </div>
       </section>

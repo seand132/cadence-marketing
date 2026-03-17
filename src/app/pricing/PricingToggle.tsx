@@ -4,11 +4,15 @@ import { useState } from 'react'
 import Link from 'next/link'
 
 const planFeaturesAll = [
-  'Unlimited 1:1 meeting agendas',
-  'Task delegation and tracking',
-  'Team dashboard and org chart',
+  'Unlimited 1:1 meeting agendas (context carries forward automatically)',
+  'Task delegation and real-time tracking',
+  'Team dashboard with on-track/off-track status',
   'KPI and goal tracking',
-  'Up to 15 team members',
+  'Org chart and reporting structure',
+  'Customizable weekly dashboard',
+  'Up to 15 direct reports included',
+  '14-day free trial, full access',
+  'Cancel anytime, no contracts',
   'Email support',
 ]
 
@@ -41,10 +45,10 @@ const faqs = [
 
 export function PricingToggle() {
   const [annual, setAnnual] = useState(false)
-  const [openFaq, setOpenFaq] = useState<number | null>(null)
+  const [openFaq, setOpenFaq] = useState<number | null | Set<number>>(new Set([0, 1]))
 
   const price = annual ? 8 : 10
-  const billed = annual ? 'Billed annually ($96/yr)' : 'Billed monthly'
+  const billed = annual ? 'Billed as $96/year — save $24' : 'Billed monthly'
 
   return (
     <>
@@ -483,6 +487,39 @@ export function PricingToggle() {
         </div>
       </div>
 
+      {/* ── Mid-page CTA ──────────────────────────────────── */}
+      <div style={{ textAlign: 'center', marginBottom: 80 }}>
+        <p
+          style={{
+            fontFamily: 'var(--font-dm-sans)',
+            fontSize: 18,
+            fontWeight: 500,
+            color: '#2C2C2C',
+            marginBottom: 16,
+          }}
+        >
+          Convinced?
+        </p>
+        <Link
+          href="https://app.cadencehq.co/signup"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '14px 32px',
+            background: '#C8782A',
+            color: 'white',
+            borderRadius: 4,
+            fontFamily: 'var(--font-dm-sans)',
+            fontWeight: 600,
+            fontSize: 15,
+            textDecoration: 'none',
+          }}
+        >
+          Get started free
+        </Link>
+      </div>
+
       {/* ── FAQ Accordion ─────────────────────────────────── */}
       <div style={{ maxWidth: 640, margin: '0 auto' }}>
         <h2
@@ -509,7 +546,15 @@ export function PricingToggle() {
               }}
             >
               <button
-                onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                onClick={() => {
+                  if (openFaq instanceof Set) {
+                    const next = new Set(openFaq)
+                    if (next.has(i)) { next.delete(i) } else { next.add(i) }
+                    setOpenFaq(next)
+                  } else {
+                    setOpenFaq(openFaq === i ? null : i)
+                  }
+                }}
                 style={{
                   width: '100%',
                   padding: '16px 20px',
@@ -539,14 +584,14 @@ export function PricingToggle() {
                     color: '#9C968B',
                     lineHeight: 1,
                     transition: 'transform 200ms ease',
-                    transform: openFaq === i ? 'rotate(45deg)' : 'none',
+                    transform: (openFaq instanceof Set ? openFaq.has(i) : openFaq === i) ? 'rotate(45deg)' : 'none',
                     flexShrink: 0,
                   }}
                 >
                   +
                 </span>
               </button>
-              {openFaq === i && (
+              {(openFaq instanceof Set ? openFaq.has(i) : openFaq === i) && (
                 <div
                   style={{
                     padding: '0 20px 18px',
