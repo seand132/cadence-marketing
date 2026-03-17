@@ -12,18 +12,17 @@ export default function Home() {
     <>
       {/* ─── SECTION 1: HERO ──────────────────────────────────── */}
       <section style={{ background: '#F5F0E8', position: 'relative', overflow: 'hidden' }} className="py-24">
-        {/* Rhythm motif decorative background — right edge */}
-        <div style={{ position: 'absolute', right: 40, top: '50%', transform: 'translateY(-50%)', display: 'flex', gap: 16, pointerEvents: 'none', zIndex: 0 }}>
-          <RhythmMotif scale={1} opacity={0.08} color="#C8782A" />
-          <div style={{ marginTop: 48 }}><RhythmMotif scale={1} opacity={0.06} color="#3A7D7B" /></div>
-          <RhythmMotif scale={1} opacity={0.05} color="#7B8F6A" />
-        </div>
+        <style>{`
+          @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+          }
+        `}</style>
 
         <div className="max-w-6xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-16" style={{ position: 'relative', zIndex: 1 }}>
 
           {/* Left */}
           <div className="flex-1 max-w-xl">
-            {/* Badge */}
             <div
               className="inline-flex mb-6 px-3 py-1 rounded-full uppercase"
               style={{
@@ -83,130 +82,144 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Right — Product Mockup matching real Cadence dashboard */}
+          {/* Right — Full browser mockup matching real Cadence dashboard */}
           <div className="flex-1 flex justify-center lg:justify-end w-full">
+            {/* Browser chrome */}
             <div style={{
-              background: '#F5F0E8',
               borderRadius: 12,
-              border: '1px solid #D0CAC0',
-              boxShadow: '0 4px 24px rgba(0,0,0,0.10)',
-              maxWidth: 380,
-              width: '100%',
-              animation: 'float 4s ease-in-out infinite',
               overflow: 'hidden',
-              fontFamily: 'var(--font-dm-sans)'
+              boxShadow: '0 20px 60px rgba(0,0,0,0.15)',
+              border: '1px solid #D0CAC0',
+              maxWidth: 520,
+              width: '100%',
+              animation: 'float 4s ease-in-out infinite'
             }}>
-              {/* Amber header bar like the real app greeting header */}
-              <div style={{ background: '#C8782A', padding: '14px 16px', position: 'relative', overflow: 'hidden' }}>
-                {/* Decorative ascending bars (from real app stat card motif) */}
-                <svg style={{ position: 'absolute', bottom: 0, right: 0, opacity: 0.2 }} width="56" height="40" viewBox="0 0 56 48" fill="white">
-                  <rect x="0" y="32" width="7" height="16" rx="2"/>
-                  <rect x="11" y="22" width="7" height="26" rx="2"/>
-                  <rect x="22" y="13" width="7" height="35" rx="2"/>
-                  <rect x="33" y="5" width="7" height="43" rx="2"/>
-                  <rect x="44" y="0" width="7" height="48" rx="2"/>
-                </svg>
-                <div style={{ fontSize: 10, color: 'rgba(255,255,255,0.7)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 2 }}>Good morning</div>
-                <div style={{ fontSize: 16, fontWeight: 700, color: 'white' }}>Sarah <span style={{ color: 'rgba(255,255,255,0.6)' }}>✦</span></div>
-                <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.7)', marginTop: 2 }}>You have 3 upcoming 1:1s this week.</div>
+              {/* Browser bar */}
+              <div style={{ background: '#EBE6DD', padding: '10px 16px', display: 'flex', alignItems: 'center', gap: 8, borderBottom: '1px solid #D0CAC0' }}>
+                <div style={{ display: 'flex', gap: 6 }}>
+                  <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#C2604A', opacity: 0.7 }}/>
+                  <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#C8782A', opacity: 0.7 }}/>
+                  <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#7B8F6A', opacity: 0.7 }}/>
+                </div>
+                <div style={{ flex: 1, background: 'white', borderRadius: 4, padding: '3px 10px', fontSize: 11, color: '#9C968B', fontFamily: 'var(--font-dm-sans)' }}>app.cadencehq.co</div>
               </div>
 
-              <div style={{ padding: '12px 14px' }}>
-                {/* Stat cards row — matches real app */}
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 12 }}>
-                  {/* Active Tasks — amber tint */}
-                  <div style={{ background: '#FDF6EE', borderRadius: 10, padding: '10px 10px 8px', position: 'relative', overflow: 'hidden' }}>
-                    <svg style={{ position: 'absolute', bottom: 0, right: 0, color: '#FAE8D0' }} width="36" height="32" viewBox="0 0 56 48" fill="currentColor">
-                      <rect x="0" y="32" width="7" height="16" rx="2"/>
-                      <rect x="11" y="22" width="7" height="26" rx="2"/>
-                      <rect x="22" y="13" width="7" height="35" rx="2"/>
-                      <rect x="33" y="5" width="7" height="43" rx="2"/>
-                      <rect x="44" y="0" width="7" height="48" rx="2"/>
+              {/* App chrome */}
+              <div style={{ display: 'flex', background: '#F5F0E8', height: 360 }}>
+
+                {/* Sidebar */}
+                <div style={{ width: 52, background: '#F5F0E8', borderRight: '1px solid #D0CAC0', padding: '16px 0', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20 }}>
+                  {/* Logo mark */}
+                  <img src="/brand/cadence-mark.svg" width="20" height="20" alt="" />
+                  {/* Dashboard — active */}
+                  <svg width="18" height="18" fill="none" stroke="#C8782A" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="4"/><polyline points="5,13 7.5,13 9.5,8 12,17 14.5,7 16.5,13 19,13"/></svg>
+                  {/* Tasks */}
+                  <svg width="18" height="18" fill="none" stroke="#9C968B" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="3"/><path d="M8.5 9.5l2 2 4-4.5"/><line x1="8.5" y1="15" x2="15.5" y2="15"/></svg>
+                  {/* 1:1s */}
+                  <svg width="18" height="18" fill="none" stroke="#9C968B" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><circle cx="8" cy="6.5" r="3"/><circle cx="16" cy="6.5" r="3"/><path d="M3 21c0-3.5 2-6.5 5-6.5h8c3 0 5 3 5 6.5"/></svg>
+                  {/* KPIs */}
+                  <svg width="18" height="18" fill="none" stroke="#9C968B" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M5 16.5A8.5 8.5 0 0119 16.5"/><line x1="12" y1="16.5" x2="15.5" y2="10.5"/><circle cx="12" cy="16.5" r="1.5" fill="#9C968B" stroke="none"/><line x1="3" y1="20" x2="21" y2="20"/></svg>
+                  {/* Team */}
+                  <svg width="18" height="18" fill="none" stroke="#9C968B" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="5" r="3"/><line x1="12" y1="8" x2="12" y2="11"/><line x1="6" y1="11" x2="18" y2="11"/><line x1="6" y1="11" x2="6" y2="14"/><line x1="18" y1="11" x2="18" y2="14"/><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/></svg>
+                </div>
+
+                {/* Main content */}
+                <div style={{ flex: 1, overflowY: 'hidden', padding: 0 }}>
+
+                  {/* Greeting header — amber with wave motif (variant 1 from real app) */}
+                  <div style={{ background: '#C8782A', padding: '14px 16px', position: 'relative', overflow: 'hidden' }}>
+                    <svg style={{ position: 'absolute', right: 0, top: 0, height: '100%', width: '50%', opacity: 0.3 }} viewBox="0 0 300 80" preserveAspectRatio="none" fill="none">
+                      <path d="M0 14 Q37 2 75 14 Q112 26 150 14 Q187 2 225 14 Q262 26 300 14" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
+                      <path d="M0 32 Q37 20 75 32 Q112 44 150 32 Q187 20 225 32 Q262 44 300 32" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
+                      <path d="M0 50 Q37 38 75 50 Q112 62 150 50 Q187 38 225 50 Q262 62 300 50" stroke="white" strokeWidth="2" strokeLinecap="round"/>
                     </svg>
-                    <div style={{ width: 24, height: 24, borderRadius: 7, background: '#FAE8D0', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 6 }}>
-                      <svg width="13" height="13" fill="none" stroke="#C8782A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                        <polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
-                      </svg>
+                    <div style={{ position: 'relative', zIndex: 1 }}>
+                      <div style={{ fontSize: 10, color: 'rgba(255,255,255,0.7)', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', fontFamily: 'var(--font-dm-sans)' }}>Good morning</div>
+                      <div style={{ fontSize: 15, fontWeight: 700, color: 'white', fontFamily: 'var(--font-dm-sans)' }}>Sarah <span style={{ color: 'rgba(255,255,255,0.5)' }}>✦</span></div>
+                      <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.75)', fontFamily: 'var(--font-source-sans)' }}>3 upcoming 1:1s this week.</div>
                     </div>
-                    <div style={{ fontSize: 20, fontWeight: 700, color: '#A86022', lineHeight: 1 }}>8</div>
-                    <div style={{ fontSize: 10, color: '#9C968B', fontWeight: 500, marginTop: 2 }}>Active Tasks</div>
                   </div>
-                  {/* Overdue — terracotta tint */}
-                  <div style={{ background: '#FAEAE7', borderRadius: 10, padding: '10px 10px 8px' }}>
-                    <div style={{ width: 24, height: 24, borderRadius: 7, background: '#F5D5CF', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 6 }}>
-                      <svg width="13" height="13" fill="none" stroke="#C2604A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
-                      </svg>
-                    </div>
-                    <div style={{ fontSize: 20, fontWeight: 700, color: '#C2604A', lineHeight: 1 }}>2</div>
-                    <div style={{ fontSize: 10, color: '#9C968B', fontWeight: 500, marginTop: 2 }}>Overdue</div>
-                  </div>
-                </div>
 
-                {/* My Work section — task list */}
-                <div style={{ marginBottom: 8 }}>
-                  <div style={{ fontSize: 10, fontWeight: 600, color: '#9C968B', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>My Work</div>
-                  {[
-                    { text: 'Q2 goal review with Jordan', priority: '#C8782A', due: 'Today' },
-                    { text: 'Share onboarding doc → Marcus', priority: '#7B8F6A', due: 'Tomorrow' },
-                    { text: "Tyler's project proposal", priority: '#C2604A', due: '2 days ago' },
-                  ].map((task, i) => (
-                    <div key={i} style={{
-                      display: 'flex', alignItems: 'center', gap: 8,
-                      padding: '6px 8px 6px 10px',
-                      background: 'white', borderRadius: '0 6px 6px 0',
-                      marginBottom: 4,
-                      border: '1px solid #D0CAC0',
-                      borderLeft: `3px solid ${task.priority}`
-                    }}>
-                      <span style={{ flex: 1, fontSize: 11, color: '#2C2C2C', fontFamily: 'var(--font-source-sans)' }}>{task.text}</span>
-                      <span style={{ fontSize: 9, color: '#9C968B', whiteSpace: 'nowrap' }}>{task.due}</span>
-                    </div>
-                  ))}
-                </div>
+                  <div style={{ padding: '12px 14px', overflowY: 'auto', maxHeight: 290 }}>
 
-                {/* Next 1:1 */}
-                <div style={{ background: 'white', borderRadius: 8, border: '1px solid #D0CAC0', padding: '8px 10px', display: 'flex', alignItems: 'center', gap: 8 }}>
-                  <div style={{ width: 28, height: 28, borderRadius: '50%', background: '#FDF6EE', color: '#C8782A', fontSize: 10, fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>AC</div>
-                  <div style={{ flex: 1 }}>
-                    <div style={{ fontSize: 11, fontWeight: 600, color: '#2C2C2C' }}>Alex Chen · 1:1</div>
-                    <div style={{ fontSize: 10, color: '#9C968B' }}>Tomorrow · 10:00 AM</div>
+                    {/* Stat cards — 2x2 grid */}
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 6, marginBottom: 12 }}>
+                      {/* Active Tasks - amber */}
+                      <div style={{ background: '#FDF6EE', borderRadius: 10, padding: '8px 10px', position: 'relative', overflow: 'hidden' }}>
+                        <svg style={{ position: 'absolute', bottom: 0, right: 0 }} width="36" height="30" viewBox="0 0 56 48" fill="#FAE8D0">
+                          <rect x="0" y="32" width="7" height="16" rx="2"/><rect x="11" y="22" width="7" height="26" rx="2"/><rect x="22" y="13" width="7" height="35" rx="2"/><rect x="33" y="5" width="7" height="43" rx="2"/><rect x="44" y="0" width="7" height="48" rx="2"/>
+                        </svg>
+                        <div style={{ width: 20, height: 20, borderRadius: 6, background: '#FAE8D0', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 4 }}>
+                          <svg width="11" height="11" fill="none" stroke="#C8782A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+                        </div>
+                        <div style={{ fontSize: 18, fontWeight: 700, color: '#A86022', lineHeight: 1, fontFamily: 'var(--font-dm-sans)' }}>12</div>
+                        <div style={{ fontSize: 9, color: '#9C968B', fontWeight: 500, fontFamily: 'var(--font-dm-sans)' }}>Active Tasks</div>
+                      </div>
+                      {/* Overdue - terracotta */}
+                      <div style={{ background: '#FAEAE7', borderRadius: 10, padding: '8px 10px' }}>
+                        <div style={{ width: 20, height: 20, borderRadius: 6, background: '#F5D5CF', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 4 }}>
+                          <svg width="11" height="11" fill="none" stroke="#C2604A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        </div>
+                        <div style={{ fontSize: 18, fontWeight: 700, color: '#C2604A', lineHeight: 1, fontFamily: 'var(--font-dm-sans)' }}>2</div>
+                        <div style={{ fontSize: 9, color: '#9C968B', fontWeight: 500, fontFamily: 'var(--font-dm-sans)' }}>Overdue</div>
+                      </div>
+                      {/* Due This Week - surface */}
+                      <div style={{ background: '#EBE6DD', borderRadius: 10, padding: '8px 10px' }}>
+                        <div style={{ width: 20, height: 20, borderRadius: 6, background: '#DDD8CF', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 4 }}>
+                          <svg width="11" height="11" fill="none" stroke="#9C968B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </div>
+                        <div style={{ fontSize: 18, fontWeight: 700, color: '#2C2C2C', lineHeight: 1, fontFamily: 'var(--font-dm-sans)' }}>5</div>
+                        <div style={{ fontSize: 9, color: '#9C968B', fontWeight: 500, fontFamily: 'var(--font-dm-sans)' }}>Due This Week</div>
+                      </div>
+                      {/* Team Members - surface */}
+                      <div style={{ background: '#EBE6DD', borderRadius: 10, padding: '8px 10px' }}>
+                        <div style={{ width: 20, height: 20, borderRadius: 6, background: '#DDD8CF', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 4 }}>
+                          <svg width="11" height="11" fill="none" stroke="#9C968B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                        </div>
+                        <div style={{ fontSize: 18, fontWeight: 700, color: '#2C2C2C', lineHeight: 1, fontFamily: 'var(--font-dm-sans)' }}>4</div>
+                        <div style={{ fontSize: 9, color: '#9C968B', fontWeight: 500, fontFamily: 'var(--font-dm-sans)' }}>Team Members</div>
+                      </div>
+                    </div>
+
+                    {/* My Work task list */}
+                    <div style={{ marginBottom: 10 }}>
+                      <div style={{ fontSize: 10, fontWeight: 700, color: '#2C2C2C', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 6, fontFamily: 'var(--font-dm-sans)' }}>My Work</div>
+                      {[
+                        { text: 'Q2 goals review with Jordan', priority: '#C8782A', statusColor: '#A86022', statusBg: '#FAE8D0', due: 'Today' },
+                        { text: 'Share onboarding doc → Marcus', priority: '#7B8F6A', statusColor: '#5A7A4A', statusBg: '#EDF2EA', due: 'Tomorrow' },
+                        { text: "Tyler's project proposal feedback", priority: '#C2604A', statusColor: '#C2604A', statusBg: '#FAEAE7', due: '2d ago' },
+                      ].map((task, i) => (
+                        <div key={i} style={{
+                          display: 'flex', alignItems: 'center', gap: 6,
+                          padding: '5px 8px',
+                          background: 'white',
+                          borderRadius: '0 6px 6px 0',
+                          marginBottom: 3,
+                          border: '1px solid #E8E4DF',
+                          borderLeft: `2.5px solid ${task.priority}`
+                        }}>
+                          <span style={{ flex: 1, fontSize: 10, color: '#2C2C2C', fontFamily: 'var(--font-source-sans)', lineHeight: 1.3 }}>{task.text}</span>
+                          <span style={{ fontSize: 8, fontWeight: 600, color: task.statusColor, background: task.statusBg, padding: '1px 5px', borderRadius: 8, whiteSpace: 'nowrap', fontFamily: 'var(--font-dm-sans)' }}>{task.due}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Next 1:1 */}
+                    <div style={{ background: 'white', borderRadius: 8, border: '1px solid #D0CAC0', padding: '8px 10px', display: 'flex', alignItems: 'center', gap: 8 }}>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" width="28" height="28" style={{ borderRadius: '50%', objectFit: 'cover', flexShrink: 0 }} alt="Marcus" />
+                      <div style={{ flex: 1 }}>
+                        <div style={{ fontSize: 11, fontWeight: 600, color: '#2C2C2C', fontFamily: 'var(--font-dm-sans)' }}>Marcus Johnson · 1:1</div>
+                        <div style={{ fontSize: 10, color: '#9C968B', fontFamily: 'var(--font-source-sans)' }}>Tomorrow · 10:00 AM</div>
+                      </div>
+                      <div style={{ fontSize: 9, background: '#EDF2EA', color: '#7B8F6A', padding: '2px 6px', borderRadius: 10, fontWeight: 600, fontFamily: 'var(--font-dm-sans)' }}>Scheduled</div>
+                    </div>
                   </div>
-                  <div style={{ fontSize: 9, background: '#EDF2EA', color: '#7B8F6A', padding: '2px 6px', borderRadius: 10, fontWeight: 600 }}>Scheduled</div>
                 </div>
               </div>
             </div>
           </div>
 
-        </div>
-      </section>
-
-      {/* ─── SOCIAL PROOF STRIP ──────────────────────────────── */}
-      <section style={{ background: 'white', borderTop: '1px solid #D0CAC0', borderBottom: '1px solid #D0CAC0', padding: '20px 0' }}>
-        <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 24px', display: 'flex', alignItems: 'center', gap: 24, flexWrap: 'wrap', justifyContent: 'center' }}>
-          <span style={{ fontSize: 13, color: '#9C968B', fontFamily: 'var(--font-dm-sans)', fontWeight: 500 }}>Managers keeping their teams in rhythm</span>
-          <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-            {[
-              { initials: 'SR', name: 'Sarah', bg: '#FDF6EE', color: '#C8782A' },
-              { initials: 'MJ', name: 'Marcus', bg: '#EDF2EA', color: '#7B8F6A' },
-              { initials: 'KL', name: 'Kim', bg: '#E8F4F3', color: '#3A7D7B' },
-              { initials: 'DP', name: 'Diego', bg: '#FDF6EE', color: '#C8782A' },
-              { initials: 'AN', name: 'Aisha', bg: '#EDF2EA', color: '#7B8F6A' },
-            ].map(p => (
-              <div key={p.initials} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
-                <div style={{
-                  width: 40, height: 40, borderRadius: '50%',
-                  background: p.bg, color: p.color,
-                  fontSize: 13, fontWeight: 700,
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontFamily: 'var(--font-dm-sans)',
-                  border: '2px solid white',
-                  boxShadow: '0 1px 4px rgba(0,0,0,0.12)'
-                }}>{p.initials}</div>
-                <span style={{ fontSize: 11, color: '#9C968B', fontFamily: 'var(--font-dm-sans)' }}>{p.name}</span>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -304,7 +317,6 @@ export default function Home() {
                   overflow: 'hidden',
                 }}
               >
-                {/* Colored top strip */}
                 <div style={{ height: 6, background: f.strip }} />
                 <div className="p-6">
                   <h3
@@ -323,6 +335,43 @@ export default function Home() {
                   >
                     {f.body}
                   </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── TESTIMONIALS ─────────────────────────────────────── */}
+      <section style={{ background: 'white', padding: '40px 0', borderTop: '1px solid #D0CAC0' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 24px' }}>
+          <div style={{ textAlign: 'center', marginBottom: 28 }}>
+            <div style={{ fontSize: 12, fontWeight: 600, color: '#9C968B', textTransform: 'uppercase', letterSpacing: '0.1em', fontFamily: 'var(--font-dm-sans)', marginBottom: 8 }}>Managers finding their rhythm</div>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+            {[
+              {
+                quote: "I used to dread 1:1s. Now I actually look forward to them — Cadence gives me a structure that works.",
+                name: "Sarah R.", role: "Engineering Manager", img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=80&h=80&fit=crop&crop=face"
+              },
+              {
+                quote: "The task delegation view alone is worth it. I always know what's moving and what needs a nudge.",
+                name: "Marcus J.", role: "Operations Lead", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face"
+              },
+              {
+                quote: "Finally a management tool that doesn't feel like it was built for an HR department.",
+                name: "Aisha N.", role: "Product Manager", img: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=80&h=80&fit=crop&crop=face"
+              }
+            ].map((t, i) => (
+              <div key={i} style={{ background: '#F5F0E8', borderRadius: 10, padding: '20px', border: '1px solid #D0CAC0' }}>
+                <div style={{ fontSize: 13, color: '#2C2C2C', fontFamily: 'var(--font-source-sans)', lineHeight: 1.6, marginBottom: 16, fontStyle: 'italic' }}>&ldquo;{t.quote}&rdquo;</div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={t.img} width="36" height="36" style={{ borderRadius: '50%', objectFit: 'cover' }} alt={t.name} />
+                  <div>
+                    <div style={{ fontSize: 13, fontWeight: 600, color: '#2C2C2C', fontFamily: 'var(--font-dm-sans)' }}>{t.name}</div>
+                    <div style={{ fontSize: 11, color: '#9C968B', fontFamily: 'var(--font-source-sans)' }}>{t.role}</div>
+                  </div>
                 </div>
               </div>
             ))}
@@ -384,7 +433,6 @@ export default function Home() {
 
       {/* ─── SECTION 5: PRICING TEASER ────────────────────────── */}
       <section style={{ background: '#F5F0E8', position: 'relative', overflow: 'hidden' }} className="py-20">
-        {/* Background motif */}
         <div style={{ position: 'absolute', right: 60, top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none', opacity: 0.6 }}>
           <RhythmMotif scale={0.7} color="#C8782A" opacity={0.08} />
         </div>
@@ -398,7 +446,6 @@ export default function Home() {
               overflow: 'hidden',
             }}
           >
-            {/* Amber top strip */}
             <div style={{ height: 6, background: '#C8782A' }} />
             <div className="p-8">
               <div
