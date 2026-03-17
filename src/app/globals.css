@@ -50,3 +50,11 @@ details[open] summary .faq-arrow {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* Hide hamburger on desktop — overrides inline display:flex */
+@media (min-width: 768px) {
+  button[aria-label="Open menu"],
+  button[aria-label="Close menu"] {
+    display: none !important;
+  }
+}
