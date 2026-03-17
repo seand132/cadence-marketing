@@ -5,6 +5,16 @@ import Link from 'next/link'
 
 const categories = ['All', '1:1s', 'Delegation', 'Team Culture', 'KPIs', 'Management']
 
+// Category → kicker label + color
+const KICKER_MAP: Record<string, { label: string; color: string }> = {
+  '1:1s':         { label: 'One-on-Ones ·',  color: '#7A9E82' },
+  'Delegation':   { label: 'Delegation ·',   color: '#1C2B3A' },
+  'Team Culture': { label: 'Team Culture ·', color: '#C8782A' },
+  'KPIs':         { label: 'Performance ·',  color: '#1C2B3A' },
+  'Management':   { label: 'Framework ·',    color: '#7A9E82' },
+  'Feedback':     { label: 'Feedback ·',     color: '#C8782A' },
+}
+
 const gridPosts = [
   {
     slug: 'how-to-delegate-without-losing-control',
@@ -12,8 +22,7 @@ const gridPosts = [
     category: 'Delegation',
     readTime: '8 min read',
     date: 'Mar 10, 2025',
-    excerpt:
-      "You know you should delegate more. You don't. Here's the real reason, and a framework that actually works.",
+    excerpt: "You know you should delegate more. You don't. Here's the real reason, and a framework that actually works.",
   },
   {
     slug: 'what-to-track-when-you-manage-a-small-team',
@@ -21,8 +30,7 @@ const gridPosts = [
     category: 'KPIs',
     readTime: '7 min read',
     date: 'Mar 3, 2025',
-    excerpt:
-      "You're either tracking the wrong things or nothing at all. Here's what actually matters for a team of 3 to 8.",
+    excerpt: "You're either tracking the wrong things or nothing at all. Here's what actually matters for a team of 3 to 8.",
   },
   {
     slug: 'how-to-give-feedback-your-team-will-hear',
@@ -30,8 +38,7 @@ const gridPosts = [
     category: 'Team Culture',
     readTime: '7 min read',
     date: 'Feb 24, 2025',
-    excerpt:
-      "Feedback doesn't fail because managers don't give it. It fails because they don't know how. That's fixable.",
+    excerpt: "Feedback doesn't fail because managers don't give it. It fails because they don't know how. That's fixable.",
   },
   {
     slug: 'building-team-culture-without-the-corporate-playbook',
@@ -39,8 +46,7 @@ const gridPosts = [
     category: 'Team Culture',
     readTime: '8 min read',
     date: 'Feb 17, 2025',
-    excerpt:
-      "Culture isn't built at off-sites. It's built in the small decisions you make every day as a manager.",
+    excerpt: "Culture isn't built at off-sites. It's built in the small decisions you make every day as a manager.",
   },
   {
     slug: 'management-in-rhythm',
@@ -64,8 +70,7 @@ const gridPosts = [
     category: 'Management',
     readTime: '6 min read',
     date: 'Jan 27, 2025',
-    excerpt:
-      "Most management tools are built for HR, not managers. Here's why that matters and what to look for instead.",
+    excerpt: "Most management tools are built for HR, not managers. Here's why that matters and what to look for instead.",
   },
 ]
 
@@ -85,9 +90,9 @@ export default function BlogFilterGrid() {
               <button
                 key={cat}
                 onClick={() => setActiveFilter(cat)}
-                className="px-4 py-2 rounded-full text-sm"
+                className="px-4 py-2 rounded-full text-sm transition-all"
                 style={{
-                  background: activeFilter === cat ? '#C8782A' : '#F5F0E8',
+                  background: activeFilter === cat ? '#1C2B3A' : '#F5F0E8',
                   color: activeFilter === cat ? 'white' : '#6B6560',
                   fontFamily: 'var(--font-dm-sans)',
                   fontWeight: activeFilter === cat ? 600 : 500,
@@ -108,82 +113,101 @@ export default function BlogFilterGrid() {
         <div className="max-w-4xl mx-auto px-6">
           <div className="grid sm:grid-cols-2 gap-6">
             {filteredPosts.map((post, idx) => {
+              const kicker = KICKER_MAP[post.category] ?? { label: 'Article ·', color: '#7A9E82' }
               const isOrphan = filteredPosts.length % 2 !== 0 && idx === filteredPosts.length - 1
               return (
-              <Link
-                key={post.slug}
-                href={`/blog/${post.slug}`}
-                className="block"
-                style={{
-                  borderRadius: 8,
-                  border: '1px solid #D0CAC0',
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.07)',
-                  overflow: 'hidden',
-                  textDecoration: 'none',
-                  background: 'white',
-                  ...(isOrphan ? { gridColumn: '1 / -1', maxWidth: '50%', margin: '0 auto', width: '100%' } : {}),
-                }}
-              >
-                <div style={{ height: 6, background: '#C8782A' }} />
-                <div className="p-7">
-                  <div className="mb-3">
-                    <span
-                      className="px-2.5 py-0.5 rounded-full text-xs font-semibold uppercase"
+                <Link
+                  key={post.slug}
+                  href={`/blog/${post.slug}`}
+                  className="block group"
+                  style={{
+                    borderRadius: 10,
+                    border: '1px solid #D0CAC0',
+                    overflow: 'hidden',
+                    textDecoration: 'none',
+                    background: '#FAFAF8',
+                    transition: 'border-color 0.15s, box-shadow 0.15s',
+                    ...(isOrphan ? { gridColumn: '1 / -1', maxWidth: '50%', margin: '0 auto', width: '100%' } : {}),
+                  }}
+                >
+                  <div className="p-7">
+                    {/* Kicker */}
+                    <p
+                      className="mb-2"
                       style={{
-                        background: '#FEF3E2',
-                        color: '#C8782A',
                         fontFamily: 'var(--font-dm-sans)',
-                        letterSpacing: '0.06em',
+                        fontWeight: 700,
+                        fontSize: 10,
+                        letterSpacing: '0.12em',
+                        textTransform: 'uppercase',
+                        color: kicker.color,
                       }}
                     >
-                      {post.category}
-                    </span>
-                  </div>
-                  <h2
-                    className="mb-3"
-                    style={{
-                      fontFamily: 'var(--font-dm-sans)',
-                      fontWeight: 600,
-                      fontSize: 17,
-                      color: '#2C2C2C',
-                      lineHeight: 1.3,
-                    }}
-                  >
-                    {post.title}
-                  </h2>
-                  <p
-                    className="mb-5"
-                    style={{
-                      fontFamily: 'var(--font-source-sans)',
-                      fontSize: 15,
-                      color: '#6B6560',
-                      lineHeight: 1.65,
-                    }}
-                  >
-                    {post.excerpt}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <span style={{ fontFamily: 'var(--font-dm-sans)', fontSize: 13, color: '#9C968B' }}>
-                      {post.readTime} · {post.date}
-                    </span>
-                    <span
-                      className="inline-flex items-center gap-1 text-sm font-semibold"
-                      style={{ color: '#C8782A', fontFamily: 'var(--font-dm-sans)' }}
+                      {kicker.label}
+                    </p>
+                    {/* Title */}
+                    <h2
+                      className="mb-3"
+                      style={{
+                        fontFamily: 'var(--font-dm-sans)',
+                        fontWeight: 600,
+                        fontSize: 17,
+                        color: '#2C2C2C',
+                        lineHeight: 1.3,
+                      }}
                     >
-                      Read
-                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                        <path
-                          d="M3 7h8M8 4l3 3-3 3"
-                          stroke="#C8782A"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </span>
+                      {post.title}
+                    </h2>
+                    {/* Excerpt */}
+                    <p
+                      className="mb-5"
+                      style={{
+                        fontFamily: 'var(--font-source-sans)',
+                        fontSize: 15,
+                        color: '#6B6560',
+                        lineHeight: 1.65,
+                      }}
+                    >
+                      {post.excerpt}
+                    </p>
+                    {/* Footer row */}
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        {/* Author avatar */}
+                        <div
+                          style={{
+                            width: 24,
+                            height: 24,
+                            borderRadius: '50%',
+                            background: '#C8782A',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            fontFamily: 'var(--font-dm-sans)',
+                            fontWeight: 700,
+                            fontSize: 9,
+                            color: 'white',
+                            flexShrink: 0,
+                          }}
+                        >
+                          SD
+                        </div>
+                        <span style={{ fontFamily: 'var(--font-dm-sans)', fontSize: 12, color: '#9C968B' }}>
+                          Sean Davis · {post.readTime}
+                        </span>
+                      </div>
+                      <span
+                        className="inline-flex items-center gap-1 text-xs font-semibold"
+                        style={{ color: '#C8782A', fontFamily: 'var(--font-dm-sans)' }}
+                      >
+                        Read
+                        <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                          <path d="M2.5 6.5h8M7.5 4l3 2.5-3 2.5" stroke="#C8782A" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </span>
+                    </div>
                   </div>
-                </div>
-              </Link>
+                </Link>
               )
             })}
           </div>

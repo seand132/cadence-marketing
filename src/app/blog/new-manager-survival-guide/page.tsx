@@ -18,6 +18,9 @@ export default function NewManagerSurvivalGuide() {
           <Link href="/blog" className="inline-flex items-center gap-1 mb-8 text-sm font-medium transition-opacity hover:opacity-70" style={{ color: '#7A9E82', fontFamily: 'var(--font-dm-sans)' }}>
             ← Back to blog
           </Link>
+          <p style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 11, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#7A9E82', marginBottom: 12 }}>
+            Framework ·
+          </p>
           <h1
             className="mb-4"
             style={{ fontFamily: 'var(--font-montserrat)', fontWeight: 300, fontSize: 'clamp(28px, 4vw, 44px)', color: 'white', lineHeight: 1.2 }}
@@ -92,7 +95,6 @@ export default function NewManagerSurvivalGuide() {
             <p className="mt-3 font-medium" style={{ color: '#1C2B3A' }}>That&rsquo;s the whole job.</p>
           </div>
 
-          <ShareBar title="The New Manager Survival Guide" url="https://cadencehq.co/blog/new-manager-survival-guide" />
 
           <ShareBar title="The New Manager Survival Guide" url="https://cadencehq.co/blog/new-manager-survival-guide" />
 

@@ -11,6 +11,7 @@ const featuredPost = {
   slug: 'the-11-that-actually-works',
   title: 'The 1:1 That Actually Works',
   category: '1:1s',
+  kicker: 'One-on-Ones ·',
   readTime: '8 min read',
   author: 'Sean Davis',
   excerpt:
@@ -71,80 +72,94 @@ export default function BlogIndex() {
         </div>
       </section>
 
-      {/* Featured post */}
+      {/* Featured post — navy anchor card */}
       <section style={{ background: '#F5F0E8' }} className="pb-12">
         <div className="max-w-4xl mx-auto px-6">
           <Link
             href={`/blog/${featuredPost.slug}`}
-            className="block"
+            className="block group"
             style={{
-              borderRadius: 10,
-              border: '1px solid #D0CAC0',
-              boxShadow: '0 2px 8px rgba(0,0,0,0.07)',
+              borderRadius: 12,
               overflow: 'hidden',
               textDecoration: 'none',
-              background: 'white',
+              background: '#1C2B3A',
             }}
           >
-            <div style={{ height: 6, background: '#C8782A' }} />
-            <div className="p-10">
-              <div className="flex items-center gap-3 mb-4">
-                <span
-                  className="px-3 py-1 rounded-full text-xs font-semibold uppercase"
-                  style={{
-                    background: '#FEF3E2',
-                    color: '#C8782A',
-                    fontFamily: 'var(--font-dm-sans)',
-                    letterSpacing: '0.07em',
-                  }}
-                >
-                  {featuredPost.category}
-                </span>
-                <span style={{ color: '#9C968B', fontFamily: 'var(--font-dm-sans)', fontSize: 14 }}>
-                  {featuredPost.readTime}
-                </span>
-              </div>
+            <div className="p-10 md:p-12">
+              {/* Kicker */}
+              <p
+                className="mb-3"
+                style={{
+                  fontFamily: 'var(--font-dm-sans)',
+                  fontWeight: 700,
+                  fontSize: 11,
+                  letterSpacing: '0.12em',
+                  textTransform: 'uppercase',
+                  color: '#7A9E82',
+                }}
+              >
+                {featuredPost.kicker}
+              </p>
+              {/* Title */}
               <h2
                 className="mb-4"
                 style={{
                   fontFamily: 'var(--font-dm-sans)',
                   fontWeight: 700,
-                  fontSize: 'clamp(24px, 3vw, 34px)',
-                  color: '#2C2C2C',
+                  fontSize: 'clamp(26px, 3.5vw, 38px)',
+                  color: '#F5F0E8',
                   lineHeight: 1.2,
+                  maxWidth: 600,
                 }}
               >
                 {featuredPost.title}
               </h2>
+              {/* Excerpt */}
               <p
-                className="mb-6"
+                className="mb-8"
                 style={{
                   fontFamily: 'var(--font-source-sans)',
                   fontSize: 18,
-                  color: '#6B6560',
+                  color: 'rgba(245,240,232,0.75)',
                   lineHeight: 1.7,
-                  maxWidth: 680,
+                  maxWidth: 560,
                 }}
               >
                 {featuredPost.excerpt}
               </p>
+              {/* Meta row */}
               <div className="flex items-center justify-between flex-wrap gap-4">
-                <span style={{ fontFamily: 'var(--font-dm-sans)', fontSize: 14, color: '#9C968B' }}>
-                  By {featuredPost.author}
-                </span>
+                <div className="flex items-center gap-3">
+                  {/* Author avatar */}
+                  <div
+                    style={{
+                      width: 32,
+                      height: 32,
+                      borderRadius: '50%',
+                      background: '#C8782A',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontFamily: 'var(--font-dm-sans)',
+                      fontWeight: 700,
+                      fontSize: 12,
+                      color: 'white',
+                      flexShrink: 0,
+                    }}
+                  >
+                    SD
+                  </div>
+                  <span style={{ fontFamily: 'var(--font-dm-sans)', fontSize: 14, color: 'rgba(245,240,232,0.6)' }}>
+                    {featuredPost.author} · {featuredPost.readTime}
+                  </span>
+                </div>
                 <span
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold transition-opacity group-hover:opacity-80"
                   style={{ color: '#C8782A', fontFamily: 'var(--font-dm-sans)' }}
                 >
-                  Read the post
+                  Read article
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path
-                      d="M3 8h10M9 4l4 4-4 4"
-                      stroke="#C8782A"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
+                    <path d="M3 8h10M9 4l4 4-4 4" stroke="#C8782A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </span>
               </div>
@@ -160,15 +175,15 @@ export default function BlogIndex() {
       <BlogFilterGrid />
 
       {/* Newsletter */}
-      <section style={{ background: '#FDF6EE' }} className="py-20">
+      <section style={{ background: '#7A9E82' }} className="py-16">
         <div className="max-w-xl mx-auto px-6 text-center">
           <h2
             className="mb-2"
-            style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 28, color: '#2C2C2C' }}
+            style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 26, color: 'white' }}
           >
             Get management insights monthly.
           </h2>
-          <p className="mb-8" style={{ fontFamily: 'var(--font-source-sans)', fontSize: 16, color: '#9C968B' }}>
+          <p className="mb-8" style={{ fontFamily: 'var(--font-source-sans)', fontSize: 16, color: 'rgba(255,255,255,0.8)' }}>
             No spam. Unsubscribe anytime.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
@@ -177,7 +192,7 @@ export default function BlogIndex() {
               placeholder="Your email address"
               className="flex-1 px-4 py-3 rounded"
               style={{
-                border: '1px solid #D0CAC0',
+                border: 'none',
                 fontFamily: 'var(--font-source-sans)',
                 fontSize: 15,
                 outline: 'none',
@@ -189,7 +204,7 @@ export default function BlogIndex() {
               href="mailto:hello@cadencehq.co?subject=Subscribe to Cadence Blog"
               className="inline-flex items-center justify-center px-6 py-3 rounded font-semibold"
               style={{
-                background: '#C8782A',
+                background: '#1C2B3A',
                 color: 'white',
                 fontFamily: 'var(--font-dm-sans)',
                 fontWeight: 600,

@@ -17,9 +17,9 @@ export default function WhatToTrackWhenYouManageASmallTeam() {
       </div>
 
       <article style={{ maxWidth: 780, margin: '0 auto', padding: '40px 24px 80px' }}>
-        <div style={{ display: 'inline-block', background: '#FDF6EE', color: '#C8782A', fontFamily: 'var(--font-dm-sans)', fontWeight: 600, fontSize: 11, letterSpacing: '0.1em', textTransform: 'uppercase', padding: '4px 12px', borderRadius: 20, marginBottom: 20 }}>
-          KPIs
-        </div>
+        <p style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 11, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#1C2B3A', marginBottom: 16 }}>
+          Performance ·
+        </p>
 
         <h1 style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 'clamp(32px, 5vw, 44px)', color: '#2C2C2C', lineHeight: 1.15, marginBottom: 16 }}>
           What to Track When You Manage a Small Team
@@ -37,7 +37,6 @@ export default function WhatToTrackWhenYouManageASmallTeam() {
           </div>
         </div>
 
-        <ShareBar title="What to Track When You Manage a Small Team" url="https://cadencehq.co/blog/what-to-track-when-you-manage-a-small-team" />
 
         <div style={{ fontFamily: 'var(--font-source-sans)', fontSize: 17, color: '#2C2C2C', lineHeight: 1.75 }}>
 

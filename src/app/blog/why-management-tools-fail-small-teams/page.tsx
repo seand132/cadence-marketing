@@ -18,6 +18,9 @@ export default function WhyToolsFail() {
           <Link href="/blog" className="inline-flex items-center gap-1 mb-8 text-sm font-medium transition-opacity hover:opacity-70" style={{ color: '#7A9E82', fontFamily: 'var(--font-dm-sans)' }}>
             ← Back to blog
           </Link>
+          <p style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 11, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#7A9E82', marginBottom: 12 }}>
+            Framework ·
+          </p>
           <h1
             className="mb-4"
             style={{ fontFamily: 'var(--font-montserrat)', fontWeight: 300, fontSize: 'clamp(28px, 4vw, 44px)', color: 'white', lineHeight: 1.2 }}
@@ -60,7 +63,6 @@ export default function WhyToolsFail() {
             <p className="mt-3" style={{ color: '#1C2B3A' }}>If you&rsquo;ve tried and abandoned a management platform in the last year, the problem probably wasn&rsquo;t you.</p>
           </div>
 
-          <ShareBar title="Why Management Tools Fail Small Teams" url="https://cadencehq.co/blog/why-management-tools-fail-small-teams" />
 
           <ShareBar title="Why Management Tools Fail Small Teams" url="https://cadencehq.co/blog/why-management-tools-fail-small-teams" />
 
