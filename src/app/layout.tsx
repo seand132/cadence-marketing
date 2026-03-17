@@ -110,7 +110,7 @@ export default function RootLayout({
               var io = new IntersectionObserver(function(entries) {
                 entries.forEach(function(e) {
                   if (e.isIntersecting) {
-                    e.target.classList.add('visible');
+                    e.target.classList.add('animate-in');
                     io.unobserve(e.target);
                   }
                 });
