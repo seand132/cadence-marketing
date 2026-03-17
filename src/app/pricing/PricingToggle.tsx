@@ -547,13 +547,7 @@ export function PricingToggle() {
             >
               <button
                 onClick={() => {
-                  if (openFaq instanceof Set) {
-                    const next = new Set(openFaq)
-                    if (next.has(i)) { next.delete(i) } else { next.add(i) }
-                    setOpenFaq(next)
-                  } else {
-                    setOpenFaq(openFaq === i ? null : i)
-                  }
+                  setOpenFaq(openFaq === i ? null : i)
                 }}
                 style={{
                   width: '100%',
@@ -584,14 +578,14 @@ export function PricingToggle() {
                     color: '#9C968B',
                     lineHeight: 1,
                     transition: 'transform 200ms ease',
-                    transform: (openFaq instanceof Set ? openFaq.has(i) : openFaq === i) ? 'rotate(45deg)' : 'none',
+                    transform: openFaq === i ? 'rotate(45deg)' : 'none',
                     flexShrink: 0,
                   }}
                 >
                   +
                 </span>
               </button>
-              {(openFaq instanceof Set ? openFaq.has(i) : openFaq === i) && (
+              {(openFaq === i) && (
                 <div
                   style={{
                     padding: '0 20px 18px',
