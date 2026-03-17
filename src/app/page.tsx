@@ -231,10 +231,18 @@ export default function Home() {
       </section>
 
       {/* ─── RHYTHM DIVIDER ───────────────────────────────────── */}
-      <div style={{ display: 'flex', justifyContent: 'center', gap: 12, padding: '8px 0', background: 'white' }}>
-        {['#3A7D7B', '#C8782A', '#7B8F6A', '#3A7D7B', '#C8782A', '#7B8F6A'].map((color, i) => (
-          <RhythmMotif key={i} scale={0.5} color={color} opacity={0.12} />
-        ))}
+      <div style={{ width: '100%', overflow: 'hidden', lineHeight: 0, background: 'white' }} aria-hidden="true">
+        <svg width="100%" height="72" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="rhythm-div-1" x="0" y="0" width="72" height="72" patternUnits="userSpaceOnUse">
+              <rect x="0"  y="28" width="10" height="44" rx="5" fill="#C8782A" />
+              <rect x="18" y="2"  width="10" height="70" rx="5" fill="#3A7D7B" />
+              <rect x="36" y="16" width="10" height="56" rx="5" fill="#7B8F6A" />
+              <rect x="54" y="34" width="10" height="38" rx="5" fill="#C2604A" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="72" fill="url(#rhythm-div-1)" />
+        </svg>
       </div>
 
       {/* ─── SECTION 3: FEATURES ──────────────────────────────── */}
@@ -249,7 +257,7 @@ export default function Home() {
               color: '#2C2C2C',
             }}
           >
-            Everything you need. Nothing you don&rsquo;t.
+            Simple tools. Steady habits. Stronger teams.
           </h2>
           <div className="grid sm:grid-cols-3 gap-6">
             {[
@@ -305,10 +313,18 @@ export default function Home() {
       </section>
 
       {/* ─── RHYTHM DIVIDER ───────────────────────────────────── */}
-      <div style={{ display: 'flex', justifyContent: 'center', gap: 12, padding: '8px 0', background: '#EBE6DD' }}>
-        {['#C8782A', '#7B8F6A', '#3A7D7B', '#C8782A', '#7B8F6A', '#3A7D7B'].map((color, i) => (
-          <RhythmMotif key={i} scale={0.5} color={color} opacity={0.12} />
-        ))}
+      <div style={{ width: '100%', overflow: 'hidden', lineHeight: 0, background: '#EBE6DD' }} aria-hidden="true">
+        <svg width="100%" height="72" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="rhythm-div-2" x="0" y="0" width="72" height="72" patternUnits="userSpaceOnUse">
+              <rect x="0"  y="28" width="10" height="44" rx="5" fill="#C8782A" />
+              <rect x="18" y="2"  width="10" height="70" rx="5" fill="#3A7D7B" />
+              <rect x="36" y="16" width="10" height="56" rx="5" fill="#7B8F6A" />
+              <rect x="54" y="34" width="10" height="38" rx="5" fill="#C2604A" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="72" fill="url(#rhythm-div-2)" />
+        </svg>
       </div>
 
       {/* ─── SECTION 4: WHO IT'S FOR ──────────────────────────── */}
@@ -326,10 +342,10 @@ export default function Home() {
                   lineHeight: 1.2,
                 }}
               >
-                Made for the manager in the middle.
+                Built for one kind of manager.
               </h2>
               <p style={{ fontFamily: 'var(--font-source-sans)', fontSize: 17, color: '#9C968B', lineHeight: 1.7 }}>
-                New enough to still be figuring it out. Experienced enough to know you need a system.
+                It&rsquo;s not a performance management suite. It&rsquo;s a rhythm you can actually keep.
               </p>
             </div>
             <div className="flex-1 reveal">
