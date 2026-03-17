@@ -17,28 +17,24 @@ const planFeatures = [
 
 const faqs = [
   {
-    q: 'Is Cadence really free right now?',
-    a: 'You get 14 days free, no credit card required. After that it\'s $10/month. Cancel anytime — no lock-in, no surprises.',
+    q: 'Is there a free trial?',
+    a: 'Yes — 14 days free, no credit card required.',
   },
   {
-    q: 'Is this per manager or per user?',
-    a: 'Per manager. If you manage a team of 8, that\'s one Cadence account at $10/month. Your direct reports don\'t need accounts.',
+    q: 'What happens after the trial?',
+    a: "You can cancel or subscribe at $10/month. No pressure, no lock-in.",
   },
   {
-    q: 'What if my team grows beyond 10 people?',
-    a: 'We\'re working on expanded plans for larger teams. For now, reach out and we\'ll figure something out.',
+    q: 'Is Cadence only for small teams?',
+    a: "It's built for managers with 3–8 direct reports, but it works for any manager who wants a simple, consistent system.",
   },
   {
-    q: 'I manage a small team at a larger company. Is Cadence right for me?',
-    a: 'Yes — that\'s exactly who it\'s for. Cadence is built for the individual manager, not for IT or HR to configure and roll out. You can get started in 3 minutes without involving anyone else.',
+    q: 'Can I invite my team?',
+    a: 'Yes — your direct reports can have accounts too.',
   },
   {
-    q: 'Is my data secure?',
-    a: 'Yes. Cadence uses Supabase for data storage with row-level security — your team\'s data is only visible to you and your direct reports. Full details in the privacy policy.',
-  },
-  {
-    q: 'What\'s your refund policy?',
-    a: 'If you\'re charged and decide within 7 days it\'s not for you, we\'ll refund the charge. After that, we don\'t offer pro-rated refunds — but you can cancel anytime and won\'t be charged again.',
+    q: 'Can I cancel anytime?',
+    a: 'Yes. No contracts, no cancellation fees.',
   },
 ]
 

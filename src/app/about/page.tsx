@@ -123,7 +123,7 @@ export default function AboutPage() {
                 {
                   strip: '#7B8F6A',
                   title: 'Managers are people too.',
-                  body: 'You have a job to do and a team to lead. We\'re not here to add homework — we\'re here to clear it.',
+                  body: "You have a job to do and a team to lead. We're not here to add homework — we're here to clear it.",
                 },
               ].map((v) => (
                 <div
@@ -148,25 +148,33 @@ export default function AboutPage() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* CTA */}
-          <div className="mt-16 text-center reveal">
-            <Link
-              href="https://app.cadencehq.co/signup"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white transition-opacity hover:opacity-90"
-              style={{
-                background: '#C8782A',
-                borderRadius: 4,
-                fontFamily: 'var(--font-dm-sans)',
-                fontWeight: 600,
-              }}
-            >
-              Get started free
-            </Link>
-            <p style={{ fontFamily: 'var(--font-source-sans)', fontSize: 14, color: '#9C968B', marginTop: 12 }}>
-              No credit card required. 14-day free trial.
-            </p>
-          </div>
+      <RhythmDivider id="about-div-2" bg="white" />
+
+      {/* Bottom CTA */}
+      <section style={{ background: '#C8782A' }} className="py-20">
+        <div className="max-w-xl mx-auto px-6 text-center">
+          <h2
+            className="mb-4"
+            style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 36, color: 'white' }}
+          >
+            Ready to find your rhythm?
+          </h2>
+          <p className="mb-8" style={{ fontFamily: 'var(--font-source-sans)', fontSize: 18, color: 'rgba(255,255,255,0.80)', lineHeight: 1.6 }}>
+            14-day free trial. Takes 3 minutes to set up. No credit card.
+          </p>
+          <Link
+            href="https://app.cadencehq.co/signup"
+            className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold transition-opacity hover:opacity-90"
+            style={{ background: 'white', color: '#C8782A', borderRadius: 4, fontFamily: 'var(--font-dm-sans)', fontWeight: 600 }}
+          >
+            Get started free
+          </Link>
+          <p className="mt-3 text-sm" style={{ color: 'rgba(255,255,255,0.65)', fontFamily: 'var(--font-source-sans)' }}>
+            No credit card required.
+          </p>
         </div>
       </section>
     </>
