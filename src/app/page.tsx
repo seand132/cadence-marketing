@@ -82,59 +82,95 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Right — Real app screenshot */}
+          {/* Right — Real app screenshot in browser frame */}
           <div className="flex-1 flex justify-center lg:justify-end w-full">
+            {/* Real app screenshot in browser frame */}
             <div style={{
               borderRadius: 12,
               overflow: 'hidden',
-              boxShadow: '0 20px 60px rgba(0,0,0,0.15)',
+              boxShadow: '0 20px 60px rgba(0,0,0,0.18)',
               border: '1px solid #D0CAC0',
-              maxWidth: 520,
+              maxWidth: 540,
               width: '100%',
               animation: 'float 4s ease-in-out infinite'
             }}>
-              {/* Browser bar */}
+              {/* Browser chrome */}
               <div style={{ background: '#EBE6DD', padding: '10px 16px', display: 'flex', alignItems: 'center', gap: 8, borderBottom: '1px solid #D0CAC0' }}>
                 <div style={{ display: 'flex', gap: 5 }}>
-                  {['#C2604A','#C8782A','#7B8F6A'].map(c => <div key={c} style={{ width: 10, height: 10, borderRadius: '50%', background: c, opacity: 0.8 }}/>)}
+                  {['#C2604A','#C8782A','#7B8F6A'].map((c,i) => (
+                    <div key={i} style={{ width: 10, height: 10, borderRadius: '50%', background: c, opacity: 0.75 }} />
+                  ))}
                 </div>
-                <div style={{ flex: 1, background: 'white', borderRadius: 4, padding: '3px 10px', fontSize: 11, color: '#9C968B', fontFamily: 'var(--font-dm-sans)' }}>app.cadencehq.co</div>
+                <div style={{ flex: 1, background: 'white', borderRadius: 4, padding: '3px 12px', fontSize: 11, color: '#9C968B', fontFamily: 'var(--font-dm-sans)' }}>
+                  app.cadencehq.co/dashboard
+                </div>
               </div>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/screenshots/dashboard.png" alt="Cadence app" style={{ width: '100%', display: 'block' }} />
+              <img
+                src="/screenshots/dashboard.png"
+                alt="Cadence dashboard"
+                style={{ width: '100%', display: 'block' }}
+              />
             </div>
           </div>
 
         </div>
       </section>
 
-      {/* ─── PRODUCT SHOWCASE ─────────────────────────────── */}
-      <section style={{ background: '#2C2C2C', padding: '60px 0', overflow: 'hidden' }}>
+      {/* ─── PRODUCT SHOWCASE ─────────────────────────────────── */}
+      {/* Product showcase — real screenshots */}
+      <section style={{ background: '#1C1C1C', padding: '80px 0', overflow: 'hidden' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 24px' }}>
-          <div style={{ textAlign: 'center', marginBottom: 40 }}>
-            <div style={{ fontSize: 11, fontWeight: 600, color: '#9C968B', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 12, fontFamily: 'var(--font-dm-sans)' }}>THE PRODUCT</div>
-            <h2 style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 36, color: 'white', margin: 0 }}>See it in action.</h2>
+
+          {/* Section header */}
+          <div style={{ textAlign: 'center', marginBottom: 48 }}>
+            <div style={{ fontSize: 11, fontWeight: 600, color: '#9C968B', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 12, fontFamily: 'var(--font-dm-sans)' }}>THE PLATFORM</div>
+            <h2 style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 36, color: 'white', margin: '0 0 12px 0', lineHeight: 1.2 }}>
+              Everything in one place.
+            </h2>
+            <p style={{ fontFamily: 'var(--font-source-sans)', fontSize: 17, color: '#9C968B', margin: 0 }}>
+              Built for the way managers actually work.
+            </p>
           </div>
-          {/* Main dashboard screenshot — large */}
-          <div style={{ borderRadius: 12, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 20px 60px rgba(0,0,0,0.4)', marginBottom: 16 }}>
+
+          {/* Main screenshot — full width dashboard */}
+          <div style={{ borderRadius: 12, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.08)', boxShadow: '0 24px 80px rgba(0,0,0,0.5)', marginBottom: 16 }}>
+            <div style={{ background: '#2A2A2A', padding: '10px 16px', display: 'flex', alignItems: 'center', gap: 8, borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+              <div style={{ display: 'flex', gap: 5 }}>
+                {['#C2604A','#C8782A','#7B8F6A'].map((c,i) => <div key={i} style={{ width: 10, height: 10, borderRadius: '50%', background: c, opacity: 0.7 }} />)}
+              </div>
+              <div style={{ flex: 1, background: 'rgba(255,255,255,0.08)', borderRadius: 4, padding: '3px 12px', fontSize: 11, color: '#9C968B', fontFamily: 'var(--font-dm-sans)' }}>app.cadencehq.co/dashboard</div>
+            </div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/screenshots/dashboard.png" alt="Cadence dashboard" style={{ width: '100%', display: 'block' }} />
+            <img src="/screenshots/dashboard.png" alt="Cadence dashboard — the manager's home base" style={{ width: '100%', display: 'block' }} />
           </div>
-          {/* Two smaller screenshots side by side */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-            <div style={{ borderRadius: 10, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 8px 24px rgba(0,0,0,0.3)' }}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/screenshots/tasks.png" alt="Task management" style={{ width: '100%', display: 'block' }} />
-            </div>
-            <div style={{ borderRadius: 10, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 8px 24px rgba(0,0,0,0.3)' }}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/screenshots/one-on-ones.png" alt="1:1 meetings" style={{ width: '100%', display: 'block' }} />
-            </div>
+
+          {/* Caption */}
+          <p style={{ textAlign: 'center', fontSize: 13, color: '#9C968B', fontFamily: 'var(--font-dm-sans)', marginBottom: 32 }}>
+            Your dashboard — tasks, 1:1s, team health, and goals. All in one view.
+          </p>
+
+          {/* Three smaller screenshots */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
+            {[
+              { src: '/screenshots/tasks.png', label: 'Task Management', desc: 'See every delegation, priority, and due date across your team.' },
+              { src: '/screenshots/one-on-ones.png', label: '1:1 Meetings', desc: 'Standing agendas that make every check-in count.' },
+              { src: '/screenshots/team.png', label: 'Team Overview', desc: 'Your full reporting structure at a glance.' },
+            ].map((item, i) => (
+              <div key={i}>
+                <div style={{ borderRadius: 10, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.08)', boxShadow: '0 8px 32px rgba(0,0,0,0.4)', marginBottom: 12 }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={item.src} alt={item.label} style={{ width: '100%', display: 'block' }} />
+                </div>
+                <div style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 600, fontSize: 14, color: 'white', marginBottom: 4 }}>{item.label}</div>
+                <div style={{ fontFamily: 'var(--font-source-sans)', fontSize: 13, color: '#9C968B', lineHeight: 1.5 }}>{item.desc}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-            {/* ─── SECTION 2: PROBLEM ───────────────────────────────── */}
+      {/* ─── SECTION 2: PROBLEM ───────────────────────────────── */}
       <section style={{ background: 'white' }} className="py-20">
         <div className="max-w-2xl mx-auto px-6 text-center reveal">
           <div
