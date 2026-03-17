@@ -119,16 +119,28 @@ export default function Home() {
 
       {/* ─── RHYTHM MOTIF BAND — hero to dark panel transition ── */}
       <div style={{ width: '100%', overflow: 'hidden', lineHeight: 0, background: '#F5F0E8' }} aria-hidden="true">
-        <svg width="100%" height="72" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <svg width="100%" height="40" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <pattern id="rhythm-hero" x="0" y="0" width="72" height="72" patternUnits="userSpaceOnUse">
-              <rect x="0"  y={72-44} width="10" height="44" rx="5" fill="#C8782A" />
-              <rect x="18" y={72-70} width="10" height="70" rx="5" fill="#3A7D7B" />
-              <rect x="36" y={72-56} width="10" height="56" rx="5" fill="#7B8F6A" />
-              <rect x="54" y={72-38} width="10" height="38" rx="5" fill="#C2604A" />
+            <pattern id="rhythm-hero" x="0" y="0" width="192" height="40" patternUnits="userSpaceOnUse">
+              <rect x="0"   y="34" width="7" height="6"  rx="3.5" fill="#C2604A" />
+              <rect x="12"  y="14" width="7" height="26" rx="3.5" fill="#C2604A" />
+              <rect x="24"  y="30" width="7" height="10" rx="3.5" fill="#3A7D7B" />
+              <rect x="36"  y="8"  width="7" height="32" rx="3.5" fill="#3A7D7B" />
+              <rect x="48"  y="32" width="7" height="8"  rx="3.5" fill="#7B8F6A" />
+              <rect x="60"  y="20" width="7" height="20" rx="3.5" fill="#7B8F6A" />
+              <rect x="72"  y="34" width="7" height="6"  rx="3.5" fill="#C8782A" />
+              <rect x="84"  y="6"  width="7" height="34" rx="3.5" fill="#C8782A" />
+              <rect x="96"  y="30" width="7" height="10" rx="3.5" fill="#3A7D7B" />
+              <rect x="108" y="22" width="7" height="18" rx="3.5" fill="#3A7D7B" />
+              <rect x="120" y="34" width="7" height="6"  rx="3.5" fill="#7B8F6A" />
+              <rect x="132" y="12" width="7" height="28" rx="3.5" fill="#7B8F6A" />
+              <rect x="144" y="32" width="7" height="8"  rx="3.5" fill="#C2604A" />
+              <rect x="156" y="18" width="7" height="22" rx="3.5" fill="#C2604A" />
+              <rect x="168" y="34" width="7" height="6"  rx="3.5" fill="#C8782A" />
+              <rect x="180" y="10" width="7" height="30" rx="3.5" fill="#C8782A" />
             </pattern>
           </defs>
-          <rect width="100%" height="72" fill="url(#rhythm-hero)" />
+          <rect width="100%" height="40" fill="url(#rhythm-hero)" />
         </svg>
       </div>
 
