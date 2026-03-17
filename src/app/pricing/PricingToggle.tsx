@@ -45,7 +45,7 @@ const faqs = [
 
 export function PricingToggle() {
   const [annual, setAnnual] = useState(false)
-  const [openFaq, setOpenFaq] = useState<number | null | Set<number>>(new Set([0, 1]))
+  const [openFaq, setOpenFaq] = useState<number | null>(0)
 
   const price = annual ? 8 : 10
   const billed = annual ? 'Billed as $96/year — save $24' : 'Billed monthly'
