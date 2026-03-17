@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { ShareBar } from '@/components/ShareBar'
 
 export const metadata: Metadata = {
   title: 'Building Team Culture Without the Corporate Playbook | Cadence Blog',
@@ -36,16 +37,7 @@ export default function BuildingTeamCultureWithoutTheCorporatePlaybook() {
           </div>
         </div>
 
-        <div style={{ display: 'flex', gap: 8, marginBottom: 40 }}>
-          {[
-            { label: 'Share on X', href: 'https://twitter.com/intent/tweet?text=Building%20Team%20Culture%20Without%20the%20Corporate%20Playbook&url=https://cadencehq.co/blog/building-team-culture-without-the-corporate-playbook' },
-            { label: 'Share on LinkedIn', href: 'https://linkedin.com/sharing/share-offsite/?url=https://cadencehq.co/blog/building-team-culture-without-the-corporate-playbook' },
-          ].map((btn) => (
-            <a key={btn.label} href={btn.href} target="_blank" rel="noopener noreferrer" style={{ fontFamily: 'var(--font-dm-sans)', fontSize: 12, fontWeight: 500, color: '#9C968B', border: '1px solid #D0CAC0', borderRadius: 20, padding: '6px 14px', textDecoration: 'none', background: 'white' }}>
-              {btn.label}
-            </a>
-          ))}
-        </div>
+        <ShareBar title="Building Team Culture Without the Corporate Playbook" url="https://cadencehq.co/blog/building-team-culture-without-the-corporate-playbook" />
 
         <div style={{ fontFamily: 'var(--font-source-sans)', fontSize: 17, color: '#2C2C2C', lineHeight: 1.75 }}>
 
@@ -141,6 +133,7 @@ export default function BuildingTeamCultureWithoutTheCorporatePlaybook() {
 
         </div>
 
+        <ShareBar title="Building Team Culture Without the Corporate Playbook" url="https://cadencehq.co/blog/building-team-culture-without-the-corporate-playbook" />
         <div style={{ marginTop: 64, padding: 24, background: 'white', border: '1px solid #D0CAC0', borderRadius: 8, display: 'flex', gap: 16, alignItems: 'flex-start' }}>
           <div style={{ width: 56, height: 56, borderRadius: '50%', background: '#C8782A', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 18, flexShrink: 0 }}>SD</div>
           <div>

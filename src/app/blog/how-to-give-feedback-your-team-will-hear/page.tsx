@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { ShareBar } from '@/components/ShareBar'
 
 export const metadata: Metadata = {
   title: 'How to Give Feedback Your Team Will Actually Hear | Cadence Blog',
@@ -36,16 +37,7 @@ export default function HowToGiveFeedbackYourTeamWillHear() {
           </div>
         </div>
 
-        <div style={{ display: 'flex', gap: 8, marginBottom: 40 }}>
-          {[
-            { label: 'Share on X', href: 'https://twitter.com/intent/tweet?text=How%20to%20Give%20Feedback%20Your%20Team%20Will%20Actually%20Hear&url=https://cadencehq.co/blog/how-to-give-feedback-your-team-will-hear' },
-            { label: 'Share on LinkedIn', href: 'https://linkedin.com/sharing/share-offsite/?url=https://cadencehq.co/blog/how-to-give-feedback-your-team-will-hear' },
-          ].map((btn) => (
-            <a key={btn.label} href={btn.href} target="_blank" rel="noopener noreferrer" style={{ fontFamily: 'var(--font-dm-sans)', fontSize: 12, fontWeight: 500, color: '#9C968B', border: '1px solid #D0CAC0', borderRadius: 20, padding: '6px 14px', textDecoration: 'none', background: 'white' }}>
-              {btn.label}
-            </a>
-          ))}
-        </div>
+        <ShareBar title="How to Give Feedback Your Team Will Actually Hear" url="https://cadencehq.co/blog/how-to-give-feedback-your-team-will-hear" />
 
         <div style={{ fontFamily: 'var(--font-source-sans)', fontSize: 17, color: '#2C2C2C', lineHeight: 1.75 }}>
 
@@ -137,6 +129,7 @@ export default function HowToGiveFeedbackYourTeamWillHear() {
 
         </div>
 
+        <ShareBar title="How to Give Feedback Your Team Will Actually Hear" url="https://cadencehq.co/blog/how-to-give-feedback-your-team-will-hear" />
         <div style={{ marginTop: 64, padding: 24, background: 'white', border: '1px solid #D0CAC0', borderRadius: 8, display: 'flex', gap: 16, alignItems: 'flex-start' }}>
           <div style={{ width: 56, height: 56, borderRadius: '50%', background: '#C8782A', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 18, flexShrink: 0 }}>SD</div>
           <div>

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { ShareBar } from '@/components/ShareBar'
 
 export const metadata: Metadata = {
   title: 'What "Management in Rhythm" Actually Means — Cadence Blog',
@@ -80,35 +81,9 @@ export default function ManagementInRhythm() {
             <p className="mt-3 font-medium" style={{ color: '#1C2B3A' }}>Management in rhythm isn&rsquo;t a brand line. It&rsquo;s the design principle.</p>
           </div>
 
-          {/* Share buttons */}
-          <div className="pt-8 flex items-center gap-4 flex-wrap">
-            <span style={{ fontFamily: 'var(--font-dm-sans)', fontSize: 13, fontWeight: 600, color: '#9C968B', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Share</span>
-            <a
-              href={`https://twitter.com/intent/tweet?text=${POST_TITLE}&url=${POST_URL}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded text-sm font-semibold transition-opacity hover:opacity-80"
-              style={{ background: '#000', color: 'white', fontFamily: 'var(--font-dm-sans)', textDecoration: 'none' }}
-            >
-              𝕏 Post
-            </a>
-            <a
-              href={`https://www.linkedin.com/sharing/share-offsite/?url=${POST_URL}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded text-sm font-semibold transition-opacity hover:opacity-80"
-              style={{ background: '#0A66C2', color: 'white', fontFamily: 'var(--font-dm-sans)', textDecoration: 'none' }}
-            >
-              LinkedIn
-            </a>
-            <a
-              href={`mailto:?subject=What "Management in Rhythm" Actually Means&body=https://cadencehq.co/blog/management-in-rhythm`}
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded text-sm font-semibold transition-opacity hover:opacity-80"
-              style={{ background: '#F5F0E8', color: '#2C2C2C', fontFamily: 'var(--font-dm-sans)', textDecoration: 'none', border: '1px solid #D0CAC0' }}
-            >
-              Email
-            </a>
-          </div>
+          <ShareBar title="Management in Rhythm" url="https://cadencehq.co/blog/management-in-rhythm" />
+
+          <ShareBar title="Management in Rhythm" url="https://cadencehq.co/blog/management-in-rhythm" />
 
           {/* Author block */}
           <div className="pt-8 pb-4 flex items-start gap-4" style={{ borderTop: '1px solid #D0CAC0', marginTop: 24 }}>

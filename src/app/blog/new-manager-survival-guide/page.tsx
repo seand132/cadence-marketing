@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { ShareBar } from '@/components/ShareBar'
 
 export const metadata: Metadata = {
   title: "The New Manager's Survival Guide (No Generic Advice) — Cadence Blog",
@@ -91,35 +92,9 @@ export default function NewManagerSurvivalGuide() {
             <p className="mt-3 font-medium" style={{ color: '#1C2B3A' }}>That&rsquo;s the whole job.</p>
           </div>
 
-          {/* Share buttons */}
-          <div className="pt-8 flex items-center gap-4 flex-wrap">
-            <span style={{ fontFamily: 'var(--font-dm-sans)', fontSize: 13, fontWeight: 600, color: '#9C968B', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Share</span>
-            <a
-              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(POST_TITLE)}&url=${encodeURIComponent(POST_URL)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded text-sm font-semibold transition-opacity hover:opacity-80"
-              style={{ background: '#000', color: 'white', fontFamily: 'var(--font-dm-sans)', textDecoration: 'none' }}
-            >
-              𝕏 Post
-            </a>
-            <a
-              href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(POST_URL)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded text-sm font-semibold transition-opacity hover:opacity-80"
-              style={{ background: '#0A66C2', color: 'white', fontFamily: 'var(--font-dm-sans)', textDecoration: 'none' }}
-            >
-              LinkedIn
-            </a>
-            <a
-              href={`mailto:?subject=${encodeURIComponent(POST_TITLE)}&body=${encodeURIComponent(POST_URL)}`}
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded text-sm font-semibold transition-opacity hover:opacity-80"
-              style={{ background: '#F5F0E8', color: '#2C2C2C', fontFamily: 'var(--font-dm-sans)', textDecoration: 'none', border: '1px solid #D0CAC0' }}
-            >
-              Email
-            </a>
-          </div>
+          <ShareBar title="The New Manager Survival Guide" url="https://cadencehq.co/blog/new-manager-survival-guide" />
+
+          <ShareBar title="The New Manager Survival Guide" url="https://cadencehq.co/blog/new-manager-survival-guide" />
 
           {/* Author block */}
           <div className="pt-8 pb-4 flex items-start gap-4" style={{ borderTop: '1px solid #D0CAC0', marginTop: 24 }}>
