@@ -29,8 +29,8 @@ export function NavClient() {
           <Image
             src="/brand/cadence-horizontal-lockup.svg"
             alt="Cadence"
-            width={140}
-            height={36}
+            width={180}
+            height={46}
             priority
           />
         </Link>
@@ -64,7 +64,7 @@ export function NavClient() {
             fontWeight: 600,
           }}
         >
-          Start free — 14 days
+          Get started free
         </Link>
       </div>
     </header>

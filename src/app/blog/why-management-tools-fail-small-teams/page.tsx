@@ -35,7 +35,7 @@ export default function WhyToolsFail() {
             The mismatch is structural.
           </h2>
           <p>Enterprise HR tools are designed around compliance, reporting, and top-down visibility. The data flows to HR, to leadership, to the org. The manager is the input, not the beneficiary.</p>
-          <p>A tool built for the first-time manager does the opposite. It surfaces information to the manager, helps them show up consistently, and stays out of the way. The outputs are better 1:1s, cleaner delegation, and a team that knows what&rsquo;s expected.</p>
+          <p>A tool built for the small-team manager does the opposite. It surfaces information to the manager, helps them show up consistently, and stays out of the way. The outputs are better 1:1s, cleaner delegation, and a team that knows what&rsquo;s expected.</p>
           <p>Those are different product goals. Most tools don&rsquo;t serve both.</p>
 
           <h2 style={{ fontFamily: 'var(--font-montserrat)', fontWeight: 500, fontSize: 22, color: '#1C2B3A', paddingTop: 16 }}>
@@ -48,7 +48,7 @@ export default function WhyToolsFail() {
             The right tool for the right manager.
           </h2>
           <p>If you&rsquo;re an HR leader managing a 500-person organization — enterprise platforms exist for you. They&rsquo;re good tools for that problem.</p>
-          <p>If you&rsquo;re a manager with 3–8 direct reports who got promoted from IC and wants a system that fits your actual workday — most of those tools are overkill.</p>
+          <p>If you&rsquo;re a manager with 3–8 direct reports who wants a system that fits your actual workday — most of those tools are overkill.</p>
           <p>That&rsquo;s the gap Cadence fills. Not a better enterprise tool. A tool for the manager the enterprise tools ignore.</p>
 
           <div className="pt-4 p-6 rounded" style={{ background: 'rgba(122,158,130,0.08)', borderLeft: '3px solid #7A9E82' }}>

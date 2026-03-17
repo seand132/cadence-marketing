@@ -33,7 +33,7 @@ const faqs = [
     a: "Yes — that's exactly who it's for. Cadence is built for the individual manager, not for IT or HR to configure and roll out. You can get started in 3 minutes without involving anyone else.",
   },
   {
-    q: "Can I use Cadence if I'm not a first-time manager?",
+    q: "Is Cadence only for small teams?",
     a: "Of course. The features are useful for any manager who wants more structure. We just built it specifically for people early in their management career — that's the problem we know best.",
   },
   {

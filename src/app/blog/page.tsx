@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Cadence Blog — Management advice for first-time managers',
-  description: 'Practical guidance for new managers navigating their first team. 1:1s, delegation, team rhythms, and building systems that stick.',
+  title: 'Cadence Blog — Management advice for managers',
+  description: 'Practical guidance for managers building systems that stick. 1:1s, delegation, team rhythms, and building systems that stick.',
 }
 
 const posts = [
@@ -42,7 +42,7 @@ export default function BlogIndex() {
             The Cadence Blog
           </h1>
           <p style={{ fontFamily: 'var(--font-source-sans)', fontSize: 18, color: '#9C968B' }}>
-            Practical guidance for new managers navigating their first team.
+            Practical guidance for managers building systems that stick.
           </p>
         </div>
       </section>

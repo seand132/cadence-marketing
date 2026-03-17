@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { RhythmMotif } from '@/components/RhythmMotif'
 
 export const metadata: Metadata = {
-  title: 'Cadence — Management tool for first-time managers',
-  description: 'Cadence helps new managers run better 1:1s, track delegation, and keep their team in rhythm. Simple. For teams of 3–8. 14-day free trial.',
+  title: 'Cadence — Management tools for small teams',
+  description: 'Cadence helps managers run better 1:1s, track delegation, and keep their team in rhythm. Built for teams of 3–8. 14-day free trial.',
 }
 
 export default function Home() {
@@ -46,7 +46,7 @@ export default function Home() {
                 color: '#2C2C2C',
               }}
             >
-              The promotion nobody prepares you for.
+              Stop running your team from memory.
             </h1>
 
             <p
@@ -58,7 +58,7 @@ export default function Home() {
                 lineHeight: 1.6,
               }}
             >
-              Cadence gives first-time managers a real system — not another meeting, doc, or guess.
+              Cadence gives managers a real system for 1:1s, delegation, and team rhythm. Built for teams of 3 to 8.
             </p>
 
             <Link
@@ -71,7 +71,7 @@ export default function Home() {
                 fontWeight: 600,
               }}
             >
-              Start free — 14 days
+              Get started free
             </Link>
 
             <p
@@ -222,7 +222,7 @@ export default function Home() {
               lineHeight: 1.2,
             }}
           >
-            The promotion nobody prepares you for.
+            Stop running your team from memory.
           </h2>
           <div
             className="space-y-4"
@@ -364,7 +364,7 @@ export default function Home() {
               <ul className="space-y-4">
                 {[
                   'You have 3–8 direct reports',
-                  'You were promoted from IC in the last year or two',
+                  'You manage a small team and want a real system, not a spreadsheet',
                   "You're still figuring out what the job actually requires",
                   'You want a system that fits the way you work, not an HR platform built for Fortune 500',
                 ].map((item) => (
@@ -429,7 +429,7 @@ export default function Home() {
                   fontWeight: 600,
                 }}
               >
-                Start free — 14 days
+                Get started free
               </Link>
               <p
                 className="mt-3 text-xs"

@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Cadence Features — 1:1s, Task Tracking, Team Dashboard',
-  description: 'Everything a first-time manager needs in one place. 1:1 agendas, delegation tracking, KPI goals, team dashboard. Built for 3–8 direct reports.',
+  description: 'Everything a small-team manager needs in one place. 1:1 agendas, delegation tracking, KPI goals, team dashboard. Built for 3–8 direct reports.',
 }
 
 const features = [
@@ -68,7 +68,7 @@ export default function FeaturesPage() {
               lineHeight: 1.15,
             }}
           >
-            Everything a first-time manager needs.<br />Nothing they don&rsquo;t.
+            Everything your team needs.<br />Nothing you don&rsquo;t.
           </h1>
           <p style={{ fontFamily: 'var(--font-source-sans)', fontSize: 18, color: '#9C968B' }}>
             Six features. One rhythm. No setup overhead.
