@@ -515,12 +515,12 @@ export default function FeaturesPage() {
                       fontFamily: 'var(--font-dm-sans)',
                     }}
                   >
-                    app.cadencehq.co/team
+                    app.cadencehq.co/dashboard
                   </div>
                 </div>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/screenshots/team.png"
+                  src="/screenshots/dashboard.png"
                   alt="Cadence team dashboard"
                   style={{ width: '100%', display: 'block' }}
                 />
@@ -576,7 +576,7 @@ export default function FeaturesPage() {
                     lineHeight: 1.75,
                   }}
                 >
-                  Set team and individual KPIs and keep them visible every week. Not buried in a spreadsheet you open once a quarter. Right there in your dashboard where they actually drive behavior.
+                  Set KPIs for your team and track them in real time. Each goal has an owner, a target, a current value, and a visual progress bar. You always know where you stand — no digging, no spreadsheets.
                 </p>
               </div>
               {/* Stat pill */}
@@ -661,7 +661,7 @@ export default function FeaturesPage() {
                 </div>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/screenshots/dashboard.png"
+                  src="/screenshots/kpis.png"
                   alt="Cadence KPI goals and tracking"
                   style={{ width: '100%', display: 'block' }}
                 />
@@ -717,7 +717,7 @@ export default function FeaturesPage() {
                     lineHeight: 1.75,
                   }}
                 >
-                  A live view of your reporting structure. Who manages who, how many reports each person has, and where the accountability sits. Simple enough that you actually use it.
+                  A live org chart that shows your reporting structure at a glance. Edit hierarchy by dragging cards. Invite new members. Know exactly who reports to who and how many people each person manages.
                 </p>
               </div>
               <div
