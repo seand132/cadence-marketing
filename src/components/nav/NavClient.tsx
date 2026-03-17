@@ -108,7 +108,6 @@ export function NavClient() {
                 border: 'none',
                 cursor: 'pointer',
                 padding: '6px 4px',
-                display: 'flex',
                 flexDirection: 'column',
                 gap: 5,
                 alignItems: 'center',
