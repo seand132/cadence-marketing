@@ -873,54 +873,83 @@ export default function FeaturesPage() {
           </p>
           <div
             style={{
-              display: 'flex',
-              justifyContent: 'center',
-              gap: 32,
-              flexWrap: 'wrap',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: 16,
               marginBottom: 48,
+              width: '100%',
+              maxWidth: 900,
+              margin: '0 auto 48px',
             }}
           >
             {[
-              { icon: '11', label: '1:1 Agendas' },
-              { icon: 'task', label: 'Task Tracking' },
-              { icon: 'chart', label: 'Team Dashboard' },
+              {
+                label: '1:1 Agendas',
+                desc: 'Structured check-ins that actually build trust',
+                svg: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8782A" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>,
+              },
+              {
+                label: 'Task Delegation',
+                desc: 'Assign, track, and follow up without the chaos',
+                svg: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8782A" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>,
+              },
+              {
+                label: 'Team Dashboard',
+                desc: 'See how your team is doing at a glance',
+                svg: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8782A" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>,
+              },
+              {
+                label: 'KPI Tracking',
+                desc: 'Set goals, track progress, stay aligned',
+                svg: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8782A" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>,
+              },
+              {
+                label: 'Org Chart',
+                desc: 'Visualize your team structure instantly',
+                svg: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8782A" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><rect x="1" y="14" width="6" height="4" rx="1"/><rect x="9" y="14" width="6" height="4" rx="1"/><rect x="17" y="14" width="6" height="4" rx="1"/><path d="M4 14V9h16v5"/><line x1="12" y1="6" x2="12" y2="9"/></svg>,
+              },
+              {
+                label: 'Email Digests',
+                desc: 'Weekly rhythms keeping everyone in sync',
+                svg: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8782A" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>,
+              },
             ].map((item) => (
               <div
                 key={item.label}
                 style={{
                   display: 'flex',
                   flexDirection: 'column',
-                  alignItems: 'center',
-                  gap: 8,
+                  alignItems: 'flex-start',
+                  gap: 12,
+                  padding: '24px',
+                  borderRadius: 10,
+                  background: 'rgba(255,255,255,0.05)',
+                  border: '1px solid rgba(255,255,255,0.1)',
                 }}
               >
                 <div
                   style={{
-                    width: 56,
-                    height: 56,
-                    borderRadius: 12,
-                    background: 'rgba(255,255,255,0.08)',
-                    border: '1px solid rgba(255,255,255,0.12)',
+                    width: 52,
+                    height: 52,
+                    borderRadius: 10,
+                    background: 'rgba(200,120,42,0.15)',
+                    border: '1px solid rgba(200,120,42,0.3)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    fontSize: 24,
+                    flexShrink: 0,
                   }}
                 >
-                  {item.icon === '11' && <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>}
-                  {item.icon === 'task' && <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>}
-                  {item.icon === 'chart' && <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>}
+                  {item.svg}
                 </div>
-                <span
-                  style={{
-                    fontFamily: 'var(--font-dm-sans)',
-                    fontSize: 13,
-                    fontWeight: 500,
-                    color: 'rgba(255,255,255,0.7)',
-                  }}
-                >
-                  {item.label}
-                </span>
+                <div>
+                  <div style={{ fontFamily: 'var(--font-dm-sans)', fontSize: 15, fontWeight: 600, color: 'white', marginBottom: 4 }}>
+                    {item.label}
+                  </div>
+                  <div style={{ fontFamily: 'var(--font-source-sans)', fontSize: 13, color: 'rgba(255,255,255,0.55)', lineHeight: 1.5 }}>
+                    {item.desc}
+                  </div>
+                </div>
               </div>
             ))}
           </div>
