@@ -337,7 +337,7 @@ export default function FaqPage() {
       </div>
 
       {/* ─── CONTACT CTA ──────────────────────────────────── */}
-      <section style={{ background: '#F5F0E8', paddingTop: 48, paddingBottom: 72 }}>
+      <section style={{ background: '#F5F0E8', paddingTop: 48, paddingBottom: 32 }}>
         <div className="max-w-2xl mx-auto px-6">
           <div
             style={{
