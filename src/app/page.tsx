@@ -149,6 +149,8 @@ export default function Home() {
           <rect width="100%" height="40" fill="url(#rhythm-hero)" />
         </svg>
       </div>
+      {/* Cream buffer before dark section */}
+      <div style={{ background: '#F5F0E8', height: 24 }} />
 
       {/* ─── PRODUCT SHOWCASE ─────────────────────────────────── */}
       {/* Product showcase — real screenshots */}
@@ -448,6 +450,8 @@ export default function Home() {
           <rect width="100%" height="40" fill="url(#rhythm-footer)" />
         </svg>
       </div>
+      {/* Cream buffer before orange section */}
+      <div style={{ background: '#F5F0E8', height: 24 }} />
 
       {/* ─── SECTION 6: CLOSING CTA ───────────────────────────── */}
       <section style={{ background: '#C8782A' }} className="py-20">
