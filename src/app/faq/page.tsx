@@ -156,7 +156,7 @@ function AccordionSection({ category }: { category: Category }) {
           fontFamily: 'var(--font-dm-sans)',
           fontWeight: 600,
           fontSize: 20,
-          color: '#2C2C2C',
+          color: '#F5F0E8',
           borderLeft: '3px solid #C8782A',
           paddingLeft: 14,
           marginBottom: 20,
@@ -314,8 +314,8 @@ export default function FaqPage() {
         <div className="max-w-2xl mx-auto px-6">
           <div
             style={{
-              background: '#FFFBF5',
-              border: '1.5px solid #E8C99A',
+              background: 'rgba(255,255,255,0.06)',
+              border: '1px solid rgba(200,120,42,0.35)',
               borderRadius: 12,
               padding: '36px 40px',
               textAlign: 'center',
@@ -336,7 +336,7 @@ export default function FaqPage() {
               style={{
                 fontFamily: 'var(--font-source-sans)',
                 fontSize: 15,
-                color: 'rgba(245,240,232,0.7)',
+                color: 'rgba(245,240,232,0.8)',
                 lineHeight: 1.7,
               }}
             >
