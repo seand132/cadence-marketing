@@ -78,7 +78,13 @@ export default function Home() {
               className="mt-3"
               style={{ fontFamily: 'var(--font-source-sans)', fontSize: 13, color: '#9C968B' }}
             >
-              No credit card required.
+              No credit card required.{' '}
+              <a
+                href="https://app.cadencehq.co/login"
+                style={{ color: '#9C968B', textDecoration: 'underline' }}
+              >
+                Already using Cadence? Log in →
+              </a>
             </p>
           </div>
 

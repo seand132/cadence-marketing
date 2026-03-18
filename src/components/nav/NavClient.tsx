@@ -86,8 +86,8 @@ export function NavClient() {
             {/* CTA — desktop only */}
             <Link
               href="https://app.cadencehq.co/login"
-              className="hidden md:inline-flex items-center justify-center px-4 py-2 text-sm font-medium transition-colors hover:text-text-primary mr-2"
-              style={{ color: '#6B6560', fontFamily: 'var(--font-dm-sans)', textDecoration: 'none' }}
+              className="hidden md:inline-flex items-center justify-center px-4 py-2 text-sm font-medium transition-all"
+              style={{ color: '#2C2C2C', fontFamily: 'var(--font-dm-sans)', textDecoration: 'none', border: '1px solid #D0CAC0', borderRadius: 4 }}
             >
               Log in
             </Link>
@@ -188,11 +188,30 @@ export function NavClient() {
                 </Link>
               ))}
               <Link
+                href="https://app.cadencehq.co/login"
+                onClick={() => setMobileOpen(false)}
+                style={{
+                  display: 'block',
+                  margin: '12px 0 6px',
+                  padding: '12px 0',
+                  border: '1px solid #D0CAC0',
+                  color: '#2C2C2C',
+                  textAlign: 'center',
+                  borderRadius: 4,
+                  fontFamily: 'var(--font-dm-sans)',
+                  fontWeight: 500,
+                  fontSize: 15,
+                  textDecoration: 'none',
+                }}
+              >
+                Log in
+              </Link>
+              <Link
                 href="https://app.cadencehq.co/signup"
                 onClick={() => setMobileOpen(false)}
                 style={{
                   display: 'block',
-                  margin: '12px 0',
+                  margin: '6px 0 12px',
                   padding: '12px 0',
                   background: '#C8782A',
                   color: 'white',
