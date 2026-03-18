@@ -832,7 +832,7 @@ export default function FeaturesPage() {
       </section>
 
       {/* ─── FEATURE 6: ONE SYSTEM (dark panel) ─────────────── */}
-      <section id="one-system" style={{ background: '#2C2C2C' }} className="py-24">
+      <section id="one-system" style={{ background: '#2C2C2C' }} className="py-16">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <p
             style={{
@@ -971,7 +971,7 @@ export default function FeaturesPage() {
       </section>
 
       {/* ─── HOW THEY WORK TOGETHER ────────────────────────── */}
-      <section style={{ background: '#2C2C2C' }} className="py-24">
+      <section style={{ background: '#2C2C2C' }} className="py-16">
         <div className="max-w-4xl mx-auto px-6">
           <p
             style={{
@@ -1074,21 +1074,18 @@ export default function FeaturesPage() {
       </section>
 
       {/* ─── WORKS WITH YOUR TOOLS ──────────────────────────── */}
-      <div style={{ background: '#F5F0E8', padding: '20px 24px', textAlign: 'center' }}>
+      <div style={{ background: '#2C2C2C', padding: '20px 24px', textAlign: 'center' }}>
         <p
           style={{
             fontFamily: 'var(--font-source-sans)',
             fontSize: 14,
-            color: '#9C968B',
+            color: 'rgba(255,255,255,0.55)',
             margin: 0,
           }}
         >
           Cadence works alongside Slack, Google Calendar, Zoom, and your existing tools. No migration required.
         </p>
       </div>
-
-      {/* ─── SPACER before CTA ─────────────────────────────────── */}
-      <div style={{ background: '#EBE6DD', height: 56 }} />
 
       {/* ─── BOTTOM CTA ─────────────────────────────────────── */}
       <section style={{ background: '#C8782A' }} className="py-24">

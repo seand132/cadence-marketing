@@ -424,9 +424,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── SPACER before orange CTA ─────────────────────────── */}
-      <div style={{ background: '#F5F0E8', height: 56 }} />
-
       {/* ─── SECTION 6: CLOSING CTA ───────────────────────────── */}
       <section style={{ background: '#C8782A' }} className="py-20">
         <div className="max-w-3xl mx-auto px-6 text-center reveal">
