@@ -1059,7 +1059,7 @@ export default function FeaturesPage() {
       </div>
 
       {/* ─── RHYTHM DIVIDER 2 ─────────────────────────────────── */}
-      <div style={{ background: '#EBE6DD', paddingTop: 20 }} />
+      <div style={{ background: '#EBE6DD', paddingTop: 48 }} />
       <div style={{ width:'100%', overflow:'hidden', lineHeight:0, background:'#EBE6DD' }} aria-hidden="true">
         <svg width="100%" height="40" xmlns="http://www.w3.org/2000/svg">
           <defs>
