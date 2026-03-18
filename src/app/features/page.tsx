@@ -1085,6 +1085,8 @@ export default function FeaturesPage() {
           <rect width="100%" height="40" fill="url(#features-div-2)" />
         </svg>
       </div>
+      {/* Cream buffer so motif doesn't sit flush against orange */}
+      <div style={{ background: '#EBE6DD', height: 24 }} />
 
       {/* ─── BOTTOM CTA ─────────────────────────────────────── */}
       <section style={{ background: '#C8782A' }} className="py-24">
