@@ -49,7 +49,7 @@ export function NavClient() {
         className="sticky top-[5px] z-50 transition-all duration-300"
         style={{
           background: scrolled ? 'rgba(245,240,232,0.95)' : '#F5F0E8',
-          borderBottom: '1px solid #D0CAC0',
+          
           backdropFilter: scrolled ? 'blur(12px)' : 'none',
           WebkitBackdropFilter: scrolled ? 'blur(12px)' : 'none',
         }}
