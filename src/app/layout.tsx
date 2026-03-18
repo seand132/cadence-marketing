@@ -57,7 +57,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${dmSans.variable} ${sourceSans3.variable}`}>
-      <body style={{ background: '#F5F0E8', overflowX: 'hidden', maxWidth: '100vw' }}>
+      <body style={{ background: '#2C2C2C', overflowX: 'hidden', maxWidth: '100vw' }}>
         <NavClient />
         <main style={{ paddingBottom: 80 }}>{children}</main>
 
