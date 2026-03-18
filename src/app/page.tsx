@@ -150,7 +150,7 @@ export default function Home() {
         </svg>
       </div>
       {/* Cream buffer before dark section */}
-      <div style={{ background: '#F5F0E8', height: 24 }} />
+      <div style={{ background: '#F5F0E8', height: 7 }} />
 
       {/* ─── PRODUCT SHOWCASE ─────────────────────────────────── */}
       {/* Product showcase — real screenshots */}
