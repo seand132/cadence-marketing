@@ -236,7 +236,7 @@ function AccordionSection({ category }: { category: Category }) {
 
 export default function FaqPage() {
   return (
-    <div style={{ background: '#F5F0E8', minHeight: '100vh' }}>
+    <div style={{ background: '#2C2C2C', minHeight: '100vh' }}>
 
       {/* ─── HERO ─────────────────────────────────────────── */}
       <section style={{ background: '#F5F0E8', paddingTop: 72, paddingBottom: 56 }}>
@@ -310,7 +310,7 @@ export default function FaqPage() {
       </section>
 
       {/* ─── CONTACT CTA ──────────────────────────────────── */}
-      <section style={{ background: '#F5F0E8', paddingTop: 32, paddingBottom: 32 }}>
+      <section style={{ background: '#2C2C2C', paddingTop: 32, paddingBottom: 32 }}>
         <div className="max-w-2xl mx-auto px-6">
           <div
             style={{
@@ -326,7 +326,7 @@ export default function FaqPage() {
                 fontFamily: 'var(--font-dm-sans)',
                 fontWeight: 600,
                 fontSize: 18,
-                color: '#2C2C2C',
+                color: '#F5F0E8',
                 marginBottom: 10,
               }}
             >
@@ -336,7 +336,7 @@ export default function FaqPage() {
               style={{
                 fontFamily: 'var(--font-source-sans)',
                 fontSize: 15,
-                color: '#6B6560',
+                color: 'rgba(245,240,232,0.7)',
                 lineHeight: 1.7,
               }}
             >
