@@ -13,7 +13,7 @@ export async function POST() {
   if (!priceId) return NextResponse.json({ error: 'Missing STRIPE_PRICE_ID_STARTER' }, { status: 500 })
 
   try {
-    const stripe = new Stripe(sk.trim(), { apiVersion: '2025-02-24.acacia' })
+    const stripe = new Stripe(sk.trim(), { apiVersion: '2026-02-25.clover' })
     const session = await stripe.checkout.sessions.create({
       mode: 'subscription',
       payment_method_types: ['card'],
@@ -25,7 +25,6 @@ export async function POST() {
     return NextResponse.json({ url: session.url })
   } catch (error) {
     const msg = error instanceof Error ? error.message : String(error)
-    console.error('Stripe error:', msg)
     return NextResponse.json({ error: msg }, { status: 500 })
   }
 }
