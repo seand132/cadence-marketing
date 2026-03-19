@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server'
 import { getStripe, STRIPE_PRICE_ID_STARTER } from '@/lib/stripe'
 
+export const runtime = 'nodejs'
+
 export async function POST() {
   try {
     const stripe = getStripe()
@@ -15,7 +17,6 @@ export async function POST() {
     return NextResponse.json({ url: session.url })
   } catch (error) {
     console.error('Stripe checkout error:', error)
-    const msg = error instanceof Error ? error.message : String(error)
-    return NextResponse.json({ error: 'Failed to create checkout session', detail: msg }, { status: 500 })
+    return NextResponse.json({ error: 'Failed to create checkout session' }, { status: 500 })
   }
 }
