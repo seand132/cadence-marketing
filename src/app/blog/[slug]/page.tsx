@@ -176,24 +176,19 @@ export default async function BlogPostPage({ params }: Props) {
             borderBottom: '1px solid #D0CAC0',
           }}
         >
-          <div
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={AUTHOR_AVATAR}
+            alt="Sean Davis"
             style={{
               width: 40,
               height: 40,
               borderRadius: '50%',
-              background: '#C8782A',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: 'white',
-              fontFamily: 'var(--font-dm-sans)',
-              fontWeight: 600,
-              fontSize: 14,
+              objectFit: 'cover',
+              border: '2px solid #D0CAC0',
               flexShrink: 0,
             }}
-          >
-            SD
-          </div>
+          />
           <div>
             <div
               style={{
