@@ -287,9 +287,7 @@ export default async function BlogPostPage({ params }: Props) {
                 margin: 0,
               }}
             >
-              Sean has spent years in operations leadership and built Cadence because the
-              management tools he needed didn&rsquo;t exist. He writes about practical
-              management for real teams.
+              Sean Davis leads operations across multifamily, commercial, and mixed-use real estate portfolios. After years managing teams without the right tools, he built Cadence. He writes about clarity, accountability, and what it actually takes to lead well.
             </p>
           </div>
         </div>
