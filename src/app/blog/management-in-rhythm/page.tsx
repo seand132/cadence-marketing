@@ -89,12 +89,7 @@ export default function ManagementInRhythm() {
 
           {/* Author block */}
           <div className="pt-8 pb-4 flex items-start gap-4" style={{ borderTop: '1px solid #D0CAC0', marginTop: 24 }}>
-            <div
-              className="flex-shrink-0 flex items-center justify-center rounded-full"
-              style={{ width: 48, height: 48, background: '#C8782A' }}
-            >
-              <span style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 16, color: 'white' }}>SD</span>
-            </div>
+            <img src="https://whzwyvjerrsyqjmktxcg.supabase.co/storage/v1/object/public/avatars/06d4938c-f40d-46dd-b24c-3a2596e0c8a1/avatar.jpg?t=1773037991750" alt="Sean Davis" className="flex-shrink-0 rounded-full" style={{ width: 48, height: 48, objectFit: 'cover', border: '2px solid #D0CAC0' }} />
             <div>
               <div style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 16, color: '#2C2C2C' }}>Sean Davis</div>
               <div style={{ fontFamily: 'var(--font-source-sans)', fontSize: 14, color: '#9C968B' }}>Founder at Cadence</div>

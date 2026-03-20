@@ -150,7 +150,7 @@ export default function HowToDelegateWithoutLosingControl() {
 
         <ShareBar title="How to Delegate Without Losing Control" url="https://cadencehq.co/blog/how-to-delegate-without-losing-control" />
         <div style={{ marginTop: 64, padding: 24, background: 'white', border: '1px solid #D0CAC0', borderRadius: 8, display: 'flex', gap: 16, alignItems: 'flex-start' }}>
-          <div style={{ width: 56, height: 56, borderRadius: '50%', background: '#C8782A', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 18, flexShrink: 0 }}>SD</div>
+          <img src="https://whzwyvjerrsyqjmktxcg.supabase.co/storage/v1/object/public/avatars/06d4938c-f40d-46dd-b24c-3a2596e0c8a1/avatar.jpg?t=1773037991750" alt="Sean Davis" style={{ width: 56, height: 56, borderRadius: '50%', objectFit: 'cover', border: '2px solid #D0CAC0', flexShrink: 0 }} />
           <div>
             <div style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 16, color: '#2C2C2C', marginBottom: 4 }}>Sean Davis</div>
             <div style={{ fontFamily: 'var(--font-source-sans)', fontSize: 13, color: '#C8782A', marginBottom: 8 }}>Founder at Cadence</div>
