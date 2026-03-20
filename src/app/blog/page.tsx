@@ -1,26 +1,20 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import BlogFilterGrid from './BlogFilterGrid'
+import { getAllPosts, getKicker } from '@/lib/blog'
 
 export const metadata: Metadata = {
   title: 'The Cadence Blog | Practical management for real teams',
-  description: 'Practical management for real teams. 1:1s, delegation, team culture, and building systems that actually work.',
-}
-
-const featuredPost = {
-  slug: 'the-11-that-actually-works',
-  title: 'The 1:1 That Actually Works',
-  category: '1:1s',
-  kicker: 'One-on-Ones ·',
-  readTime: '8 min read',
-  author: 'Sean Davis',
-  excerpt:
-    "Most 1:1s are status updates with better lighting. Here's how to turn yours into the most valuable 30 minutes of your week.",
+  description:
+    'Practical management for real teams. 1:1s, delegation, team culture, and building systems that actually work.',
 }
 
 function RhythmDivider({ id, bg }: { id: string; bg: string }) {
   return (
-    <div style={{ width: '100%', overflow: 'hidden', lineHeight: 0, background: bg }} aria-hidden="true">
+    <div
+      style={{ width: '100%', overflow: 'hidden', lineHeight: 0, background: bg }}
+      aria-hidden="true"
+    >
       <svg width="100%" height="40" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <pattern id={id} x="0" y="0" width="192" height="40" patternUnits="userSpaceOnUse">
@@ -49,6 +43,20 @@ function RhythmDivider({ id, bg }: { id: string; bg: string }) {
 }
 
 export default function BlogIndex() {
+  const posts = getAllPosts()
+  const featuredPost = posts[0]
+  const gridPosts = posts.slice(1)
+
+  if (!featuredPost) {
+    return (
+      <div style={{ padding: 40 }}>
+        <p>No posts found.</p>
+      </div>
+    )
+  }
+
+  const featuredKicker = getKicker(featuredPost.kicker || featuredPost.category)
+
   return (
     <>
       {/* Hero */}
@@ -66,7 +74,14 @@ export default function BlogIndex() {
           >
             The Cadence Blog
           </h1>
-          <p style={{ fontFamily: 'var(--font-source-sans)', fontSize: 20, color: '#9C968B', lineHeight: 1.6 }}>
+          <p
+            style={{
+              fontFamily: 'var(--font-source-sans)',
+              fontSize: 20,
+              color: '#9C968B',
+              lineHeight: 1.6,
+            }}
+          >
             Practical management for real teams.
           </p>
         </div>
@@ -85,6 +100,15 @@ export default function BlogIndex() {
               background: '#1C2B3A',
             }}
           >
+            {/* Cover image if present */}
+            {featuredPost.coverImage && (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={featuredPost.coverImage}
+                alt={featuredPost.title}
+                style={{ width: '100%', height: 280, objectFit: 'cover', display: 'block' }}
+              />
+            )}
             <div className="p-10 md:p-12">
               {/* Kicker */}
               <p
@@ -98,7 +122,7 @@ export default function BlogIndex() {
                   color: '#7A9E82',
                 }}
               >
-                {featuredPost.kicker}
+                {featuredKicker.label}
               </p>
               {/* Title */}
               <h2
@@ -131,8 +155,26 @@ export default function BlogIndex() {
               <div className="flex items-center justify-between flex-wrap gap-4">
                 <div className="flex items-center gap-3">
                   {/* Author avatar */}
-                  <img src="https://whzwyvjerrsyqjmktxcg.supabase.co/storage/v1/object/public/avatars/06d4938c-f40d-46dd-b24c-3a2596e0c8a1/avatar.jpg?t=1773037991750" alt="Sean Davis" style={{ width: 32, height: 32, borderRadius: "50%", objectFit: "cover", flexShrink: 0, border: "2px solid rgba(245,240,232,0.4)" }} />
-                  <span style={{ fontFamily: 'var(--font-dm-sans)', fontSize: 14, color: 'rgba(245,240,232,0.6)' }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="https://whzwyvjerrsyqjmktxcg.supabase.co/storage/v1/object/public/avatars/06d4938c-f40d-46dd-b24c-3a2596e0c8a1/avatar.jpg?t=1773037991750"
+                    alt="Sean Davis"
+                    style={{
+                      width: 32,
+                      height: 32,
+                      borderRadius: '50%',
+                      objectFit: 'cover',
+                      flexShrink: 0,
+                      border: '2px solid rgba(245,240,232,0.4)',
+                    }}
+                  />
+                  <span
+                    style={{
+                      fontFamily: 'var(--font-dm-sans)',
+                      fontSize: 14,
+                      color: 'rgba(245,240,232,0.6)',
+                    }}
+                  >
                     {featuredPost.author} · {featuredPost.readTime}
                   </span>
                 </div>
@@ -142,7 +184,13 @@ export default function BlogIndex() {
                 >
                   Read article
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path d="M3 8h10M9 4l4 4-4 4" stroke="#C8782A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    <path
+                      d="M3 8h10M9 4l4 4-4 4"
+                      stroke="#C8782A"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 </span>
               </div>
@@ -151,24 +199,36 @@ export default function BlogIndex() {
         </div>
       </section>
 
-      {/* Rhythm divider — with breathing room */}
+      {/* Rhythm divider */}
       <div style={{ background: '#F5F0E8', paddingBottom: 16 }} />
       <RhythmDivider id="blog-div-featured" bg="#F5F0E8" />
       <div style={{ background: 'white', paddingTop: 8 }} />
 
       {/* Category filter + Grid (client component) */}
-      <BlogFilterGrid />
+      <BlogFilterGrid posts={gridPosts} />
 
       {/* Newsletter */}
       <section style={{ background: '#7A9E82' }} className="py-16">
         <div className="max-w-xl mx-auto px-6 text-center">
           <h2
             className="mb-2"
-            style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 26, color: 'white' }}
+            style={{
+              fontFamily: 'var(--font-dm-sans)',
+              fontWeight: 700,
+              fontSize: 26,
+              color: 'white',
+            }}
           >
             Get management insights monthly.
           </h2>
-          <p className="mb-8" style={{ fontFamily: 'var(--font-source-sans)', fontSize: 16, color: 'rgba(255,255,255,0.8)' }}>
+          <p
+            className="mb-8"
+            style={{
+              fontFamily: 'var(--font-source-sans)',
+              fontSize: 16,
+              color: 'rgba(255,255,255,0.8)',
+            }}
+          >
             No spam. Unsubscribe anytime.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
