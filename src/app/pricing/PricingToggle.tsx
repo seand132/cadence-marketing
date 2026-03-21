@@ -3,63 +3,128 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
-const planFeaturesAll = [
-  'Unlimited 1:1 meeting agendas (context carries forward automatically)',
-  'Task delegation and real-time tracking',
-  'Team dashboard with on-track/off-track status',
-  'KPI and goal tracking',
-  'Org chart and reporting structure',
-  'Customizable weekly dashboard',
-  'Up to 15 direct reports included',
-  '14-day free trial, full access',
-  'Cancel anytime, no contracts',
-  'Email support',
+type PlanId = 'starter' | 'growth' | 'team' | 'unlimited'
+
+const PLANS: {
+  id: PlanId
+  name: string
+  monthly: number
+  annual: number
+  seats: string
+  popular?: boolean
+  features: string[]
+}[] = [
+  {
+    id: 'starter',
+    name: 'Starter',
+    monthly: 10,
+    annual: 8,
+    seats: 'Up to 5 team members',
+    features: [
+      '1:1 meeting templates',
+      'Task management',
+      'KPI tracking',
+      'Team member profiles',
+      'Email support',
+    ],
+  },
+  {
+    id: 'growth',
+    name: 'Growth',
+    monthly: 25,
+    annual: 20,
+    seats: 'Up to 15 team members',
+    popular: true,
+    features: [
+      'Everything in Starter',
+      'Weekly digests',
+      'Goal tracking',
+      'Referral rewards',
+      'Priority support',
+    ],
+  },
+  {
+    id: 'team',
+    name: 'Team',
+    monthly: 49,
+    annual: 39,
+    seats: 'Up to 50 team members',
+    features: [
+      'Everything in Growth',
+      'Multiple teams',
+      'Advanced reporting',
+      'Admin dashboard',
+      'Dedicated onboarding',
+    ],
+  },
+  {
+    id: 'unlimited',
+    name: 'Unlimited',
+    monthly: 79,
+    annual: 63,
+    seats: 'Unlimited team members',
+    features: [
+      'Everything in Team',
+      'Unlimited team members',
+      'Custom integrations',
+      'SLA support',
+      'Early access to new features',
+    ],
+  },
 ]
 
 const faqs = [
   {
-    q: 'Is there a free trial?',
-    a: 'Yes. 14 days, full access from day one. No credit card required.',
+    q: 'Do my employees need to pay?',
+    a: 'No. You pay one subscription — your entire team gets access for free.',
   },
   {
-    q: 'What happens after the trial?',
-    a: "You'll be prompted to subscribe at $10/mo. If you don't, your account moves to read-only. No data is lost.",
-  },
-  {
-    q: 'Is the $10 per person on my team, or just for me?',
-    a: 'Just for you as the manager. Your team members have their own accounts included at no extra cost.',
+    q: 'What counts as a team member?',
+    a: 'Anyone you invite to your Cadence workspace.',
   },
   {
     q: 'Can I cancel anytime?',
-    a: 'Yes. No contracts, no cancellation fees. Cancel from settings in 30 seconds.',
+    a: 'Yes. No contracts, no cancellation fees.',
   },
   {
-    q: 'What if my team grows past 15 people?',
-    a: "Reach out and we'll find a plan that works.",
+    q: 'What happens if I exceed my seat limit?',
+    a: "You'll be prompted to upgrade. Your data is always safe.",
   },
   {
-    q: 'Is my data safe if I cancel?',
-    a: 'Yes. You have 30 days after cancellation to export everything.',
+    q: 'Is there a free trial?',
+    a: 'Yes — 14 days free, no credit card required.',
   },
 ]
 
+function CheckIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ flexShrink: 0 }}>
+      <circle cx="8" cy="8" r="8" fill="#C8782A" fillOpacity="0.15" />
+      <path
+        d="M5 8L7 10.5L11 5.5"
+        stroke="#C8782A"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
 export function PricingToggle() {
   const [annual, setAnnual] = useState(false)
-  const [openFaq, setOpenFaq] = useState<number | null>(0)
-
-  const price = annual ? 8 : 10
-  const billed = annual ? 'Billed as $96/year — save $24' : 'Billed monthly'
+  const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   return (
     <>
-      {/* ── Annual/Monthly Toggle ─────────────────────────── */}
+      {/* Annual/Monthly Toggle */}
       <div
         style={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           gap: 16,
-          marginBottom: 40,
+          marginBottom: 48,
         }}
       >
         <span
@@ -113,415 +178,227 @@ export function PricingToggle() {
           }}
         >
           Annual
-          {annual && (
-            <span
-              style={{
-                background: '#FDF6EE',
-                color: '#C8782A',
-                fontWeight: 700,
-                fontSize: 11,
-                padding: '2px 8px',
-                borderRadius: 999,
-                border: '1px solid #F0D5B8',
-                letterSpacing: '0.04em',
-              }}
-            >
-              SAVE 20%
-            </span>
-          )}
+          <span
+            style={{
+              background: annual ? '#FDF6EE' : '#F5F0E8',
+              color: annual ? '#C8782A' : '#9C968B',
+              fontWeight: 700,
+              fontSize: 11,
+              padding: '2px 8px',
+              borderRadius: 999,
+              border: annual ? '1px solid #F0D5B8' : '1px solid #D0CAC0',
+              letterSpacing: '0.04em',
+            }}
+          >
+            SAVE 20%
+          </span>
         </span>
       </div>
 
-      {/* ── Pricing Card ──────────────────────────────────── */}
+      {/* Plan Cards */}
       <div
-        className="mx-auto"
+        className="pricing-cards-grid"
         style={{
-          maxWidth: 480,
-          borderRadius: 8,
-          border: '1px solid #D0CAC0',
-          boxShadow: '0 4px 24px rgba(0,0,0,0.09)',
-          overflow: 'hidden',
-          background: 'white',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(4, 1fr)',
+          gap: 20,
           marginBottom: 80,
+          alignItems: 'stretch',
         }}
       >
-        <div style={{ height: 6, background: '#C8782A' }} />
-        <div style={{ padding: '36px 40px' }}>
+        {PLANS.map((plan) => (
           <div
+            key={plan.id}
             style={{
+              position: 'relative',
+              borderRadius: 8,
+              border: plan.popular ? '2px solid #C8782A' : '1px solid #D0CAC0',
+              boxShadow: plan.popular
+                ? '0 4px 24px rgba(200,120,42,0.18)'
+                : '0 2px 12px rgba(0,0,0,0.06)',
+              background: 'white',
+              overflow: 'hidden',
               display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'flex-start',
-              marginBottom: 8,
+              flexDirection: 'column',
             }}
           >
-            <div>
-              <h2
+            <div style={{ height: 4, background: plan.popular ? '#C8782A' : '#D0CAC0' }} />
+
+            {plan.popular && (
+              <div
+                style={{
+                  position: 'absolute',
+                  top: 16,
+                  right: 14,
+                  background: '#C8782A',
+                  color: 'white',
+                  fontFamily: 'var(--font-dm-sans)',
+                  fontWeight: 700,
+                  fontSize: 10,
+                  letterSpacing: '0.08em',
+                  textTransform: 'uppercase',
+                  padding: '3px 10px',
+                  borderRadius: 999,
+                }}
+              >
+                Most Popular
+              </div>
+            )}
+
+            <div
+              style={{
+                padding: '24px 22px 28px',
+                flex: 1,
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
+              <p
                 style={{
                   fontFamily: 'var(--font-dm-sans)',
                   fontWeight: 700,
-                  fontSize: 22,
+                  fontSize: 18,
                   color: '#2C2C2C',
-                  margin: 0,
+                  margin: '0 0 4px',
                 }}
               >
-                Cadence
-              </h2>
+                {plan.name}
+              </p>
               <p
                 style={{
                   fontFamily: 'var(--font-source-sans)',
-                  fontSize: 14,
+                  fontSize: 13,
                   color: '#9C968B',
-                  marginTop: 4,
-                  marginBottom: 0,
+                  margin: '0 0 18px',
                 }}
               >
-                Per manager. Your whole team included.
+                {plan.seats}
               </p>
-            </div>
-            <div style={{ textAlign: 'right' }}>
-              <div
-                style={{
-                  fontFamily: 'var(--font-dm-sans)',
-                  fontWeight: 700,
-                  fontSize: 44,
-                  color: '#2C2C2C',
-                  lineHeight: 1,
-                }}
-              >
-                ${price}
+
+              <div style={{ marginBottom: 4 }}>
+                <span
+                  style={{
+                    fontFamily: 'var(--font-dm-sans)',
+                    fontWeight: 700,
+                    fontSize: 38,
+                    color: '#2C2C2C',
+                    lineHeight: 1,
+                  }}
+                >
+                  ${annual ? plan.annual : plan.monthly}
+                </span>
+                <span
+                  style={{
+                    fontFamily: 'var(--font-source-sans)',
+                    fontSize: 14,
+                    color: '#9C968B',
+                    marginLeft: 3,
+                  }}
+                >
+                  /month
+                </span>
               </div>
-              <div
+              <p
                 style={{
                   fontFamily: 'var(--font-source-sans)',
                   fontSize: 12,
                   color: '#9C968B',
-                  marginTop: 4,
+                  margin: '0 0 22px',
                 }}
               >
-                /mo
-              </div>
-            </div>
-          </div>
-          <p
-            style={{
-              fontFamily: 'var(--font-source-sans)',
-              fontSize: 13,
-              color: '#9C968B',
-              marginBottom: 24,
-            }}
-          >
-            {billed}
-          </p>
-
-          <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 28px 0' }}>
-            {planFeaturesAll.map((f) => (
-              <li
-                key={f}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 10,
-                  padding: '8px 0',
-                  borderBottom: '1px solid #F5F0E8',
-                }}
-              >
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ flexShrink: 0 }}>
-                  <circle cx="8" cy="8" r="8" fill="#C8782A" fillOpacity="0.15" />
-                  <path d="M5 8L7 10.5L11 5.5" stroke="#C8782A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-                <span
-                  style={{
-                    fontFamily: 'var(--font-source-sans)',
-                    fontSize: 15,
-                    color: '#2C2C2C',
-                  }}
-                >
-                  {f}
-                </span>
-              </li>
-            ))}
-          </ul>
-
-          <Link
-            href={annual ? "https://app.cadencehq.co/signup?billing=annual" : "https://app.cadencehq.co/signup"}
-            style={{
-              display: 'block',
-              width: '100%',
-              padding: '14px 0',
-              background: '#C8782A',
-              color: 'white',
-              textAlign: 'center',
-              borderRadius: 4,
-              fontFamily: 'var(--font-dm-sans)',
-              fontWeight: 600,
-              fontSize: 15,
-              textDecoration: 'none',
-            }}
-          >
-            Get started free
-          </Link>
-          <p
-            style={{
-              textAlign: 'center',
-              fontSize: 12,
-              color: '#9C968B',
-              fontFamily: 'var(--font-source-sans)',
-              marginTop: 12,
-              marginBottom: 0,
-            }}
-          >
-            14-day free trial included. No credit card required.
-          </p>
-        </div>
-      </div>
-
-      {/* ── What $10 Gets You ─────────────────────────────── */}
-      <div style={{ maxWidth: 900, margin: '0 auto', marginBottom: 80 }}>
-        <h2
-          style={{
-            fontFamily: 'var(--font-dm-sans)',
-            fontWeight: 700,
-            fontSize: 26,
-            color: '#2C2C2C',
-            textAlign: 'center',
-            marginBottom: 32,
-          }}
-        >
-          What $10 gets you
-        </h2>
-        <div
-          className="pricing-comparison-grid"
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: 20,
-          }}
-        >
-          {/* Before */}
-          <div
-            style={{
-              background: 'white',
-              border: '1px solid #D0CAC0',
-              borderRadius: 8,
-              overflow: 'hidden',
-            }}
-          >
-            <div style={{ height: 4, background: '#D0CAC0' }} />
-            <div style={{ padding: '24px 24px 28px' }}>
-              <p
-                style={{
-                  fontFamily: 'var(--font-dm-sans)',
-                  fontWeight: 700,
-                  fontSize: 14,
-                  color: '#9C968B',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.08em',
-                  marginBottom: 12,
-                }}
-              >
-                Before Cadence
+                {annual ? `Billed $${plan.annual * 12}/year` : 'Billed monthly'}
               </p>
-              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 20px' }}>
-                {['Notion doc that nobody updates', 'Spreadsheet from 2 managers ago', 'Slack threads nobody can find', 'Calendar with zero context', '3+ hours/week of overhead'].map(
-                  (item) => (
-                    <li
-                      key={item}
-                      style={{
-                        fontFamily: 'var(--font-source-sans)',
-                        fontSize: 14,
-                        color: '#9C968B',
-                        padding: '6px 0',
-                        borderBottom: '1px solid #F5F0E8',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: 8,
-                      }}
-                    >
-                      <span style={{ color: '#D0CAC0', fontSize: 16, flexShrink: 0 }}>&#x2212;</span>
-                      {item}
-                    </li>
-                  )
-                )}
-              </ul>
-              <div
-                style={{
-                  background: '#F5F0E8',
-                  borderRadius: 6,
-                  padding: '10px 14px',
-                  fontFamily: 'var(--font-dm-sans)',
-                  fontSize: 13,
-                  color: '#9C968B',
-                }}
-              >
-                $0/mo but 3+ hrs/week of wasted time
-              </div>
-            </div>
-          </div>
 
-          {/* Cadence */}
-          <div
-            style={{
-              background: 'white',
-              border: '2px solid #C8782A',
-              borderRadius: 8,
-              overflow: 'hidden',
-              boxShadow: '0 4px 20px rgba(200,120,42,0.15)',
-            }}
-          >
-            <div style={{ height: 4, background: '#C8782A' }} />
-            <div style={{ padding: '24px 24px 28px' }}>
-              <p
-                style={{
-                  fontFamily: 'var(--font-dm-sans)',
-                  fontWeight: 700,
-                  fontSize: 14,
-                  color: '#C8782A',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.08em',
-                  marginBottom: 12,
-                }}
-              >
-                Cadence
-              </p>
-              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 20px' }}>
-                {['One place for everything', '1:1 agendas that run themselves', 'Task delegation you can actually see', 'KPIs visible every week', '30 min/week of focused management'].map(
-                  (item) => (
-                    <li
-                      key={item}
+              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 22px', flex: 1 }}>
+                {plan.features.map((f) => (
+                  <li
+                    key={f}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 8,
+                      padding: '7px 0',
+                      borderBottom: '1px solid #F5F0E8',
+                    }}
+                  >
+                    <CheckIcon />
+                    <span
                       style={{
                         fontFamily: 'var(--font-source-sans)',
                         fontSize: 14,
                         color: '#2C2C2C',
-                        padding: '6px 0',
-                        borderBottom: '1px solid #F5F0E8',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: 8,
                       }}
                     >
-                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ flexShrink: 0 }}>
-                        <circle cx="7" cy="7" r="7" fill="#C8782A" fillOpacity="0.15" />
-                        <path d="M4 7L6 9.5L10 4.5" stroke="#C8782A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                      {item}
-                    </li>
-                  )
-                )}
+                      {f}
+                    </span>
+                  </li>
+                ))}
               </ul>
-              <div
-                style={{
-                  background: '#FDF6EE',
-                  borderRadius: 6,
-                  padding: '10px 14px',
-                  fontFamily: 'var(--font-dm-sans)',
-                  fontSize: 13,
-                  fontWeight: 600,
-                  color: '#C8782A',
-                }}
-              >
-                $10/mo. That&rsquo;s two coffees.
-              </div>
-            </div>
-          </div>
 
-          {/* Enterprise */}
-          <div
-            style={{
-              background: 'white',
-              border: '1px solid #D0CAC0',
-              borderRadius: 8,
-              overflow: 'hidden',
-            }}
-          >
-            <div style={{ height: 4, background: '#D0CAC0' }} />
-            <div style={{ padding: '24px 24px 28px' }}>
-              <p
+              <Link
+                href={`https://app.cadencehq.co/signup?plan=${plan.id}${annual ? '&billing=annual' : ''}`}
                 style={{
+                  display: 'block',
+                  width: '100%',
+                  padding: '12px 0',
+                  background: plan.popular ? '#C8782A' : 'transparent',
+                  color: plan.popular ? 'white' : '#C8782A',
+                  border: plan.popular ? 'none' : '1.5px solid #C8782A',
+                  textAlign: 'center',
+                  borderRadius: 4,
                   fontFamily: 'var(--font-dm-sans)',
-                  fontWeight: 700,
+                  fontWeight: 600,
                   fontSize: 14,
-                  color: '#9C968B',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.08em',
-                  marginBottom: 12,
+                  textDecoration: 'none',
+                  boxSizing: 'border-box' as const,
                 }}
               >
-                Enterprise tools
-              </p>
-              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 20px' }}>
-                {['Enterprise HR platforms', 'Built for HR, not managers', '$15-25/user/month', 'Months to implement', 'Requires IT department'].map(
-                  (item) => (
-                    <li
-                      key={item}
-                      style={{
-                        fontFamily: 'var(--font-source-sans)',
-                        fontSize: 14,
-                        color: '#9C968B',
-                        padding: '6px 0',
-                        borderBottom: '1px solid #F5F0E8',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: 8,
-                      }}
-                    >
-                      <span style={{ color: '#D0CAC0', fontSize: 16, flexShrink: 0 }}>&#x2212;</span>
-                      {item}
-                    </li>
-                  )
-                )}
-              </ul>
-              <div
-                style={{
-                  background: '#F5F0E8',
-                  borderRadius: 6,
-                  padding: '10px 14px',
-                  fontFamily: 'var(--font-dm-sans)',
-                  fontSize: 13,
-                  color: '#9C968B',
-                }}
-              >
-                $15-25/user/mo — built for HR teams, not managers.
-              </div>
+                Get started free
+              </Link>
             </div>
           </div>
-        </div>
+        ))}
       </div>
 
-      {/* ── Mid-page CTA ──────────────────────────────────── */}
-      <div style={{ textAlign: 'center', marginBottom: 80 }}>
+      {/* Value Callout */}
+      <div
+        style={{
+          maxWidth: 680,
+          margin: '0 auto 80px',
+          background: '#FDF6EE',
+          border: '1px solid #F0D5B8',
+          borderRadius: 12,
+          padding: '32px 36px',
+          textAlign: 'center',
+        }}
+      >
         <p
           style={{
             fontFamily: 'var(--font-dm-sans)',
-            fontSize: 18,
-            fontWeight: 500,
-            color: '#2C2C2C',
-            marginBottom: 16,
+            fontWeight: 700,
+            fontSize: 20,
+            color: '#C8782A',
+            margin: '0 0 12px',
           }}
         >
-          Convinced?
+          Why flat-rate pricing?
         </p>
-        <Link
-          href={annual ? "https://app.cadencehq.co/signup?billing=annual" : "https://app.cadencehq.co/signup"}
+        <p
           style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '14px 32px',
-            background: '#C8782A',
-            color: 'white',
-            borderRadius: 4,
-            fontFamily: 'var(--font-dm-sans)',
-            fontWeight: 600,
-            fontSize: 15,
-            textDecoration: 'none',
+            fontFamily: 'var(--font-source-sans)',
+            fontSize: 16,
+            color: '#2C2C2C',
+            lineHeight: 1.7,
+            margin: 0,
           }}
         >
-          Get started free
-        </Link>
+          Most tools charge per seat. With 8 direct reports on a $7/user tool,
+          you&rsquo;re paying $56/month before you&rsquo;ve done anything.
+          Cadence charges one flat rate &mdash; your whole team is included.
+        </p>
       </div>
 
-      {/* ── FAQ Accordion ─────────────────────────────────── */}
+      {/* FAQ */}
       <div style={{ maxWidth: 640, margin: '0 auto' }}>
         <h2
           style={{
@@ -547,9 +424,7 @@ export function PricingToggle() {
               }}
             >
               <button
-                onClick={() => {
-                  setOpenFaq(openFaq === i ? null : i)
-                }}
+                onClick={() => setOpenFaq(openFaq === i ? null : i)}
                 style={{
                   width: '100%',
                   padding: '16px 20px',
@@ -586,7 +461,7 @@ export function PricingToggle() {
                   +
                 </span>
               </button>
-              {(openFaq === i) && (
+              {openFaq === i && (
                 <div
                   style={{
                     padding: '0 20px 18px',
@@ -603,6 +478,15 @@ export function PricingToggle() {
           ))}
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 900px) {
+          .pricing-cards-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+        @media (max-width: 580px) {
+          .pricing-cards-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </>
   )
 }

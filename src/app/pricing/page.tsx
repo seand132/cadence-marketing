@@ -3,14 +3,15 @@ import Link from 'next/link'
 import { PricingToggle } from './PricingToggle'
 
 export const metadata: Metadata = {
-  title: 'Cadence Pricing — $10/month. One plan. Everything included.',
-  description: 'One plan, one price. $10/month per manager. Start free for 14 days. Not per seat. Not per feature. Just $10.',
+  title: 'Cadence Pricing — Simple pricing. No per-seat surprises.',
+  description:
+    'One flat monthly rate covers your whole team. Most management tools charge per person — Cadence does not. Starter from $10/month.',
 }
 
 export default function PricingPage() {
   return (
     <>
-      {/* ─── HERO ─────────────────────────────────────────────── */}
+      {/* Hero */}
       <section style={{ background: '#F5F0E8' }} className="py-24">
         <div className="max-w-2xl mx-auto px-6 text-center">
           <div
@@ -36,7 +37,7 @@ export default function PricingPage() {
               lineHeight: 1.15,
             }}
           >
-            One plan. Everything included.
+            Simple pricing. No per-seat surprises.
           </h1>
           <p
             style={{
@@ -47,9 +48,9 @@ export default function PricingPage() {
               marginBottom: 24,
             }}
           >
-            $10 per manager, per month. Not per seat. Not per feature. Not per user.
+            One flat monthly rate covers your whole team. Most management tools
+            charge per person &mdash; we don&rsquo;t.
           </p>
-          {/* Trust strip */}
           <div
             style={{
               display: 'flex',
@@ -72,17 +73,14 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* ─── RHYTHM DIVIDER ───────────────────────────────────── */}
-
-
-      {/* ─── MAIN CONTENT (client toggle + card + comparison + FAQ) ── */}
+      {/* Plans + FAQ */}
       <section style={{ background: 'white' }} className="py-20">
         <div className="max-w-5xl mx-auto px-6">
           <PricingToggle />
         </div>
       </section>
 
-      {/* ─── BOTTOM CTA ─────────────────────────────────────────── */}
+      {/* Bottom CTA */}
       <section style={{ background: '#2C2C2C' }} className="py-24">
         <div className="max-w-xl mx-auto px-6 text-center">
           <h2
@@ -95,7 +93,7 @@ export default function PricingPage() {
               marginBottom: 16,
             }}
           >
-            Start your free trial today.
+            Ready to manage in rhythm?
           </h2>
           <p
             style={{
@@ -106,22 +104,55 @@ export default function PricingPage() {
               marginBottom: 32,
             }}
           >
-            14 days. Full access. No credit card required.
+            14 days free. Full access. No credit card required.
           </p>
-          <Link
-            href="https://app.cadencehq.co/signup"
-            className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold transition-opacity hover:opacity-90"
+          <div
             style={{
-              background: '#C8782A',
-              color: 'white',
-              borderRadius: 4,
-              fontFamily: 'var(--font-dm-sans)',
-              fontWeight: 600,
-              textDecoration: 'none',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              gap: 16,
+              flexWrap: 'wrap',
             }}
           >
-            Get started free
-          </Link>
+            <Link
+              href="https://app.cadencehq.co/signup"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: '14px 32px',
+                background: '#C8782A',
+                color: 'white',
+                borderRadius: 4,
+                fontFamily: 'var(--font-dm-sans)',
+                fontWeight: 600,
+                fontSize: 15,
+                textDecoration: 'none',
+              }}
+            >
+              Get started free
+            </Link>
+            <Link
+              href="/features"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: '14px 32px',
+                background: 'transparent',
+                color: 'rgba(255,255,255,0.75)',
+                border: '1px solid rgba(255,255,255,0.25)',
+                borderRadius: 4,
+                fontFamily: 'var(--font-dm-sans)',
+                fontWeight: 500,
+                fontSize: 15,
+                textDecoration: 'none',
+              }}
+            >
+              See how it works &rarr;
+            </Link>
+          </div>
         </div>
       </section>
     </>
