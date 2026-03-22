@@ -20,10 +20,13 @@ import json
 
 PROMPTS = {
     "blog": (
-        "Editorial illustration for a business management blog. "
-        "Warm cream background #F5F0E8. Amber #C8782A and teal #3A7D7B geometric accents. "
-        "Mid-century modern aesthetic. Abstract shapes and forms suggesting {topic}. "
-        "No people, no text rendered in image. Clean, cinematic composition. High quality."
+        "Mid-century modern editorial illustration. Brand colors only: warm cream background (#F5F0E8), "
+        "with geometric shapes in amber (#C8782A), teal (#3A7D7B), sage (#7B8F6A), and charcoal (#2C2C2C). "
+        "Abstract composition suggesting {topic} through shape, rhythm, and form only. "
+        "Absolutely no people, no faces, no hands, no body parts, no silhouettes of humans. "
+        "No text, no words, no letters rendered in the image. "
+        "Clean geometric shapes, abstract forms, architectural rhythm. "
+        "Cinematic widescreen composition. High quality editorial illustration."
     ),
     "x": (
         "Minimalist social media card. Dark background (#1C2B3A navy). "
