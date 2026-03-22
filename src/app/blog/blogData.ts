@@ -13,7 +13,7 @@ export const allPosts: BlogPost[] = [
     title: 'The 1:1 That Actually Works',
     category: '1:1s',
     readTime: '8 min read',
-    date: 'Mar 17, 2025',
+    date: 'Mar 17, 2026',
     excerpt:
       "Most 1:1s are status updates with better lighting. Here's how to turn yours into the most valuable 30 minutes of your week.",
   },
@@ -22,7 +22,7 @@ export const allPosts: BlogPost[] = [
     title: 'How to Delegate Without Losing Control',
     category: 'Delegation',
     readTime: '8 min read',
-    date: 'Mar 10, 2025',
+    date: 'Mar 10, 2026',
     excerpt:
       "You know you should delegate more. You don't. Here's the real reason, and a framework that actually works.",
   },
@@ -31,7 +31,7 @@ export const allPosts: BlogPost[] = [
     title: 'What to Track When You Manage a Small Team',
     category: 'KPIs',
     readTime: '7 min read',
-    date: 'Mar 3, 2025',
+    date: 'Mar 3, 2026',
     excerpt:
       "You're either tracking the wrong things or nothing at all. Here's what actually matters for a team of 3 to 8.",
   },
@@ -40,7 +40,7 @@ export const allPosts: BlogPost[] = [
     title: 'How to Give Feedback Your Team Will Actually Hear',
     category: 'Team Culture',
     readTime: '7 min read',
-    date: 'Feb 24, 2025',
+    date: 'Feb 24, 2026',
     excerpt:
       "Feedback doesn't fail because managers don't give it. It fails because they don't know how. That's fixable.",
   },
@@ -49,7 +49,7 @@ export const allPosts: BlogPost[] = [
     title: 'Building Team Culture Without the Corporate Playbook',
     category: 'Team Culture',
     readTime: '8 min read',
-    date: 'Feb 17, 2025',
+    date: 'Feb 17, 2026',
     excerpt:
       "Culture isn't built at off-sites. It's built in the small decisions you make every day as a manager.",
   },
@@ -58,7 +58,7 @@ export const allPosts: BlogPost[] = [
     title: 'What "Management in Rhythm" Actually Means',
     category: 'Management',
     readTime: '6 min read',
-    date: 'Feb 10, 2025',
+    date: 'Feb 10, 2026',
     excerpt: "Great teams don't happen by accident. They find their rhythm and keep it.",
   },
   {
@@ -66,7 +66,7 @@ export const allPosts: BlogPost[] = [
     title: "The New Manager's Survival Guide (No Generic Advice)",
     category: 'Management',
     readTime: '7 min read',
-    date: 'Feb 3, 2025',
+    date: 'Feb 3, 2026',
     excerpt: "Nobody hands you a manual when you become a manager. This is as close as it gets.",
   },
   {
@@ -74,7 +74,7 @@ export const allPosts: BlogPost[] = [
     title: 'Why Most Management Tools Fail Small Teams',
     category: 'Management',
     readTime: '6 min read',
-    date: 'Jan 27, 2025',
+    date: 'Jan 27, 2026',
     excerpt:
       "Most management tools are built for HR, not managers. Here's why that matters and what to look for instead.",
   },
