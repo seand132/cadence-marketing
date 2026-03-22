@@ -64,14 +64,14 @@ export default function RootLayout({
         {/* Footer */}
         <footer style={{ background: '#2C2C2C' }} className="py-12">
           <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-8">
-            <div className="flex flex-col items-center sm:items-start gap-3">
+            <div className="flex flex-col items-center sm:items-start gap-3" style={{ minWidth: 0, overflow: "visible" }}>
               <Image
                 src="/brand/cadence-horizontal-lockup-dark.svg"
                 alt="Cadence"
                 width={160}
                 height={42}
-                className="max-w-full h-auto"
-                style={{ maxWidth: '160px' }}
+                className="h-auto"
+                style={{ maxWidth: '160px', width: '100%', display: 'block', overflow: 'visible' }}
               />
               <p
                 className="text-sm"
