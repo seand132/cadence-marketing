@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteName: 'Cadence',
     images: [
       {
-        url: 'https://cadencehq.co/og-image.svg',
+        url: 'https://cadencehq.co/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Cadence: Management in rhythm.',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Cadence: Management in rhythm.',
     description: 'Simple tools for managers.',
-    images: ['https://cadencehq.co/og-image.svg'],
+    images: ['https://cadencehq.co/og-image.png'],
     creator: '@seand132',
   },
   icons: {
