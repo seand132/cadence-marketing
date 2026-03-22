@@ -20,10 +20,10 @@ const sourceSans3 = Source_Sans_3({
 })
 
 export const metadata: Metadata = {
-  title: 'Cadence — Management in rhythm.',
+  title: 'Cadence: Management in rhythm.',
   description: 'Cadence gives managers a real system. Run better 1:1s, track your team, and build the habits that make you a great manager.',
   openGraph: {
-    title: 'Cadence — Management in rhythm.',
+    title: 'Cadence: Management in rhythm.',
     description: 'Cadence gives managers a real system. Run better 1:1s, track your team, and build the habits that make you a great manager.',
     url: 'https://cadencehq.co',
     siteName: 'Cadence',
@@ -32,14 +32,14 @@ export const metadata: Metadata = {
         url: 'https://cadencehq.co/og-image.svg',
         width: 1200,
         height: 630,
-        alt: 'Cadence — Management in rhythm.',
+        alt: 'Cadence: Management in rhythm.',
       },
     ],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cadence — Management in rhythm.',
+    title: 'Cadence: Management in rhythm.',
     description: 'Simple tools for managers.',
     images: ['https://cadencehq.co/og-image.svg'],
     creator: '@seand132',

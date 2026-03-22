@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'About Cadence — Built by a manager who needed this.',
+  title: 'About Cadence: Built by a manager who needed this.',
   description: "Cadence exists because the tools that existed weren't built for small-team managers. Here's the story, and what we believe.",
 }
 

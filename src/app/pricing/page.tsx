@@ -3,9 +3,9 @@ import Link from 'next/link'
 import { PricingToggle } from './PricingToggle'
 
 export const metadata: Metadata = {
-  title: 'Cadence Pricing — Simple pricing. No per-seat surprises.',
+  title: 'Cadence Pricing: Simple pricing. No per-seat surprises.',
   description:
-    'One flat monthly rate covers your whole team. Most management tools charge per person — Cadence does not. Starter from $10/month.',
+    'One flat monthly rate covers your whole team. Most management tools charge per person. Cadence does not. Starter from $10/month.',
 }
 
 export default function PricingPage() {

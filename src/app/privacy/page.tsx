@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — Cadence',
+  title: 'Privacy Policy | Cadence',
   description: 'How Cadence collects, uses, and protects your data.',
 }
 

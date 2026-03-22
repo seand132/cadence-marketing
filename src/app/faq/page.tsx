@@ -12,7 +12,7 @@ const CATEGORIES: Category[] = [
     items: [
       {
         q: 'What is Cadence?',
-        a: 'Cadence is a management tool built for managers of small teams — 3 to 15 direct reports. It gives you a system for running 1:1s, tracking delegation, setting team goals, and staying connected to your team without needing enterprise software. Takes 3 minutes to set up.',
+        a: 'Cadence is a management tool built for managers of small teams (3 to 15 direct reports). It gives you a system for running 1:1s, tracking delegation, setting team goals, and staying connected to your team without needing enterprise software. Takes 3 minutes to set up.',
       },
       {
         q: 'How do I get started?',
@@ -28,7 +28,7 @@ const CATEGORIES: Category[] = [
       },
       {
         q: 'What if I manage a team of less than 3 people?',
-        a: "Cadence works for any team size. We describe it as built for 3–15 because that's the sweet spot where the operating rhythm features add the most value — but if you have 1 or 2 direct reports and want a system, it works just as well.",
+        a: "Cadence works for any team size. We describe it as built for 3–15 because that's the sweet spot where the operating rhythm features add the most value. But if you have 1 or 2 direct reports and want a system, it works just as well.",
       },
     ],
   },
@@ -38,7 +38,7 @@ const CATEGORIES: Category[] = [
     items: [
       {
         q: 'How much does Cadence cost?',
-        a: '$10 per month for the manager. That covers you and your whole team — your direct reports get accounts included at no extra cost. You can also choose annual billing at $96/year (saves $24).',
+        a: '$10 per month for the manager. That covers you and your whole team. Your direct reports get accounts included at no extra cost. You can also choose annual billing at $96/year (saves $24).',
       },
       {
         q: 'Is there a free trial?',
@@ -46,7 +46,7 @@ const CATEGORIES: Category[] = [
       },
       {
         q: 'What happens when the trial ends?',
-        a: "You'll be prompted to subscribe. If you don't, your account moves to read-only — your data stays safe, nothing is deleted. You can subscribe at any time to reactivate.",
+        a: "You'll be prompted to subscribe. If you don't, your account moves to read-only. Your data stays safe, nothing is deleted. You can subscribe at any time to reactivate.",
       },
       {
         q: 'Can I cancel anytime?',
@@ -54,7 +54,7 @@ const CATEGORIES: Category[] = [
       },
       {
         q: 'Is the $10 per person on my team?',
-        a: "No. It's $10 per manager — that's you. Your team members are included at no extra cost. If you're a manager of managers, each manager needs their own account.",
+        a: "No. It's $10 per manager (that's you). Your team members are included at no extra cost. If you're a manager of managers, each manager needs their own account.",
       },
       {
         q: 'Do you offer discounts?',
@@ -68,11 +68,11 @@ const CATEGORIES: Category[] = [
     items: [
       {
         q: "What's a 1:1 in Cadence?",
-        a: 'A 1:1 is a recurring check-in between you and each of your direct reports. In Cadence, each 1:1 has a standing agenda — a consistent structure that carries context forward from week to week. No more starting from scratch every time.',
+        a: 'A 1:1 is a recurring check-in between you and each of your direct reports. In Cadence, each 1:1 has a standing agenda with a consistent structure that carries context forward from week to week. No more starting from scratch every time.',
       },
       {
         q: 'How does task delegation work?',
-        a: "You create tasks in Cadence and assign them to team members. Each task has a title, due date, priority, and status. You see all delegated tasks in one view — so nothing disappears into a Slack thread or a doc nobody checks.",
+        a: "You create tasks in Cadence and assign them to team members. Each task has a title, due date, priority, and status. You see all delegated tasks in one view, so nothing disappears into a Slack thread or a doc nobody checks.",
       },
       {
         q: 'What are KPIs in Cadence?',
@@ -84,7 +84,7 @@ const CATEGORIES: Category[] = [
       },
       {
         q: 'Does Cadence integrate with Slack or Google Calendar?',
-        a: "Not yet. It's on our roadmap. Right now Cadence works best as a standalone system — you run your 1:1s inside Cadence and use your calendar just to block the time.",
+        a: "Not yet. It's on our roadmap. Right now Cadence works best as a standalone system. You run your 1:1s inside Cadence and use your calendar just to block the time.",
       },
       {
         q: 'Can I use Cadence on my phone?',
@@ -102,7 +102,7 @@ const CATEGORIES: Category[] = [
       },
       {
         q: 'Where is my data stored?',
-        a: 'In Supabase, encrypted at rest (AES-256) and in transit (HTTPS/TLS). Payments are handled by Stripe — we never store credit card numbers.',
+        a: 'In Supabase, encrypted at rest (AES-256) and in transit (HTTPS/TLS). Payments are handled by Stripe. We never store credit card numbers.',
       },
       {
         q: 'What happens to my data if I cancel?',
@@ -351,7 +351,7 @@ export default function FaqPage() {
               >
                 hello@cadencehq.co
               </a>{' '}
-              — we read every message.
+We read every message.
             </p>
           </div>
         </div>

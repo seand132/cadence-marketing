@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Cadence Features — 1:1s, Task Delegation, Team Dashboard, KPI Goals',
+  title: 'Cadence Features: 1:1s, Task Delegation, Team Dashboard, KPI Goals',
   description: 'Six focused tools for small-team managers. 1:1 meeting agendas, task delegation, team dashboard, KPI goals, org chart. Built for teams of 3 to 8.',
 }
 
@@ -581,7 +581,7 @@ export default function FeaturesPage() {
                     lineHeight: 1.75,
                   }}
                 >
-                  Set KPIs for your team and track them in real time. Each goal has an owner, a target, a current value, and a visual progress bar. You always know where you stand — no digging, no spreadsheets.
+                  Set KPIs for your team and track them in real time. Each goal has an owner, a target, a current value, and a visual progress bar. You always know where you stand. No digging, no spreadsheets.
                 </p>
               </div>
               {/* Stat pill */}

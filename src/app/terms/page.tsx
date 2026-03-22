@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Terms of Service — Cadence',
+  title: 'Terms of Service | Cadence',
   description: 'The terms and conditions for using Cadence.',
 }
 
@@ -102,7 +102,7 @@ export default function TermsPage() {
                 Payments and billing
               </h2>
               <p>
-                Cadence offers a 14-day free trial with no credit card required. After the trial, access to paid features requires a subscription at $10/month per manager. Subscriptions renew automatically. You can cancel at any time from your account settings — cancellation takes effect at the end of the current billing period.
+                Cadence offers a 14-day free trial with no credit card required. After the trial, access to paid features requires a subscription at $10/month per manager. Subscriptions renew automatically. You can cancel at any time from your account settings. Cancellation takes effect at the end of the current billing period.
               </p>
               <p className="mt-3">
                 Refunds are available within 7 days of a charge if you decide the service isn&rsquo;t right for you. After that, we don&rsquo;t offer pro-rated refunds, but you can always cancel future charges.

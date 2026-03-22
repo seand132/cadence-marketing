@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { RhythmMotif } from '@/components/RhythmMotif'
 
 export const metadata: Metadata = {
-  title: 'Cadence — Management tools for small teams',
+  title: 'Cadence: Management tools for small teams',
   description: 'Cadence helps managers run better 1:1s, track delegation, and keep their team in rhythm. Built for teams of 3–8. 14-day free trial.',
 }
 
@@ -177,12 +177,12 @@ export default function Home() {
               <div style={{ flex: 1, background: 'rgba(255,255,255,0.08)', borderRadius: 4, padding: '3px 12px', fontSize: 11, color: '#9C968B', fontFamily: 'var(--font-dm-sans)' }}>app.cadencehq.co/dashboard</div>
             </div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/screenshots/dashboard.png" alt="Cadence dashboard — the manager's home base" style={{ width: '100%', display: 'block' }} />
+            <img src="/screenshots/dashboard.png" alt="Cadence dashboard: the manager's home base" style={{ width: '100%', display: 'block' }} />
           </div>
 
           {/* Caption */}
           <p style={{ textAlign: 'center', fontSize: 13, color: '#9C968B', fontFamily: 'var(--font-dm-sans)', marginBottom: 32 }}>
-            Your dashboard — tasks, 1:1s, team health, and goals. All in one view.
+            Your dashboard: tasks, 1:1s, team health, and goals. All in one view.
           </p>
 
           {/* Three smaller screenshots */}
@@ -271,7 +271,7 @@ export default function Home() {
               {
                 strip: '#C8782A',
                 title: '1:1s that run themselves',
-                body: 'A standing agenda for every direct report. Context, real talk, next actions — in 30 minutes.',
+                body: 'A standing agenda for every direct report. Context, real talk, and next actions in 30 minutes.',
               },
               {
                 strip: '#3A7D7B',
@@ -281,7 +281,7 @@ export default function Home() {
               {
                 strip: '#7B8F6A',
                 title: 'A team dashboard that tells you the truth',
-                body: "Know who's on track, who's overloaded, and who needs a conversation — before it becomes a problem.",
+                body: "Know who's on track, who's overloaded, and who needs a conversation before it becomes a problem.",
               },
             ].map((f, i) => (
               <div

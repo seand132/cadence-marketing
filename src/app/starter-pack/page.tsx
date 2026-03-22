@@ -2,11 +2,11 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'New Manager Starter Pack — Cadence',
+  title: 'New Manager Starter Pack | Cadence',
   description:
     'Five practical tools for first-time managers. No corporate fluff. Just the stuff that actually helps. One-time download, $37.',
   openGraph: {
-    title: 'New Manager Starter Pack — Cadence',
+    title: 'New Manager Starter Pack | Cadence',
     description:
       'Five practical tools for first-time managers. No corporate fluff. Just the stuff that actually helps.',
     url: 'https://cadencehq.co/starter-pack',
@@ -23,7 +23,7 @@ const items = [
   {
     title: '1:1 Meeting Template',
     desc: 'A standing agenda that makes your 1:1s worth 30 minutes of everyone\'s week.',
-    detail: 'Includes the questions worth rotating in — the ones that actually surface what\'s going on.',
+    detail: 'Includes the questions worth rotating in (the ones that actually surface what\'s going on.',
   },
   {
     title: 'Team Onboarding Checklist',
@@ -33,7 +33,7 @@ const items = [
   {
     title: 'Feedback Framework (SBI)',
     desc: 'Situation. Behavior. Impact. The simplest model for giving feedback that lands.',
-    detail: 'Includes worked examples for both positive and constructive feedback — so you know exactly what to say.',
+    detail: 'Includes worked examples for both positive and constructive feedback, so you know exactly what to say.',
   },
   {
     title: "Manager's Weekly Review",
@@ -119,7 +119,7 @@ export default function StarterPackPage() {
             }}
           >
             Five practical tools for first-time managers. No corporate fluff.
-            Just the stuff that actually helps — starting Monday.
+            Just the stuff that actually helps, starting Monday.
           </p>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 24, flexWrap: 'wrap' }}>
             <Link
@@ -136,7 +136,7 @@ export default function StarterPackPage() {
                 textDecoration: 'none',
               }}
             >
-              Get the pack — $37
+              Get the pack: $37
             </Link>
             <span
               style={{

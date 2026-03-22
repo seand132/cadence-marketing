@@ -85,7 +85,7 @@ const PLANS: {
 const faqs = [
   {
     q: 'Do my employees need to pay?',
-    a: 'No. You pay one subscription — your entire team gets access for free.',
+    a: 'No. You pay one subscription. Your entire team gets access for free.',
   },
   {
     q: 'What counts as a team member?',
@@ -101,7 +101,7 @@ const faqs = [
   },
   {
     q: 'Is there a free trial?',
-    a: 'Yes — 14 days free, no credit card required.',
+    a: 'Yes, 14 days free, no credit card required.',
   },
 ]
 
