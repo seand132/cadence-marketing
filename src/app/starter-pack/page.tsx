@@ -44,7 +44,7 @@ const items = [
 
 // Buy button is intentionally disabled pending content approval and research.
 // Replace '#' with Stripe payment link once Sean approves.
-const STRIPE_PAYMENT_LINK = '#'
+const STRIPE_PAYMENT_LINK = 'https://buy.stripe.com/cNi00j3Fc7Z30U47Xq7g405'
 
 function RhythmDivider({ id, bg }: { id: string; bg: string }) {
   return (
