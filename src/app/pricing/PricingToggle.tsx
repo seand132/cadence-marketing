@@ -5,6 +5,15 @@ import Link from 'next/link'
 
 type PlanId = 'starter' | 'growth' | 'team' | 'unlimited'
 
+
+// Stripe payment links (monthly). Annual falls back to signup with plan param.
+const STRIPE_LINKS: Record<PlanId, string> = {
+  starter: 'https://buy.stripe.com/7sYdR98Zw937byI4Le7g401',
+  growth: 'https://buy.stripe.com/00w3cv7Vs1AF9qAcdG7g402',
+  team: 'https://buy.stripe.com/3cI4gza3Adjn46gelO7g403',
+  unlimited: 'https://buy.stripe.com/14A7sLfnUenrdGQa5y7g404',
+}
+
 const PLANS: {
   id: PlanId
   name: string
@@ -336,7 +345,7 @@ export function PricingToggle() {
               </ul>
 
               <Link
-                href={`https://app.cadencehq.co/signup?plan=${plan.id}${annual ? '&billing=annual' : ''}`}
+                href={annual ? `https://app.cadencehq.co/signup?plan=${plan.id}&billing=annual` : STRIPE_LINKS[plan.id]}
                 style={{
                   display: 'block',
                   width: '100%',
