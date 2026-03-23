@@ -21,6 +21,8 @@ export interface BlogPost {
   shareTitle?: string
   shareUrl?: string
   content: string
+  draft?: boolean
+  publishDate?: string
 }
 
 export function getAllPosts(): BlogPost[] {
@@ -44,6 +46,8 @@ export function getAllPosts(): BlogPost[] {
       readTime: data.readTime || '',
       author: data.author || 'Sean Davis',
       coverImage: data.coverImage || '',
+      draft: data.draft === true,
+      publishDate: data.publishDate || data.date || '',
       metaTitle: data.metaTitle,
       metaDescription: data.metaDescription,
       ctaHeading: data.ctaHeading,
@@ -54,7 +58,15 @@ export function getAllPosts(): BlogPost[] {
     } as BlogPost
   })
 
-  return posts.sort(
+  // Filter out drafts and posts scheduled for the future
+  const now = new Date()
+  const published = posts.filter(p => {
+    if (p.draft) return false
+    const pubDate = new Date(p.publishDate || p.date)
+    return pubDate <= now
+  })
+
+  return published.sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   )
 }
@@ -62,6 +74,13 @@ export function getAllPosts(): BlogPost[] {
 export function getPostBySlug(slug: string): BlogPost | null {
   const filePath = path.join(CONTENT_DIR, `${slug}.mdx`)
   if (!fs.existsSync(filePath)) return null
+
+  // Quick frontmatter check for draft/future before full parse
+  const rawCheck = fs.readFileSync(filePath, 'utf-8')
+  const { data: meta } = matter(rawCheck)
+  if (meta.draft === true) return null
+  const pubDate = new Date(meta.publishDate || meta.date || '')
+  if (pubDate > new Date()) return null
 
   const raw = fs.readFileSync(filePath, 'utf-8')
   const { data, content } = matter(raw)
@@ -76,6 +95,8 @@ export function getPostBySlug(slug: string): BlogPost | null {
     readTime: data.readTime || '',
     author: data.author || 'Sean Davis',
     coverImage: data.coverImage || '',
+    draft: data.draft === true,
+    publishDate: data.publishDate || data.date || '',
     metaTitle: data.metaTitle,
     metaDescription: data.metaDescription,
     ctaHeading: data.ctaHeading,
