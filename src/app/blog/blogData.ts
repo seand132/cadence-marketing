@@ -78,6 +78,22 @@ export const allPosts: BlogPost[] = [
     excerpt:
       "Most management tools are built for HR, not managers. Here's why that matters and what to look for instead.",
   },
+  {
+    slug: 'why-your-best-employee-might-quit',
+    title: 'Why Your Best Employee Might Quit (And What You Actually Miss)',
+    category: 'Team Culture',
+    readTime: '7 min read',
+    date: 'Mar 27, 2026',
+    excerpt: 'The people most likely to leave your team are not the ones struggling. They are the ones you think are fine.',
+  },
+  {
+    slug: 'how-to-run-a-team-meeting-worth-attending',
+    title: 'How to Run a Team Meeting Worth Attending',
+    category: 'Management',
+    readTime: '6 min read',
+    date: 'Mar 29, 2026',
+    excerpt: 'Most team meetings are bad because the manager is winging it. A simple structure that makes meetings worth attending.',
+  },
 ]
 
 export const kickerMap: Record<string, { label: string; color: string }> = {
