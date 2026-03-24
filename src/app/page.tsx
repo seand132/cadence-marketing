@@ -4,7 +4,7 @@ import { RhythmMotif } from '@/components/RhythmMotif'
 
 export const metadata: Metadata = {
   title: 'Cadence: Management tools for small teams',
-  description: 'Cadence helps managers run better 1:1s, track delegation, and keep their team in rhythm. Built for teams of 3–8. 14-day free trial.',
+  description: 'Cadence gives managers a real system for 1:1s, delegation, and team rhythm. 14-day free trial.',
 }
 
 export default function Home() {
@@ -336,7 +336,7 @@ export default function Home() {
                   lineHeight: 1.2,
                 }}
               >
-                Built for one kind of manager.
+                Built for managers who give a damn.
               </h2>
               <p style={{ fontFamily: 'var(--font-source-sans)', fontSize: 17, color: '#9C968B', lineHeight: 1.7 }}>
                 It&rsquo;s not a performance management suite. It&rsquo;s a rhythm you can actually keep.
@@ -347,7 +347,7 @@ export default function Home() {
                 {[
                   'You have 3–8 direct reports',
                   'You manage a small team and want a real system, not a spreadsheet',
-                  "You're still figuring out what the job actually requires",
+                  "You want to lead well, not just manage tasks",
                   'You want a system that fits the way you work, not an HR platform built for Fortune 500',
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
