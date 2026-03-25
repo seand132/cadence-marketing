@@ -139,7 +139,7 @@ export default function AboutPage() {
               margin: 0,
             }}
           >
-            Cadence is bootstrapped and independent. We charge $10/month because that&rsquo;s what keeps us focused &mdash; not on growth rounds, not on enterprise upsells, but on building the right tools for managers who just want a system that works.
+            Cadence is bootstrapped and independent. We charge $10/month because that&rsquo;s what keeps us focused - not on growth rounds, not on enterprise upsells, but on building the right tools for managers who just want a system that works.
           </p>
         </div>
       </section>

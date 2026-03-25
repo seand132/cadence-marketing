@@ -6,7 +6,7 @@ interface RhythmMotifProps {
 }
 
 export function RhythmMotif({ color = '#C8782A', opacity = 0.12, className = '', scale = 1 }: RhythmMotifProps) {
-  // Exact heights from cadence-logomark.svg — the brand rhythm
+  // Exact heights from cadence-logomark.svg - the brand rhythm
   const BAR_W = 12 * scale
   const GAP   = 10 * scale
   const HEIGHTS = [44 * scale, 70 * scale, 56 * scale, 38 * scale]

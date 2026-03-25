@@ -403,7 +403,7 @@ export function PricingToggle() {
         >
           Most tools charge per seat. With 8 direct reports on a $7/user tool,
           you&rsquo;re paying $56/month before you&rsquo;ve done anything.
-          Cadence charges one flat rate &mdash; your whole team is included.
+          Cadence charges one flat rate - your whole team is included.
         </p>
       </div>
 

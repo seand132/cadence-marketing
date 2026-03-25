@@ -87,7 +87,7 @@ export default function BlogIndex() {
         </div>
       </section>
 
-      {/* Featured post — navy anchor card */}
+      {/* Featured post - navy anchor card */}
       <section style={{ background: '#F5F0E8' }} className="pb-12">
         <div className="max-w-4xl mx-auto px-6">
           <Link

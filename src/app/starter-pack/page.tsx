@@ -16,7 +16,7 @@ export const metadata: Metadata = {
         url: 'https://cadencehq.co/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'New Manager Starter Pack — 5 practical tools for $37',
+        alt: 'New Manager Starter Pack - 5 practical tools for $37',
       },
     ],
   },
@@ -301,7 +301,7 @@ export default function StarterPackPage() {
               textTransform: 'uppercase',
             }}
           >
-            Sean Davis &mdash; Cadence
+            Sean Davis - Cadence
           </p>
         </div>
       </section>
@@ -343,7 +343,7 @@ export default function StarterPackPage() {
             }}
           >
             You&rsquo;re figuring it out as you go. You&rsquo;ve got good
-            instincts but you want a system &mdash; something you can actually
+            instincts but you want a system - something you can actually
             open on Monday morning and use.
           </p>
           <p
@@ -417,7 +417,7 @@ export default function StarterPackPage() {
             <Link href="/" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'underline' }}>
               Cadence
             </Link>
-            {' '}&mdash; built for managers of real teams.
+            {' '}- built for managers of real teams.
           </p>
         </div>
       </section>

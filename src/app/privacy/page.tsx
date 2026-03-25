@@ -96,7 +96,7 @@ export default function PrivacyPage() {
                 Your data is stored in Supabase with row-level security enabled. This means your team data is only accessible to you and the accounts you explicitly grant access to. We use encrypted connections (HTTPS) for all data in transit.
               </p>
               <p className="mt-3">
-                Data is encrypted in transit (HTTPS/TLS) and at rest (AES-256 via Supabase). Stripe handles all payment data &mdash; we never store credit card numbers.
+                Data is encrypted in transit (HTTPS/TLS) and at rest (AES-256 via Supabase). Stripe handles all payment data - we never store credit card numbers.
               </p>
             </div>
 
@@ -136,7 +136,7 @@ export default function PrivacyPage() {
                 Data retention
               </h2>
               <p>
-                <strong style={{ color: '#2C2C2C' }}>DATA RETENTION</strong> &mdash; When you cancel your account, we delete your workspace data within 30 days. Backups are purged within 60 days. You can request immediate deletion at{' '}
+                <strong style={{ color: '#2C2C2C' }}>DATA RETENTION</strong> - When you cancel your account, we delete your workspace data within 30 days. Backups are purged within 60 days. You can request immediate deletion at{' '}
                 <a href="mailto:privacy@cadencehq.co" style={{ color: '#C8782A', textDecoration: 'underline' }}>
                   privacy@cadencehq.co
                 </a>
@@ -149,7 +149,7 @@ export default function PrivacyPage() {
                 EU users (GDPR)
               </h2>
               <p>
-                <strong style={{ color: '#2C2C2C' }}>EU USERS</strong> &mdash; If you&rsquo;re in the European Economic Area, you have rights under GDPR including access, correction, erasure, and data portability. Contact{' '}
+                <strong style={{ color: '#2C2C2C' }}>EU USERS</strong> - If you&rsquo;re in the European Economic Area, you have rights under GDPR including access, correction, erasure, and data portability. Contact{' '}
                 <a href="mailto:privacy@cadencehq.co" style={{ color: '#C8782A', textDecoration: 'underline' }}>
                   privacy@cadencehq.co
                 </a>{' '}
@@ -162,7 +162,7 @@ export default function PrivacyPage() {
                 California users (CCPA)
               </h2>
               <p>
-                <strong style={{ color: '#2C2C2C' }}>CALIFORNIA USERS</strong> &mdash; Under CCPA, you have the right to know what personal data we collect and to request deletion. We do not sell personal information. Contact{' '}
+                <strong style={{ color: '#2C2C2C' }}>CALIFORNIA USERS</strong> - Under CCPA, you have the right to know what personal data we collect and to request deletion. We do not sell personal information. Contact{' '}
                 <a href="mailto:privacy@cadencehq.co" style={{ color: '#C8782A', textDecoration: 'underline' }}>
                   privacy@cadencehq.co
                 </a>

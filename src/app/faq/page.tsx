@@ -357,7 +357,7 @@ We read every message.
         </div>
       </section>
 
-    {/* ─── RHYTHM MOTIF — above footer ─────────────────── */}
+    {/* ─── RHYTHM MOTIF - above footer ─────────────────── */}
 
 
 

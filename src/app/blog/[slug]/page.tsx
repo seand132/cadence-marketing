@@ -7,7 +7,7 @@ import { getAllPosts, getPostBySlug, getKicker } from '@/lib/blog'
 
 const AUTHOR_AVATAR = 'https://whzwyvjerrsyqjmktxcg.supabase.co/storage/v1/object/public/avatars/06d4938c-f40d-46dd-b24c-3a2596e0c8a1/avatar.jpg?t=1773037991750'
 
-// MDX component overrides — style markdown elements to match the brand
+// MDX component overrides - style markdown elements to match the brand
 const mdxComponents = {
   h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h2

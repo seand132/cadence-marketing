@@ -67,7 +67,7 @@ export function NavClient() {
             />
           </Link>
 
-          {/* Links center — desktop only */}
+          {/* Links center - desktop only */}
           <nav className="hidden md:flex items-center gap-8">
             {NAV_LINKS.map((link) => (
               <Link
@@ -83,7 +83,7 @@ export function NavClient() {
 
           {/* Right: CTA (desktop) + hamburger (mobile) */}
           <div className="flex items-center gap-2">
-            {/* CTA — desktop only */}
+            {/* CTA - desktop only */}
             <Link
               href="https://app.cadencehq.co/login"
               className="hidden md:inline-flex items-center justify-center px-4 py-2 text-sm font-medium transition-all"
@@ -104,7 +104,7 @@ export function NavClient() {
               Get started free
             </Link>
 
-            {/* Hamburger — mobile only */}
+            {/* Hamburger - mobile only */}
             <button
               className="md:hidden"
               onClick={() => setMobileOpen(!mobileOpen)}

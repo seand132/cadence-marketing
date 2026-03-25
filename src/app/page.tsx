@@ -88,7 +88,7 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Right — Real app screenshot in browser frame */}
+          {/* Right - Real app screenshot in browser frame */}
           <div className="flex-1 flex justify-center lg:justify-end w-full">
             {/* Real app screenshot in browser frame */}
             <div style={{
@@ -123,7 +123,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── RHYTHM MOTIF BAND — hero to dark panel transition ── */}
+      {/* ─── RHYTHM MOTIF BAND - hero to dark panel transition ── */}
       <div style={{ width: '100%', overflow: 'hidden', lineHeight: 0, background: '#F5F0E8' }} aria-hidden="true">
         <svg width="100%" height="40" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -153,7 +153,7 @@ export default function Home() {
       <div style={{ background: '#F5F0E8', height: 7 }} />
 
       {/* ─── PRODUCT SHOWCASE ─────────────────────────────────── */}
-      {/* Product showcase — real screenshots */}
+      {/* Product showcase - real screenshots */}
       <section style={{ background: '#1C1C1C', padding: '80px 0', overflow: 'hidden' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 24px' }}>
 
@@ -168,7 +168,7 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Main screenshot — full width dashboard */}
+          {/* Main screenshot - full width dashboard */}
           <div style={{ borderRadius: 12, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.08)', boxShadow: '0 24px 80px rgba(0,0,0,0.5)', marginBottom: 16 }}>
             <div style={{ background: '#2A2A2A', padding: '10px 16px', display: 'flex', alignItems: 'center', gap: 8, borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
               <div style={{ display: 'flex', gap: 5 }}>

@@ -49,7 +49,7 @@ export default function PricingPage() {
             }}
           >
             One flat monthly rate covers your whole team. Most management tools
-            charge per person &mdash; we don&rsquo;t.
+            charge per person - we don&rsquo;t.
           </p>
           <div
             style={{
