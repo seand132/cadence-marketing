@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     siteName: 'Cadence',
     images: [
       {
-        url: 'https://cadencehq.co/og-image.png',
+        url: 'https://cadencehq.co/og-image-v2.png',
         width: 1200,
         height: 630,
         alt: 'New Manager Starter Pack - 5 practical tools for $37',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'New Manager Starter Pack | Cadence',
     description: 'Five practical tools for first-time managers. No corporate fluff. $37 one-time.',
-    images: ['https://cadencehq.co/og-image.png'],
+    images: ['https://cadencehq.co/og-image-v2.png'],
     creator: '@seand132',
   },
 }
