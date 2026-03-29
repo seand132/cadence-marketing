@@ -185,11 +185,12 @@ export default function Home() {
             Your dashboard: tasks, 1:1s, team health, and goals. All in one view.
           </p>
 
-          {/* Three smaller screenshots */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
+          {/* Four smaller screenshots */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16 }}>
             {[
               { src: '/screenshots/tasks.png', label: 'Task Management', desc: 'See every delegation, priority, and due date across your team.' },
               { src: '/screenshots/one-on-ones.png', label: '1:1 Meetings', desc: 'Standing agendas that make every check-in count.' },
+              { src: '/screenshots/team-meetings.png', label: 'Team Meetings', desc: 'Shared agendas that keep every team meeting on track.' },
               { src: '/screenshots/team.png', label: 'Team Overview', desc: 'Your full reporting structure at a glance.' },
             ].map((item, i) => (
               <div key={i}>
@@ -266,7 +267,7 @@ export default function Home() {
           >
             Simple tools. Steady habits. Stronger teams.
           </h2>
-          <div className="grid sm:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 strip: '#C8782A',
@@ -282,6 +283,11 @@ export default function Home() {
                 strip: '#7B8F6A',
                 title: 'A team dashboard that tells you the truth',
                 body: "Know who's on track, who's overloaded, and who needs a conversation before it becomes a problem.",
+              },
+              {
+                strip: '#C2604A',
+                title: 'Team meetings with an agenda',
+                body: "Run every team meeting with a shared agenda. Everyone knows what's on the table before the call starts.",
               },
             ].map((f, i) => (
               <div

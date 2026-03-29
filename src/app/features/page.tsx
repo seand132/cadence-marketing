@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Cadence Features: 1:1s, Task Delegation, Team Dashboard, KPI Goals',
-  description: 'Six focused tools for small-team managers. 1:1 meeting agendas, task delegation, team dashboard, KPI goals, org chart. Built for teams of 3 to 8.',
+  title: 'Cadence Features: 1:1s, Team Meetings, Task Delegation, Team Dashboard, KPI Goals',
+  description: 'Seven focused tools for small-team managers. 1:1 meetings, team meetings with shared agendas, task delegation, team dashboard, KPI goals, org chart. Built for teams of 3 to 8.',
 }
 
 export default function FeaturesPage() {
@@ -35,7 +35,7 @@ export default function FeaturesPage() {
               lineHeight: 1.15,
             }}
           >
-            Six tools. One rhythm. Zero overhead.
+            Seven tools. One rhythm. Zero overhead.
           </h1>
           <p
             style={{
@@ -45,7 +45,7 @@ export default function FeaturesPage() {
               lineHeight: 1.6,
             }}
           >
-            Everything a manager needs to run a tight team. 1:1s, delegation, goals, and visibility. Nothing they don&rsquo;t.
+            Everything a manager needs to run a tight team. 1:1s, team meetings, delegation, goals, and visibility. Nothing they don&rsquo;t.
           </p>
         </div>
       </section>
@@ -99,6 +99,7 @@ export default function FeaturesPage() {
             { label: 'Team Dashboard', href: '#team-dashboard' },
             { label: 'KPI Goals', href: '#kpi-goals' },
             { label: 'Org Chart', href: '#org-chart' },
+            { label: 'Team Meetings', href: '#team-meetings' },
             { label: 'One System', href: '#one-system' },
           ].map((tab) => (
             <a
@@ -831,7 +832,135 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      {/* ─── FEATURE 6: ONE SYSTEM (dark panel) ─────────────── */}
+      {/* ─── FEATURE 6: TEAM MEETINGS ──────────────────────── */}
+      <section id="team-meetings" style={{ background: 'white' }} className="py-24">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
+            {/* Text right (reversed) */}
+            <div className="flex-1 max-w-xl">
+              <div
+                style={{
+                  borderLeft: '4px solid #3A7D7B',
+                  paddingLeft: 20,
+                  marginBottom: 24,
+                }}
+              >
+                <p
+                  style={{
+                    fontFamily: 'var(--font-dm-sans)',
+                    fontWeight: 600,
+                    fontSize: 11,
+                    color: '#3A7D7B',
+                    letterSpacing: '0.1em',
+                    textTransform: 'uppercase',
+                    marginBottom: 12,
+                  }}
+                >
+                  Team Meetings
+                </p>
+                <h2
+                  style={{
+                    fontFamily: 'var(--font-dm-sans)',
+                    fontWeight: 700,
+                    fontSize: 'clamp(26px, 3vw, 36px)',
+                    color: '#2C2C2C',
+                    lineHeight: 1.2,
+                    marginBottom: 16,
+                  }}
+                >
+                  Every meeting has an agenda. Every item has an owner.
+                </h2>
+                <p
+                  style={{
+                    fontFamily: 'var(--font-source-sans)',
+                    fontSize: 'clamp(15px, 4vw, 17px)',
+                    color: '#9C968B',
+                    lineHeight: 1.75,
+                  }}
+                >
+                  Build a shared agenda before the meeting starts so everyone knows what&rsquo;s on the table. Mark items discussed, carry open ones forward, and leave with a clear record of what was decided. No more meetings that could have been an email.
+                </p>
+              </div>
+              {/* Feature list */}
+              <ul className="space-y-3">
+                {[
+                  'Shared agenda visible to the whole team',
+                  'Mark items discussed, open, or carry forward',
+                  'Meeting history saved automatically',
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <svg className="flex-shrink-0 mt-1" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                      <circle cx="9" cy="9" r="9" fill="#3A7D7B" fillOpacity="0.15" />
+                      <path d="M5.5 9L7.8 11.5L12.5 6.5" stroke="#3A7D7B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    <span style={{ fontFamily: 'var(--font-source-sans)', fontSize: 15, color: '#2C2C2C', lineHeight: 1.6 }}>
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {/* Screenshot left (reversed) */}
+            <div className="flex-1 w-full">
+              <div
+                style={{
+                  borderRadius: 10,
+                  overflow: 'hidden',
+                  border: '1px solid #D0CAC0',
+                  boxShadow: '0 12px 40px rgba(0,0,0,0.10)',
+                }}
+              >
+                <div
+                  style={{
+                    background: '#EBE6DD',
+                    padding: '10px 16px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 8,
+                    borderBottom: '1px solid #D0CAC0',
+                  }}
+                >
+                  <div style={{ display: 'flex', gap: 5 }}>
+                    {['#C2604A', '#C8782A', '#7B8F6A'].map((c, i) => (
+                      <div
+                        key={i}
+                        style={{
+                          width: 10,
+                          height: 10,
+                          borderRadius: '50%',
+                          background: c,
+                          opacity: 0.75,
+                        }}
+                      />
+                    ))}
+                  </div>
+                  <div
+                    style={{
+                      flex: 1,
+                      background: 'white',
+                      borderRadius: 4,
+                      padding: '3px 12px',
+                      fontSize: 11,
+                      color: '#9C968B',
+                      fontFamily: 'var(--font-dm-sans)',
+                    }}
+                  >
+                    app.cadencehq.co/team-meetings
+                  </div>
+                </div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/screenshots/team-meetings.png"
+                  alt="Cadence team meetings with shared agendas"
+                  style={{ width: '100%', maxWidth: '100%', display: 'block' }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── FEATURE 7: ONE SYSTEM (dark panel) ─────────────── */}
       <section id="one-system" style={{ background: '#2C2C2C' }} className="py-16">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <p
@@ -874,7 +1003,7 @@ export default function FeaturesPage() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
               gap: 16,
               marginBottom: 48,
               width: '100%',
@@ -912,6 +1041,11 @@ export default function FeaturesPage() {
                 label: 'Email Digests',
                 desc: 'Weekly rhythms keeping everyone in sync',
                 svg: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8782A" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>,
+              },
+              {
+                label: 'Team Meetings',
+                desc: 'Shared agendas so every meeting has a point',
+                svg: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C8782A" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>,
               },
             ].map((item) => (
               <div
