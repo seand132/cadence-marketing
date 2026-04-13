@@ -1,0 +1,143 @@
+export type FaqItem = { q: string; a: string }
+export type Category = { id: string; label: string; items: FaqItem[] }
+
+export const CATEGORIES: Category[] = [
+  {
+    id: 'getting-started',
+    label: 'GETTING STARTED',
+    items: [
+      {
+        q: 'What is Cadence?',
+        a: 'Cadence is a management tool built for managers of small teams (3 to 15 direct reports). It gives you a system for running 1:1s, tracking delegation, setting team goals, and staying connected to your team without needing enterprise software. Takes 3 minutes to set up.',
+      },
+      {
+        q: 'How do I get started?',
+        a: 'Sign up at app.cadencehq.co/signup. Create your workspace, add your team members, and run your first 1:1. Most managers have their team set up and their first 1:1 scheduled within 15 minutes.',
+      },
+      {
+        q: 'Do I need to install anything?',
+        a: 'No. Cadence runs entirely in your browser. No app to download, no IT department required.',
+      },
+      {
+        q: 'Can I invite my team?',
+        a: 'Yes. Once you create your workspace, you can invite your direct reports. They get their own accounts and can see their assigned tasks, 1:1 agendas, and goals. You control what they see.',
+      },
+      {
+        q: 'What if I manage a team of less than 3 people?',
+        a: "Cadence works for any team size. We describe it as built for 3–15 because that's the sweet spot where the operating rhythm features add the most value. But if you have 1 or 2 direct reports and want a system, it works just as well.",
+      },
+    ],
+  },
+  {
+    id: 'pricing-billing',
+    label: 'PRICING & BILLING',
+    items: [
+      {
+        q: 'How much does Cadence cost?',
+        a: '$10 per month for the manager. That covers you and your whole team. Your direct reports get accounts included at no extra cost. You can also choose annual billing at $96/year (saves $24).',
+      },
+      {
+        q: 'Is there a free trial?',
+        a: 'Yes. 14 days, full access from day one. No credit card required to start.',
+      },
+      {
+        q: 'What happens when the trial ends?',
+        a: "You'll be prompted to subscribe. If you don't, your account moves to read-only. Your data stays safe, nothing is deleted. You can subscribe at any time to reactivate.",
+      },
+      {
+        q: 'Can I cancel anytime?',
+        a: 'Yes. No contracts, no cancellation fees. Cancel from your account settings in 30 seconds. If you cancel, you have 30 days to export your data.',
+      },
+      {
+        q: 'Is the $10 per person on my team?',
+        a: "No. It's $10 per manager (that's you). Your team members are included at no extra cost. If you're a manager of managers, each manager needs their own account.",
+      },
+      {
+        q: 'Do you offer discounts?',
+        a: "Annual billing saves 20% ($96/year vs $120/year). We don't currently offer additional discounts, but reach out to hello@cadencehq.co if you have a specific situation.",
+      },
+    ],
+  },
+  {
+    id: 'the-product',
+    label: 'THE PRODUCT',
+    items: [
+      {
+        q: "What's a 1:1 in Cadence?",
+        a: 'A 1:1 is a recurring check-in between you and each of your direct reports. In Cadence, each 1:1 has a standing agenda with a consistent structure that carries context forward from week to week. No more starting from scratch every time.',
+      },
+      {
+        q: 'How does task delegation work?',
+        a: "You create tasks in Cadence and assign them to team members. Each task has a title, due date, priority, and status. You see all delegated tasks in one view, so nothing disappears into a Slack thread or a doc nobody checks.",
+      },
+      {
+        q: 'What are KPIs in Cadence?',
+        a: 'KPIs are goals you track for your team. You set a target, assign an owner, and mark progress over time. You can track by percentage, number, or task count. Cadence shows you which KPIs are on track and which need attention.',
+      },
+      {
+        q: "Can my team members see each other's data?",
+        a: "No. Each team member sees their own tasks, their own 1:1 agenda, and their own goals. Only the manager has a full view of the team.",
+      },
+      {
+        q: 'Does Cadence integrate with Slack or Google Calendar?',
+        a: "Not yet. It's on our roadmap. Right now Cadence works best as a standalone system. You run your 1:1s inside Cadence and use your calendar just to block the time.",
+      },
+      {
+        q: 'Can I use Cadence on my phone?',
+        a: 'Cadence works in mobile browsers. A dedicated iOS and Android app is on the roadmap.',
+      },
+    ],
+  },
+  {
+    id: 'privacy-security',
+    label: 'PRIVACY & SECURITY',
+    items: [
+      {
+        q: 'Who can see my data?',
+        a: 'Only you and your team members (limited to their own data). We do not sell your data, share it with third parties, or use it to train AI models.',
+      },
+      {
+        q: 'Where is my data stored?',
+        a: 'In Supabase, encrypted at rest (AES-256) and in transit (HTTPS/TLS). Payments are handled by Stripe. We never store credit card numbers.',
+      },
+      {
+        q: 'What happens to my data if I cancel?',
+        a: "Your data stays in your account for 30 days after cancellation. You can export everything during that window. After 30 days, it's permanently deleted.",
+      },
+      {
+        q: 'Is Cadence GDPR compliant?',
+        a: 'Yes. EU users have rights under GDPR including access, correction, erasure, and data portability. Email privacy@cadencehq.co to exercise these rights.',
+      },
+      {
+        q: 'Is Cadence CCPA compliant?',
+        a: 'Yes. California users have rights under CCPA. We do not sell personal information. Email privacy@cadencehq.co for requests.',
+      },
+    ],
+  },
+  {
+    id: 'account-support',
+    label: 'ACCOUNT & SUPPORT',
+    items: [
+      {
+        q: 'How do I change my email or password?',
+        a: 'Go to Settings inside your Cadence account. You can update your email, password, and profile information there.',
+      },
+      {
+        q: 'How do I delete my account?',
+        a: 'Go to Settings and look for the account deletion option. Your data will be retained for 30 days in case you change your mind, then permanently deleted.',
+      },
+      {
+        q: 'What if I have a question not answered here?',
+        a: 'Email us at hello@cadencehq.co. We read every message and typically respond within one business day.',
+      },
+      {
+        q: 'How do I report a bug?',
+        a: 'Email hello@cadencehq.co with a description of what happened. Screenshots or a quick screen recording are helpful. We fix reported bugs fast.',
+      },
+      {
+        q: 'Is there a changelog or roadmap?',
+        a: "Yes. Once you're inside the app, check the Changelog link in the footer. We ship updates regularly and document what changes.",
+      },
+    ],
+  },
+]

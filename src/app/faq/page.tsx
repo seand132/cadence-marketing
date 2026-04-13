@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import FaqAccordion from './FaqAccordion'
 import { JsonLd } from '@/components/JsonLd'
-import { CATEGORIES } from './FaqAccordion'
+import { CATEGORIES } from './faq-data'
 
 export const metadata: Metadata = {
   title: 'FAQ — Cadence',
