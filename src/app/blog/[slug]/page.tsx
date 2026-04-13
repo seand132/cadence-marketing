@@ -71,9 +71,38 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const post = getPostBySlug(slug)
   if (!post) return {}
+
+  const title = post.metaTitle || `${post.title} | Cadence Blog`
+  const description = post.metaDescription || post.excerpt
+  const ogImageUrl = `https://cadencehq.co/blog/${post.slug}/opengraph-image`
+
   return {
-    title: post.metaTitle || `${post.title} | Cadence Blog`,
-    description: post.metaDescription || post.excerpt,
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url: `https://cadencehq.co/blog/${post.slug}`,
+      siteName: 'Cadence',
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+      type: 'article',
+      publishedTime: post.date,
+      authors: [post.author || 'Sean Davis'],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [ogImageUrl],
+      creator: '@seand132',
+    },
   }
 }
 
