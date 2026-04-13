@@ -5,6 +5,7 @@ import Link from 'next/link'
 import './globals.css'
 import { NavClient } from '@/components/nav/NavClient'
 import { JsonLd } from '@/components/JsonLd'
+import { CookieConsent } from '@/components/CookieConsent'
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -98,6 +99,7 @@ export default function RootLayout({
         <JsonLd schema={webSiteSchema} id="schema-website" />
         <NavClient />
         <main style={{ paddingBottom: 80 }}>{children}</main>
+        <CookieConsent />
 
         {/* Footer */}
         <footer style={{ background: '#2C2C2C' }} className="py-12">
