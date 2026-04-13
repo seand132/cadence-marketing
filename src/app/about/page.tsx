@@ -4,6 +4,28 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'About Cadence: Built by a manager who needed this.',
   description: "Cadence exists because the tools that existed weren't built for small-team managers. Here's the story, and what we believe.",
+  openGraph: {
+    title: 'About Cadence: Built by a manager who needed this.',
+    description: "Cadence exists because the tools that existed weren't built for small-team managers. Here's the story, and what we believe.",
+    url: 'https://cadencehq.co/about',
+    siteName: 'Cadence',
+    images: [
+      {
+        url: `https://cadencehq.co/og-image.png?v=${process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA || 'dev'}`,
+        width: 1200,
+        height: 630,
+        alt: 'About Cadence: Built by a manager who needed this.',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Cadence: Built by a manager who needed this.',
+    description: "Cadence exists because the tools that existed weren't built for small-team managers.",
+    images: [`https://cadencehq.co/og-image.png?v=${process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA || 'dev'}`],
+    creator: '@seand132',
+  },
 }
 
 export default function AboutPage() {

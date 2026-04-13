@@ -4,6 +4,28 @@ import FaqAccordion from './FaqAccordion'
 export const metadata: Metadata = {
   title: 'FAQ — Cadence',
   description: 'Common questions about Cadence — pricing, setup, features, and privacy.',
+  openGraph: {
+    title: 'FAQ — Cadence',
+    description: 'Common questions about Cadence — pricing, setup, features, and privacy.',
+    url: 'https://cadencehq.co/faq',
+    siteName: 'Cadence',
+    images: [
+      {
+        url: `https://cadencehq.co/og-image.png?v=${process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA || 'dev'}`,
+        width: 1200,
+        height: 630,
+        alt: 'FAQ — Cadence',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'FAQ — Cadence',
+    description: 'Common questions about Cadence — pricing, setup, features, and privacy.',
+    images: [`https://cadencehq.co/og-image.png?v=${process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA || 'dev'}`],
+    creator: '@seand132',
+  },
 }
 
 export default function FaqPage() {

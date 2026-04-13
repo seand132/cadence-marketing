@@ -6,6 +6,28 @@ export const metadata: Metadata = {
   title: 'Cadence Pricing: Simple pricing. No per-seat surprises.',
   description:
     'One flat monthly rate covers your whole team. Most management tools charge per person. Cadence does not. Starter from $10/month.',
+  openGraph: {
+    title: 'Cadence Pricing: Simple pricing. No per-seat surprises.',
+    description: 'One flat monthly rate covers your whole team. Most management tools charge per person. Cadence does not. Starter from $10/month.',
+    url: 'https://cadencehq.co/pricing',
+    siteName: 'Cadence',
+    images: [
+      {
+        url: `https://cadencehq.co/og-image.png?v=${process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA || 'dev'}`,
+        width: 1200,
+        height: 630,
+        alt: 'Cadence Pricing',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cadence Pricing: Simple pricing. No per-seat surprises.',
+    description: 'One flat monthly rate covers your whole team. Starter from $10/month.',
+    images: [`https://cadencehq.co/og-image.png?v=${process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA || 'dev'}`],
+    creator: '@seand132',
+  },
 }
 
 export default function PricingPage() {

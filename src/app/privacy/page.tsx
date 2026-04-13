@@ -3,6 +3,28 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Privacy Policy | Cadence',
   description: 'How Cadence collects, uses, and protects your data.',
+  openGraph: {
+    title: 'Privacy Policy | Cadence',
+    description: 'How Cadence collects, uses, and protects your data.',
+    url: 'https://cadencehq.co/privacy',
+    siteName: 'Cadence',
+    images: [
+      {
+        url: `https://cadencehq.co/og-image.png?v=${process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA || 'dev'}`,
+        width: 1200,
+        height: 630,
+        alt: 'Privacy Policy | Cadence',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Privacy Policy | Cadence',
+    description: 'How Cadence collects, uses, and protects your data.',
+    images: [`https://cadencehq.co/og-image.png?v=${process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA || 'dev'}`],
+    creator: '@seand132',
+  },
 }
 
 function RhythmDivider({ id, bg }: { id: string; bg: string }) {

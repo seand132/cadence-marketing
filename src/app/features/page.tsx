@@ -4,6 +4,28 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Cadence Features: 1:1s, Team Meetings, Task Delegation, Team Dashboard, KPI Goals',
   description: 'Seven focused tools for small-team managers. 1:1 meetings, team meetings with shared agendas, task delegation, team dashboard, KPI goals, org chart. Built for teams of 3 to 8.',
+  openGraph: {
+    title: 'Cadence Features: 1:1s, Team Meetings, Task Delegation, Team Dashboard, KPI Goals',
+    description: 'Seven focused tools for small-team managers. 1:1 meetings, task delegation, team dashboard, KPI goals. Built for teams of 3 to 8.',
+    url: 'https://cadencehq.co/features',
+    siteName: 'Cadence',
+    images: [
+      {
+        url: `https://cadencehq.co/og-image.png?v=${process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA || 'dev'}`,
+        width: 1200,
+        height: 630,
+        alt: 'Cadence Features',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cadence Features: 1:1s, Team Meetings, Task Delegation, Team Dashboard, KPI Goals',
+    description: 'Seven focused tools for small-team managers. Built for teams of 3 to 8.',
+    images: [`https://cadencehq.co/og-image.png?v=${process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA || 'dev'}`],
+    creator: '@seand132',
+  },
 }
 
 export default function FeaturesPage() {

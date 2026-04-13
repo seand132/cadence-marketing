@@ -7,6 +7,28 @@ export const metadata: Metadata = {
   title: 'The Cadence Blog | Practical management for real teams',
   description:
     'Practical management for real teams. 1:1s, delegation, team culture, and building systems that actually work.',
+  openGraph: {
+    title: 'The Cadence Blog | Practical management for real teams',
+    description: 'Practical management for real teams. 1:1s, delegation, team culture, and building systems that actually work.',
+    url: 'https://cadencehq.co/blog',
+    siteName: 'Cadence',
+    images: [
+      {
+        url: `https://cadencehq.co/og-image.png?v=${process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA || 'dev'}`,
+        width: 1200,
+        height: 630,
+        alt: 'The Cadence Blog',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'The Cadence Blog | Practical management for real teams',
+    description: 'Practical management for real teams. 1:1s, delegation, team culture, and building systems that actually work.',
+    images: [`https://cadencehq.co/og-image.png?v=${process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA || 'dev'}`],
+    creator: '@seand132',
+  },
 }
 
 function RhythmDivider({ id, bg }: { id: string; bg: string }) {

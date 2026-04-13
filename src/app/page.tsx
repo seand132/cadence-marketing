@@ -6,6 +6,28 @@ import { RhythmMotif } from '@/components/RhythmMotif'
 export const metadata: Metadata = {
   title: 'Cadence: Management tools for small teams',
   description: 'Cadence gives managers a real system for 1:1s, delegation, and team rhythm. 14-day free trial.',
+  openGraph: {
+    title: 'Cadence: Management tools for small teams',
+    description: 'Cadence gives managers a real system for 1:1s, delegation, and team rhythm. 14-day free trial.',
+    url: 'https://cadencehq.co',
+    siteName: 'Cadence',
+    images: [
+      {
+        url: `https://cadencehq.co/og-image.png?v=${process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA || 'dev'}`,
+        width: 1200,
+        height: 630,
+        alt: 'Cadence: Management tools for small teams',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cadence: Management tools for small teams',
+    description: 'Cadence gives managers a real system for 1:1s, delegation, and team rhythm. 14-day free trial.',
+    images: [`https://cadencehq.co/og-image.png?v=${process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA || 'dev'}`],
+    creator: '@seand132',
+  },
 }
 
 export default function Home() {
