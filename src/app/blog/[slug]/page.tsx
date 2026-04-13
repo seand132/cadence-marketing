@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { ShareBar } from '@/components/ShareBar'
@@ -156,11 +157,13 @@ export default async function BlogPostPage({ params }: Props) {
         {/* Cover image */}
         {post.coverImage && (
           <div style={{ marginBottom: 32, borderRadius: 8, overflow: 'hidden' }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src={post.coverImage}
               alt={post.title}
+              width={1200}
+              height={630}
               style={{ width: '100%', height: 'auto', display: 'block' }}
+              priority
             />
           </div>
         )}
@@ -176,13 +179,12 @@ export default async function BlogPostPage({ params }: Props) {
             borderBottom: '1px solid #D0CAC0',
           }}
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src={AUTHOR_AVATAR}
             alt="Sean Davis"
+            width={40}
+            height={40}
             style={{
-              width: 40,
-              height: 40,
               borderRadius: '50%',
               objectFit: 'cover',
               border: '2px solid #D0CAC0',
@@ -243,13 +245,12 @@ export default async function BlogPostPage({ params }: Props) {
             alignItems: 'flex-start',
           }}
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src={AUTHOR_AVATAR}
             alt="Sean Davis"
+            width={56}
+            height={56}
             style={{
-              width: 56,
-              height: 56,
               borderRadius: '50%',
               objectFit: 'cover',
               border: '2px solid #D0CAC0',

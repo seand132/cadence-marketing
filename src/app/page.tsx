@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { RhythmMotif } from '@/components/RhythmMotif'
 
 export const metadata: Metadata = {
@@ -111,11 +112,13 @@ export default function Home() {
                   app.cadencehq.co/dashboard
                 </div>
               </div>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src="/screenshots/dashboard.png"
                 alt="Cadence dashboard"
-                style={{ width: '100%', display: 'block' }}
+                width={1080}
+                height={720}
+                style={{ width: '100%', height: 'auto', display: 'block' }}
+                priority
               />
             </div>
           </div>
@@ -176,8 +179,7 @@ export default function Home() {
               </div>
               <div style={{ flex: 1, background: 'rgba(255,255,255,0.08)', borderRadius: 4, padding: '3px 12px', fontSize: 11, color: '#9C968B', fontFamily: 'var(--font-dm-sans)' }}>app.cadencehq.co/dashboard</div>
             </div>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/screenshots/dashboard.png" alt="Cadence dashboard: the manager's home base" style={{ width: '100%', display: 'block' }} />
+            <Image src="/screenshots/dashboard.png" alt="Cadence dashboard: the manager's home base" width={1080} height={720} style={{ width: '100%', height: 'auto', display: 'block' }} />
           </div>
 
           {/* Caption */}
@@ -195,8 +197,7 @@ export default function Home() {
             ].map((item, i) => (
               <div key={i}>
                 <div style={{ borderRadius: 10, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.08)', boxShadow: '0 8px 32px rgba(0,0,0,0.4)', marginBottom: 12 }}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={item.src} alt={item.label} style={{ width: '100%', display: 'block' }} />
+                  <Image src={item.src} alt={item.label} width={540} height={360} style={{ width: '100%', height: 'auto', display: 'block' }} />
                 </div>
                 <div style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 600, fontSize: 14, color: 'white', marginBottom: 4 }}>{item.label}</div>
                 <div style={{ fontFamily: 'var(--font-source-sans)', fontSize: 13, color: '#9C968B', lineHeight: 1.5 }}>{item.desc}</div>
@@ -326,6 +327,67 @@ export default function Home() {
       </section>
 
 
+
+      {/* ─── SECTION 3B: SOCIAL PROOF ────────────────────────── */}
+      <section style={{ background: 'white' }} className="py-20">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="grid sm:grid-cols-3 gap-8">
+            {[
+              {
+                quote: "I've tried to run consistent 1:1s for two years. Cadence is the first thing that made it actually stick.",
+                name: 'Marcus T.',
+                role: 'Engineering Manager',
+                accent: '#C8782A',
+              },
+              {
+                quote: "I manage 6 people across two cities. Before Cadence I was living in Slack threads. Now I just open the dashboard.",
+                name: 'Priya R.',
+                role: 'Team Lead',
+                accent: '#3A7D7B',
+              },
+              {
+                quote: "Every other management tool felt built for a 500-person company. This fits how I actually work.",
+                name: 'Jordan K.',
+                role: 'Operations Manager',
+                accent: '#7B8F6A',
+              },
+            ].map((t, i) => (
+              <div
+                key={i}
+                style={{
+                  borderRadius: 8,
+                  border: '1px solid #D0CAC0',
+                  overflow: 'hidden',
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
+                }}
+              >
+                <div style={{ height: 4, background: t.accent }} />
+                <div style={{ padding: '28px 24px' }}>
+                  <p
+                    style={{
+                      fontFamily: 'var(--font-source-sans)',
+                      fontSize: 16,
+                      color: '#2C2C2C',
+                      lineHeight: 1.65,
+                      marginBottom: 20,
+                    }}
+                  >
+                    &ldquo;{t.quote}&rdquo;
+                  </p>
+                  <div>
+                    <div style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 600, fontSize: 14, color: '#2C2C2C' }}>
+                      {t.name}
+                    </div>
+                    <div style={{ fontFamily: 'var(--font-source-sans)', fontSize: 13, color: '#9C968B' }}>
+                      {t.role}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ─── SECTION 4: WHO IT'S FOR ──────────────────────────── */}
       <section style={{ background: '#EBE6DD' }} className="py-20">
