@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { ShareBar } from '@/components/ShareBar'
+import { JsonLd } from '@/components/JsonLd'
 import { getAllPosts, getPostBySlug, getKicker } from '@/lib/blog'
 
 const AUTHOR_AVATAR = 'https://whzwyvjerrsyqjmktxcg.supabase.co/storage/v1/object/public/avatars/06d4938c-f40d-46dd-b24c-3a2596e0c8a1/avatar.jpg?t=1773037991750'
@@ -121,8 +122,59 @@ export default async function BlogPostPage({ params }: Props) {
     year: 'numeric',
   })
 
+  const blogPostSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.metaDescription || post.excerpt,
+    image: post.coverImage || `https://cadencehq.co/blog/${post.slug}/opengraph-image`,
+    datePublished: post.date,
+    dateModified: post.date,
+    url: `https://cadencehq.co/blog/${post.slug}`,
+    author: {
+      '@type': 'Person',
+      name: post.author || 'Sean Davis',
+      url: 'https://cadencehq.co/about',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Cadence',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://cadencehq.co/brand/cadence-horizontal-lockup.svg',
+      },
+    },
+  }
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://cadencehq.co',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Blog',
+        item: 'https://cadencehq.co/blog',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: post.title,
+        item: `https://cadencehq.co/blog/${post.slug}`,
+      },
+    ],
+  }
+
   return (
     <div style={{ background: '#F5F0E8', minHeight: '100vh' }}>
+      <JsonLd schema={blogPostSchema} id={`schema-blogpost-${post.slug}`} />
+      <JsonLd schema={breadcrumbSchema} id={`schema-breadcrumb-${post.slug}`} />
       <div style={{ maxWidth: 780, margin: '0 auto', padding: '24px 24px 0' }}>
         <Link
           href="/blog"
