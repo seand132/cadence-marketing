@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { DM_Sans, Source_Sans_3 } from 'next/font/google'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -19,7 +19,14 @@ const sourceSans3 = Source_Sans_3({
   weight: ['400', '600'],
 })
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+}
+
 export const metadata: Metadata = {
+  metadataBase: new URL('https://cadencehq.co'),
+  robots: { index: true, follow: true },
   title: 'Cadence: Management in rhythm.',
   description: 'Cadence gives managers a real system. Run better 1:1s, track your team, and build the habits that make you a great manager.',
   openGraph: {
