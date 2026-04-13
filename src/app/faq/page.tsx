@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import FaqAccordion from './FaqAccordion'
+import { JsonLd } from '@/components/JsonLd'
+import { CATEGORIES } from './FaqAccordion'
 
 export const metadata: Metadata = {
   title: 'FAQ — Cadence',
@@ -29,10 +31,25 @@ export const metadata: Metadata = {
 }
 
 export default function FaqPage() {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: CATEGORIES.flatMap((category) =>
+      category.items.map((item) => ({
+        '@type': 'Question',
+        name: item.q,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: item.a,
+        },
+      }))
+    ),
+  }
+
   return (
     <div style={{ background: '#2C2C2C', minHeight: '100vh' }}>
-
-      {/* ─── HERO ─────────────────────────────────────────── */}
+      <JsonLd schema={faqSchema} id="schema-faqpage" />
+      {/* ─── HERO — unchanged below this line */}
       <section style={{ background: '#F5F0E8', paddingTop: 72, paddingBottom: 56 }}>
         <div className="max-w-3xl mx-auto px-6 text-center">
           <div
