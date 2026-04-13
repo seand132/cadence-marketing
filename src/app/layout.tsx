@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import './globals.css'
 import { NavClient } from '@/components/nav/NavClient'
+import { JsonLd } from '@/components/JsonLd'
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -57,6 +58,34 @@ export const metadata: Metadata = {
   },
 }
 
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Cadence',
+  url: 'https://cadencehq.co',
+  logo: 'https://cadencehq.co/brand/cadence-horizontal-lockup.svg',
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'hello@cadencehq.co',
+    contactType: 'customer support',
+  },
+  sameAs: [
+    'https://twitter.com/seand132',
+  ],
+}
+
+const webSiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Cadence',
+  url: 'https://cadencehq.co',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: 'https://cadencehq.co/blog?q={search_term_string}',
+    'query-input': 'required name=search_term_string',
+  },
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -65,6 +94,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${dmSans.variable} ${sourceSans3.variable}`}>
       <body style={{ background: '#2C2C2C', overflowX: 'hidden', maxWidth: '100vw' }}>
+        <JsonLd schema={organizationSchema} id="schema-organization" />
+        <JsonLd schema={webSiteSchema} id="schema-website" />
         <NavClient />
         <main style={{ paddingBottom: 80 }}>{children}</main>
 
