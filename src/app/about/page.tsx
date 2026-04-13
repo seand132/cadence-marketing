@@ -505,7 +505,7 @@ export default function AboutPage() {
               textDecoration: 'none',
             }}
           >
-            Get started free
+            Start free
           </Link>
           <p
             style={{

@@ -362,7 +362,7 @@ export function PricingToggle() {
                   boxSizing: 'border-box' as const,
                 }}
               >
-                Get started free
+                Start free
               </Link>
             </div>
           </div>

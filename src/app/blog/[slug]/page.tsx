@@ -338,7 +338,7 @@ export default async function BlogPostPage({ params }: Props) {
               textDecoration: 'none',
             }}
           >
-            Get started free
+            Start free
           </a>
         </div>
       </article>

@@ -131,7 +131,7 @@ export default function PricingPage() {
                 textDecoration: 'none',
               }}
             >
-              Get started free
+              Start free
             </Link>
             <Link
               href="/features"

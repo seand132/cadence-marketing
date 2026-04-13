@@ -1099,7 +1099,7 @@ export default function FeaturesPage() {
               textDecoration: 'none',
             }}
           >
-            Get started free
+            Start free
           </Link>
         </div>
       </section>
@@ -1261,7 +1261,7 @@ export default function FeaturesPage() {
                   textDecoration: 'none',
                 }}
               >
-                Get started free
+                Start free
               </Link>
             </div>
             {/* Screenshot thumbnail */}

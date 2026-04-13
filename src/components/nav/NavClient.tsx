@@ -101,7 +101,7 @@ export function NavClient() {
                 fontWeight: 600,
               }}
             >
-              Get started free
+              Start free
             </Link>
 
             {/* Hamburger - mobile only */}
@@ -223,7 +223,7 @@ export function NavClient() {
                   textDecoration: 'none',
                 }}
               >
-                Get started free
+                Start free
               </Link>
             </nav>
           </div>

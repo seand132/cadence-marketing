@@ -71,7 +71,7 @@ export default function Home() {
                 fontWeight: 600,
               }}
             >
-              Get started free
+              Start free
             </Link>
 
             <p
@@ -231,7 +231,7 @@ export default function Home() {
               lineHeight: 1.2,
             }}
           >
-            Stop running your team from memory.
+            Nobody handed you a system.
           </h2>
           <div
             className="space-y-4"
@@ -417,7 +417,7 @@ export default function Home() {
                   fontWeight: 600,
                 }}
               >
-                Get started free
+                Start free
               </Link>
               <p
                 className="mt-3 text-xs"

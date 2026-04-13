@@ -268,7 +268,7 @@ export default function FaqPage() {
               marginBottom: 16,
             }}
           >
-            Questions? We&apos;ve got answers.
+            Common questions, plain answers.
           </h1>
           <p
             style={{
@@ -279,7 +279,7 @@ export default function FaqPage() {
               marginBottom: 12,
             }}
           >
-            Everything you need to know about Cadence.
+            Most managers are up and running in 15 minutes.
           </p>
           <p
             style={{

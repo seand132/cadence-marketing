@@ -291,7 +291,7 @@ export default function BlogIndex() {
               textDecoration: 'none',
             }}
           >
-            Get started free
+            Start free
           </Link>
         </div>
       </section>
