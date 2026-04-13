@@ -1,11 +1,13 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Script from 'next/script'
 
 const CONSENT_KEY = 'cadence_cookie_consent'
 const CONSENT_DATE_KEY = 'cadence_cookie_consent_date'
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID
+
+type ConsentState = 'loading' | 'unseen' | 'granted' | 'denied'
 
 function isConsentExpired(dateStr: string): boolean {
   const consentDate = new Date(dateStr)
@@ -14,34 +16,27 @@ function isConsentExpired(dateStr: string): boolean {
   return consentDate < twelveMonthsAgo
 }
 
+function readStoredConsent(): ConsentState {
+  if (typeof window === 'undefined') return 'loading'
+  const stored = localStorage.getItem(CONSENT_KEY) as 'granted' | 'denied' | null
+  const storedDate = localStorage.getItem(CONSENT_DATE_KEY)
+  if (stored && storedDate && !isConsentExpired(storedDate)) return stored
+  return 'unseen'
+}
+
 export function CookieConsent() {
-  const [consent, setConsent] = useState<'granted' | 'denied' | null>(null)
-  const [showBanner, setShowBanner] = useState(false)
-
-  useEffect(() => {
-    const stored = localStorage.getItem(CONSENT_KEY) as 'granted' | 'denied' | null
-    const storedDate = localStorage.getItem(CONSENT_DATE_KEY)
-
-    if (stored && storedDate && !isConsentExpired(storedDate)) {
-      setConsent(stored)
-      setShowBanner(false)
-    } else {
-      setShowBanner(true)
-    }
-  }, [])
+  const [consent, setConsent] = useState<ConsentState>(readStoredConsent)
 
   function handleAccept() {
     localStorage.setItem(CONSENT_KEY, 'granted')
     localStorage.setItem(CONSENT_DATE_KEY, new Date().toISOString())
     setConsent('granted')
-    setShowBanner(false)
   }
 
   function handleDecline() {
     localStorage.setItem(CONSENT_KEY, 'denied')
     localStorage.setItem(CONSENT_DATE_KEY, new Date().toISOString())
     setConsent('denied')
-    setShowBanner(false)
   }
 
   return (
@@ -65,7 +60,7 @@ export function CookieConsent() {
       )}
 
       {/* Consent banner */}
-      {showBanner && (
+      {consent === 'unseen' && (
         <div
           role="dialog"
           aria-label="Cookie consent"
