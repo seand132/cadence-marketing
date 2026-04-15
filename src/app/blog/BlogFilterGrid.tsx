@@ -1,192 +1,350 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import Link from 'next/link'
+import type { BlogPost } from '@/lib/blog'
+import { KICKER_MAP } from '@/lib/blog'
 
-interface Post {
-  slug: string
-  title: string
-  category: string
-  readTime: string
-  date: string
-  excerpt: string
-  coverImage?: string
-}
+const CATEGORIES = ['All', '1:1s', 'Delegation', 'Team Culture', 'KPIs', 'Management', 'Feedback']
 
 interface Props {
-  posts: Post[]
+  posts: BlogPost[]
 }
 
-// Category → kicker label + color
-const KICKER_MAP: Record<string, { label: string; color: string }> = {
-  '1:1s':         { label: 'One-on-Ones ·',  color: '#7A9E82' },
-  'Delegation':   { label: 'Delegation ·',   color: '#1C2B3A' },
-  'Team Culture': { label: 'Team Culture ·', color: '#C8782A' },
-  'KPIs':         { label: 'Performance ·',  color: '#1C2B3A' },
-  'Management':   { label: 'Framework ·',    color: '#7A9E82' },
-  'Feedback':     { label: 'Feedback ·',     color: '#C8782A' },
+function getKickerDisplay(post: BlogPost): { label: string; color: string } {
+  return KICKER_MAP[post.kicker] ?? KICKER_MAP[post.category] ?? { label: post.category, color: '#7A9E82' }
+}
+
+function countByCategory(posts: BlogPost[], category: string): number {
+  if (category === 'All') return posts.length
+  return posts.filter((p) => p.category === category).length
 }
 
 export default function BlogFilterGrid({ posts }: Props) {
-  // Derive unique categories from posts
-  const categorySet = new Set(posts.map((p) => p.category))
-  const categories = ['All', ...Array.from(categorySet)]
+  const [activeCategory, setActiveCategory] = useState('All')
+  const [searchQuery, setSearchQuery] = useState('')
 
-  const [activeFilter, setActiveFilter] = useState('All')
+  const filteredPosts = useMemo(() => {
+    let result = posts
+    if (activeCategory !== 'All') {
+      result = result.filter((p) => p.category === activeCategory)
+    }
+    const q = searchQuery.trim().toLowerCase()
+    if (q) {
+      result = result.filter(
+        (p) =>
+          p.title.toLowerCase().includes(q) ||
+          p.excerpt.toLowerCase().includes(q) ||
+          p.kicker.toLowerCase().includes(q) ||
+          p.category.toLowerCase().includes(q)
+      )
+    }
+    return result
+  }, [posts, activeCategory, searchQuery])
 
-  const filteredPosts =
-    activeFilter === 'All' ? posts : posts.filter((p) => p.category === activeFilter)
+  function getMetaLabel(): string {
+    const q = searchQuery.trim()
+    if (q) {
+      return filteredPosts.length === 0
+        ? `No results for "${q}"`
+        : `${filteredPosts.length} result${filteredPosts.length !== 1 ? 's' : ''} for "${q}"`
+    }
+    if (activeCategory !== 'All') {
+      return `${filteredPosts.length} article${filteredPosts.length !== 1 ? 's' : ''} in ${activeCategory}`
+    }
+    return `${filteredPosts.length} article${filteredPosts.length !== 1 ? 's' : ''}`
+  }
 
   return (
     <>
-      {/* Category filter */}
-      <section style={{ background: 'white' }} className="pt-12 pb-6">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="flex flex-wrap gap-2">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveFilter(cat)}
-                className="px-4 py-2 rounded-full text-sm transition-all"
-                style={{
-                  background: activeFilter === cat ? '#1C2B3A' : '#F5F0E8',
-                  color: activeFilter === cat ? 'white' : '#6B6560',
-                  fontFamily: 'var(--font-dm-sans)',
-                  fontWeight: activeFilter === cat ? 600 : 500,
-                  letterSpacing: '0.02em',
-                  border: 'none',
-                  cursor: 'pointer',
-                }}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
+      {/* ── Navy header with search ── */}
+      <section
+        style={{ background: '#1C2B3A' }}
+        className="pt-14 pb-12 px-6 text-center"
+      >
+        <p
+          className="mb-3"
+          style={{
+            fontFamily: 'var(--font-dm-sans)',
+            fontWeight: 700,
+            fontSize: 11,
+            letterSpacing: '0.14em',
+            textTransform: 'uppercase',
+            color: 'rgba(245,240,232,0.45)',
+          }}
+        >
+          The Cadence Blog
+        </p>
+        <h1
+          className="mb-3"
+          style={{
+            fontFamily: 'var(--font-dm-sans)',
+            fontWeight: 700,
+            fontSize: 'clamp(32px, 5vw, 52px)',
+            color: '#F5F0E8',
+            lineHeight: 1.15,
+          }}
+        >
+          Everything you need<br />to manage better.
+        </h1>
+        <p
+          className="mb-8"
+          style={{
+            fontFamily: 'var(--font-source-sans)',
+            fontSize: 16,
+            color: 'rgba(245,240,232,0.6)',
+            lineHeight: 1.5,
+          }}
+        >
+          Practical guides, frameworks, and resources for frontline managers.
+        </p>
+        <div className="relative max-w-xl mx-auto">
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder='Search — try "delegation" or "1:1"'
+            style={{
+              width: '100%',
+              padding: '14px 48px 14px 18px',
+              fontSize: 15,
+              borderRadius: 8,
+              border: '2px solid rgba(245,240,232,0.15)',
+              background: 'rgba(255,255,255,0.08)',
+              color: '#F5F0E8',
+              outline: 'none',
+              fontFamily: 'var(--font-source-sans)',
+              transition: 'border-color 0.15s, background 0.15s',
+            }}
+            onFocus={(e) => {
+              e.currentTarget.style.borderColor = 'rgba(245,240,232,0.4)'
+              e.currentTarget.style.background = 'rgba(255,255,255,0.12)'
+            }}
+            onBlur={(e) => {
+              e.currentTarget.style.borderColor = 'rgba(245,240,232,0.15)'
+              e.currentTarget.style.background = 'rgba(255,255,255,0.08)'
+            }}
+          />
+          <span
+            className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"
+            aria-hidden="true"
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="6.5" cy="6.5" r="4.5" stroke="rgba(245,240,232,0.4)" strokeWidth="1.5" />
+              <path d="M10.5 10.5L14 14" stroke="rgba(245,240,232,0.4)" strokeWidth="1.5" strokeLinecap="round" />
+            </svg>
+          </span>
         </div>
       </section>
 
-      {/* Grid */}
-      <section style={{ background: 'white' }} className="pt-4 pb-20">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="grid sm:grid-cols-2 gap-6">
-            {filteredPosts.map((post, idx) => {
-              const kicker = KICKER_MAP[post.category] ?? { label: 'Article ·', color: '#7A9E82' }
-              const isOrphan =
-                filteredPosts.length % 2 !== 0 && idx === filteredPosts.length - 1
-              return (
-                <Link
-                  key={post.slug}
-                  href={`/blog/${post.slug}`}
-                  className="block group"
-                  style={{
-                    borderRadius: 10,
-                    border: '1px solid #D0CAC0',
-                    overflow: 'hidden',
-                    textDecoration: 'none',
-                    background: '#FAFAF8',
-                    transition: 'border-color 0.15s, box-shadow 0.15s',
-                    ...(isOrphan
-                      ? { gridColumn: '1 / -1', maxWidth: '50%', margin: '0 auto', width: '100%' }
-                      : {}),
-                  }}
-                >
-                  {/* Cover image if present */}
-                  {post.coverImage && (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      src={post.coverImage}
-                      alt={post.title}
-                      style={{ width: '100%', height: 160, objectFit: 'cover', display: 'block' }}
-                    />
-                  )}
-                  <div className="p-7">
-                    {/* Kicker */}
-                    <p
-                      className="mb-2"
-                      style={{
-                        fontFamily: 'var(--font-dm-sans)',
-                        fontWeight: 700,
-                        fontSize: 10,
-                        letterSpacing: '0.12em',
-                        textTransform: 'uppercase',
-                        color: kicker.color,
-                      }}
-                    >
-                      {kicker.label}
-                    </p>
-                    {/* Title */}
-                    <h2
-                      className="mb-3"
-                      style={{
-                        fontFamily: 'var(--font-dm-sans)',
-                        fontWeight: 600,
-                        fontSize: 17,
-                        color: '#2C2C2C',
-                        lineHeight: 1.3,
-                      }}
-                    >
-                      {post.title}
-                    </h2>
-                    {/* Excerpt */}
-                    <p
-                      className="mb-5"
-                      style={{
-                        fontFamily: 'var(--font-source-sans)',
-                        fontSize: 15,
-                        color: '#6B6560',
-                        lineHeight: 1.65,
-                      }}
-                    >
-                      {post.excerpt}
-                    </p>
-                    {/* Footer row */}
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        {/* Author avatar */}
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          src="https://whzwyvjerrsyqjmktxcg.supabase.co/storage/v1/object/public/avatars/06d4938c-f40d-46dd-b24c-3a2596e0c8a1/avatar.jpg?t=1773037991750"
-                          alt="Sean Davis"
-                          style={{
-                            width: 24,
-                            height: 24,
-                            borderRadius: '50%',
-                            objectFit: 'cover',
-                            flexShrink: 0,
-                            border: '1.5px solid #D0CAC0',
-                          }}
-                        />
+      {/* ── Category filter bar ── */}
+      <div
+        style={{
+          background: '#F5F0E8',
+          borderBottom: '1px solid #DDD8CE',
+          padding: '16px 24px',
+        }}
+      >
+        <div className="max-w-5xl mx-auto flex flex-wrap gap-2">
+          {CATEGORIES.map((cat) => {
+            const isActive = cat === activeCategory
+            const count = countByCategory(posts, cat)
+            return (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                style={{
+                  padding: '6px 14px',
+                  borderRadius: 6,
+                  fontSize: 13,
+                  fontWeight: isActive ? 600 : 500,
+                  fontFamily: 'var(--font-dm-sans)',
+                  background: isActive ? '#1C2B3A' : 'white',
+                  color: isActive ? 'white' : '#6B6560',
+                  border: isActive ? '1px solid #1C2B3A' : '1px solid #D0CAC0',
+                  cursor: 'pointer',
+                  whiteSpace: 'nowrap',
+                  transition: 'all 0.12s',
+                }}
+              >
+                {cat}
+                <span style={{ fontSize: 11, opacity: 0.65, marginLeft: 3 }}>({count})</span>
+              </button>
+            )
+          })}
+        </div>
+      </div>
+
+      {/* ── Article grid ── */}
+      <section style={{ background: 'white' }} className="pt-10 pb-20 px-6">
+        <div className="max-w-5xl mx-auto">
+          {/* Results meta */}
+          <p
+            className="mb-6"
+            style={{
+              fontFamily: 'var(--font-dm-sans)',
+              fontSize: 13,
+              color: '#9C968B',
+              fontWeight: 500,
+            }}
+          >
+            {getMetaLabel()}
+          </p>
+
+          {filteredPosts.length === 0 ? (
+            <div className="text-center py-20">
+              <p
+                style={{
+                  fontFamily: 'var(--font-dm-sans)',
+                  fontSize: 18,
+                  fontWeight: 600,
+                  color: '#6B6560',
+                  marginBottom: 8,
+                }}
+              >
+                No articles found
+              </p>
+              <p style={{ fontFamily: 'var(--font-source-sans)', fontSize: 14, color: '#9C968B' }}>
+                Try a different search term or browse all categories.
+              </p>
+            </div>
+          ) : (
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredPosts.map((post) => {
+                const kicker = getKickerDisplay(post)
+                return (
+                  <Link
+                    key={post.slug}
+                    href={`/blog/${post.slug}`}
+                    className="group flex flex-col"
+                    style={{
+                      borderRadius: 10,
+                      border: '1px solid #D0CAC0',
+                      background: '#FAFAF8',
+                      overflow: 'hidden',
+                      textDecoration: 'none',
+                      color: 'inherit',
+                      transition: 'border-color 0.15s, box-shadow 0.15s',
+                    }}
+                  >
+                    {/* Cover image or placeholder */}
+                    {post.coverImage ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={post.coverImage}
+                        alt={post.title}
+                        style={{ width: '100%', height: 160, objectFit: 'cover', display: 'block' }}
+                      />
+                    ) : (
+                      <div
+                        style={{
+                          width: '100%',
+                          height: 160,
+                          background: 'linear-gradient(135deg, #E8E0D4 0%, #D0CAC0 100%)',
+                        }}
+                      />
+                    )}
+
+                    <div className="flex flex-col flex-1 p-6">
+                      {/* Kicker */}
+                      <p
+                        className="mb-2"
+                        style={{
+                          fontFamily: 'var(--font-dm-sans)',
+                          fontWeight: 700,
+                          fontSize: 10,
+                          letterSpacing: '0.12em',
+                          textTransform: 'uppercase',
+                          color: kicker.color,
+                        }}
+                      >
+                        {kicker.label}
+                      </p>
+
+                      {/* Title */}
+                      <h2
+                        className="mb-2 flex-1"
+                        style={{
+                          fontFamily: 'var(--font-dm-sans)',
+                          fontWeight: 600,
+                          fontSize: 16,
+                          color: '#2C2C2C',
+                          lineHeight: 1.35,
+                        }}
+                      >
+                        {post.title}
+                      </h2>
+
+                      {/* Excerpt */}
+                      <p
+                        className="mb-4"
+                        style={
+                          {
+                            fontFamily: 'var(--font-source-sans)',
+                            fontSize: 13,
+                            color: '#6B6560',
+                            lineHeight: 1.6,
+                            display: '-webkit-box',
+                            WebkitLineClamp: 2,
+                            WebkitBoxOrient: 'vertical',
+                            overflow: 'hidden',
+                          } as React.CSSProperties
+                        }
+                      >
+                        {post.excerpt}
+                      </p>
+
+                      {/* Footer */}
+                      <div
+                        className="flex items-center justify-between pt-4"
+                        style={{ borderTop: '1px solid #EBE6DE' }}
+                      >
+                        <div className="flex items-center gap-2">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src="https://whzwyvjerrsyqjmktxcg.supabase.co/storage/v1/object/public/avatars/06d4938c-f40d-46dd-b24c-3a2596e0c8a1/avatar.jpg?t=1773037991750"
+                            alt="Sean Davis"
+                            style={{
+                              width: 24,
+                              height: 24,
+                              borderRadius: '50%',
+                              objectFit: 'cover',
+                              border: '1.5px solid #D0CAC0',
+                              flexShrink: 0,
+                            }}
+                          />
+                          <span
+                            style={{
+                              fontFamily: 'var(--font-dm-sans)',
+                              fontSize: 12,
+                              color: '#9C968B',
+                            }}
+                          >
+                            Sean Davis · {post.readTime}
+                          </span>
+                        </div>
                         <span
-                          style={{
-                            fontFamily: 'var(--font-dm-sans)',
-                            fontSize: 12,
-                            color: '#9C968B',
-                          }}
+                          className="inline-flex items-center gap-1 text-xs font-semibold"
+                          style={{ color: '#C8782A', fontFamily: 'var(--font-dm-sans)' }}
                         >
-                          Sean Davis · {post.readTime}
+                          Read
+                          <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                            <path
+                              d="M2.5 6.5h8M7.5 4l3 2.5-3 2.5"
+                              stroke="#C8782A"
+                              strokeWidth="1.4"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
                         </span>
                       </div>
-                      <span
-                        className="inline-flex items-center gap-1 text-xs font-semibold"
-                        style={{ color: '#C8782A', fontFamily: 'var(--font-dm-sans)' }}
-                      >
-                        Read
-                        <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
-                          <path
-                            d="M2.5 6.5h8M7.5 4l3 2.5-3 2.5"
-                            stroke="#C8782A"
-                            strokeWidth="1.4"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </span>
                     </div>
-                  </div>
-                </Link>
-              )
-            })}
-          </div>
+                  </Link>
+                )
+              })}
+            </div>
+          )}
         </div>
       </section>
     </>
