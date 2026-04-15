@@ -2,6 +2,7 @@
 
 import React, { useState, useMemo } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import type { BlogPost } from '@/lib/blogTypes'
 
 const CATEGORIES = ['All', '1:1s', 'Delegation', 'Team Culture', 'KPIs', 'Management', 'Feedback']
@@ -142,6 +143,49 @@ export default function BlogFilterGrid({ posts }: Props) {
               <path d="M10.5 10.5L14 14" stroke="rgba(245,240,232,0.4)" strokeWidth="1.5" strokeLinecap="round" />
             </svg>
           </span>
+        </div>
+
+        {/* ── Cover image strip ── */}
+        <div className="relative mt-10 -mb-8" style={{ overflow: 'hidden' }}>
+          {/* Left fade */}
+          <div
+            className="absolute left-0 top-0 bottom-0 z-10 pointer-events-none"
+            style={{ width: 120, background: 'linear-gradient(to right, #1C2B3A, transparent)' }}
+          />
+          {/* Right fade */}
+          <div
+            className="absolute right-0 top-0 bottom-0 z-10 pointer-events-none"
+            style={{ width: 120, background: 'linear-gradient(to left, #1C2B3A, transparent)' }}
+          />
+          {/* Bottom fade into filter bar */}
+          <div
+            className="absolute left-0 right-0 bottom-0 z-10 pointer-events-none"
+            style={{ height: 40, background: 'linear-gradient(to bottom, transparent, #1C2B3A)' }}
+          />
+          <div className="flex gap-3 justify-center">
+            {posts.map((post) => (
+              <div
+                key={post.slug}
+                style={{
+                  flexShrink: 0,
+                  width: 160,
+                  height: 90,
+                  borderRadius: 6,
+                  overflow: 'hidden',
+                  opacity: 0.75,
+                  border: '1px solid rgba(245,240,232,0.12)',
+                }}
+              >
+                <Image
+                  src={post.coverImage}
+                  alt={post.title}
+                  width={160}
+                  height={90}
+                  style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
