@@ -1,8 +1,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import BlogFilterGrid from './BlogFilterGrid'
-import { getAllPosts, getKicker } from '@/lib/blog'
+import { resources } from './resourceData'
+import type { Resource } from './resourceData'
+import { getAllPosts } from '@/lib/blog'
 
+// ── SEO metadata — unchanged from previous version ──
 export const metadata: Metadata = {
   title: 'The Cadence Blog | Practical management for real teams',
   description:
@@ -31,213 +34,124 @@ export const metadata: Metadata = {
   },
 }
 
-function RhythmDivider({ id, bg }: { id: string; bg: string }) {
+function ResourceCard({ resource }: { resource: Resource }) {
   return (
     <div
-      style={{ width: '100%', overflow: 'hidden', lineHeight: 0, background: bg }}
-      aria-hidden="true"
+      style={{
+        background: 'white',
+        border: '1.5px dashed #C0BAB0',
+        borderRadius: 10,
+        padding: 22,
+        opacity: 0.8,
+      }}
     >
-      <svg width="100%" height="40" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id={id} x="0" y="0" width="192" height="40" patternUnits="userSpaceOnUse">
-            <rect x="0"   y="34" width="7" height="6"  rx="3.5" fill="#C2604A" />
-            <rect x="12"  y="14" width="7" height="26" rx="3.5" fill="#C2604A" />
-            <rect x="24"  y="30" width="7" height="10" rx="3.5" fill="#3A7D7B" />
-            <rect x="36"  y="8"  width="7" height="32" rx="3.5" fill="#3A7D7B" />
-            <rect x="48"  y="32" width="7" height="8"  rx="3.5" fill="#7B8F6A" />
-            <rect x="60"  y="20" width="7" height="20" rx="3.5" fill="#7B8F6A" />
-            <rect x="72"  y="34" width="7" height="6"  rx="3.5" fill="#C8782A" />
-            <rect x="84"  y="6"  width="7" height="34" rx="3.5" fill="#C8782A" />
-            <rect x="96"  y="30" width="7" height="10" rx="3.5" fill="#3A7D7B" />
-            <rect x="108" y="22" width="7" height="18" rx="3.5" fill="#3A7D7B" />
-            <rect x="120" y="34" width="7" height="6"  rx="3.5" fill="#7B8F6A" />
-            <rect x="132" y="12" width="7" height="28" rx="3.5" fill="#7B8F6A" />
-            <rect x="144" y="32" width="7" height="8"  rx="3.5" fill="#C2604A" />
-            <rect x="156" y="18" width="7" height="22" rx="3.5" fill="#C2604A" />
-            <rect x="168" y="34" width="7" height="6"  rx="3.5" fill="#C8782A" />
-            <rect x="180" y="10" width="7" height="30" rx="3.5" fill="#C8782A" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="40" fill={`url(#${id})`} />
-      </svg>
+      <div style={{ fontSize: 22, marginBottom: 10 }}>{resource.icon}</div>
+      <p
+        style={{
+          fontFamily: 'var(--font-dm-sans)',
+          fontWeight: 700,
+          fontSize: 10,
+          letterSpacing: '0.1em',
+          textTransform: 'uppercase',
+          color: '#9C968B',
+          marginBottom: 6,
+        }}
+      >
+        {resource.label}
+      </p>
+      <p
+        style={{
+          fontFamily: 'var(--font-dm-sans)',
+          fontWeight: 600,
+          fontSize: 15,
+          color: '#6B6560',
+          marginBottom: 6,
+          lineHeight: 1.3,
+        }}
+      >
+        {resource.title}
+      </p>
+      <p
+        style={{
+          fontFamily: 'var(--font-source-sans)',
+          fontSize: 12,
+          color: '#9C968B',
+          lineHeight: 1.5,
+        }}
+      >
+        {resource.desc}
+      </p>
     </div>
   )
 }
 
 export default function BlogIndex() {
   const posts = getAllPosts()
-  const featuredPost = posts[0]
-  const gridPosts = posts.slice(1)
-
-  if (!featuredPost) {
-    return (
-      <div style={{ padding: 40 }}>
-        <p>No posts found.</p>
-      </div>
-    )
-  }
-
-  const featuredKicker = getKicker(featuredPost.kicker || featuredPost.category)
 
   return (
     <>
-      {/* Hero */}
-      <section style={{ background: '#F5F0E8' }} className="pt-20 pb-10">
-        <div className="max-w-4xl mx-auto px-6">
-          <h1
-            className="mb-3"
-            style={{
-              fontFamily: 'var(--font-dm-sans)',
-              fontWeight: 700,
-              fontSize: 'clamp(40px, 5vw, 60px)',
-              color: '#2C2C2C',
-              lineHeight: 1.1,
-            }}
-          >
-            The Cadence Blog
-          </h1>
+      {/* Interactive section — search, filters, grid */}
+      <BlogFilterGrid posts={posts} />
+
+      {/* ── Resources & Templates ── */}
+      <section style={{ background: '#F5F0E8', borderTop: '1px solid #DDD8CE' }} className="py-14 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex items-baseline gap-3 mb-2">
+            <h2
+              style={{
+                fontFamily: 'var(--font-dm-sans)',
+                fontWeight: 700,
+                fontSize: 22,
+                color: '#2C2C2C',
+              }}
+            >
+              Resources &amp; Templates
+            </h2>
+            <span
+              style={{
+                fontFamily: 'var(--font-dm-sans)',
+                fontWeight: 700,
+                fontSize: 10,
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
+                background: '#C8782A',
+                color: 'white',
+                padding: '3px 8px',
+                borderRadius: 4,
+              }}
+            >
+              Coming Soon
+            </span>
+          </div>
           <p
+            className="mb-8"
             style={{
               fontFamily: 'var(--font-source-sans)',
-              fontSize: 20,
-              color: '#9C968B',
+              fontSize: 15,
+              color: '#6B6560',
               lineHeight: 1.6,
+              maxWidth: 560,
             }}
           >
-            Practical management for real teams.
+            Free templates, checklists, and guides to go alongside every article. The practical tools to put ideas into practice.
           </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {resources.map((r) => (
+              <ResourceCard key={r.title} resource={r} />
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Featured post - navy anchor card */}
-      <section style={{ background: '#F5F0E8' }} className="pb-12">
-        <div className="max-w-4xl mx-auto px-6">
-          <Link
-            href={`/blog/${featuredPost.slug}`}
-            className="block group"
-            style={{
-              borderRadius: 12,
-              overflow: 'hidden',
-              textDecoration: 'none',
-              background: '#1C2B3A',
-            }}
-          >
-            {/* Cover image if present */}
-            {featuredPost.coverImage && (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src={featuredPost.coverImage}
-                alt={featuredPost.title}
-                style={{ width: '100%', height: 280, objectFit: 'cover', display: 'block' }}
-              />
-            )}
-            <div className="p-10 md:p-12">
-              {/* Kicker */}
-              <p
-                className="mb-3"
-                style={{
-                  fontFamily: 'var(--font-dm-sans)',
-                  fontWeight: 700,
-                  fontSize: 11,
-                  letterSpacing: '0.12em',
-                  textTransform: 'uppercase',
-                  color: '#7A9E82',
-                }}
-              >
-                {featuredKicker.label}
-              </p>
-              {/* Title */}
-              <h2
-                className="mb-4"
-                style={{
-                  fontFamily: 'var(--font-dm-sans)',
-                  fontWeight: 700,
-                  fontSize: 'clamp(26px, 3.5vw, 38px)',
-                  color: '#F5F0E8',
-                  lineHeight: 1.2,
-                  maxWidth: 600,
-                }}
-              >
-                {featuredPost.title}
-              </h2>
-              {/* Excerpt */}
-              <p
-                className="mb-8"
-                style={{
-                  fontFamily: 'var(--font-source-sans)',
-                  fontSize: 18,
-                  color: 'rgba(245,240,232,0.75)',
-                  lineHeight: 1.7,
-                  maxWidth: 560,
-                }}
-              >
-                {featuredPost.excerpt}
-              </p>
-              {/* Meta row */}
-              <div className="flex items-center justify-between flex-wrap gap-4">
-                <div className="flex items-center gap-3">
-                  {/* Author avatar */}
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="https://whzwyvjerrsyqjmktxcg.supabase.co/storage/v1/object/public/avatars/06d4938c-f40d-46dd-b24c-3a2596e0c8a1/avatar.jpg?t=1773037991750"
-                    alt="Sean Davis"
-                    style={{
-                      width: 32,
-                      height: 32,
-                      borderRadius: '50%',
-                      objectFit: 'cover',
-                      flexShrink: 0,
-                      border: '2px solid rgba(245,240,232,0.4)',
-                    }}
-                  />
-                  <span
-                    style={{
-                      fontFamily: 'var(--font-dm-sans)',
-                      fontSize: 14,
-                      color: 'rgba(245,240,232,0.6)',
-                    }}
-                  >
-                    {featuredPost.author} · {featuredPost.readTime}
-                  </span>
-                </div>
-                <span
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold transition-opacity group-hover:opacity-80"
-                  style={{ color: '#C8782A', fontFamily: 'var(--font-dm-sans)' }}
-                >
-                  Read article
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path
-                      d="M3 8h10M9 4l4 4-4 4"
-                      stroke="#C8782A"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>
-              </div>
-            </div>
-          </Link>
-        </div>
-      </section>
-
-      {/* Rhythm divider */}
-      <div style={{ background: '#F5F0E8', paddingBottom: 16 }} />
-      <RhythmDivider id="blog-div-featured" bg="#F5F0E8" />
-      <div style={{ background: 'white', paddingTop: 8 }} />
-
-      {/* Category filter + Grid (client component) */}
-      <BlogFilterGrid posts={gridPosts} />
-
-      {/* Newsletter */}
-      <section style={{ background: '#7A9E82' }} className="py-16">
-        <div className="max-w-xl mx-auto px-6 text-center">
+      {/* ── Newsletter ── */}
+      <section style={{ background: '#7A9E82' }} className="py-14 px-6">
+        <div className="max-w-md mx-auto text-center">
           <h2
             className="mb-2"
             style={{
               fontFamily: 'var(--font-dm-sans)',
               fontWeight: 700,
-              fontSize: 26,
+              fontSize: 24,
               color: 'white',
             }}
           >
@@ -247,13 +161,14 @@ export default function BlogIndex() {
             className="mb-8"
             style={{
               fontFamily: 'var(--font-source-sans)',
-              fontSize: 16,
+              fontSize: 15,
               color: 'rgba(255,255,255,0.8)',
+              lineHeight: 1.5,
             }}
           >
-            No spam. Unsubscribe anytime.
+            Practical ideas for frontline managers. No fluff, no spam. Unsubscribe anytime.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+          <div className="flex flex-col sm:flex-row gap-3">
             <input
               type="email"
               placeholder="Your email address"
@@ -286,9 +201,9 @@ export default function BlogIndex() {
         </div>
       </section>
 
-      {/* Bottom CTA */}
-      <section style={{ background: '#C8782A' }} className="py-20">
-        <div className="max-w-xl mx-auto px-6 text-center">
+      {/* ── CTA ── */}
+      <section style={{ background: '#C8782A' }} className="py-20 px-6">
+        <div className="max-w-xl mx-auto text-center">
           <h2
             className="mb-6"
             style={{
@@ -299,7 +214,7 @@ export default function BlogIndex() {
               lineHeight: 1.2,
             }}
           >
-            Ready to try Cadence?
+            Ready to put it into practice?
           </h2>
           <Link
             href="https://app.cadencehq.co/signup"
@@ -313,7 +228,7 @@ export default function BlogIndex() {
               textDecoration: 'none',
             }}
           >
-            Start free
+            Start free with Cadence
           </Link>
         </div>
       </section>
