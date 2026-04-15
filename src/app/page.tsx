@@ -351,58 +351,134 @@ export default function Home() {
 
 
       {/* ─── SECTION 3B: SOCIAL PROOF ────────────────────────── */}
-      <section style={{ background: 'white' }} className="py-20">
+      <section style={{ background: '#F5F0E8' }} className="py-24">
         <div className="max-w-5xl mx-auto px-6">
-          <div className="grid sm:grid-cols-3 gap-8">
+
+          {/* Section label */}
+          <div style={{ textAlign: 'center', marginBottom: 48 }}>
+            <p style={{
+              fontFamily: 'var(--font-dm-sans)',
+              fontSize: 11,
+              fontWeight: 600,
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase',
+              color: '#C8782A',
+              marginBottom: 10,
+            }}>
+              What managers are saying
+            </p>
+            <div style={{ width: 28, height: 2, background: '#C8782A', margin: '0 auto' }} />
+          </div>
+
+          <div className="grid sm:grid-cols-3 gap-6">
             {[
               {
                 quote: "I've tried to run consistent 1:1s for two years. Cadence is the first thing that made it actually stick.",
                 name: 'Marcus T.',
                 role: 'Engineering Manager',
+                initial: 'M',
                 accent: '#C8782A',
+                avatarBg: '#FAE8D0',
               },
               {
                 quote: "I manage 6 people across two cities. Before Cadence I was living in Slack threads. Now I just open the dashboard.",
                 name: 'Priya R.',
                 role: 'Team Lead',
+                initial: 'P',
                 accent: '#3A7D7B',
+                avatarBg: '#DFF0EF',
               },
               {
                 quote: "Every other management tool felt built for a 500-person company. This fits how I actually work.",
                 name: 'Jordan K.',
                 role: 'Operations Manager',
+                initial: 'J',
                 accent: '#7B8F6A',
+                avatarBg: '#E8EEE5',
               },
             ].map((t, i) => (
               <div
                 key={i}
                 style={{
-                  borderRadius: 8,
+                  background: 'white',
+                  borderRadius: 12,
                   border: '1px solid #D0CAC0',
+                  padding: '32px 28px',
+                  boxShadow: '0 2px 8px rgba(44,44,44,0.06)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  position: 'relative',
                   overflow: 'hidden',
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
                 }}
               >
-                <div style={{ height: 4, background: t.accent }} />
-                <div style={{ padding: '28px 24px' }}>
-                  <p
-                    style={{
-                      fontFamily: 'var(--font-source-sans)',
-                      fontSize: 16,
-                      color: '#2C2C2C',
-                      lineHeight: 1.65,
-                      marginBottom: 20,
-                    }}
-                  >
-                    &ldquo;{t.quote}&rdquo;
-                  </p>
-                  <div>
-                    <div style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 600, fontSize: 14, color: '#2C2C2C' }}>
-                      {t.name}
-                    </div>
-                    <div style={{ fontFamily: 'var(--font-source-sans)', fontSize: 13, color: '#9C968B' }}>
-                      {t.role}
-                    </div>
+                {/* Decorative quotation mark */}
+                <div style={{
+                  position: 'absolute',
+                  top: 12,
+                  right: 18,
+                  fontFamily: 'Georgia, serif',
+                  fontSize: 88,
+                  lineHeight: 1,
+                  color: t.accent,
+                  opacity: 0.07,
+                  pointerEvents: 'none',
+                  userSelect: 'none',
+                }}>
+                  &ldquo;
+                </div>
+
+                {/* Avatar */}
+                <div style={{
+                  width: 48,
+                  height: 48,
+                  borderRadius: '50%',
+                  background: t.avatarBg,
+                  border: `2px solid ${t.accent}`,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: 20,
+                  flexShrink: 0,
+                }}>
+                  <span style={{
+                    fontFamily: 'var(--font-dm-sans)',
+                    fontWeight: 700,
+                    fontSize: 18,
+                    color: t.accent,
+                  }}>
+                    {t.initial}
+                  </span>
+                </div>
+
+                {/* Quote */}
+                <p style={{
+                  fontFamily: 'var(--font-source-sans)',
+                  fontSize: 15,
+                  color: '#2C2C2C',
+                  lineHeight: 1.72,
+                  flex: 1,
+                  marginBottom: 24,
+                }}>
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+
+                {/* Attribution */}
+                <div style={{ borderTop: '1px solid #EBE6DD', paddingTop: 16 }}>
+                  <div style={{
+                    fontFamily: 'var(--font-dm-sans)',
+                    fontWeight: 600,
+                    fontSize: 14,
+                    color: '#2C2C2C',
+                  }}>
+                    {t.name}
+                  </div>
+                  <div style={{
+                    fontFamily: 'var(--font-source-sans)',
+                    fontSize: 13,
+                    color: '#9C968B',
+                    marginTop: 2,
+                  }}>
+                    {t.role}
                   </div>
                 </div>
               </div>
