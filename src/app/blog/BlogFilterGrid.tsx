@@ -2,8 +2,8 @@
 
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
-import type { BlogPost } from '@/lib/blog'
-import { KICKER_MAP } from '@/lib/blog'
+import type { BlogPost } from '@/lib/blogTypes'
+import { KICKER_MAP } from '@/lib/blogTypes'
 
 const CATEGORIES = ['All', '1:1s', 'Delegation', 'Team Culture', 'KPIs', 'Management', 'Feedback']
 
