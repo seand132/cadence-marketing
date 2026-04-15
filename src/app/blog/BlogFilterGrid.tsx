@@ -3,16 +3,24 @@
 import React, { useState, useMemo } from 'react'
 import Link from 'next/link'
 import type { BlogPost } from '@/lib/blogTypes'
-import { KICKER_MAP } from '@/lib/blogTypes'
 
 const CATEGORIES = ['All', '1:1s', 'Delegation', 'Team Culture', 'KPIs', 'Management', 'Feedback']
+
+const CATEGORY_DISPLAY: Record<string, { label: string; color: string }> = {
+  '1:1s':         { label: '1:1s ·',         color: '#7A9E82' },
+  'Delegation':   { label: 'Delegation ·',    color: '#1C2B3A' },
+  'Team Culture': { label: 'Team Culture ·',  color: '#C8782A' },
+  'KPIs':         { label: 'KPIs ·',          color: '#1C2B3A' },
+  'Management':   { label: 'Management ·',    color: '#7A9E82' },
+  'Feedback':     { label: 'Feedback ·',      color: '#C8782A' },
+}
 
 interface Props {
   posts: BlogPost[]
 }
 
 function getKickerDisplay(post: BlogPost): { label: string; color: string } {
-  return KICKER_MAP[post.kicker] ?? KICKER_MAP[post.category] ?? { label: post.category, color: '#7A9E82' }
+  return CATEGORY_DISPLAY[post.category] ?? { label: post.category + ' ·', color: '#7A9E82' }
 }
 
 function countByCategory(posts: BlogPost[], category: string): number {
