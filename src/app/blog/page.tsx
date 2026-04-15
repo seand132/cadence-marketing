@@ -35,14 +35,18 @@ export const metadata: Metadata = {
 }
 
 function ResourceCard({ resource }: { resource: Resource }) {
+  const isAvailable = resource.status === 'available'
+
   return (
     <div
       style={{
         background: 'white',
-        border: '1.5px dashed #C0BAB0',
+        border: isAvailable ? '1.5px solid #D0CAC0' : '1.5px dashed #C0BAB0',
         borderRadius: 10,
         padding: 22,
-        opacity: 0.8,
+        opacity: isAvailable ? 1 : 0.8,
+        display: 'flex',
+        flexDirection: 'column',
       }}
     >
       <div style={{ fontSize: 22, marginBottom: 10 }}>{resource.icon}</div>
@@ -64,7 +68,7 @@ function ResourceCard({ resource }: { resource: Resource }) {
           fontFamily: 'var(--font-dm-sans)',
           fontWeight: 600,
           fontSize: 15,
-          color: '#6B6560',
+          color: isAvailable ? '#2C2C2C' : '#6B6560',
           marginBottom: 6,
           lineHeight: 1.3,
         }}
@@ -77,10 +81,47 @@ function ResourceCard({ resource }: { resource: Resource }) {
           fontSize: 12,
           color: '#9C968B',
           lineHeight: 1.5,
+          flexGrow: 1,
         }}
       >
         {resource.desc}
       </p>
+      {isAvailable && resource.href ? (
+        <a
+          href={resource.href}
+          download
+          style={{
+            marginTop: 14,
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 5,
+            fontFamily: 'var(--font-dm-sans)',
+            fontWeight: 600,
+            fontSize: 12,
+            color: '#C8782A',
+            textDecoration: 'none',
+          }}
+        >
+          Download PDF
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M6 1v7M3 5.5l3 3 3-3M1 10.5h10" stroke="#C8782A" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </a>
+      ) : (
+        <p
+          style={{
+            marginTop: 12,
+            fontFamily: 'var(--font-dm-sans)',
+            fontWeight: 600,
+            fontSize: 10,
+            letterSpacing: '0.1em',
+            textTransform: 'uppercase',
+            color: '#C0BAB0',
+          }}
+        >
+          Coming Soon
+        </p>
+      )}
     </div>
   )
 }

@@ -15,7 +15,8 @@ export const resources: Resource[] = [
     label: 'Template · 1:1s',
     title: 'Weekly 1:1 Agenda Template',
     desc: 'A simple, reusable agenda that makes every 1:1 worth attending.',
-    status: 'coming-soon',
+    status: 'available',
+    href: '/cadence-weekly-11-agenda-template.pdf',
   },
   {
     icon: '✅',
