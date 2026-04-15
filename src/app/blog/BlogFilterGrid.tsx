@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import React, { useState, useMemo } from 'react'
 import Link from 'next/link'
 import type { BlogPost } from '@/lib/blogTypes'
 import { KICKER_MAP } from '@/lib/blogTypes'
@@ -152,6 +152,7 @@ export default function BlogFilterGrid({ posts }: Props) {
             return (
               <button
                 key={cat}
+                type="button"
                 onClick={() => setActiveCategory(cat)}
                 style={{
                   padding: '6px 14px',
