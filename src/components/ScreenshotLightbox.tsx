@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 const DOT_COLORS = ['#C2604A', '#C8782A', '#7B8F6A']
 
@@ -64,6 +64,25 @@ export default function ScreenshotLightbox({
   dark = false,
 }: ScreenshotLightboxProps) {
   const [open, setOpen] = useState(false)
+  const closeButtonRef = useRef<HTMLButtonElement>(null)
+  const triggerRef = useRef<HTMLDivElement>(null)
+
+  // Move focus into the modal when it opens
+  useEffect(() => {
+    if (open) {
+      closeButtonRef.current?.focus()
+    }
+  }, [open])
+
+  // Return focus to the trigger when the modal closes (skip initial render)
+  const hasOpenedRef = useRef(false)
+  useEffect(() => {
+    if (open) {
+      hasOpenedRef.current = true
+    } else if (hasOpenedRef.current) {
+      triggerRef.current?.focus()
+    }
+  }, [open])
 
   useEffect(() => {
     if (!open) return
@@ -78,6 +97,7 @@ export default function ScreenshotLightbox({
     <>
       {/* ── Thumbnail ─────────────────────────────────────────── */}
       <div
+        ref={triggerRef}
         style={{
           borderRadius: 10,
           overflow: 'hidden',
@@ -156,6 +176,7 @@ export default function ScreenshotLightbox({
             <div style={{ position: 'relative', flexShrink: 0 }}>
               <Chrome dark={false} url={url} />
               <button
+                ref={closeButtonRef}
                 onClick={() => setOpen(false)}
                 aria-label="Close"
                 style={{
