@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import ScreenshotLightbox from '@/components/ScreenshotLightbox'
 
 export const metadata: Metadata = {
   title: 'Cadence Features: 1:1s, Team Meetings, Task Delegation, Team Dashboard, KPI Goals',
@@ -226,105 +227,18 @@ export default function FeaturesPage() {
             </div>
             {/* Screenshot right */}
             <div className="flex-1 w-full">
-              <div
-                style={{
-                  borderRadius: 10,
-                  overflow: 'hidden',
-                  border: '1px solid #D0CAC0',
-                  boxShadow: '0 12px 40px rgba(0,0,0,0.12)',
-                }}
-              >
-                <div
-                  style={{
-                    background: '#EBE6DD',
-                    padding: '10px 16px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 8,
-                    borderBottom: '1px solid #D0CAC0',
-                  }}
-                >
-                  <div style={{ display: 'flex', gap: 5 }}>
-                    {['#C2604A', '#C8782A', '#7B8F6A'].map((c, i) => (
-                      <div
-                        key={i}
-                        style={{
-                          width: 10,
-                          height: 10,
-                          borderRadius: '50%',
-                          background: c,
-                          opacity: 0.75,
-                        }}
-                      />
-                    ))}
-                  </div>
-                  <div
-                    style={{
-                      flex: 1,
-                      background: 'white',
-                      borderRadius: 4,
-                      padding: '3px 12px',
-                      fontSize: 11,
-                      color: '#9C968B',
-                      fontFamily: 'var(--font-dm-sans)',
-                    }}
-                  >
-                    app.cadencehq.co/1-1s
-                  </div>
-                </div>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/screenshots/one-on-ones.png"
-                  alt="Cadence 1:1 meeting agendas"
-                  style={{ width: '100%', maxWidth: '100%', display: 'block' }}
-                />
-              </div>
+              <ScreenshotLightbox
+                src="/screenshots/one-on-ones.png"
+                alt="Cadence 1:1 meeting agendas"
+                url="app.cadencehq.co/1-1s"
+              />
               {/* 1:1 detail view */}
-              <div
-                style={{
-                  borderRadius: 10,
-                  overflow: 'hidden',
-                  border: '1px solid #D0CAC0',
-                  boxShadow: '0 12px 40px rgba(0,0,0,0.12)',
-                  marginTop: 16,
-                }}
-              >
-                <div
-                  style={{
-                    background: '#EBE6DD',
-                    padding: '10px 16px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 8,
-                    borderBottom: '1px solid #D0CAC0',
-                  }}
-                >
-                  <div style={{ display: 'flex', gap: 5 }}>
-                    {['#C2604A', '#C8782A', '#7B8F6A'].map((c, i) => (
-                      <div key={i} style={{ width: 10, height: 10, borderRadius: '50%', background: c, opacity: 0.75 }} />
-                    ))}
-                  </div>
-                  <div
-                    style={{
-                      flex: 1,
-                      background: 'white',
-                      borderRadius: 4,
-                      padding: '3px 12px',
-                      fontSize: 11,
-                      color: '#9C968B',
-                      fontFamily: 'var(--font-dm-sans)',
-                    }}
-                  >
-                    app.cadencehq.co/1-1s/devon-lewis
-                  </div>
-                </div>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/screenshots/one-on-one-detail.png"
-                  alt="Cadence 1:1 meeting detail with structured agenda sections"
-                  style={{ width: '100%', maxWidth: '100%', display: 'block' }}
-                />
-              </div>
+              <ScreenshotLightbox
+                src="/screenshots/one-on-one-detail.png"
+                alt="Cadence 1:1 meeting detail with structured agenda sections"
+                url="app.cadencehq.co/1-1s/devon-lewis"
+                containerStyle={{ marginTop: 16 }}
+              />
             </div>
           </div>
         </div>
@@ -405,59 +319,11 @@ export default function FeaturesPage() {
             </div>
             {/* Screenshot left (reversed) */}
             <div className="flex-1 w-full">
-              <div
-                style={{
-                  borderRadius: 10,
-                  overflow: 'hidden',
-                  border: '1px solid #D0CAC0',
-                  boxShadow: '0 12px 40px rgba(0,0,0,0.10)',
-                }}
-              >
-                <div
-                  style={{
-                    background: '#EBE6DD',
-                    padding: '10px 16px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 8,
-                    borderBottom: '1px solid #D0CAC0',
-                  }}
-                >
-                  <div style={{ display: 'flex', gap: 5 }}>
-                    {['#C2604A', '#C8782A', '#7B8F6A'].map((c, i) => (
-                      <div
-                        key={i}
-                        style={{
-                          width: 10,
-                          height: 10,
-                          borderRadius: '50%',
-                          background: c,
-                          opacity: 0.75,
-                        }}
-                      />
-                    ))}
-                  </div>
-                  <div
-                    style={{
-                      flex: 1,
-                      background: 'white',
-                      borderRadius: 4,
-                      padding: '3px 12px',
-                      fontSize: 11,
-                      color: '#9C968B',
-                      fontFamily: 'var(--font-dm-sans)',
-                    }}
-                  >
-                    app.cadencehq.co/tasks
-                  </div>
-                </div>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/screenshots/tasks.png"
-                  alt="Cadence task delegation and tracking"
-                  style={{ width: '100%', maxWidth: '100%', display: 'block' }}
-                />
-              </div>
+              <ScreenshotLightbox
+                src="/screenshots/tasks.png"
+                alt="Cadence task delegation and tracking"
+                url="app.cadencehq.co/tasks"
+              />
             </div>
           </div>
         </div>
@@ -546,59 +412,11 @@ export default function FeaturesPage() {
             </div>
             {/* Screenshot right */}
             <div className="flex-1 w-full">
-              <div
-                style={{
-                  borderRadius: 10,
-                  overflow: 'hidden',
-                  border: '1px solid #D0CAC0',
-                  boxShadow: '0 12px 40px rgba(0,0,0,0.10)',
-                }}
-              >
-                <div
-                  style={{
-                    background: '#EBE6DD',
-                    padding: '10px 16px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 8,
-                    borderBottom: '1px solid #D0CAC0',
-                  }}
-                >
-                  <div style={{ display: 'flex', gap: 5 }}>
-                    {['#C2604A', '#C8782A', '#7B8F6A'].map((c, i) => (
-                      <div
-                        key={i}
-                        style={{
-                          width: 10,
-                          height: 10,
-                          borderRadius: '50%',
-                          background: c,
-                          opacity: 0.75,
-                        }}
-                      />
-                    ))}
-                  </div>
-                  <div
-                    style={{
-                      flex: 1,
-                      background: 'white',
-                      borderRadius: 4,
-                      padding: '3px 12px',
-                      fontSize: 11,
-                      color: '#9C968B',
-                      fontFamily: 'var(--font-dm-sans)',
-                    }}
-                  >
-                    app.cadencehq.co/dashboard
-                  </div>
-                </div>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/screenshots/dashboard.png"
-                  alt="Cadence team dashboard"
-                  style={{ width: '100%', maxWidth: '100%', display: 'block' }}
-                />
-              </div>
+              <ScreenshotLightbox
+                src="/screenshots/dashboard.png"
+                alt="Cadence team dashboard"
+                url="app.cadencehq.co/dashboard"
+              />
             </div>
           </div>
         </div>
@@ -687,105 +505,18 @@ export default function FeaturesPage() {
             </div>
             {/* Screenshot left (reversed) */}
             <div className="flex-1 w-full">
-              <div
-                style={{
-                  borderRadius: 10,
-                  overflow: 'hidden',
-                  border: '1px solid #D0CAC0',
-                  boxShadow: '0 12px 40px rgba(0,0,0,0.10)',
-                }}
-              >
-                <div
-                  style={{
-                    background: '#EBE6DD',
-                    padding: '10px 16px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 8,
-                    borderBottom: '1px solid #D0CAC0',
-                  }}
-                >
-                  <div style={{ display: 'flex', gap: 5 }}>
-                    {['#C2604A', '#C8782A', '#7B8F6A'].map((c, i) => (
-                      <div
-                        key={i}
-                        style={{
-                          width: 10,
-                          height: 10,
-                          borderRadius: '50%',
-                          background: c,
-                          opacity: 0.75,
-                        }}
-                      />
-                    ))}
-                  </div>
-                  <div
-                    style={{
-                      flex: 1,
-                      background: 'white',
-                      borderRadius: 4,
-                      padding: '3px 12px',
-                      fontSize: 11,
-                      color: '#9C968B',
-                      fontFamily: 'var(--font-dm-sans)',
-                    }}
-                  >
-                    app.cadencehq.co/goals
-                  </div>
-                </div>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/screenshots/kpis.png"
-                  alt="Cadence KPI goals and tracking"
-                  style={{ width: '100%', maxWidth: '100%', display: 'block' }}
-                />
-              </div>
+              <ScreenshotLightbox
+                src="/screenshots/kpis.png"
+                alt="Cadence KPI goals and tracking"
+                url="app.cadencehq.co/goals"
+              />
               {/* Goals tab */}
-              <div
-                style={{
-                  borderRadius: 10,
-                  overflow: 'hidden',
-                  border: '1px solid #D0CAC0',
-                  boxShadow: '0 12px 40px rgba(0,0,0,0.10)',
-                  marginTop: 16,
-                }}
-              >
-                <div
-                  style={{
-                    background: '#EBE6DD',
-                    padding: '10px 16px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 8,
-                    borderBottom: '1px solid #D0CAC0',
-                  }}
-                >
-                  <div style={{ display: 'flex', gap: 5 }}>
-                    {['#C2604A', '#C8782A', '#7B8F6A'].map((c, i) => (
-                      <div key={i} style={{ width: 10, height: 10, borderRadius: '50%', background: c, opacity: 0.75 }} />
-                    ))}
-                  </div>
-                  <div
-                    style={{
-                      flex: 1,
-                      background: 'white',
-                      borderRadius: 4,
-                      padding: '3px 12px',
-                      fontSize: 11,
-                      color: '#9C968B',
-                      fontFamily: 'var(--font-dm-sans)',
-                    }}
-                  >
-                    app.cadencehq.co/goals
-                  </div>
-                </div>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/screenshots/goals.png"
-                  alt="Cadence team goals with subtasks and progress tracking"
-                  style={{ width: '100%', maxWidth: '100%', display: 'block' }}
-                />
-              </div>
+              <ScreenshotLightbox
+                src="/screenshots/goals.png"
+                alt="Cadence team goals with subtasks and progress tracking"
+                url="app.cadencehq.co/goals"
+                containerStyle={{ marginTop: 16 }}
+              />
             </div>
           </div>
         </div>
@@ -888,59 +619,11 @@ export default function FeaturesPage() {
             </div>
             {/* Screenshot right */}
             <div className="flex-1 w-full">
-              <div
-                style={{
-                  borderRadius: 10,
-                  overflow: 'hidden',
-                  border: '1px solid #D0CAC0',
-                  boxShadow: '0 12px 40px rgba(0,0,0,0.10)',
-                }}
-              >
-                <div
-                  style={{
-                    background: '#EBE6DD',
-                    padding: '10px 16px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 8,
-                    borderBottom: '1px solid #D0CAC0',
-                  }}
-                >
-                  <div style={{ display: 'flex', gap: 5 }}>
-                    {['#C2604A', '#C8782A', '#7B8F6A'].map((c, i) => (
-                      <div
-                        key={i}
-                        style={{
-                          width: 10,
-                          height: 10,
-                          borderRadius: '50%',
-                          background: c,
-                          opacity: 0.75,
-                        }}
-                      />
-                    ))}
-                  </div>
-                  <div
-                    style={{
-                      flex: 1,
-                      background: 'white',
-                      borderRadius: 4,
-                      padding: '3px 12px',
-                      fontSize: 11,
-                      color: '#9C968B',
-                      fontFamily: 'var(--font-dm-sans)',
-                    }}
-                  >
-                    app.cadencehq.co/org
-                  </div>
-                </div>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/screenshots/team.png"
-                  alt="Cadence org chart and team structure"
-                  style={{ width: '100%', maxWidth: '100%', display: 'block' }}
-                />
-              </div>
+              <ScreenshotLightbox
+                src="/screenshots/team.png"
+                alt="Cadence org chart and team structure"
+                url="app.cadencehq.co/org"
+              />
             </div>
           </div>
         </div>
@@ -1016,59 +699,11 @@ export default function FeaturesPage() {
             </div>
             {/* Screenshot left (reversed) */}
             <div className="flex-1 w-full">
-              <div
-                style={{
-                  borderRadius: 10,
-                  overflow: 'hidden',
-                  border: '1px solid #D0CAC0',
-                  boxShadow: '0 12px 40px rgba(0,0,0,0.10)',
-                }}
-              >
-                <div
-                  style={{
-                    background: '#EBE6DD',
-                    padding: '10px 16px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 8,
-                    borderBottom: '1px solid #D0CAC0',
-                  }}
-                >
-                  <div style={{ display: 'flex', gap: 5 }}>
-                    {['#C2604A', '#C8782A', '#7B8F6A'].map((c, i) => (
-                      <div
-                        key={i}
-                        style={{
-                          width: 10,
-                          height: 10,
-                          borderRadius: '50%',
-                          background: c,
-                          opacity: 0.75,
-                        }}
-                      />
-                    ))}
-                  </div>
-                  <div
-                    style={{
-                      flex: 1,
-                      background: 'white',
-                      borderRadius: 4,
-                      padding: '3px 12px',
-                      fontSize: 11,
-                      color: '#9C968B',
-                      fontFamily: 'var(--font-dm-sans)',
-                    }}
-                  >
-                    app.cadencehq.co/team-meetings
-                  </div>
-                </div>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/screenshots/team-meetings.png"
-                  alt="Cadence team meetings with shared agendas"
-                  style={{ width: '100%', maxWidth: '100%', display: 'block' }}
-                />
-              </div>
+              <ScreenshotLightbox
+                src="/screenshots/team-meetings.png"
+                alt="Cadence team meetings with shared agendas"
+                url="app.cadencehq.co/team-meetings"
+              />
             </div>
           </div>
         </div>
@@ -1380,60 +1015,13 @@ export default function FeaturesPage() {
             </div>
             {/* Screenshot thumbnail */}
             <div className="flex-1 w-full max-w-md">
-              <div
-                style={{
-                  borderRadius: 10,
-                  overflow: 'hidden',
-                  border: '1px solid rgba(255,255,255,0.25)',
-                  boxShadow: '0 16px 50px rgba(0,0,0,0.25)',
-                  opacity: 0.92,
-                }}
-              >
-                <div
-                  style={{
-                    background: 'rgba(0,0,0,0.3)',
-                    padding: '10px 16px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 8,
-                    borderBottom: '1px solid rgba(255,255,255,0.1)',
-                  }}
-                >
-                  <div style={{ display: 'flex', gap: 5 }}>
-                    {['#C2604A', '#C8782A', '#7B8F6A'].map((c, i) => (
-                      <div
-                        key={i}
-                        style={{
-                          width: 10,
-                          height: 10,
-                          borderRadius: '50%',
-                          background: c,
-                          opacity: 0.75,
-                        }}
-                      />
-                    ))}
-                  </div>
-                  <div
-                    style={{
-                      flex: 1,
-                      background: 'rgba(255,255,255,0.15)',
-                      borderRadius: 4,
-                      padding: '3px 12px',
-                      fontSize: 11,
-                      color: 'rgba(255,255,255,0.7)',
-                      fontFamily: 'var(--font-dm-sans)',
-                    }}
-                  >
-                    app.cadencehq.co/dashboard
-                  </div>
-                </div>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/screenshots/dashboard.png"
-                  alt="Cadence dashboard"
-                  style={{ width: '100%', maxWidth: '100%', display: 'block' }}
-                />
-              </div>
+              <ScreenshotLightbox
+                src="/screenshots/dashboard.png"
+                alt="Cadence dashboard"
+                url="app.cadencehq.co/dashboard"
+                dark
+                containerStyle={{ opacity: 0.92 }}
+              />
             </div>
           </div>
         </div>
