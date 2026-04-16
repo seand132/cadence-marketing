@@ -50,6 +50,13 @@ async function main() {
   // ── 1. Dashboard ──────────────────────────────────────────────
   await page.goto(`${BASE_URL}/dashboard`);
   await waitForApp(page);
+  // Dismiss "You're all set!" onboarding banner if present
+  try {
+    await page.click('button[aria-label="Dismiss getting started checklist"]', { timeout: 3000 });
+    await page.waitForTimeout(500);
+  } catch {
+    // Banner not present or already dismissed
+  }
   await screenshot(page, 'dashboard.png');
 
   // ── 2. Tasks ──────────────────────────────────────────────────
