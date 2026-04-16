@@ -4,6 +4,7 @@ import React, { useState, useMemo } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import type { BlogPost } from '@/lib/blogTypes'
+import { AUTHOR_AVATAR } from '@/lib/author'
 
 const CATEGORIES = ['All', '1:1s', 'Delegation', 'Team Culture', 'KPIs', 'Management', 'Feedback']
 
@@ -355,7 +356,7 @@ export default function BlogFilterGrid({ posts }: Props) {
                         <div className="flex items-center gap-2">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
-                            src="https://whzwyvjerrsyqjmktxcg.supabase.co/storage/v1/object/public/avatars/06d4938c-f40d-46dd-b24c-3a2596e0c8a1/avatar.jpg?t=1773037991750"
+                            src={AUTHOR_AVATAR}
                             alt="Sean Davis"
                             style={{
                               width: 24,

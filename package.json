@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@fontsource/dm-sans": "^5.2.8",
-    "@supabase/supabase-js": "^2.99.1",
     "gray-matter": "^4.0.3",
     "next": "16.1.6",
     "next-mdx-remote": "^6.0.0",

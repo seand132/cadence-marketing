@@ -1,0 +1,10 @@
+{"type":"server-started","port":56522,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:56522","screen_dir":"/Users/seandavis/Documents/Claude/Projects/Cadence/marketing/.superpowers/brainstorm/24338-1776294596/content","state_dir":"/Users/seandavis/Documents/Claude/Projects/Cadence/marketing/.superpowers/brainstorm/24338-1776294596/state"}
+{"type":"screen-added","file":"/Users/seandavis/Documents/Claude/Projects/Cadence/marketing/.superpowers/brainstorm/24338-1776294596/content/profile-photos.html"}
+{"source":"user-event","type":"click","text":"Jordan Kim\n      \n      \n        \n          \n        \n        Sam Chen\n      \n      \n        \n          \n        \n        Priya Patel\n      \n    \n    \n      B — Stock / royalty-free photos\n      Use free headshots from Unsplash, UI Faces, or similar services. Natural-looking, no copyright risk, curated for professional diversity.\n      Pro: Very natural, easy to sourceCon: Less control, may need to verify usage rights","choice":"b","id":null,"timestamp":1776294723005}
+{"type":"screen-added","file":"/Users/seandavis/Documents/Claude/Projects/Cadence/marketing/.superpowers/brainstorm/24338-1776294596/content/demo-scenario.html"}
+{"type":"screen-added","file":"/Users/seandavis/Documents/Claude/Projects/Cadence/marketing/.superpowers/brainstorm/24338-1776294596/content/waiting-1.html"}
+{"type":"screen-added","file":"/Users/seandavis/Documents/Claude/Projects/Cadence/marketing/.superpowers/brainstorm/24338-1776294596/content/new-screens.html"}
+{"type":"screen-added","file":"/Users/seandavis/Documents/Claude/Projects/Cadence/marketing/.superpowers/brainstorm/24338-1776294596/content/waiting-2.html"}
+{"type":"screen-added","file":"/Users/seandavis/Documents/Claude/Projects/Cadence/marketing/.superpowers/brainstorm/24338-1776294596/content/design.html"}
+{"type":"screen-added","file":"/Users/seandavis/Documents/Claude/Projects/Cadence/marketing/.superpowers/brainstorm/24338-1776294596/content/design-v2.html"}
+{"type":"server-stopped","reason":"idle timeout"}

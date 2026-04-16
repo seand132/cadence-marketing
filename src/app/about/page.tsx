@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { AUTHOR_AVATAR } from '@/lib/author'
 
 export const metadata: Metadata = {
   title: 'About Cadence: Built by a manager who needed this.',
@@ -48,7 +49,7 @@ export default function AboutPage() {
             Our Story
           </div>
           {/* Founder avatar */}
-          <img src="https://whzwyvjerrsyqjmktxcg.supabase.co/storage/v1/object/public/avatars/06d4938c-f40d-46dd-b24c-3a2596e0c8a1/avatar.jpg?t=1773037991750" alt="Sean Davis" style={{ width: 96, height: 96, borderRadius: "50%", objectFit: "cover", marginBottom: 24, border: "3px solid #D0CAC0" }} />
+          <img src={AUTHOR_AVATAR} alt="Sean Davis" style={{ width: 96, height: 96, borderRadius: "50%", objectFit: "cover", marginBottom: 24, border: "3px solid #D0CAC0" }} />
           <h1
             style={{
               fontFamily: 'var(--font-dm-sans)',

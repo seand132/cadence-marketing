@@ -6,4 +6,3 @@ export function getStripe(): Stripe {
   return new Stripe(key, { apiVersion: '2026-02-25.clover' })
 }
 
-export const STRIPE_PRICE_ID_STARTER = process.env.STRIPE_PRICE_ID_STARTER ?? ''

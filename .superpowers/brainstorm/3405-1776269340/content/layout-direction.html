@@ -1,0 +1,99 @@
+<h2>Overall page layout — which direction?</h2>
+<p class="subtitle">Three directions that combine search + a resource framework. Which feels most like Cadence?</p>
+
+<div class="cards">
+
+  <!-- Option A: Magazine Hub -->
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: #f5f0e8; padding: 16px; font-size: 11px; font-family: monospace; color: #555; line-height: 1.8;">
+      <div style="background:#1C2B3A; color:#F5F0E8; padding:8px 12px; border-radius:4px; margin-bottom:6px; font-size:10px;">🔍 Search the blog...</div>
+      <div style="display:flex; gap:4px; margin-bottom:8px; flex-wrap:wrap;">
+        <span style="background:#C8782A; color:white; padding:2px 6px; border-radius:10px; font-size:9px;">All</span>
+        <span style="background:#e8e0d4; padding:2px 6px; border-radius:10px; font-size:9px;">1:1s</span>
+        <span style="background:#e8e0d4; padding:2px 6px; border-radius:10px; font-size:9px;">Delegation</span>
+        <span style="background:#e8e0d4; padding:2px 6px; border-radius:10px; font-size:9px;">Team Culture</span>
+        <span style="background:#e8e0d4; padding:2px 6px; border-radius:10px; font-size:9px;">KPIs</span>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:4px; margin-bottom:6px;">
+        <div style="background:#1C2B3A; padding:8px; border-radius:4px; color:#F5F0E8; font-size:9px;">★ Featured post<br/><strong>Title here</strong></div>
+        <div style="display:grid; gap:4px;">
+          <div style="background:white; border:1px solid #d0cac0; padding:6px; border-radius:3px; font-size:8px;">Recent article 1</div>
+          <div style="background:white; border:1px solid #d0cac0; padding:6px; border-radius:3px; font-size:8px;">Recent article 2</div>
+          <div style="background:white; border:1px solid #d0cac0; padding:6px; border-radius:3px; font-size:8px;">Recent article 3</div>
+        </div>
+      </div>
+      <div style="border-top:1px solid #d0cac0; padding-top:6px; font-size:8px; color:#888;">📂 Latest in 1:1s &nbsp;&nbsp; 📂 Latest in Delegation &nbsp;&nbsp; 📂 Resources (coming soon)</div>
+    </div>
+    <div class="card-body">
+      <h3>A — Magazine Hub</h3>
+      <p>Search + filters at the top. Featured post + 3 recents side by side. Then horizontal sections per category ("Latest in 1:1s", "Latest in Delegation"). Resource section at bottom. Like HubSpot or Help Scout. Feels rich and editorial.</p>
+    </div>
+  </div>
+
+  <!-- Option B: Search-First Grid -->
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: #f5f0e8; padding: 16px; font-size: 11px; font-family: monospace; color: #555; line-height: 1.8;">
+      <div style="background:white; border:2px solid #1C2B3A; padding:8px 12px; border-radius:6px; margin-bottom:8px; font-size:10px;">🔍 Search 13 articles on management...</div>
+      <div style="display:flex; gap:4px; margin-bottom:10px; flex-wrap:wrap;">
+        <span style="background:#1C2B3A; color:white; padding:3px 8px; border-radius:4px; font-size:9px;">All (13)</span>
+        <span style="background:white; border:1px solid #d0cac0; padding:3px 8px; border-radius:4px; font-size:9px;">1:1s (3)</span>
+        <span style="background:white; border:1px solid #d0cac0; padding:3px 8px; border-radius:4px; font-size:9px;">Delegation (2)</span>
+        <span style="background:white; border:1px solid #d0cac0; padding:3px 8px; border-radius:4px; font-size:9px;">Team Culture (3)</span>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:4px; margin-bottom:8px;">
+        <div style="background:white; border:1px solid #d0cac0; padding:6px; border-radius:3px; font-size:8px; line-height:1.4;"><span style="color:#C8782A; font-size:7px;">1:1S</span><br/><strong>Article title</strong><br/><span style="color:#888; font-size:7px;">7 min · Sean Davis</span></div>
+        <div style="background:white; border:1px solid #d0cac0; padding:6px; border-radius:3px; font-size:8px; line-height:1.4;"><span style="color:#7A9E82; font-size:7px;">DELEGATION</span><br/><strong>Article title</strong><br/><span style="color:#888; font-size:7px;">8 min · Sean Davis</span></div>
+        <div style="background:white; border:1px solid #d0cac0; padding:6px; border-radius:3px; font-size:8px; line-height:1.4;"><span style="color:#1C2B3A; font-size:7px;">TEAM CULTURE</span><br/><strong>Article title</strong><br/><span style="color:#888; font-size:7px;">7 min · Sean Davis</span></div>
+      </div>
+      <div style="background:#7A9E82; padding:6px 10px; border-radius:4px; color:white; font-size:8px; text-align:center;">📚 Resources library — templates &amp; guides (coming soon)</div>
+    </div>
+    <div class="card-body">
+      <h3>B — Search-First Grid</h3>
+      <p>Big search bar dominates the top. Below it: category pills showing post counts. Then a uniform 3-column grid — every post treated equally, no "featured" hierarchy. Resources section pinned at the bottom as a separate block. Feels fast and functional like Notion or Intercom.</p>
+    </div>
+  </div>
+
+  <!-- Option C: Sidebar Tool -->
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="background: #f5f0e8; padding: 16px; font-size: 11px; font-family: monospace; color: #555; line-height: 1.8;">
+      <div style="display:flex; gap:8px;">
+        <div style="width:28%; background:white; border:1px solid #d0cac0; border-radius:4px; padding:8px; font-size:8px; line-height:1.8;">
+          <div style="background:#1C2B3A; color:#F5F0E8; padding:4px 6px; border-radius:3px; margin-bottom:6px; font-size:8px;">🔍 Search</div>
+          <div style="font-weight:bold; color:#888; font-size:7px; margin-bottom:4px;">TOPICS</div>
+          <div style="color:#C8782A; font-size:8px;">● All (13)</div>
+          <div style="color:#555; font-size:8px;">○ 1:1s (3)</div>
+          <div style="color:#555; font-size:8px;">○ Delegation (2)</div>
+          <div style="color:#555; font-size:8px;">○ Team Culture (3)</div>
+          <div style="color:#555; font-size:8px;">○ KPIs (2)</div>
+          <div style="color:#555; font-size:8px;">○ Management (4)</div>
+          <div style="margin-top:8px; font-weight:bold; color:#888; font-size:7px;">RESOURCES</div>
+          <div style="color:#9C968B; font-size:7px; font-style:italic;">Templates coming soon</div>
+        </div>
+        <div style="flex:1;">
+          <div style="background:white; border:1px solid #d0cac0; border-radius:3px; padding:6px; margin-bottom:4px; font-size:8px; display:flex; gap:6px; align-items:center;">
+            <div style="width:30px; height:24px; background:#e8e0d4; border-radius:2px; flex-shrink:0;"></div>
+            <div><strong>Article title here</strong><br/><span style="color:#888; font-size:7px;">1:1s · 7 min read · Mar 2026</span></div>
+          </div>
+          <div style="background:white; border:1px solid #d0cac0; border-radius:3px; padding:6px; margin-bottom:4px; font-size:8px; display:flex; gap:6px; align-items:center;">
+            <div style="width:30px; height:24px; background:#e8e0d4; border-radius:2px; flex-shrink:0;"></div>
+            <div><strong>Article title here</strong><br/><span style="color:#888; font-size:7px;">Delegation · 8 min read · Mar 2026</span></div>
+          </div>
+          <div style="background:white; border:1px solid #d0cac0; border-radius:3px; padding:6px; font-size:8px; display:flex; gap:6px; align-items:center;">
+            <div style="width:30px; height:24px; background:#e8e0d4; border-radius:2px; flex-shrink:0;"></div>
+            <div><strong>Article title here</strong><br/><span style="color:#888; font-size:7px;">Team Culture · 7 min read</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Sidebar Tool</h3>
+      <p>Persistent left sidebar with search and category filters (with post counts). Main area shows a scannable list of articles with thumbnails, category, and read time. Most "tool-like" of the three — feels like a knowledge base or app sidebar. Resources section lives in the sidebar as a category.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="section" style="margin-top: 20px; padding: 14px; background: #f5f0e8; border-radius: 8px;">
+  <p class="label">My recommendation</p>
+  <p style="margin-top: 6px; font-size: 14px; color: #555;"><strong>B</strong> is the sweet spot for Cadence right now — prominent search, clean grid with post counts per category, and a dedicated resource section ready to fill in. It's fast to build, SEO-friendly, and feels like a real tool without the complexity of a full magazine layout. <strong>A</strong> gets more interesting as the post library grows past ~30 articles.</p>
+</div>
