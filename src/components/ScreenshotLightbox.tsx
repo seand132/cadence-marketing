@@ -108,7 +108,10 @@ export default function ScreenshotLightbox({
         tabIndex={0}
         aria-label={`View ${alt} larger`}
         onKeyDown={e => {
-          if (e.key === 'Enter' || e.key === ' ') setOpen(true)
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault()
+            setOpen(true)
+          }
         }}
       >
         <Chrome dark={dark} url={url} />
