@@ -119,6 +119,9 @@ export default function ScreenshotLightbox({
       {/* ── Modal overlay ─────────────────────────────────────── */}
       {open && (
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={alt}
           style={{
             position: 'fixed',
             inset: 0,
