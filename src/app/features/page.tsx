@@ -64,7 +64,7 @@ export default function FeaturesPage() {
             style={{
               fontFamily: 'var(--font-source-sans)',
               fontSize: 19,
-              color: '#9C968B',
+              color: '#7A7468',
               lineHeight: 1.6,
             }}
           >
@@ -131,7 +131,7 @@ export default function FeaturesPage() {
               className="flex-shrink-0 px-4 py-1.5 rounded-full text-sm font-medium transition-colors hover:bg-[#FDF6EE] hover:text-[#C8782A]"
               style={{
                 fontFamily: 'var(--font-dm-sans)',
-                color: '#9C968B',
+                color: '#7A7468',
                 textDecoration: 'none',
               }}
             >
@@ -183,7 +183,7 @@ export default function FeaturesPage() {
                   style={{
                     fontFamily: 'var(--font-source-sans)',
                     fontSize: 'clamp(15px, 4vw, 17px)',
-                    color: '#9C968B',
+                    color: '#7A7468',
                     lineHeight: 1.75,
                   }}
                 >
@@ -286,7 +286,7 @@ export default function FeaturesPage() {
                   style={{
                     fontFamily: 'var(--font-source-sans)',
                     fontSize: 'clamp(15px, 4vw, 17px)',
-                    color: '#9C968B',
+                    color: '#7A7468',
                     lineHeight: 1.75,
                   }}
                 >
@@ -371,7 +371,7 @@ export default function FeaturesPage() {
                   style={{
                     fontFamily: 'var(--font-source-sans)',
                     fontSize: 'clamp(15px, 4vw, 17px)',
-                    color: '#9C968B',
+                    color: '#7A7468',
                     lineHeight: 1.75,
                   }}
                 >
@@ -464,7 +464,7 @@ export default function FeaturesPage() {
                   style={{
                     fontFamily: 'var(--font-source-sans)',
                     fontSize: 'clamp(15px, 4vw, 17px)',
-                    color: '#9C968B',
+                    color: '#7A7468',
                     lineHeight: 1.75,
                   }}
                 >
@@ -564,7 +564,7 @@ export default function FeaturesPage() {
                   style={{
                     fontFamily: 'var(--font-source-sans)',
                     fontSize: 'clamp(15px, 4vw, 17px)',
-                    color: '#9C968B',
+                    color: '#7A7468',
                     lineHeight: 1.75,
                   }}
                 >
@@ -607,7 +607,7 @@ export default function FeaturesPage() {
                       style={{
                         fontFamily: 'var(--font-source-sans)',
                         fontSize: 12,
-                        color: '#9C968B',
+                        color: '#7A7468',
                         marginTop: 4,
                       }}
                     >
@@ -671,7 +671,7 @@ export default function FeaturesPage() {
                   style={{
                     fontFamily: 'var(--font-source-sans)',
                     fontSize: 'clamp(15px, 4vw, 17px)',
-                    color: '#9C968B',
+                    color: '#7A7468',
                     lineHeight: 1.75,
                   }}
                 >
@@ -717,7 +717,7 @@ export default function FeaturesPage() {
               fontFamily: 'var(--font-dm-sans)',
               fontWeight: 600,
               fontSize: 11,
-              color: '#9C968B',
+              color: '#7A7468',
               letterSpacing: '0.12em',
               textTransform: 'uppercase',
               marginBottom: 16,
@@ -861,7 +861,7 @@ export default function FeaturesPage() {
               fontFamily: 'var(--font-dm-sans)',
               fontWeight: 600,
               fontSize: 11,
-              color: '#9C968B',
+              color: '#7A7468',
               letterSpacing: '0.12em',
               textTransform: 'uppercase',
               marginBottom: 16,

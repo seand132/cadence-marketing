@@ -65,13 +65,13 @@ export default function PricingPage() {
             style={{
               fontFamily: 'var(--font-source-sans)',
               fontSize: 19,
-              color: '#9C968B',
+              color: '#7A7468',
               lineHeight: 1.6,
               marginBottom: 24,
             }}
           >
             One flat monthly rate covers your whole team. Most management tools
-            charge per person - we don&rsquo;t.
+            charge per person. We don&rsquo;t.
           </p>
           <div
             style={{
@@ -82,7 +82,7 @@ export default function PricingPage() {
               flexWrap: 'wrap',
               fontFamily: 'var(--font-dm-sans)',
               fontSize: 13,
-              color: '#9C968B',
+              color: '#7A7468',
               fontWeight: 500,
             }}
           >

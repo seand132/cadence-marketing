@@ -180,7 +180,7 @@ export default async function BlogPostPage({ params }: Props) {
           style={{
             fontFamily: 'var(--font-dm-sans)',
             fontSize: 13,
-            color: '#9C968B',
+            color: '#7A7468',
             textDecoration: 'none',
             display: 'inline-flex',
             alignItems: 'center',
@@ -286,7 +286,7 @@ export default async function BlogPostPage({ params }: Props) {
               style={{
                 fontFamily: 'var(--font-source-sans)',
                 fontSize: 13,
-                color: '#9C968B',
+                color: '#7A7468',
               }}
             >
               Founder at Cadence · {formattedDate} · {post.readTime}

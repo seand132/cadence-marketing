@@ -113,7 +113,7 @@ export default function BlogFilterGrid({ posts }: Props) {
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder='Search — try "delegation" or "1:1"'
+            placeholder='Search articles (try "delegation" or "1:1")'
             style={{
               width: '100%',
               padding: '14px 48px 14px 18px',
@@ -238,7 +238,7 @@ export default function BlogFilterGrid({ posts }: Props) {
             style={{
               fontFamily: 'var(--font-dm-sans)',
               fontSize: 13,
-              color: '#9C968B',
+              color: '#7A7468',
               fontWeight: 500,
             }}
           >
@@ -258,7 +258,7 @@ export default function BlogFilterGrid({ posts }: Props) {
               >
                 No articles found
               </p>
-              <p style={{ fontFamily: 'var(--font-source-sans)', fontSize: 14, color: '#9C968B' }}>
+              <p style={{ fontFamily: 'var(--font-source-sans)', fontSize: 14, color: '#7A7468' }}>
                 Try a different search term or browse all categories.
               </p>
             </div>
@@ -371,7 +371,7 @@ export default function BlogFilterGrid({ posts }: Props) {
                             style={{
                               fontFamily: 'var(--font-dm-sans)',
                               fontSize: 12,
-                              color: '#9C968B',
+                              color: '#7A7468',
                             }}
                           >
                             Sean Davis · {post.readTime}

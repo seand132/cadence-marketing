@@ -22,7 +22,7 @@ export const resources: Resource[] = [
     icon: '✅',
     label: 'Checklist · Delegation',
     title: 'Delegation Readiness Checklist',
-    desc: 'Know when — and how — to hand off work without losing control.',
+    desc: 'Know when to hand off work, and how to do it without losing control.',
     status: 'coming-soon',
   },
   {

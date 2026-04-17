@@ -84,14 +84,14 @@ export function CookieConsent() {
             style={{
               fontFamily: 'var(--font-dm-sans)',
               fontSize: 14,
-              color: '#9C968B',
+              color: '#7A7468',
               margin: 0,
               lineHeight: 1.5,
               flex: 1,
-              minWidth: 240,
+              minWidth: 0,
             }}
           >
-            We use cookies to understand how Cadence is used — it helps us make it better. Accept to enable analytics, or decline to browse without tracking.
+            We use cookies to understand how Cadence is used. It helps us make it better.
           </p>
           <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexShrink: 0 }}>
             <button
@@ -102,7 +102,7 @@ export function CookieConsent() {
                 cursor: 'pointer',
                 fontFamily: 'var(--font-dm-sans)',
                 fontSize: 14,
-                color: '#9C968B',
+                color: '#7A7468',
                 padding: '8px 4px',
                 textDecoration: 'underline',
               }}

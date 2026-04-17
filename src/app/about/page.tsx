@@ -66,7 +66,7 @@ export default function AboutPage() {
             style={{
               fontFamily: 'var(--font-source-sans)',
               fontSize: 19,
-              color: '#9C968B',
+              color: '#7A7468',
               lineHeight: 1.6,
             }}
           >
@@ -110,7 +110,7 @@ export default function AboutPage() {
             style={{
               fontFamily: 'var(--font-source-sans)',
               fontSize: 18,
-              color: '#9C968B',
+              color: '#7A7468',
               lineHeight: 1.8,
               maxWidth: 680,
             }}
@@ -155,7 +155,7 @@ export default function AboutPage() {
             style={{
               fontFamily: 'var(--font-source-sans)',
               fontSize: 17,
-              color: '#9C968B',
+              color: '#7A7468',
               lineHeight: 1.8,
               borderLeft: '4px solid #C8782A',
               paddingLeft: 20,
@@ -254,7 +254,7 @@ export default function AboutPage() {
                     style={{
                       fontFamily: 'var(--font-source-sans)',
                       fontSize: 15,
-                      color: '#9C968B',
+                      color: '#7A7468',
                       lineHeight: 1.7,
                       margin: 0,
                     }}
@@ -376,7 +376,7 @@ export default function AboutPage() {
             style={{
               fontFamily: 'var(--font-source-sans)',
               fontSize: 17,
-              color: '#9C968B',
+              color: '#7A7468',
               textAlign: 'center',
               marginBottom: 40,
             }}
@@ -418,7 +418,7 @@ export default function AboutPage() {
                 style={{
                   fontFamily: 'var(--font-source-sans)',
                   fontSize: 14,
-                  color: '#9C968B',
+                  color: '#7A7468',
                   lineHeight: 1.6,
                   margin: 0,
                 }}
@@ -452,7 +452,7 @@ export default function AboutPage() {
                 style={{
                   fontFamily: 'var(--font-source-sans)',
                   fontSize: 14,
-                  color: '#9C968B',
+                  color: '#7A7468',
                   lineHeight: 1.6,
                   margin: 0,
                 }}

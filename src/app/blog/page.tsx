@@ -57,7 +57,7 @@ function ResourceCard({ resource }: { resource: Resource }) {
           fontSize: 10,
           letterSpacing: '0.1em',
           textTransform: 'uppercase',
-          color: '#9C968B',
+          color: '#7A7468',
           marginBottom: 6,
         }}
       >
@@ -79,7 +79,7 @@ function ResourceCard({ resource }: { resource: Resource }) {
         style={{
           fontFamily: 'var(--font-source-sans)',
           fontSize: 12,
-          color: '#9C968B',
+          color: '#7A7468',
           lineHeight: 1.5,
           flexGrow: 1,
         }}

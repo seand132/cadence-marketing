@@ -96,7 +96,7 @@ export default function FaqPage() {
             style={{
               fontFamily: 'var(--font-source-sans)',
               fontSize: 15,
-              color: '#9C968B',
+              color: '#7A7468',
               lineHeight: 1.6,
             }}
           >

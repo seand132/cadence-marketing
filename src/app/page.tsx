@@ -66,7 +66,7 @@ export default function Home() {
               style={{
                 fontFamily: 'var(--font-dm-sans)',
                 fontWeight: 700,
-                fontSize: 52,
+                fontSize: 'clamp(32px, 6vw, 52px)',
                 color: '#2C2C2C',
               }}
             >
@@ -78,7 +78,7 @@ export default function Home() {
               style={{
                 fontFamily: 'var(--font-source-sans)',
                 fontSize: 19,
-                color: '#9C968B',
+                color: '#7A7468',
                 lineHeight: 1.6,
               }}
             >
@@ -100,12 +100,12 @@ export default function Home() {
 
             <p
               className="mt-3"
-              style={{ fontFamily: 'var(--font-source-sans)', fontSize: 13, color: '#9C968B' }}
+              style={{ fontFamily: 'var(--font-source-sans)', fontSize: 13, color: '#7A7468' }}
             >
               No credit card required.{' '}
               <a
                 href="https://app.cadencehq.co/login"
-                style={{ color: '#9C968B', textDecoration: 'underline' }}
+                style={{ color: '#7A7468', textDecoration: 'underline' }}
               >
                 Already using Cadence? Log in →
               </a>
@@ -115,7 +115,7 @@ export default function Home() {
           {/* Right - Real app screenshot in browser frame */}
           <div className="flex-1 flex justify-center lg:justify-end w-full">
             {/* Real app screenshot in browser frame */}
-            <div style={{
+            <div className="float-animation" style={{
               borderRadius: 12,
               overflow: 'hidden',
               boxShadow: '0 20px 60px rgba(0,0,0,0.18)',
@@ -131,7 +131,7 @@ export default function Home() {
                     <div key={i} style={{ width: 10, height: 10, borderRadius: '50%', background: c, opacity: 0.75 }} />
                   ))}
                 </div>
-                <div style={{ flex: 1, background: 'white', borderRadius: 4, padding: '3px 12px', fontSize: 11, color: '#9C968B', fontFamily: 'var(--font-dm-sans)' }}>
+                <div style={{ flex: 1, background: 'white', borderRadius: 4, padding: '3px 12px', fontSize: 11, color: '#7A7468', fontFamily: 'var(--font-dm-sans)' }}>
                   app.cadencehq.co/dashboard
                 </div>
               </div>
@@ -185,11 +185,11 @@ export default function Home() {
 
           {/* Section header */}
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
-            <div style={{ fontSize: 11, fontWeight: 600, color: '#9C968B', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 12, fontFamily: 'var(--font-dm-sans)' }}>THE PLATFORM</div>
+            <div style={{ fontSize: 11, fontWeight: 600, color: '#7A7468', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: 12, fontFamily: 'var(--font-dm-sans)' }}>THE PLATFORM</div>
             <h2 style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 36, color: 'white', margin: '0 0 12px 0', lineHeight: 1.2 }}>
               Everything in one place.
             </h2>
-            <p style={{ fontFamily: 'var(--font-source-sans)', fontSize: 17, color: '#9C968B', margin: 0 }}>
+            <p style={{ fontFamily: 'var(--font-source-sans)', fontSize: 17, color: '#7A7468', margin: 0 }}>
               Built for the way managers actually work.
             </p>
           </div>
@@ -200,13 +200,13 @@ export default function Home() {
               <div style={{ display: 'flex', gap: 5 }}>
                 {['#C2604A','#C8782A','#7B8F6A'].map((c,i) => <div key={i} style={{ width: 10, height: 10, borderRadius: '50%', background: c, opacity: 0.7 }} />)}
               </div>
-              <div style={{ flex: 1, background: 'rgba(255,255,255,0.08)', borderRadius: 4, padding: '3px 12px', fontSize: 11, color: '#9C968B', fontFamily: 'var(--font-dm-sans)' }}>app.cadencehq.co/dashboard</div>
+              <div style={{ flex: 1, background: 'rgba(255,255,255,0.08)', borderRadius: 4, padding: '3px 12px', fontSize: 11, color: '#7A7468', fontFamily: 'var(--font-dm-sans)' }}>app.cadencehq.co/dashboard</div>
             </div>
             <Image src="/screenshots/dashboard.png" alt="Cadence dashboard: the manager's home base" width={1080} height={720} style={{ width: '100%', height: 'auto', display: 'block' }} />
           </div>
 
           {/* Caption */}
-          <p style={{ textAlign: 'center', fontSize: 13, color: '#9C968B', fontFamily: 'var(--font-dm-sans)', marginBottom: 32 }}>
+          <p style={{ textAlign: 'center', fontSize: 13, color: '#7A7468', fontFamily: 'var(--font-dm-sans)', marginBottom: 32 }}>
             Your dashboard: tasks, 1:1s, team health, and goals. All in one view.
           </p>
 
@@ -223,7 +223,7 @@ export default function Home() {
                   <Image src={item.src} alt={item.label} width={540} height={360} style={{ width: '100%', height: 'auto', display: 'block' }} />
                 </div>
                 <div style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 600, fontSize: 14, color: 'white', marginBottom: 4 }}>{item.label}</div>
-                <div style={{ fontFamily: 'var(--font-source-sans)', fontSize: 13, color: '#9C968B', lineHeight: 1.5 }}>{item.desc}</div>
+                <div style={{ fontFamily: 'var(--font-source-sans)', fontSize: 13, color: '#7A7468', lineHeight: 1.5 }}>{item.desc}</div>
               </div>
             ))}
           </div>
@@ -259,7 +259,7 @@ export default function Home() {
           </h2>
           <div
             className="space-y-4"
-            style={{ fontFamily: 'var(--font-source-sans)', fontSize: 17, color: '#9C968B', lineHeight: 1.7 }}
+            style={{ fontFamily: 'var(--font-source-sans)', fontSize: 17, color: '#7A7468', lineHeight: 1.7 }}
           >
             <p>
               You were great at the job. So they made you manage the people who do your old job.
@@ -336,7 +336,7 @@ export default function Home() {
                     style={{
                       fontFamily: 'var(--font-source-sans)',
                       fontSize: 15,
-                      color: '#9C968B',
+                      color: '#7A7468',
                       lineHeight: 1.6,
                     }}
                   >
@@ -371,7 +371,7 @@ export default function Home() {
               >
                 Built for managers who give a damn.
               </h2>
-              <p style={{ fontFamily: 'var(--font-source-sans)', fontSize: 17, color: '#9C968B', lineHeight: 1.7 }}>
+              <p style={{ fontFamily: 'var(--font-source-sans)', fontSize: 17, color: '#7A7468', lineHeight: 1.7 }}>
                 It&rsquo;s not a performance management suite. It&rsquo;s a rhythm you can actually keep.
               </p>
             </div>
@@ -420,7 +420,7 @@ export default function Home() {
                 className="mb-1"
                 style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: 40, color: '#2C2C2C', lineHeight: 1 }}
               >
-                $10 / month
+                From $10 / month
               </div>
               <div
                 className="inline-flex items-center px-3 py-1 rounded-full mb-6"
@@ -448,7 +448,7 @@ export default function Home() {
               </Link>
               <p
                 className="mt-3 text-xs"
-                style={{ color: '#9C968B', fontFamily: 'var(--font-source-sans)' }}
+                style={{ color: '#7A7468', fontFamily: 'var(--font-source-sans)' }}
               >
                 No credit card required.
               </p>

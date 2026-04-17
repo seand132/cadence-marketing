@@ -62,8 +62,10 @@ export function NavClient() {
               src="/brand/cadence-horizontal-lockup.svg"
               alt="Cadence"
               width={180}
-              height={46}
+              height={66}
               priority
+              unoptimized
+              style={{ width: 'auto', height: 'auto', maxWidth: '180px' }}
             />
           </Link>
 
@@ -74,7 +76,7 @@ export function NavClient() {
                 key={link.href}
                 href={link.href}
                 className="text-sm transition-colors hover:text-[#2C2C2C]"
-                style={{ color: '#9C968B', fontFamily: 'var(--font-dm-sans)', fontWeight: 500 }}
+                style={{ color: '#7A7468', fontFamily: 'var(--font-dm-sans)', fontWeight: 500 }}
               >
                 {link.label}
               </Link>

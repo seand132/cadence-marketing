@@ -14,6 +14,11 @@ body {
   50% { transform: translateY(-8px); }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .float-animation { animation: none !important; }
+  .reveal, .reveal.animate-in { transition: none !important; animation: none !important; }
+}
+
 .reveal {
   opacity: 1;
   transform: translateY(0);

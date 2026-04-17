@@ -36,7 +36,7 @@ function Chrome({ dark, url }: ChromeProps) {
           borderRadius: 4,
           padding: '3px 12px',
           fontSize: 11,
-          color: dark ? 'rgba(255,255,255,0.7)' : '#9C968B',
+          color: dark ? 'rgba(255,255,255,0.7)' : '#7A7468',
           fontFamily: 'var(--font-dm-sans)',
         }}
       >
@@ -187,7 +187,7 @@ export default function ScreenshotLightbox({
                   background: 'none',
                   border: 'none',
                   cursor: 'pointer',
-                  color: '#9C968B',
+                  color: '#7A7468',
                   fontSize: 16,
                   lineHeight: 1,
                   padding: '4px 8px',

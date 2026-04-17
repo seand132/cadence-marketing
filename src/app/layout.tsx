@@ -110,12 +110,12 @@ export default function RootLayout({
                 alt="Cadence"
                 width={160}
                 height={42}
-                className="h-auto"
-                style={{ maxWidth: '160px', width: '100%', display: 'block', overflow: 'visible' }}
+                unoptimized
+                style={{ maxWidth: '160px', width: 'auto', height: 'auto', display: 'block', overflow: 'visible' }}
               />
               <p
                 className="text-sm"
-                style={{ color: '#9C968B', fontFamily: 'var(--font-source-sans)' }}
+                style={{ color: '#7A7468', fontFamily: 'var(--font-source-sans)' }}
               >
                 © {new Date().getFullYear()} Cadence. All rights reserved.
               </p>
@@ -134,7 +134,7 @@ export default function RootLayout({
                   key={link.href}
                   href={link.href}
                   className="text-sm transition-colors hover:text-white"
-                  style={{ color: '#9C968B', fontFamily: 'var(--font-dm-sans)' }}
+                  style={{ color: '#7A7468', fontFamily: 'var(--font-dm-sans)' }}
                 >
                   {link.label}
                 </Link>

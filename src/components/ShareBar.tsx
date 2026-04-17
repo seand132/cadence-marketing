@@ -48,7 +48,7 @@ export function ShareBar({ title, url }: ShareBarProps) {
 
   return (
     <div style={{ marginBottom: 40 }}>
-      <div style={{ fontFamily: 'var(--font-dm-sans)', fontSize: 11, fontWeight: 600, color: '#9C968B', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 10 }}>
+      <div style={{ fontFamily: 'var(--font-dm-sans)', fontSize: 11, fontWeight: 600, color: '#7A7468', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 10 }}>
         Share this
       </div>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>

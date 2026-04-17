@@ -80,7 +80,7 @@ export default function TermsPage() {
           >
             Terms of Service
           </h1>
-          <p className="mt-4" style={{ fontFamily: 'var(--font-source-sans)', fontSize: 15, color: '#9C968B' }}>
+          <p className="mt-4" style={{ fontFamily: 'var(--font-source-sans)', fontSize: 15, color: '#7A7468' }}>
             Last updated: March 2026
           </p>
         </div>
@@ -90,7 +90,7 @@ export default function TermsPage() {
 
       <section style={{ background: 'white' }} className="py-20">
         <div className="max-w-2xl mx-auto px-6">
-          <div className="space-y-10" style={{ fontFamily: 'var(--font-source-sans)', fontSize: 16, color: '#9C968B', lineHeight: 1.8 }}>
+          <div className="space-y-10" style={{ fontFamily: 'var(--font-source-sans)', fontSize: 16, color: '#7A7468', lineHeight: 1.8 }}>
 
             <div>
               <h2 style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 600, fontSize: 20, color: '#2C2C2C', marginBottom: 12 }}>

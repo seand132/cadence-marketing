@@ -126,7 +126,7 @@ export default function StarterPackPage() {
             style={{
               fontFamily: 'var(--font-source-sans)',
               fontSize: 20,
-              color: '#9C968B',
+              color: '#7A7468',
               lineHeight: 1.65,
               marginBottom: 36,
               maxWidth: 520,
@@ -157,7 +157,7 @@ export default function StarterPackPage() {
               style={{
                 fontFamily: 'var(--font-source-sans)',
                 fontSize: 14,
-                color: '#9C968B',
+                color: '#7A7468',
               }}
             >
               One-time · Instant download
@@ -260,7 +260,7 @@ export default function StarterPackPage() {
                     style={{
                       fontFamily: 'var(--font-source-sans)',
                       fontSize: 14,
-                      color: '#9C968B',
+                      color: '#7A7468',
                       lineHeight: 1.55,
                       fontStyle: 'italic',
                     }}
@@ -350,7 +350,7 @@ export default function StarterPackPage() {
             style={{
               fontFamily: 'var(--font-source-sans)',
               fontSize: 16,
-              color: '#9C968B',
+              color: '#7A7468',
               lineHeight: 1.65,
             }}
           >

@@ -141,7 +141,7 @@ export function PricingToggle() {
             fontFamily: 'var(--font-dm-sans)',
             fontSize: 15,
             fontWeight: annual ? 400 : 600,
-            color: annual ? '#9C968B' : '#2C2C2C',
+            color: annual ? '#7A7468' : '#2C2C2C',
           }}
         >
           Monthly
@@ -180,7 +180,7 @@ export function PricingToggle() {
             fontFamily: 'var(--font-dm-sans)',
             fontSize: 15,
             fontWeight: annual ? 600 : 400,
-            color: annual ? '#2C2C2C' : '#9C968B',
+            color: annual ? '#2C2C2C' : '#7A7468',
             display: 'flex',
             alignItems: 'center',
             gap: 8,
@@ -190,7 +190,7 @@ export function PricingToggle() {
           <span
             style={{
               background: annual ? '#FDF6EE' : '#F5F0E8',
-              color: annual ? '#C8782A' : '#9C968B',
+              color: annual ? '#C8782A' : '#7A7468',
               fontWeight: 700,
               fontSize: 11,
               padding: '2px 8px',
@@ -277,7 +277,7 @@ export function PricingToggle() {
                 style={{
                   fontFamily: 'var(--font-source-sans)',
                   fontSize: 13,
-                  color: '#9C968B',
+                  color: '#7A7468',
                   margin: '0 0 18px',
                 }}
               >
@@ -300,7 +300,7 @@ export function PricingToggle() {
                   style={{
                     fontFamily: 'var(--font-source-sans)',
                     fontSize: 14,
-                    color: '#9C968B',
+                    color: '#7A7468',
                     marginLeft: 3,
                   }}
                 >
@@ -311,7 +311,7 @@ export function PricingToggle() {
                 style={{
                   fontFamily: 'var(--font-source-sans)',
                   fontSize: 12,
-                  color: '#9C968B',
+                  color: '#7A7468',
                   margin: '0 0 22px',
                 }}
               >
@@ -460,7 +460,7 @@ export function PricingToggle() {
                 <span
                   style={{
                     fontSize: 20,
-                    color: '#9C968B',
+                    color: '#7A7468',
                     lineHeight: 1,
                     transition: 'transform 200ms ease',
                     transform: openFaq === i ? 'rotate(45deg)' : 'none',
@@ -476,7 +476,7 @@ export function PricingToggle() {
                     padding: '0 20px 18px',
                     fontFamily: 'var(--font-source-sans)',
                     fontSize: 15,
-                    color: '#9C968B',
+                    color: '#7A7468',
                     lineHeight: 1.7,
                   }}
                 >

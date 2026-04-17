@@ -219,7 +219,7 @@ export default function TestimonialsCarousel() {
                     <div style={{
                       fontFamily: "var(--font-source-sans)",
                       fontSize: 13,
-                      color: "#9C968B",
+                      color: "#7A7468",
                       marginTop: 2,
                     }}>
                       {t.role}

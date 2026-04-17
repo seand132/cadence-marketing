@@ -61,7 +61,7 @@ function AccordionSection({ category }: { category: Category }) {
               <span
                 style={{
                   fontSize: 20,
-                  color: '#9C968B',
+                  color: '#7A7468',
                   lineHeight: 1,
                   transition: 'transform 200ms ease',
                   transform: openIndex === i ? 'rotate(45deg)' : 'none',
@@ -77,7 +77,7 @@ function AccordionSection({ category }: { category: Category }) {
                   padding: '0 20px 18px',
                   fontFamily: 'var(--font-source-sans)',
                   fontSize: 15,
-                  color: '#9C968B',
+                  color: '#7A7468',
                   lineHeight: 1.7,
                 }}
               >
