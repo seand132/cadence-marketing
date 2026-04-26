@@ -1,0 +1,84 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../../base.css">
+<style>
+  .slide-2 .body {
+    padding: 80px 96px 96px;
+    display: flex; flex-direction: column;
+    justify-content: space-between;
+    gap: 32px;
+  }
+  .slide-2 .hero-block {
+    margin-top: 48px;
+  }
+  .slide-2 .hero {
+    font-family: 'DM Sans'; font-weight: 700;
+    font-size: 132px; line-height: 0.98; letter-spacing: -3px;
+    color: var(--charcoal);
+  }
+  .slide-2 .hero .accent { color: var(--amber); }
+  .slide-2 .when {
+    font-family: 'Source Sans 3'; font-weight: 400;
+    font-size: 28px; color: var(--warmstone);
+    line-height: 1.5; max-width: 720px;
+    margin-top: 24px;
+  }
+  .slide-2 .cal-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 30px 36px;
+    width: 720px;
+    box-shadow: 0 8px 24px rgba(28, 24, 18, 0.06);
+  }
+  .slide-2 .cal-card .day {
+    font-family: 'DM Sans'; font-weight: 600;
+    font-size: 13px; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--warmstone);
+    margin-bottom: 6px;
+  }
+  .slide-2 .cal-card .row {
+    display: flex; align-items: center; gap: 20px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--linen);
+  }
+  .slide-2 .cal-card .row:last-child { border-bottom: 0; padding-bottom: 0; }
+  .slide-2 .cal-card .row .t {
+    font-family: 'DM Sans'; font-weight: 500;
+    font-size: 18px; color: var(--warmstone);
+    width: 92px;
+  }
+  .slide-2 .cal-card .row .e {
+    font-family: 'DM Sans'; font-weight: 500;
+    font-size: 22px; color: var(--charcoal);
+  }
+  .slide-2 .cal-card .row.now {
+    background: var(--amber-50);
+    margin: 4px -16px; padding: 14px 16px;
+    border-radius: 8px; border-bottom: 0;
+    position: relative;
+  }
+  .slide-2 .cal-card .row.now::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px; background: var(--amber); border-radius: 2px;
+  }
+  .slide-2 .cal-card .row.now .t,
+  .slide-2 .cal-card .row.now .e { color: var(--amber); }
+  .slide-2 .cal-card .row.now .e { font-weight: 600; }
+</style></head>
+<body><div class="slide slide-2">
+  <div class="stripe-top"></div>
+  <div class="body">
+    <div class="eyebrow">Starting in 13 minutes</div>
+    <div class="hero-block">
+      <div class="hero">1:1 with<br><span class="accent">Marcus.</span></div>
+      <div class="when">Tuesday, 3:00 pm. The next thirteen minutes will decide whether the meeting is worth showing up to.</div>
+    </div>
+    <div class="cal-card">
+      <div class="day">Today</div>
+      <div class="row"><div class="t">2:00 pm</div><div class="e">Inventory walk</div></div>
+      <div class="row now"><div class="t">3:00 pm</div><div class="e">1:1 with Marcus</div></div>
+      <div class="row"><div class="t">4:30 pm</div><div class="e">Hiring panel: BOH lead</div></div>
+    </div>
+  </div>
+  <div class="stripe-bot"></div>
+</div></body></html>
